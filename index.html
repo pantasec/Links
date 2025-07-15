@@ -1,46 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pantasec Links</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantasec | Ciberseguridad</title>
   <style>
+    :root {
+      --primary: #FF6D00;
+      --primary-dark: #FF3D00;
+      --dark: #121212;
+      --light: #f5f5f5;
+    }
+    
     body {
-      background-color: #111;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
+      background-color: var(--dark);
+      color: var(--light);
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
       padding: 2rem;
+      position: relative;
     }
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
     h1 {
-      color: #00ff88;
+      color: var(--primary);
+      font-size: 3rem;
+      text-shadow: 0 0 10px rgba(255, 109, 0, 0.5);
+      margin-bottom: 0.5rem;
     }
-    .links a {
+    
+    .tagline {
+      color: var(--primary);
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    
+    .links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    .link-card {
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .link-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 109, 0, 0.4);
+      background: rgba(18, 18, 18, 0.9);
+    }
+    
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(45deg, var(--primary), var(--primary-dark), var(--primary));
+      background-size: 200% 200%;
+      border-radius: 8px;
+      animation: gradient 3s ease infinite;
+    }
+    
+    .link-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
       display: block;
-      background: #1e1e1e;
-      margin: 1rem auto;
-      padding: 1rem;
-      border: 2px solid #00ff88;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-      max-width: 400px;
-      transition: 0.3s;
     }
-    .links a:hover {
-      background: #00ff88;
-      color: black;
+    
+    .link-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .link-desc {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .hacking-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 0.1;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.05;
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .links {
+        grid-template-columns: 1fr;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🌐 Pantasec</h1>
-  <p>La mejor empresa de ciberseguridad y redes</p>
-  <div class="links">
-    <a href="https://youtube.com/@pantasec" target="_blank">🎥 YouTube</a>
-    <a href="https://t.me/LionxSecurity" target="_blank">📲 Telegram</a>
-    <a href="https://pantasec.com/cursos" target="_blank">📚 Cursos</a>
-    <a href="https://github.com/pantasec" target="_blank">💻 GitHub</a>
+  <div class="hacking-animation" id="matrixAnimation"></div>
+  
+  <div class="container">
+    <header>
+      <h1>PANTASEC</h1>
+      <p class="tagline">Ciberseguridad | Hacking Ético | IA</p>
+    </header>
+    
+    <div class="links">
+      <a href="https://youtube.com/@pantasec" target="_blank" class="link-card">
+        <span class="link-icon">🎥</span>
+        <div class="link-title">YouTube</div>
+        <div class="link-desc">Tutoriales y análisis</div>
+      </a>
+      
+      <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
+        <span class="link-icon">📲</span>
+        <div class="link-title">Únete a la Comunidad</div>
+        <div class="link-desc">Telegram @LionxSecurity</div>
+      </a>
+      
+      <a href="https://pantasec.com/cursos" target="_blank" class="link-card">
+        <span class="link-icon">📚</span>
+        <div class="link-title">Cursos Premium</div>
+        <div class="link-desc">Certificaciones en ciberseguridad</div>
+      </a>
+      
+      <a href="https://github.com/pantasec" target="_blank" class="link-card">
+        <span class="link-icon">💻</span>
+        <div class="link-title">GitHub</div>
+        <div class="link-desc">Herramientas open-source</div>
+      </a>
+      
+      <a href="https://instagram.com/pantasec" target="_blank" class="link-card">
+        <span class="link-icon">📸</span>
+        <div class="link-title">Instagram</div>
+        <div class="link-desc">Contenido diario</div>
+      </a>
+      
+      <a href="https://linkedin.com/company/pantasec" target="_blank" class="link-card">
+        <span class="link-icon">🔗</span>
+        <div class="link-title">LinkedIn</div>
+        <div class="link-desc">Red profesional</div>
+      </a>
+    </div>
   </div>
+
+  <script>
+    // Efecto Matrix en el fondo
+    const canvas = document.createElement('canvas');
+    canvas.className = 'hacking-animation';
+    document.getElementById('matrixAnimation').appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    
+    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const nums = '0123456789';
+    const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+    
+    const alphabet = katakana + latin + nums + symbols;
+    
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    
+    const rainDrops = [];
+    
+    for (let x = 0; x < columns; x++) {
+      rainDrops[x] = 1;
+    }
+    
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#FF6D00';
+      ctx.font = fontSize + 'px monospace';
+      
+      for (let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+        
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+      }
+    };
+    
+    setInterval(draw, 30);
+    
+    // Ajustar canvas al redimensionar
+    window.addEventListener('resize', () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    });
+  </script>
 </body>
 </html>
