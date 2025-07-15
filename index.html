@@ -34,7 +34,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             position: relative;
             overflow-x: hidden;
         }
@@ -110,6 +109,29 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 2rem 0 1rem 0;
+            text-align: left;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 4px;
+            background: var(--primary);
         }
         
         .link-card {
@@ -517,8 +539,9 @@
             <p class="tagline">Creador Digital - Ciberseguridad</p>
         </header>
         
+        <!-- PRIMERA SECCIÓN - LionxSecurity -->
+        <h3 class="section-title">LionxSecurity</h3>
         <div class="links">
-            <!-- Nueva tarjeta de Academia LionxSecurity -->
             <a href="#" class="link-card academy-card" id="academyLink">
                 <div class="link-icon">
                     <i class="fas fa-book"></i>
@@ -526,6 +549,20 @@
                 <div class="link-text">
                     <p class="link-title">LionxSecurity</p>
                     <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
+                </div>
+            </a>
+        </div>
+        
+        <!-- SEGUNDA SECCIÓN - Telegram, YouTube y Spotify -->
+        <h3 class="section-title">Contenido Principal</h3>
+        <div class="links">
+            <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <div class="link-text">
+                    <p class="link-title">Comunidad en Telegram</p>
+                    <p class="link-desc">Únete para contenido exclusivo y debates</p>
                 </div>
             </a>
             
@@ -548,17 +585,11 @@
                     <p class="link-desc">Escucha nuestras entrevistas y debates</p>
                 </div>
             </a>
-            
-            <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Comunidad en Telegram</p>
-                    <p class="link-desc">Únete para contenido exclusivo y debates</p>
-                </div>
-            </a>
-            
+        </div>
+        
+        <!-- TERCERA SECCIÓN - Instagram, LinkedIn y TikTok -->
+        <h3 class="section-title">Redes Sociales</h3>
+        <div class="links">
             <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-instagram"></i>
@@ -566,6 +597,16 @@
                 <div class="link-text">
                     <p class="link-title">Instagram</p>
                     <p class="link-desc">Tips rápidos y contenido diario</p>
+                </div>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="link-text">
+                    <p class="link-title">LinkedIn</p>
+                    <p class="link-desc">Networking y perfil profesional</p>
                 </div>
             </a>
 
@@ -576,16 +617,6 @@
                 <div class="link-text">
                     <p class="link-title">TikTok</p>
                     <p class="link-desc">Vídeos cortos y virales</p>
-                </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">LinkedIn</p>
-                    <p class="link-desc">Networking y perfil profesional</p>
                 </div>
             </a>
         </div>
