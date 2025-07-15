@@ -16,7 +16,6 @@
             --light: #f5f5f5;
             --grey: #1a1a1a;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            
             /* Social media brand colors */
             --youtube: #FF0000;
             --spotify: #1DB954;
@@ -36,7 +35,7 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         #background-video {
@@ -158,35 +157,14 @@
             transition: var(--transition);
         }
         
-        /* YouTube Icon */
-        .fa-youtube {
-            color: var(--youtube);
-        }
-        
-        /* Spotify Icon */
-        .fa-spotify {
-            color: var(--spotify);
-        }
-        
-        /* Telegram Icon */
-        .fa-telegram {
-            color: var(--telegram);
-        }
-        
-        /* Instagram Icon */
-        .fa-instagram {
-            color: var(--instagram);
-        }
-        
-        /* TikTok Icon */
-        .fa-tiktok {
-            color: var(--tiktok);
-        }
-        
-        /* LinkedIn Icon */
-        .fa-linkedin-in {
-            color: var(--linkedin);
-        }
+        /* Social media icon colors */
+        .fa-youtube { color: var(--youtube); }
+        .fa-spotify { color: var(--spotify); }
+        .fa-telegram { color: var(--telegram); }
+        .fa-instagram { color: var(--instagram); }
+        .fa-tiktok { color: var(--tiktok); }
+        .fa-linkedin-in { color: var(--linkedin); }
+        .fa-book { color: var(--primary); }
         
         .link-card:hover .link-icon i {
             filter: drop-shadow(0 0 8px currentColor);
@@ -216,6 +194,123 @@
             line-height: 1.4;
         }
 
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+        }
+
+        .modal-content {
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .ml-subscribe-close {
+            width: 30px;
+            height: 30px;
+            background: url('https://assets.mlcdn.com/ml/images/default/modal_close.png') no-repeat;
+            background-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+        }
+
+        /* Form styles (adjusted for theme consistency) */
+        #mlb2-28412192.ml-form-embedContainer {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper {
+            background-color: rgba(26, 26, 26, 0.9);
+            border: 1px solid var(--grey);
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+            color: var(--light);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent p {
+            color: var(--light);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea {
+            background-color: rgba(38, 38, 38, 0.8) !important;
+            color: var(--light) !important;
+            border-color: var(--grey) !important;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-webkit-input-placeholder {
+            color: var(--light);
+            opacity: 0.6;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-moz-placeholder {
+            color: var(--light);
+            opacity: 0.6;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-ms-input-placeholder {
+            color: var(--light);
+            opacity: 0.6;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-moz-placeholder {
+            color: var(--light);
+            opacity: 0.6;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+            background-color: #e66a00 !important;
+            border-color: #e66a00 !important;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before {
+            background-color: rgba(38, 38, 38, 0.8) !important;
+            border-color: var(--grey) !important;
+        }
+
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::before,
+        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::before {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -239,94 +334,8 @@
         .link-card:nth-child(4) { animation-delay: 0.4s; }
         .link-card:nth-child(5) { animation-delay: 0.5s; }
         .link-card:nth-child(6) { animation-delay: 0.6s; }
+        .link-card:nth-child(7) { animation-delay: 0.7s; }
 
-        /* Floating Book Icon */
-        .floating-book {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        .floating-book:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.6);
-        }
-        
-        .floating-book i {
-            color: white;
-            font-size: 24px;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 122, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
-        }
-        
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal-content {
-            background-color: rgba(26, 26, 26, 0.95);
-            border: 1px solid var(--primary);
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            padding: 2rem;
-            position: relative;
-            animation: modalFadeIn 0.3s ease-out;
-        }
-        
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: var(--light);
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: var(--primary);
-        }
-        
-        .modal-title {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-        
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -358,22 +367,14 @@
             body {
                 background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             }
-            
-            .floating-book {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .floating-book i {
-                font-size: 20px;
+
+            .modal-content {
+                width: 95%;
             }
         }
     </style>
 </head>
 <body>
-    
     <video autoplay muted loop playsinline id="background-video">
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
@@ -445,22 +446,23 @@
                     <p class="link-desc">Networking y perfil profesional</p>
                 </div>
             </a>
+
+            <a href="#" class="link-card" onclick="openModal(); return false;">
+                <div class="link-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="link-text">
+                    <p class="link-title">LionxSecurity</p>
+                    <p class="link-desc">Suscríbete para un 15% de descuento</p>
+                </div>
+            </a>
         </div>
     </div>
 
-    <!-- Floating Book Icon -->
-    <div class="floating-book" id="bookIcon">
-        <i class="fas fa-book"></i>
-    </div>
-
-    <!-- Modal with Form -->
-    <div class="modal-overlay" id="formModal">
+    <!-- Modal for MailerLite Form -->
+    <div id="subscribeModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
-            <p style="text-align: center; margin-bottom: 1.5rem;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> si estás entre los 100 primeros en acceder a nuestros cursos de ciberseguridad.</p>
-            
-            <!-- MailerLite Form -->
+            <span class="ml-subscribe-close" onclick="closeModal()"></span>
             <div id="mlb2-28412192" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28412192">
                 <div class="ml-form-align-center">
                     <div class="ml-form-embedWrapper embedForm">
@@ -497,7 +499,7 @@
                                 </div>
                                 <input type="hidden" name="ml-submit" value="1">
                                 <div class="ml-form-embedSubmit">
-                                    <button type="submit" class="primary">Quiero mi descuento</button>
+                                    <button type="submit" class="primary">Subscribe</button>
                                     <button disabled="disabled" style="display: none;" type="button" class="loading">
                                         <div class="ml-form-embedSubmitLoad"></div>
                                         <span class="sr-only">Loading...</span>
@@ -508,8 +510,8 @@
                         </div>
                         <div class="ml-form-successBody row-success" style="display: none">
                             <div class="ml-form-successContent">
-                                <h4>¡Gracias!</h4>
-                                <p>Te has registrado exitosamente para recibir el descuento.</p>
+                                <h4>Thank you!</h4>
+                                <p>You have successfully joined our subscriber list.</p>
                             </div>
                         </div>
                     </div>
@@ -525,36 +527,29 @@
             document.body.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
         }
 
-        // Modal functionality
-        const bookIcon = document.getElementById('bookIcon');
-        const formModal = document.getElementById('formModal');
-        const closeModal = document.getElementById('closeModal');
+        // Modal functions
+        function openModal() {
+            document.getElementById('subscribeModal').style.display = 'flex';
+        }
 
-        bookIcon.addEventListener('click', () => {
-            formModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
+        function closeModal() {
+            document.getElementById('subscribeModal').style.display = 'none';
+        }
 
-        closeModal.addEventListener('click', () => {
-            formModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        formModal.addEventListener('click', (e) => {
-            if (e.target === formModal) {
-                formModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('subscribeModal')) {
+                closeModal();
             }
-        });
+        }
 
-        // MailerLite form success handler
+        // MailerLite success callback
         function ml_webform_success_28412192() {
             var $ = ml_jQuery || jQuery;
             $('.ml-subscribe-form-28412192 .row-success').show();
             $('.ml-subscribe-form-28412192 .row-form').hide();
         }
     </script>
-
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/takel")
