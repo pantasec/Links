@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF7A00; /* Naranja vibrante como color principal */
+            --primary: #FF7A00;
             --primary-light: rgba(255, 122, 0, 0.1);
             --dark: #0a0a0a;
             --light: #e5e5e5;
@@ -19,14 +19,13 @@
         
         body {
             color: var(--light);
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background-color: var(--dark); /* Color de fondo mientras carga el vídeo */
+            background-color: var(--dark);
         }
 
-        /* --- NUEVA SECCIÓN PARA EL VÍDEO DE FONDO --- */
         #background-video {
             position: fixed;
             right: 0;
@@ -36,8 +35,8 @@
             width: auto;
             height: auto;
             z-index: -100;
-            object-fit: cover; /* Asegura que el vídeo cubra todo sin deformarse */
-            filter: brightness(0.4); /* Oscurece el vídeo para que el texto resalte */
+            object-fit: cover;
+            filter: brightness(0.4);
         }
 
         .container {
@@ -57,18 +56,21 @@
         
         h1 {
             color: var(--light);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para mejorar legibilidad sobre vídeo */
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 10px var(--primary);
         }
         
         .tagline {
             color: var(--primary);
-            font-weight: bold;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
         
         .links {
@@ -78,7 +80,7 @@
         }
         
         .link-card {
-            background: rgba(26, 26, 26, 0.7); /* Fondo semi-transparente */
+            background: rgba(26, 26, 26, 0.7);
             border: 1px solid var(--primary-light);
             border-radius: 12px;
             padding: 1rem 1.5rem;
@@ -90,7 +92,7 @@
             animation: fadeIn 1s ease-in-out forwards;
             animation-delay: calc(0.2s * var(--i));
             opacity: 0;
-            backdrop-filter: blur(5px); /* Efecto de desenfoque para el fondo */
+            backdrop-filter: blur(5px);
         }
         
         .link-card:hover {
@@ -98,13 +100,28 @@
             background: var(--primary-light);
             border-color: var(--primary);
         }
-        
+
+        /* --- ESTILOS ACTUALIZADOS PARA LOS LOGOS --- */
         .link-icon {
-            font-size: 1.8rem;
-            color: var(--primary);
-            width: 50px;
-            text-align: center;
+            width: 40px; /* Ancho fijo para el contenedor del logo */
+            height: 40px; /* Alto fijo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 1.5rem;
+        }
+
+        .link-icon img {
+            max-width: 100%; /* La imagen del logo se ajusta a su contenedor */
+            max-height: 100%;
+            transition: all 0.3s ease;
+            /* --- EFECTO DE BRILLO IMPACTANTE --- */
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+        }
+
+        .link-card:hover .link-icon img {
+            filter: drop-shadow(0 0 8px var(--primary)); /* El brillo se intensifica al pasar el ratón */
+            transform: scale(1.1);
         }
         
         .link-text {
@@ -112,7 +129,7 @@
         }
 
         .link-title {
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.1rem;
             margin: 0;
         }
@@ -150,7 +167,9 @@
         
         <div class="links">
             <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card" style="--i: 1;">
-                <i class="fab fa-youtube link-icon"></i>
+                <div class="link-icon">
+                    <img src="youtube.svg" alt="YouTube Logo">
+                </div>
                 <div class="link-text">
                     <p class="link-title">YouTube</p>
                     <p class="link-desc">Análisis y tutoriales en profundidad</p>
@@ -158,7 +177,9 @@
             </a>
 
             <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card" style="--i: 2;">
-                <i class="fab fa-spotify link-icon"></i>
+                <div class="link-icon">
+                    <img src="spotify.svg" alt="Spotify Logo">
+                </div>
                 <div class="link-text">
                     <p class="link-title">Podcast en Spotify</p>
                     <p class="link-desc">Escucha nuestras entrevistas y debates</p>
@@ -166,7 +187,9 @@
             </a>
             
             <a href="https://t.me/LionxSecurity" target="_blank" class="link-card" style="--i: 3;">
-                <i class="fab fa-telegram link-icon"></i>
+                <div class="link-icon">
+                    <img src="telegram.svg" alt="Telegram Logo">
+                </div>
                 <div class="link-text">
                     <p class="link-title">Comunidad en Telegram</p>
                     <p class="link-desc">Únete para contenido exclusivo y debates</p>
@@ -174,7 +197,9 @@
             </a>
             
             <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card" style="--i: 4;">
-                <i class="fab fa-instagram link-icon"></i>
+                <div class="link-icon">
+                    <img src="instagram.svg" alt="Instagram Logo">
+                </div>
                 <div class="link-text">
                     <p class="link-title">Instagram</p>
                     <p class="link-desc">Tips rápidos y contenido diario</p>
@@ -182,7 +207,9 @@
             </a>
 
             <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card" style="--i: 5;">
-                <i class="fab fa-tiktok link-icon"></i>
+                <div class="link-icon">
+                    <img src="tiktok.svg" alt="TikTok Logo">
+                </div>
                 <div class="link-text">
                     <p class="link-title">TikTok</p>
                     <p class="link-desc">Vídeos cortos y virales</p>
@@ -190,7 +217,9 @@
             </a>
 
             <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card" style="--i: 6;">
-                <i class="fab fa-linkedin link-icon"></i>
+                <div class="link-icon">
+                    <img src="linkedin.svg" alt="LinkedIn Logo">
+                </div>
                 <div class="link-text">
                     <p class="link-title">LinkedIn</p>
                     <p class="link-desc">Networking y perfil profesional</p>
