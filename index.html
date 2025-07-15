@@ -1,244 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pantasec | Ciberseguridad</title>
-  <style>
-    :root {
-      --primary: #FF6D00;
-      --primary-dark: #FF3D00;
-      --dark: #121212;
-      --light: #f5f5f5;
-    }
-    
-    body {
-      background-color: var(--dark);
-      color: var(--light);
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-    }
-    
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-    
-    h1 {
-      color: var(--primary);
-      font-size: 3rem;
-      text-shadow: 0 0 10px rgba(255, 109, 0, 0.5);
-      margin-bottom: 0.5rem;
-    }
-    
-    .tagline {
-      color: var(--primary);
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    
-    .link-card {
-      background: rgba(0, 0, 0, 0.7);
-      border: 2px solid var(--primary);
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .link-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(255, 109, 0, 0.4);
-      background: rgba(18, 18, 18, 0.9);
-    }
-    
-    .link-card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      z-index: -1;
-      background: linear-gradient(45deg, var(--primary), var(--primary-dark), var(--primary));
-      background-size: 200% 200%;
-      border-radius: 8px;
-      animation: gradient 3s ease infinite;
-    }
-    
-    .link-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    
-    .link-title {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-    
-    .link-desc {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    
-    .hacking-animation {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.1;
-      pointer-events: none;
-    }
-    
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 0.1;
-      }
-      20%, 22%, 24%, 55% {
-        opacity: 0.05;
-      }
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .links {
-        grid-template-columns: 1fr;
-      }
-      
-      h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="hacking-animation" id="matrixAnimation"></div>
-  
-  <div class="container">
-    <header>
-      <h1>PANTASEC</h1>
-      <p class="tagline">Ciberseguridad | Hacking Ético | IA</p>
-    </header>
-    
-    <div class="links">
-      <a href="https://youtube.com/@pantasec" target="_blank" class="link-card">
-        <span class="link-icon">🎥</span>
-        <div class="link-title">YouTube</div>
-        <div class="link-desc">Tutoriales y análisis</div>
-      </a>
-      
-      <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
-        <span class="link-icon">📲</span>
-        <div class="link-title">Únete a la Comunidad</div>
-        <div class="link-desc">Telegram @LionxSecurity</div>
-      </a>
-      
-      <a href="https://pantasec.com/cursos" target="_blank" class="link-card">
-        <span class="link-icon">📚</span>
-        <div class="link-title">Cursos Premium</div>
-        <div class="link-desc">Certificaciones en ciberseguridad</div>
-      </a>
-      
-      <a href="https://github.com/pantasec" target="_blank" class="link-card">
-        <span class="link-icon">💻</span>
-        <div class="link-title">GitHub</div>
-        <div class="link-desc">Herramientas open-source</div>
-      </a>
-      
-      <a href="https://instagram.com/pantasec" target="_blank" class="link-card">
-        <span class="link-icon">📸</span>
-        <div class="link-title">Instagram</div>
-        <div class="link-desc">Contenido diario</div>
-      </a>
-      
-      <a href="https://linkedin.com/company/pantasec" target="_blank" class="link-card">
-        <span class="link-icon">🔗</span>
-        <div class="link-title">LinkedIn</div>
-        <div class="link-desc">Red profesional</div>
-      </a>
-    </div>
-  </div>
-
-  <script>
-    // Efecto Matrix en el fondo
-    const canvas = document.createElement('canvas');
-    canvas.className = 'hacking-animation';
-    document.getElementById('matrixAnimation').appendChild(canvas);
-    
-    const ctx = canvas.getContext('2d');
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    
-    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const nums = '0123456789';
-    const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
-    
-    const alphabet = katakana + latin + nums + symbols;
-    
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    
-    const rainDrops = [];
-    
-    for (let x = 0; x < columns; x++) {
-      rainDrops[x] = 1;
-    }
-    
-    const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      ctx.fillStyle = '#FF6D00';
-      ctx.font = fontSize + 'px monospace';
-      
-      for (let i = 0; i < rainDrops.length; i++) {
-        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-        
-        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          rainDrops[i] = 0;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantasec | Ciberseguridad & Hacking Ético</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A8FF; /* Un azul cian más tecnológico */
+            --primary-light: rgba(0, 168, 255, 0.1);
+            --dark: #0a0a0a; /* Un negro casi puro para mayor contraste */
+            --light: #e5e5e5;
+            --grey: #1a1a1a;
         }
-        rainDrops[i]++;
-      }
-    };
-    
-    setInterval(draw, 30);
-    
-    // Ajustar canvas al redimensionar
-    window.addEventListener('resize', () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    });
-  </script>
-</body>
-</html>
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        #matrixCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        header {
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+        }
+        
+        h1 {
+            color: var(--light);
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .link-card {
+            background: var(--grey);
+            border: 1px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--light);
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: calc(0.2s * var(--i));
+            opacity: 0;
+        }
+        
+        .link-card:hover {
+            transform: scale(1.05);
+            background: var(--primary-light);
+            border-color: var(--primary);
+        }
+        
+        .link-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            width: 50px;
+            text-align: center;
+            margin-right: 1.5rem;
+        }
+        
+        .link-text {
+            text-align: left;
+        }
+
+        .link-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .link-desc {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        @keyframes fadeIn
