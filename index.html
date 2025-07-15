@@ -16,6 +16,7 @@
             --light: #f5f5f5;
             --grey: #1a1a1a;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            
             /* Social media brand colors */
             --youtube: #FF0000;
             --spotify: #1DB954;
@@ -35,7 +36,7 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         #background-video {
@@ -125,6 +126,7 @@
             opacity: 0;
             backdrop-filter: blur(5px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         
         .link-card:hover {
@@ -157,14 +159,40 @@
             transition: var(--transition);
         }
         
-        /* Social media icon colors */
-        .fa-youtube { color: var(--youtube); }
-        .fa-spotify { color: var(--spotify); }
-        .fa-telegram { color: var(--telegram); }
-        .fa-instagram { color: var(--instagram); }
-        .fa-tiktok { color: var(--tiktok); }
-        .fa-linkedin-in { color: var(--linkedin); }
-        .fa-book { color: var(--primary); }
+        /* YouTube Icon */
+        .fa-youtube {
+            color: var(--youtube);
+        }
+        
+        /* Spotify Icon */
+        .fa-spotify {
+            color: var(--spotify);
+        }
+        
+        /* Telegram Icon */
+        .fa-telegram {
+            color: var(--telegram);
+        }
+        
+        /* Instagram Icon */
+        .fa-instagram {
+            color: var(--instagram);
+        }
+        
+        /* TikTok Icon */
+        .fa-tiktok {
+            color: var(--tiktok);
+        }
+        
+        /* LinkedIn Icon */
+        .fa-linkedin-in {
+            color: var(--linkedin);
+        }
+        
+        /* Book Icon for Academy */
+        .fa-book {
+            color: var(--primary);
+        }
         
         .link-card:hover .link-icon i {
             filter: drop-shadow(0 0 8px currentColor);
@@ -194,194 +222,22 @@
             line-height: 1.4;
         }
 
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-            overflow: auto;
-            animation: fadeIn 0.3s ease-out;
+        /* Academy Card Special Styling */
+        .academy-card {
+            border: 1px solid var(--primary);
+            background: rgba(255, 122, 0, 0.1);
         }
-
-        .modal-content {
-            max-width: 400px;
-            width: 90%;
-            position: relative;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            background: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(5px);
-            padding: 2rem;
-            animation: slideIn 0.3s ease-out;
+        
+        .academy-card .link-icon {
+            background: rgba(255, 122, 0, 0.2);
         }
-
-        .ml-subscribe-close {
-            width: 30px;
-            height: 30px;
-            background: url('https://assets.mlcdn.com/ml/images/default/modal_close.png') no-repeat;
-            background-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            transition: var(--transition);
+        
+        .academy-card .link-title {
+            color: var(--primary);
         }
-
-        .ml-subscribe-close:hover {
-            transform: scale(1.1);
-        }
-
-        /* Form styles */
-        #mlb2-28412192.ml-form-embedContainer {
-            font-family: 'IBM Plex Mono', monospace;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper {
-            background: transparent;
-            border: none;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4 {
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p {
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 14px;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
-            background-color: rgba(38, 38, 38, 0.8) !important;
-            color: var(--light) !important;
-            border-color: var(--grey) !important;
-            border-radius: 4px !important;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 14px !important;
-            padding: 12px !important;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
-            border-color: var(--primary) !important;
-            box-shadow: 0 0 8px var(--primary-light);
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-webkit-input-placeholder {
-            color: var(--light);
-            opacity: 0.6;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder,
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-moz-placeholder {
-            color: var(--light);
-            opacity: 0.6;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder,
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-ms-input-placeholder {
-            color: var(--light);
-            opacity: 0.6;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder,
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-moz-placeholder {
-            color: var(--light);
-            opacity: 0.6;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description {
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            margin-bottom: 0.5rem;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox] {
-            margin: 0;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
-            display: none;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
-            display: none;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent p {
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-            background-color: var(--primary) !important;
-            border-color: var(--primary) !important;
-            border-radius: 4px !important;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 14px !important;
-            padding: 12px !important;
-            transition: var(--transition);
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-            background-color: #e66a00 !important;
-            border-color: #e66a00 !important;
-            transform: translateY(-2px);
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4,
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            text-align: center;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
-            background-color: var(--grey) !important;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description,
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p {
-            color: #ff5555 !important;
-        }
-
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .ml-error input {
-            border-color: #ff5555 !important;
+        
+        .academy-card .link-desc {
+            opacity: 0.9;
         }
 
         @keyframes fadeIn {
@@ -389,11 +245,6 @@
             to { opacity: 1; }
         }
         
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         @keyframes fadeInUp {
             from { 
                 opacity: 0;
@@ -413,6 +264,192 @@
         .link-card:nth-child(5) { animation-delay: 0.5s; }
         .link-card:nth-child(6) { animation-delay: 0.6s; }
         .link-card:nth-child(7) { animation-delay: 0.7s; }
+
+        /* Floating Book Icon */
+        .floating-book {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-book:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.6);
+        }
+        
+        .floating-book i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 122, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: rgba(26, 26, 26, 0.95);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        .modal-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Improved Form Styling */
+        .ml-form-embedContainer {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        .ml-form-embedWrapper {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        
+        .ml-form-embedBody {
+            padding: 0 !important;
+        }
+        
+        .ml-form-embedContent h4 {
+            color: var(--light) !important;
+            font-size: 1.2rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+        
+        .ml-form-embedContent p {
+            color: var(--light) !important;
+            opacity: 0.8;
+            margin-bottom: 1.5rem !important;
+        }
+        
+        .ml-form-fieldRow input {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid var(--grey) !important;
+            color: var(--light) !important;
+            padding: 12px 15px !important;
+            margin-bottom: 15px !important;
+            width: 100% !important;
+            border-radius: 6px !important;
+            transition: var(--transition);
+        }
+        
+        .ml-form-fieldRow input:focus {
+            border-color: var(--primary) !important;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2) !important;
+        }
+        
+        .ml-form-fieldRow input::placeholder {
+            color: rgba(245, 245, 245, 0.6) !important;
+        }
+        
+        .ml-form-checkboxRow {
+            margin: 20px 0 !important;
+            padding: 15px !important;
+            background: rgba(255, 122, 0, 0.1) !important;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 122, 0, 0.3);
+        }
+        
+        .ml-form-checkboxRow label {
+            color: var(--light) !important;
+            font-size: 0.85rem !important;
+            line-height: 1.5 !important;
+        }
+        
+        .ml-form-embedSubmit button {
+            background-color: var(--primary) !important;
+            border: none !important;
+            color: var(--dark) !important;
+            font-weight: 700 !important;
+            padding: 12px 24px !important;
+            width: 100% !important;
+            border-radius: 6px !important;
+            transition: var(--transition) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+        
+        .ml-form-embedSubmit button:hover {
+            background-color: #ff8a00 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
+        }
+        
+        .ml-form-successBody {
+            text-align: center !important;
+            padding: 2rem !important;
+        }
+        
+        .ml-form-successBody h4 {
+            color: var(--primary) !important;
+            font-size: 1.5rem !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .ml-form-successBody p {
+            color: var(--light) !important;
+            opacity: 0.9;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -445,15 +482,30 @@
             body {
                 background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             }
-
+            
+            .floating-book {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-book i {
+                font-size: 20px;
+            }
+            
             .modal-content {
-                width: 95%;
                 padding: 1.5rem;
+            }
+            
+            .modal-title {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
+    
     <video autoplay muted loop playsinline id="background-video">
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
@@ -466,16 +518,17 @@
         </header>
         
         <div class="links">
-            <a href="#" class="link-card" onclick="openModal(); return false;">
+            <!-- Nueva tarjeta de Academia LionxSecurity -->
+            <a href="#" class="link-card academy-card" id="academyLink">
                 <div class="link-icon">
                     <i class="fas fa-book"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">LionxSecurity</p>
-                    <p class="link-desc">Academia Hacking Ético - 15% de descuento</p>
+                    <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
                 </div>
             </a>
-
+            
             <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-youtube"></i>
@@ -538,47 +591,56 @@
         </div>
     </div>
 
-    <!-- Modal for MailerLite Form -->
-    <div id="subscribeModal" class="modal">
+    <!-- Floating Book Icon -->
+    <div class="floating-book" id="bookIcon">
+        <i class="fas fa-book"></i>
+    </div>
+
+    <!-- Modal with Form -->
+    <div class="modal-overlay" id="formModal">
         <div class="modal-content">
-            <span class="ml-subscribe-close" onclick="closeModal()"></span>
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: var(--light); opacity: 0.9;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético (solo para los primeros 100 registrados).</p>
+            
+            <!-- MailerLite Form -->
             <div id="mlb2-28412192" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28412192">
                 <div class="ml-form-align-center">
                     <div class="ml-form-embedWrapper embedForm">
                         <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                             <div class="ml-form-embedContent">
-                                <h4>LionxSecurity Acceso Exclusivo 🎁</h4>
-                                <p>Suscríbete para recibir el descuento 15%.</p>
+                                <h4>¡Obtén tu descuento del 15%!</h4>
+                                <p>Completa el formulario para acceder a la oferta exclusiva.</p>
                             </div>
                             <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/subscribe" data-code="" method="post" target="_blank">
                                 <div class="ml-form-formContent">
                                     <div class="ml-form-fieldRow">
-                                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                            <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                                        <div class="ml-field-group ml-field-name ml-validate-required">
+                                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre completo" autocomplete="name" required>
                                         </div>
                                     </div>
                                     <div class="ml-form-fieldRow ml-last-item">
-                                        <div class="ml-field-group ml-field-name">
-                                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre" autocomplete="given-name">
+                                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                            <input aria-label="email" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="ml-form-embedPermissions">
-                                    <div class="ml-form-embedPermissionsContent default privacy-policy">
-                                        <p>Puedes darte de baja en cualquier momento. Para más detalles, revisa nuestra Política de Privacidad.</p>
                                     </div>
                                 </div>
                                 <div class="ml-form-checkboxRow ml-validate-required">
                                     <label class="checkbox">
+                                        <input type="checkbox" required>
                                         <div class="label-description">
-                                            <p>Marca esta casilla para recibir noticias y actualizaciones.</p>
+                                            <p>Marca esta casilla para recibir información sobre nuestros cursos y el descuento del 15%.</p>
                                         </div>
-                                        <input type="checkbox">
                                     </label>
+                                </div>
+                                <div class="ml-form-embedPermissions">
+                                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                        <p style="font-size: 0.8rem; opacity: 0.7;">Al registrarte aceptas nuestra política de privacidad. Puedes darte de baja en cualquier momento.</p>
+                                    </div>
                                 </div>
                                 <input type="hidden" name="ml-submit" value="1">
                                 <div class="ml-form-embedSubmit">
-                                    <button type="submit" class="primary">Subscribe</button>
+                                    <button type="submit" class="primary">QUIERO MI DESCUENTO</button>
                                     <button disabled="disabled" style="display: none;" type="button" class="loading">
                                         <div class="ml-form-embedSubmitLoad"></div>
                                         <span class="sr-only">Loading...</span>
@@ -589,8 +651,8 @@
                         </div>
                         <div class="ml-form-successBody row-success" style="display: none">
                             <div class="ml-form-successContent">
-                                <h4>Thank you!</h4>
-                                <p>You have successfully joined our subscriber list.</p>
+                                <h4>¡Registro exitoso!</h4>
+                                <p>Te hemos enviado el código de descuento a tu correo electrónico. ¡Bienvenido a LionxSecurity!</p>
                             </div>
                         </div>
                     </div>
@@ -606,29 +668,47 @@
             document.body.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
         }
 
-        // Modal functions
+        // Modal functionality
+        const bookIcon = document.getElementById('bookIcon');
+        const academyLink = document.getElementById('academyLink');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.getElementById('closeModal');
+
         function openModal() {
-            document.getElementById('subscribeModal').style.display = 'flex';
+            formModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            document.getElementById('subscribeModal').style.display = 'none';
+        function closeModalFunc() {
+            formModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target === document.getElementById('subscribeModal')) {
-                closeModal();
+        bookIcon.addEventListener('click', openModal);
+        academyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+
+        closeModal.addEventListener('click', closeModalFunc);
+
+        formModal.addEventListener('click', (e) => {
+            if (e.target === formModal) {
+                closeModalFunc();
             }
-        }
+        });
 
-        // MailerLite success callback
+        // MailerLite form success handler
         function ml_webform_success_28412192() {
             var $ = ml_jQuery || jQuery;
             $('.ml-subscribe-form-28412192 .row-success').show();
             $('.ml-subscribe-form-28412192 .row-form').hide();
+            
+            // Cerrar automáticamente después de 5 segundos
+            setTimeout(closeModalFunc, 5000);
         }
     </script>
+
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/takel")
