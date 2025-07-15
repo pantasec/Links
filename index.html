@@ -129,4 +129,117 @@
             margin: 0;
         }
 
-        @keyframes fadeIn
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    
+    <div class="container">
+        <header>
+            <h1>PANTASEC</h1>
+            <p class="tagline">Ciberseguridad | Hacking Ético | IA</p>
+        </header>
+        
+        <div class="links">
+            <a href="https://www.youtube.com/watch?v=vVoIeW4p1xI3" target="_blank" class="link-card" style="--i: 1;">
+                <i class="fab fa-youtube link-icon"></i>
+                <div class="link-text">
+                    <p class="link-title">YouTube</p>
+                    <p class="link-desc">Análisis y tutoriales en profundidad</p>
+                </div>
+            </a>
+
+            <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card" style="--i: 2;">
+                <i class="fab fa-spotify link-icon"></i>
+                <div class="link-text">
+                    <p class="link-title">Podcast en Spotify</p>
+                    <p class="link-desc">Escucha nuestras entrevistas y debates</p>
+                </div>
+            </a>
+            
+            <a href="https://t.me/LionxSecurity" target="_blank" class="link-card" style="--i: 3;">
+                <i class="fab fa-telegram link-icon"></i>
+                <div class="link-text">
+                    <p class="link-title">Comunidad en Telegram</p>
+                    <p class="link-desc">Únete para contenido exclusivo y debates</p>
+                </div>
+            </a>
+            
+            <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card" style="--i: 4;">
+                <i class="fab fa-instagram link-icon"></i>
+                <div class="link-text">
+                    <p class="link-title">Instagram</p>
+                    <p class="link-desc">Tips rápidos y contenido diario</p>
+                </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card" style="--i: 5;">
+                <i class="fab fa-tiktok link-icon"></i>
+                <div class="link-text">
+                    <p class="link-title">TikTok</p>
+                    <p class="link-desc">Vídeos cortos y virales</p>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card" style="--i: 6;">
+                <i class="fab fa-linkedin link-icon"></i>
+                <div class="link-text">
+                    <p class="link-title">LinkedIn</p>
+                    <p class="link-desc">Networking y perfil profesional</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Efecto Matrix sutil en el fondo
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const alphabet = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクABCDEFG0123456789';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        
+        const rainDrops = Array(Math.floor(columns)).fill(1);
+        
+        const draw = () => {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00A8FF'; // Color primario para las letras
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        setInterval(draw, 33);
+        
+        // Ajustar canvas al redimensionar
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
