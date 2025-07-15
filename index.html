@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #FF7A00;
-            --primary-light: rgba(255, 122, 0, 0.15);
+            --primary-light: rgba(255, 122, 0, 0.3);
             --dark: #0a0a0a;
-            --light: #e5e5e5;
+            --light: #f5f5f5;
             --grey: #1a1a1a;
-            --grey-light: #2d2d2d;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            
+            /* Social media brand colors */
+            --youtube: #FF0000;
+            --spotify: #1DB954;
+            --telegram: #26A5E4;
+            --instagram: #E1306C;
+            --tiktok: #000000;
+            --linkedin: #0077B5;
         }
         
         body {
@@ -23,18 +31,25 @@
             font-family: 'IBM Plex Mono', monospace;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
             overflow-x: hidden;
-            background-color: var(--dark);
         }
 
         #background-video {
             position: fixed;
-            right: 0; bottom: 0;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             z-index: -100;
             object-fit: cover;
-            filter: brightness(0.4);
+            filter: brightness(0.3);
         }
 
         .container {
@@ -45,161 +60,323 @@
             position: relative;
             z-index: 1;
             text-align: center;
+            backdrop-filter: blur(2px);
         }
         
         header {
             margin-bottom: 3rem;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 0.8s ease-out;
         }
         
         h1 {
             color: var(--light);
             font-size: 2.8rem;
             margin: 0;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-weight: 700;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 10px var(--primary);
+            text-shadow: 0 0 15px rgba(255, 122, 0, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+        
+        h1:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
         
         .tagline {
             color: var(--primary);
             font-weight: 700;
-            font-style: normal;
             font-size: 1.1rem;
-            margin-top: 0.75rem;
+            margin-top: 1rem;
             letter-spacing: 1px;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
         }
         
         .links {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 4rem; /* Espacio para el formulario */
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
         
         .link-card {
             background: rgba(26, 26, 26, 0.7);
-            border: 1px solid var(--primary-light);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
+            border: 1px solid var(--grey);
+            border-radius: 8px;
+            padding: 1.2rem;
             display: flex;
             align-items: center;
             text-decoration: none;
             color: var(--light);
-            transition: all 0.3s ease;
-            animation: fadeIn 1s ease-in-out forwards;
-            animation-delay: calc(0.2s * var(--i));
+            transition: var(--transition);
+            animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
             backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .link-card:hover {
-            transform: scale(1.05);
-            background: var(--primary-light);
+            transform: translateY(-3px);
             border-color: var(--primary);
+            box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
+            background: rgba(38, 38, 38, 0.8);
         }
 
         .link-icon {
-            width: 40px; height: 40px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 1.5rem;
             flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
         }
 
-        .link-icon svg {
-            width: 100%; height: 100%;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 0 4px var(--primary));
-        }
-
-        .link-card:hover .link-icon svg {
-            filter: drop-shadow(0 0 8px var(--primary));
+        .link-card:hover .link-icon {
             transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .link-icon i {
+            font-size: 1.4rem;
+            transition: var(--transition);
         }
         
-        .link-text { text-align: left; }
-        .link-title { font-weight: 700; font-size: 1.1rem; margin: 0; }
-        .link-desc { font-size: 0.9rem; opacity: 0.7; margin: 0; }
+        /* YouTube Icon */
+        .fa-youtube {
+            color: var(--youtube);
+        }
+        
+        /* Spotify Icon */
+        .fa-spotify {
+            color: var(--spotify);
+        }
+        
+        /* Telegram Icon */
+        .fa-telegram {
+            color: var(--telegram);
+        }
+        
+        /* Instagram Icon */
+        .fa-instagram {
+            color: var(--instagram);
+        }
+        
+        /* TikTok Icon */
+        .fa-tiktok {
+            color: var(--tiktok);
+        }
+        
+        /* LinkedIn Icon */
+        .fa-linkedin-in {
+            color: var(--linkedin);
+        }
+        
+        .link-card:hover .link-icon i {
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        
+        .link-text {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .link-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 0 0.2rem 0;
+            color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .link-card:hover .link-title {
+            color: var(--primary);
+        }
+
+        .link-desc {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin: 0;
+            line-height: 1.4;
+        }
 
         @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation delays */
+        .link-card:nth-child(1) { animation-delay: 0.1s; }
+        .link-card:nth-child(2) { animation-delay: 0.2s; }
+        .link-card:nth-child(3) { animation-delay: 0.3s; }
+        .link-card:nth-child(4) { animation-delay: 0.4s; }
+        .link-card:nth-child(5) { animation-delay: 0.5s; }
+        .link-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Floating Book Icon */
+        .floating-book {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-book:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.6);
+        }
+        
+        .floating-book i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 122, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: rgba(26, 26, 26, 0.95);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* --- INICIO: ESTILOS PARA EL FORMULARIO DE MAILERLITE --- */
-        #mlb2-28412192.ml-form-embedContainer .ml-form-embedWrapper {
-            background-color: rgba(26, 26, 26, 0.7) !important;
-            border: 1px solid var(--primary-light) !important;
-            border-radius: 12px !important;
-            backdrop-filter: blur(5px);
-        }
-
-        #mlb2-28412192 .ml-form-embedContent h4, #mlb2-28412192 .ml-form-embedContent p {
-            font-family: 'IBM Plex Mono', monospace !important;
-            text-align: center !important;
-        }
-
-        #mlb2-28412192 .ml-form-embedContent h4 {
-            color: var(--primary) !important;
-            font-size: 1.5rem !important;
-            font-weight: 700 !important;
-        }
-
-        #mlb2-28412192 .ml-form-embedContent p {
-            color: var(--light) !important;
-            font-size: 1rem !important;
-            opacity: 0.8;
-        }
-
-        #mlb2-28412192 .form-control {
-            background-color: var(--grey-light) !important;
-            color: var(--light) !important;
-            border-color: var(--grey) !important;
-            font-family: 'IBM Plex Mono', monospace !important;
-            border-radius: 8px !important;
-        }
-
-        #mlb2-28412192 .form-control::placeholder {
-            color: rgba(229, 229, 229, 0.5) !important;
-        }
-
-        #mlb2-28412192 .ml-form-embedSubmit button {
-            background-color: var(--primary) !important;
-            color: var(--dark) !important;
-            font-family: 'IBM Plex Mono', monospace !important;
-            font-weight: 700 !important;
-            border-radius: 8px !important;
-            transition: all 0.3s ease;
-        }
-
-        #mlb2-28412192 .ml-form-embedSubmit button:hover {
-            background-color: var(--light) !important;
-            color: var(--dark) !important;
-            transform: scale(1.05);
-        }
-
-        #mlb2-28412192 .ml-form-embedPermissions, #mlb2-28412192 .ml-form-checkboxRow {
-            text-align: center !important;
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
         }
         
-        #mlb2-28412192 .label-description, #mlb2-28412192 .label-description p {
-            color: rgba(229, 229, 229, 0.6) !important;
-            font-family: 'IBM Plex Mono', monospace !important;
-            font-size: 0.8rem !important;
-            text-align: center !important;
+        .close-modal:hover {
+            color: var(--primary);
         }
-        /* --- FIN: ESTILOS PARA EL FORMULARIO DE MAILERLITE --- */
-
+        
+        .modal-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .link-card {
+                padding: 1rem;
+            }
+            
+            .link-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 1rem;
+            }
+            
+            .link-icon i {
+                font-size: 1.2rem;
+            }
+            
+            #background-video {
+                display: none;
+            }
+            
+            body {
+                background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            }
+            
+            .floating-book {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-book i {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-
+    
     <video autoplay muted loop playsinline id="background-video">
         <source src="background-video.mp4" type="video/mp4">
-        Tu navegador no soporta vídeos HTML5.
+        Your browser does not support HTML5 video.
     </video>
     
     <div class="container">
@@ -209,54 +386,59 @@
         </header>
         
         <div class="links">
-            <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card" style="--i: 1;">
+            <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card">
                 <div class="link-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <i class="fab fa-youtube"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">YouTube</p>
                     <p class="link-desc">Análisis y tutoriales en profundidad</p>
                 </div>
             </a>
-            <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card" style="--i: 2;">
+
+            <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card">
                 <div class="link-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#1DB954"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.923 16.241c-.273.432-.82.538-1.252.264-3.328-2.043-7.46-2.497-12.414-1.35a.75.75 0 0 1-.84-.732.75.75 0 0 1 .733-.84C9.843 12.01 14.363 12.51 18.05 14.81a.81.81 0 0 1 .264 1.252zm1.148-2.964c-.33.515-1.002.66-1.517.33-3.66-2.23-9.32-2.883-13.673-1.58a.903.903 0 0 1-1.002-.882.903.903 0 0 1 .882-1.002c4.86-.144 10.993.58 15.093 3.175a.972.972 0 0 1 .33 1.517zm.12-3.23c-.412.617-1.2.788-1.817.375C12.894 8.27 7.35 7.995 2.115 9.298a1.083 1.083 0 0 1-1.2-.972A1.083 1.083 0 0 1 2.083 7.12c5.688-1.397 11.756-1.082 16.242 1.916a1.266 1.266 0 0 1 .375 1.817z"/></svg>
+                    <i class="fab fa-spotify"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">Podcast en Spotify</p>
                     <p class="link-desc">Escucha nuestras entrevistas y debates</p>
                 </div>
             </a>
-            <a href="https://t.me/LionxSecurity" target="_blank" class="link-card" style="--i: 3;">
+            
+            <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
                 <div class="link-icon">
-                     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#26A5E4"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.17.91-.494 1.202-.82 1.23-.696.06-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.79-2.083-.002-1.227.611.244.183.416.33.555.45.18.15.333.293.18.442-.495.495-1.77 1.73-2.428 2.27a.54.54 0 0 1-.61.01c-.13-.09-.642-.39-.933-.565-.3-.18-.636-.264-.564-.643.08-.41.22-.79.37-1.15.82-1.92 2.3-6.66 2.53-8.52a.569.569 0 0 1 .58-.48c.28-.002.502.164.554.21.05.045.086.13.096.223.014.13.02.29.004.442-.014.13-.02.29-.004.442-.12 1.122-1.13 6.94-1.22 7.49-.04.28.02.49.12.61.12.12.3.18.49.08.2-.1.82-.54 1.28-1.11.49-.6.89-1.21.84-1.96-.02-.34-.13-1.08-1.1-6.7z"/></svg>
+                    <i class="fab fa-telegram"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">Comunidad en Telegram</p>
                     <p class="link-desc">Únete para contenido exclusivo y debates</p>
                 </div>
             </a>
-            <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card" style="--i: 4;">
+            
+            <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card">
                 <div class="link-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="url(#ig-grad)"><defs><radialGradient id="ig-grad" r="150%" cx="30%" cy="107%"><stop stop-color="#fdf497" offset="0"/><stop stop-color="#fdf497" offset="0.05"/><stop stop-color="#fd5949" offset="0.45"/><stop stop-color="#d6249f" offset="0.6"/><stop stop-color="#285AEB" offset="0.9"/></radialGradient></defs><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.314.935 20.644.522 19.854.217c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.06.943-.272 1.783-.413 2.227a3.48 3.48 0 0 1-.896 1.381c-.42.419-.82.679-1.382.896-.422.165-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-.943-.06-1.783-.272-2.227-.413a3.493 3.493 0 0 1-1.381-.896c-.42-.42-.68-.82-.896-1.382-.165-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.07-4.85c.06-.943.272-1.783.413-2.227.217-.562.477-.96.896-1.382.419-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413A31.8 31.8 0 0 1 12 2.16zm0 2.91c-3.116 0-5.613 2.496-5.613 5.612 0 3.116 2.497 5.613 5.613 5.613s5.613-2.497 5.613-5.613c0-3.116-2.497-5.612-5.613-5.612zm0 9.24c-2.003 0-3.627-1.623-3.627-3.628S9.997 8.37 12 8.37s3.627 1.623 3.627 3.628-1.623 3.628-3.627 3.628zm4.405-6.837c-.596 0-1.079-.483-1.079-1.078s.483-1.079 1.079-1.079 1.079.483 1.079 1.079-.483 1.078-1.079 1.078z"/></svg>
+                    <i class="fab fa-instagram"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">Instagram</p>
                     <p class="link-desc">Tips rápidos y contenido diario</p>
                 </div>
             </a>
-            <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card" style="--i: 5;">
+
+            <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card">
                 <div class="link-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.85-.98-6.46-2.98-1.72-2.11-2.22-4.64-1.5-7.05.5-1.71 1.52-3.23 2.9-4.32.78-.58 1.62-1.07 2.5-1.48.21-.1.42-.2.63-.31.02-.01.03-.02.05-.03v-4.11c-.02.01-.03.02-.05.03-.43.22-.84.47-1.24.75-1.32.91-2.47 2.05-3.34 3.42-.87 1.37-1.34 2.94-1.34 4.62 0 2.45.95 4.84 2.66 6.62 1.81 1.89 4.25 2.91 6.83 2.91 2.58 0 5.02-1.02 6.83-2.91 1.71-1.78 2.66-4.17 2.66-6.62 0-1.68-.47-3.25-1.34-4.62-.87-1.37-2.02-2.51-3.34-3.42-.4-.28-.81-.53-1.24-.75-.02-.01-.03-.02-.05-.03v-4.1c.14.02.28.04.42.06z" fill="#FFFFFF"/></svg>
+                    <i class="fab fa-tiktok"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">TikTok</p>
                     <p class="link-desc">Vídeos cortos y virales</p>
                 </div>
             </a>
-            <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card" style="--i: 6;">
+
+            <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card">
                 <div class="link-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#0077B5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    <i class="fab fa-linkedin-in"></i>
                 </div>
                 <div class="link-text">
                     <p class="link-title">LinkedIn</p>
@@ -266,5 +448,116 @@
         </div>
     </div>
 
+    <!-- Floating Book Icon -->
+    <div class="floating-book" id="bookIcon">
+        <i class="fas fa-book"></i>
+    </div>
+
+    <!-- Modal with Form -->
+    <div class="modal-overlay" id="formModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> si estás entre los 100 primeros en acceder a nuestros cursos de ciberseguridad.</p>
+            
+            <!-- MailerLite Form -->
+            <div id="mlb2-28412192" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28412192">
+                <div class="ml-form-align-center">
+                    <div class="ml-form-embedWrapper embedForm">
+                        <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                            <div class="ml-form-embedContent">
+                                <h4>LionxSecurity Acceso Exclusivo 🎁</h4>
+                                <p>Suscríbete para recibir el descuento 15%.</p>
+                            </div>
+                            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/subscribe" data-code="" method="post" target="_blank">
+                                <div class="ml-form-formContent">
+                                    <div class="ml-form-fieldRow">
+                                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                            <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                                        </div>
+                                    </div>
+                                    <div class="ml-form-fieldRow ml-last-item">
+                                        <div class="ml-field-group ml-field-name">
+                                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre" autocomplete="given-name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ml-form-embedPermissions">
+                                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                        <p>Puedes darte de baja en cualquier momento. Para más detalles, revisa nuestra Política de Privacidad.</p>
+                                    </div>
+                                </div>
+                                <div class="ml-form-checkboxRow ml-validate-required">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <div class="label-description">
+                                            <p>Marca esta casilla para recibir noticias y actualizaciones.</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <input type="hidden" name="ml-submit" value="1">
+                                <div class="ml-form-embedSubmit">
+                                    <button type="submit" class="primary">Quiero mi descuento</button>
+                                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                        <div class="ml-form-embedSubmitLoad"></div>
+                                        <span class="sr-only">Loading...</span>
+                                    </button>
+                                </div>
+                                <input type="hidden" name="anticsrf" value="true">
+                            </form>
+                        </div>
+                        <div class="ml-form-successBody row-success" style="display: none">
+                            <div class="ml-form-successContent">
+                                <h4>¡Gracias!</h4>
+                                <p>Te has registrado exitosamente para recibir el descuento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fallback for mobile devices
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById('background-video').style.display = 'none';
+            document.body.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
+        }
+
+        // Modal functionality
+        const bookIcon = document.getElementById('bookIcon');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.getElementById('closeModal');
+
+        bookIcon.addEventListener('click', () => {
+            formModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModal.addEventListener('click', () => {
+            formModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        formModal.addEventListener('click', (e) => {
+            if (e.target === formModal) {
+                formModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // MailerLite form success handler
+        function ml_webform_success_28412192() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-28412192 .row-success').show();
+            $('.ml-subscribe-form-28412192 .row-form').hide();
+        }
+    </script>
+
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/takel")
+    </script>
 </body>
 </html>
