@@ -1,326 +1,279 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantasec | Creador Digital - Ciberseguridad</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FF7A00;
-            --primary-light: rgba(255, 122, 0, 0.3);
-            --dark: #0a0a0a;
-            --light: #f5f5f5;
-            --grey: #1a1a1a;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            /* Social media brand colors */
-            --youtube: #FF0000;
-            --spotify: #1DB954;
-            --telegram: #0088CC;
-            --instagram: #E4405F;
-            --tiktok: #000000;
-            --linkedin: #0077B5;
-        }
-        
-        body {
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            margin: 0;
-            padding: 0;
-            background-color: var(--dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pantasec | Creador Digital - Ciberseguridad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 
-        /* Background video styles */
-        #bg-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            filter: brightness(0.3);
-        }
+  <style>
+    :root {
+      --primary: #FF7A00;
+      --primary-light: rgba(255, 122, 0, 0.3);
+      --dark: #0a0a0a;
+      --light: #f5f5f5;
+      --grey: #1a1a1a;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
 
-        .container {
-            max-width: 680px;
-            width: 90%;
-            margin: 2rem auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-        
-        header {
-            margin-bottom: 3rem;
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        h1 {
-            color: var(--light);
-            font-size: 2.8rem;
-            margin: 0;
-            letter-spacing: 2px;
-            font-weight: 700;
-            text-shadow: 0 0 15px rgba(255, 122, 0, 0.3);
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
-        }
-        
-        h1:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .tagline {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .links {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        
-        .link-card {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid var(--grey);
-            border-radius: 8px;
-            padding: 1.2rem;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--light);
-            transition: var(--transition);
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .link-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-            box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
-            background: rgba(38, 38, 38, 0.8);
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .link-icon {
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1.5rem;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: rgba(255, 122, 0, 0.1);
-            transition: var(--transition);
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--light);
+      background-color: var(--dark);
+      overflow-x: hidden;
+    }
 
-        .link-card:hover .link-icon {
-            background: rgba(255, 122, 0, 0.2);
-            transform: scale(1.1);
-        }
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.25);
+    }
 
-        .link-icon i {
-            font-size: 1.4rem;
-            transition: var(--transition);
-        }
-        
-        .link-card:hover .link-icon i {
-            text-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
-        }
+    .container {
+      max-width: 680px;
+      width: 90%;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
 
-        /* Specific icon colors */
-        .youtube-icon { color: var(--youtube); }
-        .spotify-icon { color: var(--spotify); }
-        .telegram-icon { color: var(--telegram); }
-        .instagram-icon { color: var(--instagram); }
-        .tiktok-icon { color: var(--tiktok); }
-        .linkedin-icon { color: var(--linkedin); }
+    header {
+      margin-bottom: 3rem;
+      animation: fadeIn 0.8s ease-out;
+    }
 
-        .link-card:hover .youtube-icon { color: var(--youtube); }
-        .link-card:hover .spotify-icon { color: var(--spotify); }
-        .link-card:hover .telegram-icon { color: var(--telegram); }
-        .link-card:hover .instagram-icon { color: var(--instagram); }
-        .link-card:hover .tiktok-icon { color: var(--tiktok); }
-        .link-card:hover .linkedin-icon { color: var(--linkedin); }
+    h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--light);
+      text-shadow: 0 0 15px var(--primary-light);
+      position: relative;
+      display: inline-block;
+    }
 
-        .link-text {
-            text-align: left;
-            flex-grow: 1;
-        }
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s ease;
+    }
 
-        .link-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 0 0 0.2rem 0;
-            color: var(--light);
-            transition: var(--transition);
-        }
-        
-        .link-card:hover .link-title {
-            color: var(--primary);
-        }
+    h1:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
-        .link-desc {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin: 0;
-            line-height: 1.4;
-        }
+    .tagline {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
-        /* Asignamos delays a las animaciones */
-        .link-card:nth-child(1) { animation-delay: 0.1s; }
-        .link-card:nth-child(2) { animation-delay: 0.2s; }
-        .link-card:nth-child(3) { animation-delay: 0.3s; }
-        .link-card:nth-child(4) { animation-delay: 0.4s; }
-        .link-card:nth-child(5) { animation-delay: 0.5s; }
-        .link-card:nth-child(6) { animation-delay: 0.6s; }
+    .link-card {
+      background: rgba(26, 26, 26, 0.8);
+      border: 1px solid var(--grey);
+      border-radius: 8px;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--light);
+      transition: var(--transition);
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-            }
-            
-            .link-card {
-                padding: 1rem;
-            }
-            
-            .link-icon {
-                width: 40px;
-                height: 40px;
-                margin-right: 1rem;
-            }
-            
-            .link-icon i {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+      box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
+      background: rgba(38, 38, 38, 0.85);
+    }
+
+    .link-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      transition: var(--transition);
+    }
+
+    .link-icon i {
+      font-size: 1.4rem;
+      transition: var(--transition);
+    }
+
+    /* Colores personalizados */
+    .youtube i { color: #FF0000; }
+    .spotify i { color: #1DB954; }
+    .telegram i { color: #229ED9; }
+    .instagram i { color: #E1306C; }
+    .tiktok i { color: #69C9D0; }
+    .linkedin i { color: #0077B5; }
+
+    .link-card:hover .link-icon {
+      transform: scale(1.1);
+    }
+
+    .link-text {
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .link-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 0 0 0.2rem 0;
+      transition: var(--transition);
+    }
+
+    .link-card:hover .link-title {
+      color: var(--primary);
+    }
+
+    .link-desc {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .link-card:nth-child(1) { animation-delay: 0.1s; }
+    .link-card:nth-child(2) { animation-delay: 0.2s; }
+    .link-card:nth-child(3) { animation-delay: 0.3s; }
+    .link-card:nth-child(4) { animation-delay: 0.4s; }
+    .link-card:nth-child(5) { animation-delay: 0.5s; }
+    .link-card:nth-child(6) { animation-delay: 0.6s; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .tagline { font-size: 1rem; }
+      .link-card { padding: 1rem; }
+      .link-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+      }
+      .link-icon i { font-size: 1.2rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <video id="bg-video" autoplay muted loop playsinline>
-        <source src="background-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div class="container">
-        <header>
-            <h1>PANTASEC</h1>
-            <p class="tagline">Creador Digital - Ciberseguridad</p>
-        </header>
-        
-        <div class="links">
-            <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-youtube youtube-icon"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">YouTube</p>
-                    <p class="link-desc">Análisis y tutoriales en profundidad</p>
-                </div>
-            </a>
 
-            <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-spotify spotify-icon"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Podcast en Spotify</p>
-                    <p class="link-desc">Escucha nuestras entrevistas y debates</p>
-                </div>
-            </a>
-            
-            <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-telegram telegram-icon"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Comunidad en Telegram</p>
-                    <p class="link-desc">Únete para contenido exclusivo y debates</p>
-                </div>
-            </a>
-            
-            <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-instagram instagram-icon"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Instagram</p>
-                    <p class="link-desc">Tips rápidos y contenido diario</p>
-                </div>
-            </a>
+  <!-- 🎥 Video de fondo -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="background-video.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
 
-            <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-tiktok tiktok-icon"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">TikTok</p>
-                    <p class="link-desc">Vídeos cortos y virales</p>
-                </div>
-            </a>
+  <div class="container">
+    <header>
+      <h1>PANTASEC</h1>
+      <p class="tagline">Creador Digital - Ciberseguridad</p>
+    </header>
 
-            <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card">
-                <div class="link-icon">
-                    <i class="fab fa-linkedin-in linkedin-icon"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">LinkedIn</p>
-                    <p class="link-desc">Networking y perfil profesional</p>
-                </div>
-            </a>
+    <div class="links">
+      <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card youtube">
+        <div class="link-icon"><i class="fab fa-youtube"></i></div>
+        <div class="link-text">
+          <p class="link-title">YouTube</p>
+          <p class="link-desc">Análisis y tutoriales en profundidad</p>
         </div>
+      </a>
+
+      <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card spotify">
+        <div class="link-icon"><i class="fab fa-spotify"></i></div>
+        <div class="link-text">
+          <p class="link-title">Podcast en Spotify</p>
+          <p class="link-desc">Escucha nuestras entrevistas y debates</p>
+        </div>
+      </a>
+
+      <a href="https://t.me/LionxSecurity" target="_blank" class="link-card telegram">
+        <div class="link-icon"><i class="fab fa-telegram"></i></div>
+        <div class="link-text">
+          <p class="link-title">Comunidad en Telegram</p>
+          <p class="link-desc">Únete para contenido exclusivo y debates</p>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card instagram">
+        <div class="link-icon"><i class="fab fa-instagram"></i></div>
+        <div class="link-text">
+          <p class="link-title">Instagram</p>
+          <p class="link-desc">Tips rápidos y contenido diario</p>
+        </div>
+      </a>
+
+      <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card tiktok">
+        <div class="link-icon"><i class="fab fa-tiktok"></i></div>
+        <div class="link-text">
+          <p class="link-title">TikTok</p>
+          <p class="link-desc">Vídeos cortos y virales</p>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card linkedin">
+        <div class="link-icon"><i class="fab fa-linkedin-in"></i></div>
+        <div class="link-text">
+          <p class="link-title">LinkedIn</p>
+          <p class="link-desc">Networking y perfil profesional</p>
+        </div>
+      </a>
     </div>
+  </div>
+
 </body>
 </html>
