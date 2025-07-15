@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00A8FF; /* Un azul cian más tecnológico */
-            --primary-light: rgba(0, 168, 255, 0.1);
-            --dark: #0a0a0a; /* Un negro casi puro para mayor contraste */
+            --primary: #FF7A00; /* Naranja vibrante como color principal */
+            --primary-light: rgba(255, 122, 0, 0.1);
+            --dark: #0a0a0a;
             --light: #e5e5e5;
             --grey: #1a1a1a;
         }
@@ -61,7 +61,7 @@
             border-radius: 50%;
             border: 3px solid var(--primary);
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 122, 0, 0.3);
         }
         
         h1 {
@@ -151,7 +151,7 @@
         </header>
         
         <div class="links">
-            <a href="https://www.youtube.com/watch?v=vVoIeW4p1xI3" target="_blank" class="link-card" style="--i: 1;">
+            <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card" style="--i: 1;">
                 <i class="fab fa-youtube link-icon"></i>
                 <div class="link-text">
                     <p class="link-title">YouTube</p>
@@ -219,7 +219,7 @@
             ctx.fillStyle = 'rgba(10, 10, 10, 0.04)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
-            ctx.fillStyle = '#00A8FF'; // Color primario para las letras
+            ctx.fillStyle = '#FF7A00'; // Color primario NARANJA para las letras
             ctx.font = fontSize + 'px monospace';
             
             for (let i = 0; i < rainDrops.length; i++) {
