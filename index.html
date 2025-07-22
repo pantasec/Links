@@ -16,8 +16,6 @@
             --light: #f5f5f5;
             --grey: #1a1a1a;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            
-            /* Social media brand colors */
             --youtube: #FF0000;
             --spotify: #1DB954;
             --telegram: #26A5E4;
@@ -25,7 +23,7 @@
             --tiktok: #000000;
             --linkedin: #0077B5;
         }
-        
+
         body {
             color: var(--light);
             font-family: 'IBM Plex Mono', monospace;
@@ -61,12 +59,12 @@
             text-align: center;
             backdrop-filter: blur(2px);
         }
-        
+
         header {
             margin-bottom: 3rem;
             animation: fadeIn 0.8s ease-out;
         }
-        
+
         h1 {
             color: var(--light);
             font-size: 2.8rem;
@@ -77,7 +75,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         h1::after {
             content: '';
             position: absolute;
@@ -90,12 +88,12 @@
             transform-origin: right;
             transition: transform 0.5s ease;
         }
-        
+
         h1:hover::after {
             transform: scaleX(1);
             transform-origin: left;
         }
-        
+
         .tagline {
             color: var(--primary);
             font-weight: 700;
@@ -104,14 +102,14 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        
+
         .links {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
             margin-bottom: 2rem;
         }
-        
+
         .section-title {
             color: var(--primary);
             font-size: 1.2rem;
@@ -122,7 +120,7 @@
             position: relative;
             padding-left: 15px;
         }
-        
+
         .section-title::before {
             content: '';
             position: absolute;
@@ -133,7 +131,7 @@
             width: 4px;
             background: var(--primary);
         }
-        
+
         .link-card {
             background: rgba(26, 26, 26, 0.7);
             border: 1px solid var(--grey);
@@ -150,7 +148,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-        
+
         .link-card:hover {
             transform: translateY(-3px);
             border-color: var(--primary);
@@ -180,46 +178,19 @@
             font-size: 1.4rem;
             transition: var(--transition);
         }
-        
-        /* YouTube Icon */
-        .fa-youtube {
-            color: var(--youtube);
-        }
-        
-        /* Spotify Icon */
-        .fa-spotify {
-            color: var(--spotify);
-        }
-        
-        /* Telegram Icon */
-        .fa-telegram {
-            color: var(--telegram);
-        }
-        
-        /* Instagram Icon */
-        .fa-instagram {
-            color: var(--instagram);
-        }
-        
-        /* TikTok Icon */
-        .fa-tiktok {
-            color: var(--tiktok);
-        }
-        
-        /* LinkedIn Icon */
-        .fa-linkedin-in {
-            color: var(--linkedin);
-        }
-        
-        /* Book Icon for Academy */
-        .fa-book {
-            color: var(--primary);
-        }
-        
+
+        .fa-youtube { color: var(--youtube); }
+        .fa-spotify { color: var(--spotify); }
+        .fa-telegram { color: var(--telegram); }
+        .fa-instagram { color: var(--instagram); }
+        .fa-tiktok { color: var(--tiktok); }
+        .fa-linkedin-in { color: var(--linkedin); }
+        .fa-book, .fa-shopping-cart { color: var(--primary); }
+
         .link-card:hover .link-icon i {
             filter: drop-shadow(0 0 8px currentColor);
         }
-        
+
         .link-text {
             text-align: left;
             flex-grow: 1;
@@ -232,7 +203,7 @@
             color: var(--light);
             transition: var(--transition);
         }
-        
+
         .link-card:hover .link-title {
             color: var(--primary);
         }
@@ -244,41 +215,99 @@
             line-height: 1.4;
         }
 
-        /* Academy Card Special Styling */
         .academy-card {
             border: 1px solid var(--primary);
             background: rgba(255, 122, 0, 0.1);
         }
-        
+
         .academy-card .link-icon {
             background: rgba(255, 122, 0, 0.2);
         }
-        
+
         .academy-card .link-title {
             color: var(--primary);
         }
-        
+
         .academy-card .link-desc {
             opacity: 0.9;
+        }
+
+        .course-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(255, 122, 0, 0.05));
+            border: 2px solid var(--primary);
+            padding: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 122, 0, 0.3);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--grey);
+        }
+
+        .course-content {
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary);
+            color: var(--dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .course-button {
+            background-color: var(--primary);
+            color: var(--dark);
+            font-weight: 700;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-decoration: none;
+            margin-left: auto;
+        }
+
+        .course-button:hover {
+            background-color: #ff8a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         @keyframes fadeInUp {
-            from { 
+            from {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            to { 
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Animation delays */
         .link-card:nth-child(1) { animation-delay: 0.1s; }
         .link-card:nth-child(2) { animation-delay: 0.2s; }
         .link-card:nth-child(3) { animation-delay: 0.3s; }
@@ -286,8 +315,8 @@
         .link-card:nth-child(5) { animation-delay: 0.5s; }
         .link-card:nth-child(6) { animation-delay: 0.6s; }
         .link-card:nth-child(7) { animation-delay: 0.7s; }
+        .course-card:nth-child(1) { animation-delay: 0.2s; }
 
-        /* Floating Book Icon */
         .floating-book {
             position: fixed;
             bottom: 30px;
@@ -305,24 +334,23 @@
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
         }
-        
+
         .floating-book:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(255, 122, 0, 0.6);
         }
-        
+
         .floating-book i {
             color: white;
             font-size: 24px;
         }
-        
+
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(255, 122, 0, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
         }
-        
-        /* Modal Styles */
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -336,7 +364,7 @@
             align-items: center;
             backdrop-filter: blur(5px);
         }
-        
+
         .modal-content {
             background-color: rgba(26, 26, 26, 0.95);
             border: 1px solid var(--primary);
@@ -347,12 +375,12 @@
             position: relative;
             animation: modalFadeIn 0.3s ease-out;
         }
-        
+
         @keyframes modalFadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .close-modal {
             position: absolute;
             top: 15px;
@@ -362,47 +390,46 @@
             cursor: pointer;
             transition: color 0.3s;
         }
-        
+
         .close-modal:hover {
             color: var(--primary);
         }
-        
+
         .modal-title {
             color: var(--primary);
             text-align: center;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
-        
-        /* Improved Form Styling */
+
         .ml-form-embedContainer {
             width: 100% !important;
             max-width: 100% !important;
         }
-        
+
         .ml-form-embedWrapper {
             background-color: transparent !important;
             border: none !important;
             box-shadow: none !important;
             padding: 0 !important;
         }
-        
+
         .ml-form-embedBody {
             padding: 0 !important;
         }
-        
+
         .ml-form-embedContent h4 {
             color: var(--light) !important;
             font-size: 1.2rem !important;
             margin-bottom: 0.5rem !important;
         }
-        
+
         .ml-form-embedContent p {
             color: var(--light) !important;
             opacity: 0.8;
             margin-bottom: 1.5rem !important;
         }
-        
+
         .ml-form-fieldRow input {
             background-color: rgba(255, 255, 255, 0.1) !important;
             border: 1px solid var(--grey) !important;
@@ -413,17 +440,17 @@
             border-radius: 6px !important;
             transition: var(--transition);
         }
-        
+
         .ml-form-fieldRow input:focus {
             border-color: var(--primary) !important;
             outline: none;
             box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2) !important;
         }
-        
+
         .ml-form-fieldRow input::placeholder {
             color: rgba(245, 245, 245, 0.6) !important;
         }
-        
+
         .ml-form-checkboxRow {
             margin: 20px 0 !important;
             padding: 15px !important;
@@ -431,13 +458,13 @@
             border-radius: 6px;
             border: 1px solid rgba(255, 122, 0, 0.3);
         }
-        
+
         .ml-form-checkboxRow label {
             color: var(--light) !important;
             font-size: 0.85rem !important;
             line-height: 1.5 !important;
         }
-        
+
         .ml-form-embedSubmit button {
             background-color: var(--primary) !important;
             border: none !important;
@@ -450,287 +477,98 @@
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
         }
-        
+
         .ml-form-embedSubmit button:hover {
             background-color: #ff8a00 !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
         }
-        
+
         .ml-form-successBody {
             text-align: center !important;
             padding: 2rem !important;
         }
-        
+
         .ml-form-successBody h4 {
             color: var(--primary) !important;
             font-size: 1.5rem !important;
             margin-bottom: 1rem !important;
         }
-        
+
         .ml-form-successBody p {
             color: var(--light) !important;
             opacity: 0.9;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
-            
+
             .tagline {
                 font-size: 1rem;
             }
-            
-            .link-card {
+
+            .link-card, .course-card {
                 padding: 1rem;
             }
-            
+
             .link-icon {
                 width: 40px;
                 height: 40px;
                 margin-right: 1rem;
             }
-            
+
             .link-icon i {
                 font-size: 1.2rem;
             }
-            
+
+            .course-image {
+                height: 140px;
+            }
+
             #background-video {
                 display: none;
             }
-            
+
             body {
                 background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             }
-            
+
             .floating-book {
                 width: 50px;
                 height: 50px;
                 bottom: 20px;
                 right: 20px;
             }
-            
+
             .floating-book i {
                 font-size: 20px;
             }
-            
+
             .modal-content {
                 padding: 1.5rem;
             }
-            
+
             .modal-title {
                 font-size: 1.3rem;
             }
         }
-
-        /* Añade estos nuevos estilos */
-        .featured-course {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid var(--primary);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 3rem 0;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 10px 30px rgba(255, 122, 0, 0.15);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .course-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--primary);
-            color: var(--dark);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .course-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .course-content {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-
-        .course-image {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .course-image:hover {
-            transform: scale(1.02);
-        }
-
-        .course-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .course-details {
-            flex: 2;
-            text-align: left;
-        }
-
-        .course-title {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin: 0 0 0.5rem 0;
-            font-weight: 700;
-        }
-
-        .course-description {
-            color: var(--light);
-            opacity: 0.9;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.6;
-        }
-
-        .course-features {
-            margin: 1.5rem 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .course-features li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 0.8rem;
-            color: var(--light);
-        }
-
-        .course-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .course-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 1rem 0;
-        }
-
-        .course-price small {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        .course-cta {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--dark);
-            padding: 12px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-        }
-
-        .course-cta:hover {
-            background-color: transparent;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
-        }
-
-        .course-cta.secondary {
-            background-color: transparent;
-            color: var(--primary);
-            margin-left: 15px;
-        }
-
-        .course-cta.secondary:hover {
-            background-color: rgba(255, 122, 0, 0.1);
-        }
-
-        /* Animación para el badge */
-        @keyframes pulse-badge {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .course-badge {
-            animation: pulse-badge 2s infinite;
-        }
     </style>
 </head>
 <body>
-    
     <video autoplay muted loop playsinline id="background-video">
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-    
+
     <div class="container">
         <header>
             <h1>PANTASEC</h1>
             <p class="tagline">Creador Digital - Ciberseguridad</p>
         </header>
-        
 
-         <!-- NUEVA SECCIÓN - Curso Destacado -->
-    <div class="container">
-        <div class="featured-course">
-            <span class="course-badge">¡Nuevo!</span>
-            <div class="course-content">
-                <div class="course-image">
-                    <img src="https://via.placeholder.com/600x400/1a1a1a/FF7A00?text=Introducción+a+Redes" alt="Introducción a Redes" loading="lazy">
-                </div>
-                <div class="course-details">
-                    <h3 class="course-title">Introducción a Redes</h3>
-                    <p class="course-description">
-                        Domina los fundamentos de redes de computadoras con nuestro nuevo curso. Aprende los conceptos esenciales que todo profesional de ciberseguridad necesita conocer.
-                    </p>
-                    
-                    <ul class="course-features">
-                        <li>Conceptos básicos de redes TCP/IP</li>
-                        <li>Configuración de dispositivos de red</li>
-                        <li>Protocolos esenciales para pentesting</li>
-                        <li>Herramientas profesionales de análisis</li>
-                        <li>Certificado de finalización incluido</li>
-                    </ul>
-                    
-                    <div class="course-price">50€ <small>(IVA incluido)</small></div>
-                    
-                    <div>
-                        <a href="https://tusitio.com/checkout?course_id=introduccion-redes" class="course-cta">
-                            <i class="fas fa-shopping-cart"></i> Comprar Ahora
-                        </a>
-                        <a href="https://tusitio.com/course-detail?course=introduccion-redes" class="course-cta secondary">
-                            <i class="fas fa-info-circle"></i> Más Información
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-        <!-- PRIMERA SECCIÓN - LionxSecurity -->
+        <!-- LionxSecurity Section -->
         <h3 class="section-title">LionxSecurity</h3>
         <div class="links">
             <a href="#" class="link-card academy-card" id="academyLink">
@@ -743,8 +581,29 @@
                 </div>
             </a>
         </div>
-        
-        <!-- SEGUNDA SECCIÓN - Telegram, YouTube y Spotify -->
+
+        <!-- Cursos Disponibles Section -->
+        <h3 class="section-title">Cursos Disponibles</h3>
+        <div class="links">
+            <a href="https://lionxsecurity.es/curso/introduccion-a-redes/" class="link-card course-card">
+                <span class="course-badge">Ya disponible</span>
+                <img src="images/ciberseguridad.jpg" alt="Introducción a Redes" class="course-image">
+                <div class="course-content">
+                    <div class="link-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="link-text">
+                        <p class="link-title">Introducción a Redes</p>
+                        <p class="link-desc">Aprende los fundamentos de redes y comienza tu carrera en ciberseguridad</p>
+                    </div>
+                    <a href="https://lionxsecurity.es/checkout/" class="course-button">
+                        <i class="fas fa-shopping-cart"></i> Comprar Curso
+                    </a>
+                </div>
+            </a>
+        </div>
+
+        <!-- Contenido Principal Section -->
         <h3 class="section-title">Contenido Principal</h3>
         <div class="links">
             <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
@@ -756,7 +615,6 @@
                     <p class="link-desc">Únete para contenido exclusivo y debates</p>
                 </div>
             </a>
-            
             <a href="https://www.youtube.com/@Pantasec" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-youtube"></i>
@@ -766,7 +624,6 @@
                     <p class="link-desc">Análisis y tutoriales en profundidad</p>
                 </div>
             </a>
-
             <a href="https://open.spotify.com/episode/2C1UDLkUX0rwCt8QMT3TAC" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-spotify"></i>
@@ -777,8 +634,8 @@
                 </div>
             </a>
         </div>
-        
-        <!-- TERCERA SECCIÓN - Instagram, LinkedIn y TikTok -->
+
+        <!-- Redes Sociales Section -->
         <h3 class="section-title">Redes Sociales</h3>
         <div class="links">
             <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card">
@@ -790,7 +647,6 @@
                     <p class="link-desc">Tips rápidos y contenido diario</p>
                 </div>
             </a>
-            
             <a href="https://www.linkedin.com/in/pantasec/" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-linkedin-in"></i>
@@ -800,7 +656,6 @@
                     <p class="link-desc">Networking y perfil profesional</p>
                 </div>
             </a>
-
             <a href="https://www.tiktok.com/@pantasec" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-tiktok"></i>
@@ -821,11 +676,9 @@
     <!-- Modal with Form -->
     <div class="modal-overlay" id="formModal">
         <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
+            <span class="close-modal" id="closeModal">×</span>
             <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
             <p style="text-align: center; margin-bottom: 1.5rem; color: var(--light); opacity: 0.9;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético (solo para los primeros 100 registrados).</p>
-            
-            <!-- MailerLite Form -->
             <div id="mlb2-28412192" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28412192">
                 <div class="ml-form-align-center">
                     <div class="ml-form-embedWrapper embedForm">
@@ -884,13 +737,11 @@
     </div>
 
     <script>
-        // Fallback for mobile devices
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.getElementById('background-video').style.display = 'none';
             document.body.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
         }
 
-        // Modal functionality
         const bookIcon = document.getElementById('bookIcon');
         const academyLink = document.getElementById('academyLink');
         const formModal = document.getElementById('formModal');
@@ -920,13 +771,10 @@
             }
         });
 
-        // MailerLite form success handler
         function ml_webform_success_28412192() {
             var $ = ml_jQuery || jQuery;
             $('.ml-subscribe-form-28412192 .row-success').show();
             $('.ml-subscribe-form-28412192 .row-form').hide();
-            
-            // Cerrar automáticamente después de 5 segundos
             setTimeout(closeModalFunc, 5000);
         }
     </script>
