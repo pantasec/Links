@@ -524,6 +524,159 @@
                 font-size: 1.3rem;
             }
         }
+
+        /* Añade estos nuevos estilos */
+        .featured-course {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(255, 122, 0, 0.15);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .course-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .course-content {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .course-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .course-image:hover {
+            transform: scale(1.02);
+        }
+
+        .course-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .course-details {
+            flex: 2;
+            text-align: left;
+        }
+
+        .course-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .course-description {
+            color: var(--light);
+            opacity: 0.9;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.6;
+        }
+
+        .course-features {
+            margin: 1.5rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .course-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 0.8rem;
+            color: var(--light);
+        }
+
+        .course-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .course-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .course-price small {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .course-cta {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .course-cta:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+        }
+
+        .course-cta.secondary {
+            background-color: transparent;
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .course-cta.secondary:hover {
+            background-color: rgba(255, 122, 0, 0.1);
+        }
+
+        /* Animación para el badge */
+        @keyframes pulse-badge {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .course-badge {
+            animation: pulse-badge 2s infinite;
+        }
     </style>
 </head>
 <body>
@@ -532,6 +685,44 @@
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
+    
+
+      <!-- NUEVA SECCIÓN - Curso Destacado -->
+    <div class="container">
+        <div class="featured-course">
+            <span class="course-badge">¡Nuevo!</span>
+            <div class="course-content">
+                <div class="course-image">
+                    <img src="https://via.placeholder.com/600x400/1a1a1a/FF7A00?text=Introducción+a+Redes" alt="Introducción a Redes" loading="lazy">
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">Introducción a Redes</h3>
+                    <p class="course-description">
+                        Domina los fundamentos de redes de computadoras con nuestro nuevo curso. Aprende los conceptos esenciales que todo profesional de ciberseguridad necesita conocer.
+                    </p>
+                    
+                    <ul class="course-features">
+                        <li>Conceptos básicos de redes TCP/IP</li>
+                        <li>Configuración de dispositivos de red</li>
+                        <li>Protocolos esenciales para pentesting</li>
+                        <li>Herramientas profesionales de análisis</li>
+                        <li>Certificado de finalización incluido</li>
+                    </ul>
+                    
+                    <div class="course-price">50€ <small>(IVA incluido)</small></div>
+                    
+                    <div>
+                        <a href="https://tusitio.com/checkout?course_id=introduccion-redes" class="course-cta">
+                            <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                        </a>
+                        <a href="https://tusitio.com/course-detail?course=introduccion-redes" class="course-cta secondary">
+                            <i class="fas fa-info-circle"></i> Más Información
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="container">
         <header>
