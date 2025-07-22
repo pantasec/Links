@@ -185,7 +185,8 @@
         .fa-instagram { color: var(--instagram); }
         .fa-tiktok { color: var(--tiktok); }
         .fa-linkedin-in { color: var(--linkedin); }
-        .fa-book, .fa-shopping-cart { color: var(--primary); }
+        .fa-book { color: var(--primary); }
+        .fa-shopping-cart { color: var(--light); }
 
         .link-card:hover .link-icon i {
             filter: drop-shadow(0 0 8px currentColor);
@@ -233,30 +234,19 @@
         }
 
         .course-card {
-            position: relative;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(255, 122, 0, 0.05));
             border: 2px solid var(--primary);
-            padding: 0;
-            overflow: hidden;
+            background: rgba(255, 122, 0, 0.1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem;
             transition: var(--transition);
         }
 
         .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(255, 122, 0, 0.3);
-        }
-
-        .course-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--grey);
-        }
-
-        .course-content {
-            padding: 1.2rem;
-            display: flex;
-            align-items: center;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
         }
 
         .course-badge {
@@ -277,19 +267,29 @@
             background-color: var(--primary);
             color: var(--dark);
             font-weight: 700;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+            padding: 1.2rem;
+            border-radius: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: var(--transition);
             text-decoration: none;
-            margin-left: auto;
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 200px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .course-button:hover {
             background-color: #ff8a00;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+        }
+
+        .course-button i {
+            margin-right: 0.5rem;
         }
 
         @keyframes fadeIn {
@@ -308,14 +308,13 @@
             }
         }
 
-        .link-card:nth-child(1) { animation-delay: 0.1s; }
+        .link-card:nth-child(1), .course-card:nth-child(1) { animation-delay: 0.1s; }
         .link-card:nth-child(2) { animation-delay: 0.2s; }
         .link-card:nth-child(3) { animation-delay: 0.3s; }
         .link-card:nth-child(4) { animation-delay: 0.4s; }
         .link-card:nth-child(5) { animation-delay: 0.5s; }
         .link-card:nth-child(6) { animation-delay: 0.6s; }
         .link-card:nth-child(7) { animation-delay: 0.7s; }
-        .course-card:nth-child(1) { animation-delay: 0.2s; }
 
         .floating-book {
             position: fixed;
@@ -523,8 +522,9 @@
                 font-size: 1.2rem;
             }
 
-            .course-image {
-                height: 140px;
+            .course-button {
+                padding: 1rem;
+                max-width: 180px;
             }
 
             #background-video {
@@ -587,19 +587,16 @@
         <div class="links">
             <a href="https://lionxsecurity.es/curso/introduccion-a-redes/" class="link-card course-card">
                 <span class="course-badge">Ya disponible</span>
-                <img src="images/redess.jpg" alt="Introducción a Redes" class="course-image">
-                <div class="course-content">
-                    <div class="link-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="link-text">
-                        <p class="link-title">Introducción a Redes</p>
-                        <p class="link-desc">Aprende los fundamentos de redes y comienza tu carrera en ciberseguridad</p>
-                    </div>
-                    <a href="https://lionxsecurity.es/checkout/" class="course-button">
-                        <i class="fas fa-shopping-cart"></i> Comprar Curso
-                    </a>
+                <div class="link-icon">
+                    <i class="fas fa-book"></i>
                 </div>
+                <div class="link-text">
+                    <p class="link-title">Introducción a Redes</p>
+                    <p class="link-desc">Aprende los fundamentos de redes y comienza tu carrera en ciberseguridad</p>
+                </div>
+                <a href="https://lionxsecurity.es/checkout/" class="course-button">
+                    <i class="fas fa-shopping-cart"></i> Comprar Curso
+                </a>
             </a>
         </div>
 
