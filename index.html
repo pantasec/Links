@@ -22,6 +22,7 @@
             --instagram: #E1306C;
             --tiktok: #000000;
             --linkedin: #0077B5;
+            --purple: #8A2BE2;
         }
 
         body {
@@ -273,17 +274,40 @@
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
-        .course-badge-text {
-            background-color: var(--primary);
-            color: var(--dark);
-            font-size: 0.8rem;
+        .free-notes-button {
+            background-color: var(--purple);
+            color: white;
             font-weight: 700;
-            padding: 0.4rem 0.8rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            margin-top: 0.5rem;
-            text-align: center;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-left: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3);
+        }
+
+        .free-notes-button:hover {
+            background-color: #9932CC;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+        }
+
+        .free-notes-button i {
+            margin-right: 8px;
+        }
+
+        .academy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-title-with-button {
+            display: flex;
+            align-items: center;
         }
 
         @media (max-width: 768px) {
@@ -314,9 +338,9 @@
                 max-width: 180px;
             }
 
-            .course-badge-text {
-                font-size: 0.7rem;
-                padding: 0.3rem 0.6rem;
+            .free-notes-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
             }
 
             #background-video {
@@ -567,24 +591,6 @@
             <p class="tagline">Creador Digital - Ciberseguridad</p>
         </header>
 
-        <!-- LionxSecurity Section -->
-        <h3 class="section-title">LionxSecurity</h3>
-        <div class="links">
-            <a href="#" class="link-card academy-card" id="academyLink">
-                <div class="link-icon">
-                    <i class="fas fa-book"></i>
-                </div>
-                <div class="link-text">
-                    <p class="link-title">LionxSecurity</p>
-                    <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
-                </div>
-            </a>
-        </div>
-
-        <!DOCTYPE html>
-<html lang="es">
-<!-- [Todo el código anterior permanece igual hasta la sección de Cursos Disponibles] -->
-
         <!-- Cursos Disponibles Section -->
         <h3 class="section-title">Cursos Disponibles</h3>
         <div class="links">
@@ -598,7 +604,25 @@
                 </div>
                 <a href="https://www.elrincondelhacker.es/offers/8J49oCnw/checkout" class="course-button" aria-label="Comprar curso Introducción a Redes" target="_blank">Comprar Curso</a>
             </a>
-            <p class="course-badge-text">YA DISPONIBLE</p>
+        </div>
+
+        <!-- LionxSecurity Section con botón nuevo -->
+        <div class="academy-header">
+            <h3 class="section-title">LionxSecurity</h3>
+            <a href="#" class="free-notes-button" id="freeNotesButton">
+                <i class="fas fa-gift"></i> Apuntes Gratis
+            </a>
+        </div>
+        <div class="links">
+            <a href="#" class="link-card academy-card" id="academyLink">
+                <div class="link-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="link-text">
+                    <p class="link-title">LionxSecurity</p>
+                    <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
+                </div>
+            </a>
         </div>
 
         <!-- Contenido Principal Section -->
@@ -742,6 +766,7 @@
 
         const bookIcon = document.getElementById('bookIcon');
         const academyLink = document.getElementById('academyLink');
+        const freeNotesButton = document.getElementById('freeNotesButton');
         const formModal = document.getElementById('formModal');
         const closeModal = document.getElementById('closeModal');
 
@@ -757,6 +782,11 @@
 
         bookIcon.addEventListener('click', openModal);
         academyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+        
+        freeNotesButton.addEventListener('click', function(e) {
             e.preventDefault();
             openModal();
         });
