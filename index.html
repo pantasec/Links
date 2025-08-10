@@ -305,8 +305,8 @@
             background: rgba(26, 26, 26, 0.7);
             border: 1px solid var(--grey);
             border-radius: 8px;
-            padding: 1.2rem;
-            margin-bottom: 1rem;
+            padding: 1rem;
+            margin: 0.5rem 0;
             animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
             backdrop-filter: blur(5px);
@@ -315,7 +315,7 @@
 
         .podcast-embed iframe {
             width: 100%;
-            height: 232px;
+            height: 152px;
             border-radius: 12px;
             border: none;
         }
@@ -355,6 +355,10 @@
 
             #background-video {
                 display: none;
+            }
+
+            .podcast-embed iframe {
+                height: 132px;
             }
 
             .floating-book {
@@ -632,12 +636,6 @@
         <!-- Contenido Principal Section -->
         <h3 class="section-title">Contenido Principal</h3>
         <div class="links">
-            <!-- Podcast Embed -->
-            <div class="podcast-embed">
-                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axYg7j3N" 
-                        allow="encrypted-media"></iframe>
-            </div>
-            
             <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
                 <div class="link-icon">
                     <i class="fab fa-telegram"></i>
@@ -656,6 +654,12 @@
                     <p class="link-desc">Análisis y tutoriales en profundidad</p>
                 </div>
             </a>
+            
+            <!-- Spotify Embed -->
+            <div class="podcast-embed">
+                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axYg7j3N" 
+                        allow="encrypted-media"></iframe>
+            </div>
         </div>
 
         <!-- Redes Sociales Section -->
