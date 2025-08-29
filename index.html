@@ -188,6 +188,7 @@
         .fa-linkedin-in { color: var(--linkedin); }
         .fa-book { color: var(--primary); }
         .fa-shopping-cart { color: var(--primary); }
+        .fa-download { color: var(--primary); }
 
         .link-card:hover .link-icon i {
             filter: drop-shadow(0 0 8px currentColor);
@@ -301,6 +302,32 @@
             margin-right: 8px;
         }
 
+        .download-tools-button {
+            background-color: var(--primary);
+            color: var(--dark);
+            font-weight: 700;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(255, 122, 0, 0.3);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .download-tools-button:hover {
+            background-color: #ff8a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.4);
+        }
+
+        .download-tools-button i {
+            margin-right: 8px;
+        }
+
         .podcast-embed {
             background: rgba(26, 26, 26, 0.7);
             border: 1px solid var(--grey);
@@ -349,6 +376,11 @@
             }
 
             .free-notes-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .download-tools-button {
                 padding: 0.6rem 1rem;
                 font-size: 0.9rem;
             }
@@ -630,6 +662,10 @@
             </a>
             <a href="#" class="free-notes-button" id="freeNotesButton">
                 <i class="fas fa-gift"></i> Apuntes Gratis
+            </a>
+            <!-- Botón de descarga de herramientas añadido aquí -->
+            <a href="herramientas.pdf" download class="download-tools-button">
+                <i class="fas fa-download"></i> Descargar todas las herramientas
             </a>
         </div>
 
