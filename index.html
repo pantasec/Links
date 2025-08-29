@@ -16,12 +16,7 @@
             --light: #f5f5f5;
             --grey: #1a1a1a;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --youtube: #FF0000;
-            --spotify: #1DB954;
-            --telegram: #26A5E4;
-            --instagram: #E1306C;
-            --tiktok: #000000;
-            --linkedin: #0077B5;
+            --icon-color: #FF7A00;
         }
 
         body {
@@ -47,7 +42,8 @@
             height: auto;
             z-index: -100;
             object-fit: cover;
-            filter: brightness(0.3);
+            /* Más difuminado para resaltar los botones */
+            filter: brightness(0.2) blur(4px);
         }
 
         .container {
@@ -134,7 +130,7 @@
         }
 
         .link-card {
-            background: rgba(26, 26, 26, 0.7);
+            background: rgba(26, 26, 26, 0.8);
             border: 1px solid var(--grey);
             border-radius: 8px;
             padding: 1.2rem;
@@ -154,7 +150,7 @@
             transform: translateY(-3px);
             border-color: var(--primary);
             box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
-            background: rgba(38, 38, 38, 0.8);
+            background: rgba(38, 38, 38, 0.9);
         }
 
         .link-icon {
@@ -178,20 +174,12 @@
         .link-icon i {
             font-size: 1.4rem;
             transition: var(--transition);
+            /* Color uniforme para todos los iconos */
+            color: var(--icon-color);
         }
 
-        .fa-youtube { color: var(--youtube); }
-        .fa-spotify { color: var(--spotify); }
-        .fa-telegram { color: var(--telegram); }
-        .fa-instagram { color: var(--instagram); }
-        .fa-tiktok { color: var(--tiktok); }
-        .fa-linkedin-in { color: var(--linkedin); }
-        .fa-book { color: var(--light); }
-        .fa-shopping-cart { color: var(--light); }
-        .fa-download { color: var(--primary); }
-
         .link-card:hover .link-icon i {
-            filter: drop-shadow(0 0 8px currentColor);
+            filter: drop-shadow(0 0 8px var(--primary));
         }
 
         .link-text {
@@ -243,7 +231,7 @@
 
         /* Cajita transparente para los botones */
         .tools-box {
-            background: rgba(26, 26, 26, 0.6);
+            background: rgba(26, 26, 26, 0.7);
             border: 1px solid var(--primary);
             border-radius: 10px;
             padding: 1.2rem;
@@ -318,6 +306,7 @@
         .tool-button i {
             margin-right: 8px;
             font-size: 1.1rem;
+            color: var(--icon-color);
         }
 
         .podcast-embed {
@@ -673,7 +662,7 @@
                     <a href="#" class="tool-button" id="freeNotesButton">
                         <i class="fas fa-gift"></i> Apuntes Gratis
                     </a>
-                    <a href="Hacking Tools.md" download class="tool-button">
+                    <a href="herramientas.pdf" download class="tool-button">
                         <i class="fab fa-github"></i> Hacking Tools
                     </a>
                 </div>
@@ -770,7 +759,7 @@
                                     </div>
                                     <div class="ml-form-fieldRow ml-last-item">
                                         <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                            <input aria-label="email" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
+                                            <input aria-label="email" type: "email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
                                         </div>
                                     </div>
                                 </div>
