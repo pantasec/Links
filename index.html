@@ -186,8 +186,8 @@
         .fa-instagram { color: var(--instagram); }
         .fa-tiktok { color: var(--tiktok); }
         .fa-linkedin-in { color: var(--linkedin); }
-        .fa-book { color: var(--primary); }
-        .fa-shopping-cart { color: var(--primary); }
+        .fa-book { color: var(--light); }
+        .fa-shopping-cart { color: var(--light); }
         .fa-download { color: var(--primary); }
 
         .link-card:hover .link-icon i {
@@ -197,6 +197,7 @@
         .link-text {
             text-align: left;
             flex: 1 1 auto;
+            margin-right: 1rem;
         }
 
         .link-title {
@@ -218,56 +219,20 @@
             line-height: 1.4;
         }
 
-        .academy-card {
-            border: 1px solid var(--primary);
-            background: rgba(255, 122, 0, 0.1);
-        }
-
-        .academy-card .link-icon {
-            background: rgba(255, 122, 0, 0.2);
-        }
-
-        .academy-card .link-title {
-            color: var(--primary);
-        }
-
-        .academy-card .link-desc {
-            opacity: 0.9;
-        }
-
-        .course-card {
-            border: 2px solid var(--primary);
-            background: rgba(255, 122, 0, 0.1);
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .course-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
-        }
-
         .course-button {
             background-color: var(--primary);
             color: var(--dark);
             font-weight: 700;
-            padding: 1.2rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: var(--transition);
             text-decoration: none;
-            flex: 0 0 auto;
-            width: 100%;
-            max-width: 200px;
+            flex-shrink: 0;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
+            display: inline-block;
+            font-size: 0.9rem;
         }
 
         .course-button:hover {
@@ -383,23 +348,31 @@
                 font-size: 1rem;
             }
 
-            .link-card, .course-card {
+            .link-card {
                 padding: 1rem;
+                flex-direction: column;
+                text-align: center;
             }
 
             .link-icon {
                 width: 40px;
                 height: 40px;
-                margin-right: 1rem;
+                margin-right: 0;
+                margin-bottom: 0.8rem;
             }
 
             .link-icon i {
                 font-size: 1.2rem;
             }
 
+            .link-text {
+                margin-right: 0;
+                margin-bottom: 0.8rem;
+            }
+
             .course-button {
-                padding: 1rem;
-                max-width: 180px;
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
             }
 
             .tools-box {
@@ -460,7 +433,7 @@
             }
         }
 
-        .link-card:nth-child(1), .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .link-card:nth-child(1) { animation-delay: 0.1s; }
         .link-card:nth-child(2) { animation-delay: 0.2s; }
         .link-card:nth-child(3) { animation-delay: 0.3s; }
         .link-card:nth-child(4) { animation-delay: 0.4s; }
@@ -669,7 +642,7 @@
         <!-- Cursos Disponibles Section -->
         <h3 class="section-title">Cursos Disponibles</h3>
         <div class="links">
-            <a href="https://www.elrincondelhacker.es/offers/8J49oCnw/checkout" class="link-card course-card" aria-label="Comprar curso Introducción a Redes" target="_blank">
+            <div class="link-card">
                 <div class="link-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
@@ -678,13 +651,13 @@
                     <p class="link-desc">Aprende los fundamentos de redes y comienza tu carrera en ciberseguridad</p>
                 </div>
                 <a href="https://www.elrincondelhacker.es/offers/8J49oCnw/checkout" class="course-button" aria-label="Comprar curso Introducción a Redes" target="_blank">Comprar Curso</a>
-            </a>
+            </div>
         </div>
 
         <!-- LionxSecurity Section -->
         <h3 class="section-title">LionxSecurity</h3>
         <div class="links">
-            <a href="#" class="link-card academy-card" id="academyLink">
+            <div class="link-card" id="academyLink">
                 <div class="link-icon">
                     <i class="fas fa-book"></i>
                 </div>
@@ -692,7 +665,7 @@
                     <p class="link-title">LionxSecurity</p>
                     <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
                 </div>
-            </a>
+            </div>
             
             <!-- Cajita transparente con botones -->
             <div class="tools-box">
