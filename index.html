@@ -276,83 +276,83 @@
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
-        .free-notes-button {
-            background-color: var(--primary);
-            color: var(--dark);
-            font-weight: 700;
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
+        /* Cajita transparente para los botones */
+        .tools-box {
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.2rem;
             margin-top: 0.5rem;
-            transition: var(--transition);
-            box-shadow: 0 2px 8px rgba(255, 122, 0, 0.3);
-            width: 100%;
-            justify-content: center;
-        }
-
-        .free-notes-button:hover {
-            background-color: #ff8a00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.4);
-        }
-
-        .free-notes-button i {
-            margin-right: 8px;
-        }
-
-        .hacking-tools-button {
-            background: 
-                linear-gradient(45deg, 
-                    #000000 25%, 
-                    #FF7A00 25%, 
-                    #FF7A00 50%, 
-                    #000000 50%, 
-                    #000000 75%, 
-                    #FF7A00 75%, 
-                    #FF7A00 100%);
-            background-size: 20px 20px;
-            color: white;
-            font-weight: 700;
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            margin-top: 0.5rem;
-            transition: var(--transition);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            justify-content: center;
-            border: 1px solid #FF7A00;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.15);
             position: relative;
             overflow: hidden;
-            /* Fondo más sólido para mejor legibilidad */
-            background-color: #000000;
         }
 
-        .hacking-tools-button:hover {
+        .tools-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .tools-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .tool-button {
+            flex: 1;
+            background: rgba(255, 122, 0, 0.15);
+            color: var(--light);
+            font-weight: 700;
+            padding: 0.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 122, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .tool-button:hover {
+            background: rgba(255, 122, 0, 0.25);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.6);
-            background-position: 20px 20px;
-            animation: stripeAnimation 0.5s linear infinite;
+            box-shadow: 0 4px 10px rgba(255, 122, 0, 0.3);
+            border-color: var(--primary);
         }
 
-        .hacking-tools-button i {
+        .tool-button:hover::before {
+            left: 100%;
+        }
+
+        .tool-button i {
             margin-right: 8px;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-            color: white;
             font-size: 1.1rem;
-        }
-
-        @keyframes stripeAnimation {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 20px 20px;
-            }
         }
 
         .podcast-embed {
@@ -402,24 +402,18 @@
                 max-width: 180px;
             }
 
-            .free-notes-button {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
+            .tools-box {
+                padding: 1rem;
             }
 
-            .hacking-tools-button {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-                background-size: 15px 15px;
+            .tools-buttons {
+                flex-direction: column;
+                gap: 0.6rem;
             }
 
-            @keyframes stripeAnimation {
-                0% {
-                    background-position: 0 0;
-                }
-                100% {
-                    background-position: 15px 15px;
-                }
+            .tool-button {
+                padding: 0.7rem;
+                font-size: 0.9rem;
             }
 
             #background-video {
@@ -645,6 +639,7 @@
         .ml-form-successBody {
             text-align: center !important;
             padding: 2rem !important;
+            display: none;
         }
 
         .ml-form-successBody h4 {
@@ -698,13 +693,18 @@
                     <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
                 </div>
             </a>
-            <a href="#" class="free-notes-button" id="freeNotesButton">
-                <i class="fas fa-gift"></i> Apuntes Gratis
-            </a>
-            <!-- Botón de descarga de herramientas añadido aquí -->
-            <a href="Hacking Tools.md" download class="hacking-tools-button">
-                <i class="fab fa-github"></i> Hacking Tools
-            </a>
+            
+            <!-- Cajita transparente con botones -->
+            <div class="tools-box">
+                <div class="tools-buttons">
+                    <a href="#" class="tool-button" id="freeNotesButton">
+                        <i class="fas fa-gift"></i> Apuntes Gratis
+                    </a>
+                    <a href="Hacking Tools.md" download class="tool-button">
+                        <i class="fab fa-github"></i> Hacking Tools
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- Contenido Principal Section -->
@@ -786,7 +786,7 @@
                         <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                             <div class="ml-form-embedContent">
                                 <h4>¡Obtén tu descuento del 15%!</h4>
-                                <p>Completa el formulario para acceder to la oferta exclusiva.</p>
+                                <p>Completa el formulario para acceder a la oferta exclusiva.</p>
                             </div>
                             <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/subscribe" data-code="" method="post" target="_blank">
                                 <div class="ml-form-formContent">
