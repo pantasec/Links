@@ -9,7 +9,7 @@ Organizadas por categorías para que te sea más fácil encontrarlas.
 - 🔎 **Sherlock** → [GitHub](https://github.com/sherlock-project/sherlock)  
   Busca perfiles de un nombre de usuario en múltiples redes sociales.
 
-- 🌍 **GeoRecon** → [GitHub](https://github.com/radioactivetobi/GeoRecon)  
+- 🌍 **GeoRecon** → [GitHub](https://github.com/radioactivetobi/GeoRecon)
   Herramienta de OSINT para obtener datos de geolocalización.
 
 - 👤 **UserSearch.ai** → [UserSearch](https://usersearch.ai/)  
@@ -21,16 +21,16 @@ Organizadas por categorías para que te sea más fácil encontrarlas.
 - 📱 **PhoneInfoga** → [GitHub](https://github.com/sundowndev/PhoneInfoga)  
   Escanea y analiza números de teléfono para extraer metadatos.
 
-- ☁️ **SkyTrack** → *(enlace oficial pendiente)*  
+- ☁️ **SkyTrack** → [GitHub](https://github.com/ANG13T/skytrack)
   Herramienta para rastrear información relacionada con telefonía / datos online.
 
-- 📞 **TruecallerJS** → *(enlace oficial pendiente)*  
+- 📞 **TruecallerJS** → [GitHub](https://github.com/sumithemmadi/truecallerjs) 
   Wrapper en JavaScript para interactuar con la base de datos de Truecaller.
 
 ---
 
 ## 🎭 Phishing y Seguridad
-- 🎣 **SocialPhish** → [GitHub](https://github.com/xHak9x/SocialPhish)  
+- 🎣 **SocialPhish** → [[GitHub](https://github.com/mrlarkowis/SocialPhish) 
   Framework de phishing con plantillas para distintas plataformas.
 
 ---
