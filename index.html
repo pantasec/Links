@@ -22,6 +22,7 @@
             --instagram: #E1306C;
             --tiktok: #000000;
             --linkedin: #0077B5;
+            --github: #6e5494;
         }
 
         body {
@@ -189,6 +190,7 @@
         .fa-book { color: var(--primary); }
         .fa-shopping-cart { color: var(--primary); }
         .fa-download { color: var(--primary); }
+        .fa-github { color: var(--github); }
 
         .link-card:hover .link-icon i {
             filter: drop-shadow(0 0 8px currentColor);
@@ -303,8 +305,8 @@
         }
 
         .download-tools-button {
-            background-color: var(--primary);
-            color: var(--dark);
+            background-color: var(--github);
+            color: var(--light);
             font-weight: 700;
             padding: 0.8rem 1.2rem;
             border-radius: 8px;
@@ -313,15 +315,15 @@
             align-items: center;
             margin-top: 0.5rem;
             transition: var(--transition);
-            box-shadow: 0 2px 8px rgba(255, 122, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(110, 84, 148, 0.3);
             width: 100%;
             justify-content: center;
         }
 
         .download-tools-button:hover {
-            background-color: #ff8a00;
+            background-color: #7d5ba6;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(110, 84, 148, 0.4);
         }
 
         .download-tools-button i {
@@ -596,6 +598,7 @@
             transition: var(--transition) !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
+            cursor: pointer;
         }
 
         .ml-form-embedSubmit button:hover {
@@ -664,8 +667,8 @@
                 <i class="fas fa-gift"></i> Apuntes Gratis
             </a>
             <!-- Botón de descarga de herramientas añadido aquí -->
-            <a href="Hacking Tools.md" download class="download-tools-button">
-                <i class="fas fa-download"></i> Descargar todas las herramientas
+            <a href="herramientas.pdf" download class="download-tools-button">
+                <i class="fab fa-github"></i> Hacking Tools
             </a>
         </div>
 
@@ -748,7 +751,7 @@
                         <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                             <div class="ml-form-embedContent">
                                 <h4>¡Obtén tu descuento del 15%!</h4>
-                                <p>Completa el formulario para acceder a la oferta exclusiva.</p>
+                                <p>Completa el formulario para acceder to la oferta exclusiva.</p>
                             </div>
                             <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/subscribe" data-code="" method="post" target="_blank">
                                 <div class="ml-form-formContent">
