@@ -9,7 +9,7 @@ Organizadas por categorías para que te sea más fácil encontrarlas.
 - 🔎 **Sherlock** → [GitHub](https://github.com/sherlock-project/sherlock)  
   Busca perfiles de un nombre de usuario en múltiples redes sociales.
 
-- 🌍 **GeoRecon** → [GitHub](https://github.com/radioactivetobi/GeoRecon)
+- 🌍 **GeoRecon** → [GitHub](https://github.com/radioactivetobi/geo-recon)
   Herramienta de OSINT para obtener datos de geolocalización.
 
 - 👤 **UserSearch.ai** → [UserSearch](https://usersearch.ai/)  
