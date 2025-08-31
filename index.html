@@ -481,19 +481,22 @@
             background-color: rgba(255, 255, 255, 0.1) !important;
             border: 1px solid var(--grey) !important;
             color: var(--light) !important;
-            padding: 12px 15px !important;
-            margin-bottom: 15px !important;
+            padding: 0.6rem 0.8rem !important;
+            margin-bottom: 1rem !important;
             width: 100% !important;
             border-radius: 6px !important;
             transition: var(--transition);
+            font-size: 0.9rem !important;
+            height: 36px !important;
+            font-family: 'IBM Plex Mono', monospace !important;
         }
 
         .ml-form-fieldRow select {
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             border: 1px solid var(--grey) !important;
             color: var(--light) !important;
-            padding: 12px 15px !important;
-            margin-bottom: 15px !important;
+            padding: 0.6rem 0.8rem !important;
+            margin-bottom: 1rem !important;
             width: 100% !important;
             border-radius: 6px !important;
             transition: var(--transition);
@@ -502,10 +505,13 @@
             background-repeat: no-repeat;
             background-position: right 12px center;
             background-size: 16px;
+            font-size: 0.9rem !important;
+            height: 36px !important;
+            font-family: 'IBM Plex Mono', monospace !important;
         }
 
         .ml-form-fieldRow select option {
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             color: var(--light) !important;
         }
 
@@ -520,8 +526,8 @@
         }
 
         .ml-form-checkboxRow {
-            margin: 20px 0 !important;
-            padding: 15px !important;
+            margin: 1rem 0 !important;
+            padding: 0.8rem !important;
             background: rgba(255, 122, 0, 0.1) !important;
             border-radius: 6px;
             border: 1px solid rgba(255, 122, 0, 0.3);
@@ -538,13 +544,14 @@
             border: none !important;
             color: var(--dark) !important;
             font-weight: 700 !important;
-            padding: 12px 24px !important;
+            padding: 0.8rem 1.2rem !important;
             width: 100% !important;
             border-radius: 6px !important;
             transition: var(--transition) !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
             cursor: pointer;
+            font-size: 0.9rem !important;
         }
 
         .ml-form-embedSubmit button:hover {
@@ -573,20 +580,32 @@
         .apuntes-modal .modal-content {
             border-color: var(--purple);
             max-width: 500px;
+            padding: 1.2rem;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .apuntes-modal .modal-title {
             color: var(--purple);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .apuntes-modal .tagline {
+            color: var(--purple);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .apuntes-modal .ml-form-fieldRow select {
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>');
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             color: var(--light) !important;
         }
 
         .apuntes-modal .ml-form-fieldRow select option {
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             color: var(--light) !important;
         }
 
@@ -615,14 +634,14 @@
 
         .features {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 0.8rem;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             justify-content: center;
         }
 
         .feature {
-            flex: 1 1 150px;
+            flex: 1 1 200px;
             background: rgba(138, 43, 226, 0.1);
             border: 1px solid rgba(138, 43, 226, 0.3);
             border-radius: 8px;
@@ -632,42 +651,44 @@
         }
 
         .feature:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
         }
 
         .feature-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--purple);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .feature-title {
             color: var(--purple);
             font-weight: 700;
             font-size: 1rem;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .feature-desc {
             font-size: 0.8rem;
             opacity: 0.8;
+            line-height: 1.4;
+            color: var(--light);
         }
 
         .form-box {
             background: rgba(26, 26, 26, 0.8);
             border: 1px solid var(--purple);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 1.2rem;
             margin-top: 1rem;
             backdrop-filter: blur(5px);
-            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
             text-align: left;
         }
 
         .form-title {
             color: var(--purple);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             text-align: center;
             font-weight: 700;
@@ -690,9 +711,11 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid #333;
             border-radius: 6px;
-            padding: 0.7rem 1rem;
+            padding: 0.6rem 0.8rem;
             color: var(--light);
-            font-family: inherit;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            height: 36px;
             transition: var(--transition);
         }
 
@@ -706,7 +729,7 @@
             background-color: var(--purple);
             color: white;
             font-weight: 700;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
             display: inline-block;
@@ -714,7 +737,7 @@
             border: none;
             cursor: pointer;
             width: 100%;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -730,6 +753,23 @@
             opacity: 0.7;
             margin-top: 1rem;
             text-align: center;
+            color: var(--light);
+        }
+
+        @media (max-width: 768px) {
+            .apuntes-modal .modal-content {
+                padding: 1rem;
+                max-width: 95%;
+            }
+            .features {
+                flex-direction: column;
+            }
+            .feature {
+                padding: 0.8rem;
+            }
+            .form-box {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -906,292 +946,167 @@
     </div>
 
     <div class="modal-overlay apuntes-modal" id="apuntesModal">
-    <div class="modal-content">
-        <span class="close-modal" id="closeApuntesModal">×</span>
-        <h3 class="modal-title">LionxSecurity</h3>
-        <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 15px;">APUNTES GRATIS DE CIBERSEGURIDAD</p>
-        
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">
-                    <i class="fas fa-book"></i>
+        <div class="modal-content">
+            <span class="close-modal" id="closeApuntesModal">×</span>
+            <h3 class="modal-title">LionxSecurity</h3>
+            <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 15px;">APUNTES GRATIS DE CIBERSEGURIDAD</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="feature-title">Teoría Completa</h3>
+                    <p class="feature-desc">Conceptos fundamentales explicados de forma clara y práctica</p>
                 </div>
-                <h3 class="feature-title">Teoría Completa</h3>
-                <p class="feature-desc">Conceptos fundamentales explicados de forma clara y práctica</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">
-                    <i class="fas fa-flask"></i>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="feature-title">Laboratorios</h3>
+                    <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
                 </div>
-                <h3 class="feature-title">Laboratorios</h3>
-                <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
             </div>
-        </div>
-        
-        <div class="form-box">
-            <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
-            
-            <!-- Código de MailerLite -->
-            <div id="mlb2-161913152330532255" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-161913152330532255">
-                <div class="ml-form-align-center">
-                    <div class="ml-form-embedWrapper embedForm">
-                        <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                            <div class="ml-form-embedContent">
-                                <h4>¡Obtén acceso inmediato!</h4>
-                                <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
+            <div class="form-box">
+                <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
+                <div id="mlb2-161913152330532255" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-161913152330532255">
+                    <div class="ml-form-align-center">
+                        <div class="ml-form-embedWrapper embedForm">
+                            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                <div class="ml-form-embedContent">
+                                    <h4>¡Obtén acceso inmediato!</h4>
+                                    <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
+                                </div>
+                                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/161913152330532255/subscribe" data-code="" method="post" target="_blank">
+                                    <div class="ml-form-formContent">
+                                        <div class="ml-form-fieldRow">
+                                            <div class="ml-field-group ml-field-name ml-validate-required">
+                                                <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre completo" autocomplete="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="ml-form-fieldRow">
+                                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="ml-form-fieldRow ml-last-item">
+                                            <div class="ml-field-group ml-field-interes ml-validate-required">
+                                                <select name="fields[interes]" class="form-control" required>
+                                                    <option value="" disabled selected>Selecciona tu área de interés</option>
+                                                    <option value="hacking-etico">Hacking Ético</option>
+                                                    <option value="redes">Redes</option>
+                                                    <option value="bash">Bash</option>
+                                                    <option value="bug-bounty">Bug Bounty</option>
+                                                    <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ml-form-checkboxRow ml-validate-required">
+                                        <label class="checkbox">
+                                            <input type="checkbox" required>
+                                            <div class="label-description">
+                                                <p>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="ml-form-embedPermissions">
+                                        <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                            <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="ml-submit" value="1">
+                                    <div class="ml-form-embedSubmit">
+                                        <button type="submit" class="primary"><i class="fas fa-download"></i> Obtener Apuntes</button>
+                                        <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                            <div class="ml-form-embedSubmitLoad"></div>
+                                            <span class="sr-only">Loading...</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" name="anticsrf" value="true">
+                                </form>
                             </div>
-                            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/161913152330532255/subscribe" data-code="" method="post" target="_blank">
-                                <div class="ml-form-formContent">
-                                    <div class="ml-form-fieldRow">
-                                        <div class="ml-field-group ml-field-name ml-validate-required">
-                                            <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre completo" autocomplete="name" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid #333; border-radius: 6px; padding: 12px 15px; color: #f5f5f5; width: 100%; margin-bottom: 15px;">
-                                        </div>
-                                    </div>
-                                    <div class="ml-form-fieldRow">
-                                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                            <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid #333; border-radius: 6px; padding: 12px 15px; color: #f5f5f5; width: 100%; margin-bottom: 15px;">
-                                        </div>
-                                    </div>
-                                    <div class="ml-form-fieldRow ml-last-item">
-                                        <div class="ml-field-group ml-field-interes ml-validate-required">
-                                            <select name="fields[interes]" required style="background: rgba(255, 255, 255, 0.1); border: 1px solid #333; border-radius: 6px; padding: 12px 15px; color: #f5f5f5; width: 100%; margin-bottom: 15px; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%238A2BE2\"><path d=\"M8 11L3 6h10z\"/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;">
-                                                <option value="" disabled selected>Selecciona tu área de interés</option>
-                                                <option value="hacking-etico" style="background-color: #0a0a0a; color: #f5f5f5;">Hacking Ético</option>
-                                                <option value="redes" style="background-color: #0a0a0a; color: #f5f5f5;">Redes</option>
-                                                <option value="bash" style="background-color: #0a0a0a; color: #f5f5f5;">Bash</option>
-                                                <option value="bug-bounty" style="background-color: #0a0a0a; color: #f5f5f5;">Bug Bounty</option>
-                                                <option value="oscp-ejpt-ecppt" style="background-color: #0a0a0a; color: #f5f5f5;">OSCP-eJPT-eCPPT</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                            <div class="ml-form-successBody row-success" style="display: none">
+                                <div class="ml-form-successContent">
+                                    <h4>¡Solicitud exitosa!</h4>
+                                    <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
                                 </div>
-                                <div class="ml-form-checkboxRow ml-validate-required">
-                                    <label class="checkbox">
-                                        <input type="checkbox" required>
-                                        <div class="label-description">
-                                            <p style="color: #f5f5f5; font-size: 0.85rem;">Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="ml-form-embedPermissions">
-                                    <div class="ml-form-embedPermissionsContent default privacy-policy">
-                                        <p style="color: #f5f5f5; opacity: 0.7; font-size: 0.8rem;">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="ml-submit" value="1">
-                                <div class="ml-form-embedSubmit">
-                                    <button type="submit" class="primary" style="background-color: #8A2BE2; border: none; color: white; font-weight: 700; padding: 12px 24px; width: 100%; border-radius: 6px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; cursor: pointer;">
-                                        <i class="fas fa-download"></i> Obtener Apuntes
-                                    </button>
-                                    <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                        <div class="ml-form-embedSubmitLoad"></div>
-                                        <span class="sr-only">Loading...</span>
-                                    </button>
-                                </div>
-                                <input type="hidden" name="anticsrf" value="true">
-                            </form>
-                        </div>
-                        <div class="ml-form-successBody row-success" style="display: none">
-                            <div class="ml-form-successContent">
-                                <h4 style="color: #8A2BE2; margin-bottom: 1rem;">¡Solicitud exitosa!</h4>
-                                <p style="color: #f5f5f5;">Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Fin del código de MailerLite -->
         </div>
     </div>
-</div>
 
-<style>
-.apuntes-modal .modal-content {
-    border-color: #8A2BE2;
-    max-width: 500px;
-    width: 90%;
-    padding: 1.2rem;
-    max-height: 90vh;
-    overflow-y: auto;
-}
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById('background-video').style.display = 'none';
+        }
 
-.apuntes-modal .modal-title {
-    color: #8A2BE2;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
+        const bookIcon = document.getElementById('bookIcon');
+        const academyLink = document.getElementById('academyLink');
+        const freeNotesButton = document.getElementById('freeNotesButton');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.getElementById('closeModal');
+        const apuntesModal = document.getElementById('apuntesModal');
+        const closeApuntesModal = document.getElementById('closeApuntesModal');
 
-.apuntes-modal .tagline {
-    color: #8A2BE2;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
+        function openFormModal() {
+            formModal.style.display = 'flex';
+            apuntesModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
 
-.features {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    margin: 1rem 0;
-}
+        function openApuntesModal() {
+            apuntesModal.style.display = 'flex';
+            formModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
 
-.feature {
-    background: rgba(138, 43, 226, 0.1);
-    border: 1px solid rgba(138, 43, 226, 0.3);
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    transition: all 0.3s;
-}
+        function closeModalFunc() {
+            formModal.style.display = 'none';
+            apuntesModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-.feature:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
-}
+        bookIcon.addEventListener('click', openFormModal);
+        academyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openFormModal();
+        });
+        freeNotesButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            openApuntesModal();
+        });
+        closeModal.addEventListener('click', closeModalFunc);
+        closeApuntesModal.addEventListener('click', closeModalFunc);
 
-.feature-icon {
-    font-size: 1.8rem;
-    color: #8A2BE2;
-    margin-bottom: 0.5rem;
-}
+        formModal.addEventListener('click', (e) => {
+            if (e.target === formModal) closeModalFunc();
+        });
+        apuntesModal.addEventListener('click', (e) => {
+            if (e.target === apuntesModal) closeModalFunc();
+        });
 
-.feature-title {
-    color: #8A2BE2;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
+        function ml_webform_success_28412192() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-28412192 .row-success').show();
+            $('.ml-subscribe-form-28412192 .row-form').hide();
+            setTimeout(closeModalFunc, 5000);
+        }
 
-.feature-desc {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    line-height: 1.4;
-    color: #f5f5f5;
-}
+        function ml_webform_success_161913152330532255() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-161913152330532255 .row-success').show();
+            $('.ml-subscribe-form-161913152330532255 .row-form').hide();
+            setTimeout(closeModalFunc, 5000);
+        }
+    </script>
 
-.form-box {
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid #8A2BE2;
-    border-radius: 10px;
-    padding: 1.2rem;
-    margin-top: 1rem;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
-}
-
-.form-title {
-    color: #8A2BE2;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: 700;
-}
-
-.ml-form-fieldRow {
-    margin-bottom: 1rem;
-}
-
-.ml-form-fieldRow input,
-.ml-form-fieldRow select {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #333;
-    border-radius: 6px;
-    padding: 0.8rem 1rem;
-    color: #f5f5f5;
-    font-family: 'IBM Plex Mono', monospace;
-    transition: all 0.3s;
-    box-sizing: border-box;
-}
-
-.ml-form-fieldRow select {
-    appearance: none;
-}
-
-.ml-form-fieldRow input:focus,
-.ml-form-fieldRow select:focus {
-    outline: none;
-    border-color: #8A2BE2;
-    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
-}
-
-.ml-form-fieldRow input::placeholder {
-    color: rgba(245, 245, 245, 0.6);
-}
-
-.ml-form-checkboxRow {
-    margin: 1rem 0;
-    padding: 0.8rem;
-    background: rgba(138, 43, 226, 0.1);
-    border-radius: 6px;
-    border: 1px solid rgba(138, 43, 226, 0.3);
-}
-
-.ml-form-checkboxRow label {
-    color: #f5f5f5;
-    font-size: 0.8rem;
-    line-height: 1.4;
-}
-
-.ml-form-embedSubmit button {
-    background-color: #8A2BE2;
-    border: none;
-    color: white;
-    font-weight: 700;
-    padding: 0.8rem 1.2rem;
-    width: 100%;
-    border-radius: 6px;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.ml-form-embedSubmit button:hover {
-    background-color: #9932CC;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
-}
-
-@media (max-width: 768px) {
-    .apuntes-modal .modal-content {
-        padding: 1rem;
-        max-width: 95%;
-    }
-    
-    .features {
-        flex-direction: column;
-    }
-    
-    .feature {
-        padding: 0.8rem;
-    }
-    
-    .form-box {
-        padding: 1rem;
-    }
-}
-</style>
-
-<script>
-function ml_webform_success_161913152330532255() {
-    // Esta función se ejecutará cuando el formulario se envíe correctamente
-    var successElement = document.querySelector('#apuntesModal .ml-form-successBody');
-    var formElement = document.querySelector('#apuntesModal .ml-form-embedBody');
-    
-    if (successElement && formElement) {
-        successElement.style.display = 'block';
-        formElement.style.display = 'none';
-        
-        // Cerrar el modal después de 5 segundos
-        setTimeout(function() {
-            document.getElementById('apuntesModal').style.display = 'none';
-        }, 5000);
-    }
-}
-</script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/takel");
+        fetch("https://assets.mailerlite.com/jsonp/1666597/forms/161913152330532255/takel");
+    </script>
 </body>
 </html>
