@@ -906,88 +906,280 @@
     </div>
 
     <div class="modal-overlay apuntes-modal" id="apuntesModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeApuntesModal">×</span>
-            <h3 class="modal-title">LionxSecurity</h3>
-            <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 15px;">APUNTES GRATIS DE CIBERSEGURIDAD</p>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3 class="feature-title">Teoría Completa</h3>
-                    <p class="feature-desc">Conceptos fundamentales explicados de forma clara y práctica</p>
+    <div class="modal-content">
+        <span class="close-modal" id="closeApuntesModal">×</span>
+        <h3 class="modal-title">LionxSecurity</h3>
+        <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 20px;">APUNTES GRATIS DE CIBERSEGURIDAD</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-book"></i>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3 class="feature-title">Laboratorios</h3>
-                    <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3 class="feature-title">Ejercicios Prácticos</h3>
-                    <p class="feature-desc">Desafíos reales para aplicar tus conocimientos</p>
-                </div>
+                <h3 class="feature-title">Teoría Completa</h3>
+                <p class="feature-desc">Conceptos fundamentales explicados de forma clara y práctica</p>
             </div>
-            <div class="form-box">
-                <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
-                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/subscribe" method="post" target="_blank">
-                    <div class="form-group">
-                        <label class="form-label" for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="fields[name]" class="form-input" placeholder="Tu nombre" autocomplete="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="fields[email]" class="form-input" placeholder="tu@email.com" autocomplete="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="interes">Área de Mayor Interés</label>
-                        <select id="interes" name="fields[interes]" class="form-input" required>
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="hacking-etico">Hacking Ético</option>
-                            <option value="redes">Redes</option>
-                            <option value="bash">Bash</option>
-                            <option value="bug-bounty">Bug Bounty</option>
-                            <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
-                        </select>
-                    </div>
-                    <div class="ml-form-checkboxRow ml-validate-required">
-                        <label class="checkbox">
-                            <input type="checkbox" required>
-                            <div class="label-description">
-                                <p>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3 class="feature-title">Laboratorios</h3>
+                <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
+            </div>
+        </div>
+        
+        <div class="form-box">
+            <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
+            
+            <!-- Reemplaza con tu ID de formulario de MailerLite -->
+            <div class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1234567">
+                <div class="ml-form-align-center">
+                    <div class="ml-form-embedWrapper embedForm">
+                        <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1234567/forms/1234567890/subscribe" data-code="" method="post" target="_blank">
+                                <div class="ml-form-formContent">
+                                    <div class="ml-form-fieldRow">
+                                        <div class="ml-field-group ml-field-name ml-validate-required">
+                                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre completo" autocomplete="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="ml-form-fieldRow">
+                                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                            <input aria-label="email" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="ml-form-fieldRow ml-last-item">
+                                        <div class="ml-field-group ml-field-interes ml-validate-required">
+                                            <select aria-label="interes" class="form-control" name="fields[interes]" required style="background-color: #0a0a0a; color: #f5f5f5; border: 1px solid #333; border-radius: 6px; padding: 12px 15px; width: 100%; margin-bottom: 15px; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%238A2BE2\"><path d=\"M8 11L3 6h10z\"/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;">
+                                                <option value="" disabled selected>Selecciona tu área de interés</option>
+                                                <option value="hacking-etico" style="background-color: #0a0a0a; color: #f5f5f5;">Hacking Ético</option>
+                                                <option value="redes" style="background-color: #0a0a0a; color: #f5f5f5;">Redes</option>
+                                                <option value="bash" style="background-color: #0a0a0a; color: #f5f5f5;">Bash</option>
+                                                <option value="bug-bounty" style="background-color: #0a0a0a; color: #f5f5f5;">Bug Bounty</option>
+                                                <option value="oscp-ejpt-ecppt" style="background-color: #0a0a0a; color: #f5f5f5;">OSCP-eJPT-eCPPT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ml-form-checkboxRow ml-validate-required">
+                                    <label class="checkbox">
+                                        <input type="checkbox" required>
+                                        <div class="label-description">
+                                            <p style="color: #f5f5f5; font-size: 0.85rem;">Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="ml-form-embedPermissions">
+                                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                        <p style="color: #f5f5f5; opacity: 0.7; font-size: 0.8rem;">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="ml-submit" value="1">
+                                <div class="ml-form-embedSubmit">
+                                    <button type="submit" class="primary" style="background-color: #8A2BE2; border: none; color: white; font-weight: 700; padding: 12px 24px; width: 100%; border-radius: 6px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; cursor: pointer;">
+                                        <i class="fas fa-download"></i> Obtener Apuntes
+                                    </button>
+                                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                        <div class="ml-form-embedSubmitLoad"></div>
+                                        <span class="sr-only">Loading...</span>
+                                    </button>
+                                </div>
+                                <input type="hidden" name="anticsrf" value="true">
+                            </form>
+                        </div>
+                        <div class="ml-form-successBody row-success" style="display: none">
+                            <div class="ml-form-successContent">
+                                <h4 style="color: #8A2BE2; margin-bottom: 1rem;">¡Solicitud exitosa!</h4>
+                                <p style="color: #f5f5f5;">Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
                             </div>
-                        </label>
-                    </div>
-                    <div class="ml-form-embedPermissions">
-                        <div class="ml-form-embedPermissionsContent default privacy-policy">
-                            <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
                         </div>
                     </div>
-                    <input type="hidden" name="ml-submit" value="1">
-                    <div class="ml-form-embedSubmit">
-                        <button type="submit" class="btn"><i class="fas fa-download"></i> Obtener Apuntes</button>
-                        <button disabled="disabled" style="display: none;" type="button" class="loading">
-                            <div class="ml-form-embedSubmitLoad"></div>
-                            <span class="sr-only">Loading...</span>
-                        </button>
-                    </div>
-                    <input type="hidden" name="anticsrf" value="true">
-                </form>
-            </div>
-            <div class="ml-form-successBody row-success" style="display: none">
-                <div class="ml-form-successContent">
-                    <h4>¡Solicitud exitosa!</h4>
-                    <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+<style>
+.apuntes-modal .modal-content {
+    border-color: #8A2BE2;
+    max-width: 600px;
+    width: 90%;
+    padding: 1.5rem;
+}
+
+.apuntes-modal .modal-title {
+    color: #8A2BE2;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.apuntes-modal .tagline {
+    color: #8A2BE2;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.feature {
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #8A2BE2;
+    margin-bottom: 0.8rem;
+}
+
+.feature-title {
+    color: #8A2BE2;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.feature-desc {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    color: #f5f5f5;
+}
+
+.form-box {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid #8A2BE2;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
+}
+
+.form-title {
+    color: #8A2BE2;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.ml-form-fieldRow {
+    margin-bottom: 1.2rem;
+}
+
+.ml-form-fieldRow input,
+.ml-form-fieldRow select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #333 !important;
+    border-radius: 6px !important;
+    padding: 0.8rem 1rem !important;
+    color: #f5f5f5 !important;
+    font-family: 'IBM Plex Mono', monospace;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.ml-form-fieldRow select {
+    appearance: none;
+}
+
+.ml-form-fieldRow input:focus,
+.ml-form-fieldRow select:focus {
+    outline: none;
+    border-color: #8A2BE2 !important;
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3) !important;
+}
+
+.ml-form-fieldRow input::placeholder {
+    color: rgba(245, 245, 245, 0.6) !important;
+}
+
+.ml-form-checkboxRow {
+    margin: 1.2rem 0 !important;
+    padding: 1rem !important;
+    background: rgba(138, 43, 226, 0.1) !important;
+    border-radius: 6px;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.ml-form-checkboxRow label {
+    color: #f5f5f5 !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+}
+
+.ml-form-embedSubmit button {
+    background-color: #8A2BE2 !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    padding: 0.8rem 1.5rem !important;
+    width: 100% !important;
+    border-radius: 6px !important;
+    transition: all 0.3s !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.ml-form-embedSubmit button:hover {
+    background-color: #9932CC !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4) !important;
+}
+
+@media (max-width: 768px) {
+    .apuntes-modal .modal-content {
+        padding: 1rem;
+    }
+    
+    .features {
+        flex-direction: column;
+    }
+    
+    .feature {
+        padding: 1rem;
+    }
+}
+</style>
+
+<script>
+function ml_webform_success_1234567() {
+    // Esta función se ejecutará cuando el formulario se envíe correctamente
+    var successElement = document.querySelector('#apuntesModal .ml-form-successBody');
+    var formElement = document.querySelector('#apuntesModal .ml-form-embedBody');
+    
+    if (successElement && formElement) {
+        successElement.style.display = 'block';
+        formElement.style.display = 'none';
+        
+        // Cerrar el modal después de 5 segundos
+        setTimeout(function() {
+            document.getElementById('apuntesModal').style.display = 'none';
+        }, 5000);
+    }
+}
+</script>
     <script>
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.getElementById('background-video').style.display = 'none';
