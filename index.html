@@ -17,6 +17,8 @@
             --grey: #1a1a1a;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --icon-color: #FF7A00;
+            --purple: #8A2BE2;
+            --purple-light: rgba(138, 43, 226, 0.3);
         }
 
         body {
@@ -42,7 +44,6 @@
             height: auto;
             z-index: -100;
             object-fit: cover;
-            /* Más difuminado para resaltar los botones */
             filter: brightness(0.2) blur(4px);
         }
 
@@ -174,7 +175,6 @@
         .link-icon i {
             font-size: 1.4rem;
             transition: var(--transition);
-            /* Color uniforme para todos los iconos */
             color: var(--icon-color);
         }
 
@@ -229,7 +229,6 @@
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
-        /* Cajita transparente para los botones */
         .tools-box {
             background: rgba(26, 26, 26, 0.7);
             border: 1px solid var(--primary);
@@ -329,81 +328,22 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .link-card {
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .link-icon {
-                width: 40px;
-                height: 40px;
-                margin-right: 0;
-                margin-bottom: 0.8rem;
-            }
-
-            .link-icon i {
-                font-size: 1.2rem;
-            }
-
-            .link-text {
-                margin-right: 0;
-                margin-bottom: 0.8rem;
-            }
-
-            .course-button {
-                padding: 0.7rem 1rem;
-                font-size: 0.85rem;
-            }
-
-            .tools-box {
-                padding: 1rem;
-            }
-
-            .tools-buttons {
-                flex-direction: column;
-                gap: 0.6rem;
-            }
-
-            .tool-button {
-                padding: 0.7rem;
-                font-size: 0.9rem;
-            }
-
-            #background-video {
-                display: none;
-            }
-
-            .podcast-embed iframe {
-                height: 132px;
-            }
-
-            .floating-book {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .floating-book i {
-                font-size: 20px;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-            }
-
-            .modal-title {
-                font-size: 1.3rem;
-            }
+            h1 { font-size: 2.2rem; }
+            .tagline { font-size: 1rem; }
+            .link-card { padding: 1rem; flex-direction: column; text-align: center; }
+            .link-icon { width: 40px; height: 40px; margin-right: 0; margin-bottom: 0.8rem; }
+            .link-icon i { font-size: 1.2rem; }
+            .link-text { margin-right: 0; margin-bottom: 0.8rem; }
+            .course-button { padding: 0.7rem 1rem; font-size: 0.85rem; }
+            .tools-box { padding: 1rem; }
+            .tools-buttons { flex-direction: column; gap: 0.6rem; }
+            .tool-button { padding: 0.7rem; font-size: 0.9rem; }
+            #background-video { display: none; }
+            .podcast-embed iframe { height: 132px; }
+            .floating-book { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .floating-book i { font-size: 20px; }
+            .modal-content { padding: 1.5rem; }
+            .modal-title { font-size: 1.3rem; }
         }
 
         @keyframes fadeIn {
@@ -412,14 +352,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .link-card:nth-child(1) { animation-delay: 0.1s; }
@@ -554,13 +488,34 @@
             transition: var(--transition);
         }
 
-        .ml-form-fieldRow input:focus {
+        .ml-form-fieldRow select {
+            background-color: var(--dark) !important;
+            border: 1px solid var(--grey) !important;
+            color: var(--light) !important;
+            padding: 12px 15px !important;
+            margin-bottom: 15px !important;
+            width: 100% !important;
+            border-radius: 6px !important;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FF7A00"><path d="M8 11L3 6h10z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+
+        .ml-form-fieldRow select option {
+            background-color: var(--dark) !important;
+            color: var(--light) !important;
+        }
+
+        .ml-form-fieldRow input:focus, .ml-form-fieldRow select:focus {
             border-color: var(--primary) !important;
             outline: none;
             box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2) !important;
         }
 
-        .ml-form-fieldRow input::placeholder {
+        .ml-form-fieldRow input::placeholder, .ml-form-fieldRow select::placeholder {
             color: rgba(245, 245, 245, 0.6) !important;
         }
 
@@ -614,6 +569,166 @@
             color: var(--light) !important;
             opacity: 0.9;
         }
+
+        .apuntes-modal .modal-content {
+            border-color: var(--purple);
+            max-width: 600px;
+        }
+
+        .apuntes-modal .modal-title {
+            color: var(--purple);
+        }
+
+        .apuntes-modal .ml-form-fieldRow select {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>');
+            background-color: var(--dark) !important;
+            color: var(--light) !important;
+        }
+
+        .apuntes-modal .ml-form-fieldRow select option {
+            background-color: var(--dark) !important;
+            color: var(--light) !important;
+        }
+
+        .apuntes-modal .ml-form-fieldRow input:focus, .apuntes-modal .ml-form-fieldRow select:focus {
+            border-color: var(--purple) !important;
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2) !important;
+        }
+
+        .apuntes-modal .ml-form-checkboxRow {
+            background: rgba(138, 43, 226, 0.1) !important;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .apuntes-modal .ml-form-embedSubmit button {
+            background-color: var(--purple) !important;
+        }
+
+        .apuntes-modal .ml-form-embedSubmit button:hover {
+            background-color: #9932CC !important;
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3) !important;
+        }
+
+        .apuntes-modal .ml-form-successBody h4 {
+            color: var(--purple) !important;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .feature {
+            flex: 1 1 200px;
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--purple);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            color: var(--purple);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .form-box {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--purple);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 1rem;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
+            text-align: left;
+        }
+
+        .form-title {
+            color: var(--purple);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            color: var(--light);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
+        }
+
+        .btn {
+            background-color: var(--purple);
+            color: white;
+            font-weight: 700;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #9932CC;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+        }
+
+        .privacy {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -628,7 +743,6 @@
             <p class="tagline">Creador Digital - Ciberseguridad</p>
         </header>
 
-        <!-- Cursos Disponibles Section -->
         <h3 class="section-title">Cursos Disponibles</h3>
         <div class="links">
             <div class="link-card">
@@ -643,7 +757,6 @@
             </div>
         </div>
 
-        <!-- LionxSecurity Section -->
         <h3 class="section-title">LionxSecurity</h3>
         <div class="links">
             <div class="link-card" id="academyLink">
@@ -655,8 +768,6 @@
                     <p class="link-desc">Academia de Hacking Ético - 15% de descuento para los primeros 100</p>
                 </div>
             </div>
-            
-            <!-- Cajita transparente con botones -->
             <div class="tools-box">
                 <div class="tools-buttons">
                     <a href="#" class="tool-button" id="freeNotesButton">
@@ -669,7 +780,6 @@
             </div>
         </div>
 
-        <!-- Contenido Principal Section -->
         <h3 class="section-title">Contenido Principal</h3>
         <div class="links">
             <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
@@ -690,15 +800,11 @@
                     <p class="link-desc">Análisis y tutoriales en profundidad</p>
                 </div>
             </a>
-            
-            <!-- Spotify Embed -->
             <div class="podcast-embed">
-                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axYg7j3N" 
-                        allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axYg7j3N" allow="encrypted-media"></iframe>
             </div>
         </div>
 
-        <!-- Redes Sociales Section -->
         <h3 class="section-title">Redes Sociales</h3>
         <div class="links">
             <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card">
@@ -731,12 +837,10 @@
         </div>
     </div>
 
-    <!-- Floating Book Icon -->
     <div class="floating-book" id="bookIcon">
         <i class="fas fa-book"></i>
     </div>
 
-    <!-- Modal with Form -->
     <div class="modal-overlay" id="formModal">
         <div class="modal-content">
             <span class="close-modal" id="closeModal">×</span>
@@ -759,7 +863,7 @@
                                     </div>
                                     <div class="ml-form-fieldRow ml-last-item">
                                         <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                            <input aria-label="email" type: "email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
+                                            <input aria-label="email" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -778,7 +882,7 @@
                                 </div>
                                 <input type="hidden" name="ml-submit" value="1">
                                 <div class="ml-form-embedSubmit">
-                                    <button type="submit" class="primary">QUIERO MI DESCUENTO</button>
+                                    <button type="submit" class="primary"><i class="fas fa-percentage"></i> QUIERO MI DESCUENTO</button>
                                     <button disabled="disabled" style="display: none;" type="button" class="loading">
                                         <div class="ml-form-embedSubmitLoad"></div>
                                         <span class="sr-only">Loading...</span>
@@ -799,6 +903,89 @@
         </div>
     </div>
 
+    <div class="modal-overlay apuntes-modal" id="apuntesModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeApuntesModal">×</span>
+            <h3 class="modal-title">LionxSecurity</h3>
+            <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 20px;">APUNTES GRATIS DE CIBERSEGURIDAD</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="feature-title">Teoría Completa</h3>
+                    <p class="feature-desc">Conceptos fundamentales explicados de forma clara y práctica</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="feature-title">Laboratorios</h3>
+                    <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="feature-title">Ejercicios Prácticos</h3>
+                    <p class="feature-desc">Desafíos reales para aplicar tus conocimientos</p>
+                </div>
+            </div>
+            <div class="form-box">
+                <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/subscribe" method="post" target="_blank">
+                    <div class="form-group">
+                        <label class="form-label" for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="fields[name]" class="form-input" placeholder="Tu nombre" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="fields[email]" class="form-input" placeholder="tu@email.com" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="interes">Área de Mayor Interés</label>
+                        <select id="interes" name="fields[interes]" class="form-input" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="hacking-etico">Hacking Ético</option>
+                            <option value="redes">Redes</option>
+                            <option value="bash">Bash</option>
+                            <option value="bug-bounty">Bug Bounty</option>
+                            <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                        </select>
+                    </div>
+                    <div class="ml-form-checkboxRow ml-validate-required">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <div class="label-description">
+                                <p>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                        <div class="ml-form-embedPermissionsContent default privacy-policy">
+                            <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                        <button type="submit" class="btn"><i class="fas fa-download"></i> Obtener Apuntes</button>
+                        <button disabled="disabled" style="display: none;" type="button" class="loading">
+                            <div class="ml-form-embedSubmitLoad"></div>
+                            <span class="sr-only">Loading...</span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                    <h4>¡Solicitud exitosa!</h4>
+                    <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.getElementById('background-video').style.display = 'none';
@@ -809,40 +996,57 @@
         const freeNotesButton = document.getElementById('freeNotesButton');
         const formModal = document.getElementById('formModal');
         const closeModal = document.getElementById('closeModal');
+        const apuntesModal = document.getElementById('apuntesModal');
+        const closeApuntesModal = document.getElementById('closeApuntesModal');
 
-        function openModal() {
+        function openFormModal() {
             formModal.style.display = 'flex';
+            apuntesModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openApuntesModal() {
+            apuntesModal.style.display = 'flex';
+            formModal.style.display = 'none';
             document.body.style.overflow = 'hidden';
         }
 
         function closeModalFunc() {
             formModal.style.display = 'none';
+            apuntesModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        bookIcon.addEventListener('click', openModal);
+        bookIcon.addEventListener('click', openFormModal);
         academyLink.addEventListener('click', function(e) {
             e.preventDefault();
-            openModal();
+            openFormModal();
         });
-        
         freeNotesButton.addEventListener('click', function(e) {
             e.preventDefault();
-            openModal();
+            openApuntesModal();
         });
-
         closeModal.addEventListener('click', closeModalFunc);
+        closeApuntesModal.addEventListener('click', closeModalFunc);
 
         formModal.addEventListener('click', (e) => {
-            if (e.target === formModal) {
-                closeModalFunc();
-            }
+            if (e.target === formModal) closeModalFunc();
+        });
+        apuntesModal.addEventListener('click', (e) => {
+            if (e.target === apuntesModal) closeModalFunc();
         });
 
         function ml_webform_success_28412192() {
             var $ = ml_jQuery || jQuery;
             $('.ml-subscribe-form-28412192 .row-success').show();
             $('.ml-subscribe-form-28412192 .row-form').hide();
+            setTimeout(closeModalFunc, 5000);
+        }
+
+        function ml_webform_success_apuntes() {
+            var $ = ml_jQuery || jQuery;
+            $('#apuntesModal .row-success').show();
+            $('#apuntesModal .row-form').hide();
             setTimeout(closeModalFunc, 5000);
         }
     </script>
