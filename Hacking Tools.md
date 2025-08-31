@@ -30,7 +30,7 @@ Organizadas por categorías para que te sea más fácil encontrarlas.
 ---
 
 ## 🎭 Phishing y Seguridad
-- 🎣 **SocialPhish** → [[GitHub](https://github.com/mrlarkowis/SocialPhish) 
+- 🎣 **SocialPhish** → [GitHub](https://github.com/mrlarkowis/SocialPhish) 
   Framework de phishing con plantillas para distintas plataformas.
 
 ---
