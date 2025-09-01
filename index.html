@@ -494,7 +494,7 @@
         }
 
         .ml-form-fieldRow select {
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             border: 1px solid var(--grey) !important;
             color: var(--light) !important;
             padding: 0.6rem 0.8rem !important;
@@ -513,7 +513,7 @@
         }
 
         .ml-form-fieldRow select option {
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             color: var(--light) !important;
         }
 
@@ -602,12 +602,12 @@
 
         .apuntes-modal .ml-form-fieldRow select {
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>');
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             color: var(--light) !important;
         }
 
         .apuntes-modal .ml-form-fieldRow select option {
-            background-color: var(--grey) !important;
+            background-color: var(--dark) !important;
             color: var(--light) !important;
         }
 
@@ -634,11 +634,67 @@
             color: var(--purple) !important;
         }
 
+        .hacking-tools-modal .modal-content {
+            border-color: var(--gold);
+            max-width: 500px;
+            padding: 1.2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .hacking-tools-modal .modal-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hacking-tools-modal .tagline {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .hacking-tools-modal .ml-form-fieldRow select {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFD700"><path d="M8 11L3 6h10z"/></svg>');
+            background-color: var(--dark) !important;
+            color: var(--light) !important;
+        }
+
+        .hacking-tools-modal .ml-form-fieldRow select option {
+            background-color: var(--dark) !important;
+            color: var(--light) !important;
+        }
+
+        .hacking-tools-modal .ml-form-fieldRow input:focus, .hacking-tools-modal .ml-form-fieldRow select:focus {
+            border-color: var(--gold) !important;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2) !important;
+        }
+
+        .hacking-tools-modal .ml-form-checkboxRow {
+            background: rgba(255, 215, 0, 0.1) !important;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .hacking-tools-modal .ml-form-embedSubmit button {
+            background-color: var(--gold) !important;
+            color: var(--dark) !important;
+        }
+
+        .hacking-tools-modal .ml-form-embedSubmit button:hover {
+            background-color: #FFEC33 !important;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important;
+        }
+
+        .hacking-tools-modal .ml-form-successBody h4 {
+            color: var(--gold) !important;
+        }
+
         .features {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 0.8rem;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             justify-content: center;
         }
 
@@ -647,61 +703,87 @@
             background: rgba(138, 43, 226, 0.1);
             border: 1px solid rgba(138, 43, 226, 0.3);
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1rem;
             text-align: center;
             transition: var(--transition);
         }
 
         .feature:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
         }
 
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--purple);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .feature-title {
             color: var(--purple);
             font-weight: 700;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
         }
 
         .feature-desc {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.8;
+            line-height: 1.4;
+            color: var(--light);
+        }
+
+        .hacking-tools-modal .feature {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .hacking-tools-modal .feature-icon {
+            color: var(--gold);
+        }
+
+        .hacking-tools-modal .feature-title {
+            color: var(--gold);
         }
 
         .form-box {
             background: rgba(26, 26, 26, 0.8);
             border: 1px solid var(--purple);
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 10px;
+            padding: 1.2rem;
             margin-top: 1rem;
             backdrop-filter: blur(5px);
-            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
             text-align: left;
+        }
+
+        .hacking-tools-modal .form-box {
+            border-color: var(--gold);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
         }
 
         .form-title {
             color: var(--purple);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             text-align: center;
             font-weight: 700;
         }
 
+        .hacking-tools-modal .form-title {
+            color: var(--gold);
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
             color: var(--light);
+            font-size: 0.9rem;
         }
 
         .form-input {
@@ -709,9 +791,11 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid #333;
             border-radius: 6px;
-            padding: 0.8rem 1rem;
+            padding: 0.6rem 0.8rem;
             color: var(--light);
-            font-family: inherit;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            height: 36px;
             transition: var(--transition);
         }
 
@@ -725,7 +809,7 @@
             background-color: var(--purple);
             color: white;
             font-weight: 700;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
             display: inline-block;
@@ -733,7 +817,7 @@
             border: none;
             cursor: pointer;
             width: 100%;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -745,10 +829,27 @@
         }
 
         .privacy {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             opacity: 0.7;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             text-align: center;
+            color: var(--light);
+        }
+
+        @media (max-width: 768px) {
+            .apuntes-modal .modal-content, .hacking-tools-modal .modal-content {
+                padding: 1rem;
+                max-width: 95%;
+            }
+            .features {
+                flex-direction: column;
+            }
+            .feature {
+                padding: 0.8rem;
+            }
+            .form-box {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -990,6 +1091,8 @@
                                                     <option value="bash">Bash</option>
                                                     <option value="bug-bounty">Bug Bounty</option>
                                                     <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                                                    <option value="clases-particulares">Clases Particulares</option>
+                                                    <option value="conseguir-trabajo">Conseguir Trabajo</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1031,6 +1134,108 @@
         </div>
     </div>
 
+    <div class="modal-overlay hacking-tools-modal" id="hackingToolsModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeHackingToolsModal">×</span>
+            <h3 class="modal-title">¿Quieres acceder a todas las herramientas de hacking proporcionadas en mis shorts?</h3>
+            <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 15px;">GEOLOCALIZACIÓN DE IPs, SABER TODO DE UN NÚMERO TELEFÓNICO O HACKEAR UNA WEBCAM</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Geolocalización de IPs</h3>
+                    <p class="feature-desc">Herramientas para rastrear y localizar direcciones IP con precisión.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="feature-title">Análisis de Números</h3>
+                    <p class="feature-desc">Descubre información detallada sobre números telefónicos.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="feature-title">Hacking de Webcams</h3>
+                    <p class="feature-desc">Técnicas y herramientas para pruebas de seguridad en cámaras.</p>
+                </div>
+            </div>
+            <div class="form-box">
+                <h2 class="form-title">¡Obtén acceso a las herramientas!</h2>
+                <div id="mlb2-164358144147851225" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-164358144147851225">
+                    <div class="ml-form-align-center">
+                        <div class="ml-form-embedWrapper embedForm">
+                            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                                <div class="ml-form-embedContent">
+                                    <h4>¡Regístrate ahora!</h4>
+                                    <p>Completa el formulario para recibir acceso a las herramientas de hacking.</p>
+                                </div>
+                                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1666597/forms/164358144147851225/subscribe" data-code="" method="post" target="_blank">
+                                    <div class="ml-form-formContent">
+                                        <div class="ml-form-fieldRow">
+                                            <div class="ml-field-group ml-field-name ml-validate-required">
+                                                <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Nombre completo" autocomplete="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="ml-form-fieldRow">
+                                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="ml-form-fieldRow ml-last-item">
+                                            <div class="ml-field-group ml-field-interes ml-validate-required">
+                                                <select name="fields[interes]" class="form-control" required>
+                                                    <option value="" disabled selected>Selecciona tu área de interés</option>
+                                                    <option value="hacking-etico">Hacking Ético</option>
+                                                    <option value="redes">Redes</option>
+                                                    <option value="bash">Bash</option>
+                                                    <option value="bug-bounty">Bug Bounty</option>
+                                                    <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                                                    <option value="clases-particulares">Clases Particulares</option>
+                                                    <option value="conseguir-trabajo">Conseguir Trabajo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ml-form-checkboxRow ml-validate-required">
+                                        <label class="checkbox">
+                                            <input type="checkbox" required>
+                                            <div class="label-description">
+                                                <p>Marca esta casilla para recibir las herramientas y comunicaciones sobre ciberseguridad.</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="ml-form-embedPermissions">
+                                        <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                            <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="ml-submit" value="1">
+                                    <div class="ml-form-embedSubmit">
+                                        <button type="submit" class="primary"><i class="fas fa-tools"></i> Obtener Herramientas</button>
+                                        <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                            <div class="ml-form-embedSubmitLoad"></div>
+                                            <span class="sr-only">Loading...</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" name="anticsrf" value="true">
+                                </form>
+                            </div>
+                            <div class="ml-form-successBody row-success" style="display: none">
+                                <div class="ml-form-successContent">
+                                    <h4>¡Solicitud exitosa!</h4>
+                                    <p>Revisa tu correo electrónico para acceder a las herramientas de hacking. ¡Gracias por unirte a LionxSecurity!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.getElementById('background-video').style.display = 'none';
@@ -1039,26 +1244,39 @@
         const bookIcon = document.getElementById('bookIcon');
         const academyLink = document.getElementById('academyLink');
         const freeNotesButton = document.getElementById('freeNotesButton');
+        const hackingToolsButton = document.getElementById('hackingToolsButton');
         const formModal = document.getElementById('formModal');
         const closeModal = document.getElementById('closeModal');
         const apuntesModal = document.getElementById('apuntesModal');
         const closeApuntesModal = document.getElementById('closeApuntesModal');
+        const hackingToolsModal = document.getElementById('hackingToolsModal');
+        const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
 
         function openFormModal() {
             formModal.style.display = 'flex';
             apuntesModal.style.display = 'none';
+            hackingToolsModal.style.display = 'none';
             document.body.style.overflow = 'hidden';
         }
 
         function openApuntesModal() {
             apuntesModal.style.display = 'flex';
             formModal.style.display = 'none';
+            hackingToolsModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openHackingToolsModal() {
+            hackingToolsModal.style.display = 'flex';
+            formModal.style.display = 'none';
+            apuntesModal.style.display = 'none';
             document.body.style.overflow = 'hidden';
         }
 
         function closeModalFunc() {
             formModal.style.display = 'none';
             apuntesModal.style.display = 'none';
+            hackingToolsModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
@@ -1071,14 +1289,22 @@
             e.preventDefault();
             openApuntesModal();
         });
+        hackingToolsButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            openHackingToolsModal();
+        });
         closeModal.addEventListener('click', closeModalFunc);
         closeApuntesModal.addEventListener('click', closeModalFunc);
+        closeHackingToolsModal.addEventListener('click', closeModalFunc);
 
         formModal.addEventListener('click', (e) => {
             if (e.target === formModal) closeModalFunc();
         });
         apuntesModal.addEventListener('click', (e) => {
             if (e.target === apuntesModal) closeModalFunc();
+        });
+        hackingToolsModal.addEventListener('click', (e) => {
+            if (e.target === hackingToolsModal) closeModalFunc();
         });
 
         function ml_webform_success_28412192() {
@@ -1094,12 +1320,20 @@
             $('.ml-subscribe-form-161913152330532255 .row-form').hide();
             setTimeout(closeModalFunc, 5000);
         }
+
+        function ml_webform_success_164358144147851225() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-164358144147851225 .row-success').show();
+            $('.ml-subscribe-form-164358144147851225 .row-form').hide();
+            setTimeout(closeModalFunc, 5000);
+        }
     </script>
 
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1666597/forms/159988740446487920/takel");
         fetch("https://assets.mailerlite.com/jsonp/1666597/forms/161913152330532255/takel");
+        fetch("https://assets.mailerlite.com/jsonp/1666597/forms/164358144147851225/takel");
     </script>
 </body>
-</html> 
+</html>
