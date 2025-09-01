@@ -19,6 +19,8 @@
             --icon-color: #FF7A00;
             --purple: #8A2BE2;
             --purple-light: rgba(138, 43, 226, 0.3);
+            --gold: #FFD700;
+            --gold-light: rgba(255, 215, 0, 0.3);
         }
 
         body {
@@ -492,7 +494,7 @@
         }
 
         .ml-form-fieldRow select {
-            background-color: var(--dark) !important;
+            background-color: var(--grey) !important;
             border: 1px solid var(--grey) !important;
             color: var(--light) !important;
             padding: 0.6rem 0.8rem !important;
@@ -511,7 +513,7 @@
         }
 
         .ml-form-fieldRow select option {
-            background-color: var(--dark) !important;
+            background-color: var(--grey) !important;
             color: var(--light) !important;
         }
 
@@ -600,12 +602,12 @@
 
         .apuntes-modal .ml-form-fieldRow select {
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>');
-            background-color: var(--dark) !important;
+            background-color: var(--grey) !important;
             color: var(--light) !important;
         }
 
         .apuntes-modal .ml-form-fieldRow select option {
-            background-color: var(--dark) !important;
+            background-color: var(--grey) !important;
             color: var(--light) !important;
         }
 
@@ -634,9 +636,9 @@
 
         .features {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 0.8rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             justify-content: center;
         }
 
@@ -645,65 +647,61 @@
             background: rgba(138, 43, 226, 0.1);
             border: 1px solid rgba(138, 43, 226, 0.3);
             border-radius: 8px;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
             transition: var(--transition);
         }
 
         .feature:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
         }
 
         .feature-icon {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             color: var(--purple);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .feature-title {
             color: var(--purple);
             font-weight: 700;
-            font-size: 1rem;
             margin-bottom: 0.5rem;
         }
 
         .feature-desc {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             opacity: 0.8;
-            line-height: 1.4;
-            color: var(--light);
         }
 
         .form-box {
             background: rgba(26, 26, 26, 0.8);
             border: 1px solid var(--purple);
-            border-radius: 10px;
-            padding: 1.2rem;
+            border-radius: 12px;
+            padding: 2rem;
             margin-top: 1rem;
             backdrop-filter: blur(5px);
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
             text-align: left;
         }
 
         .form-title {
             color: var(--purple);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             font-weight: 700;
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--light);
-            font-size: 0.9rem;
         }
 
         .form-input {
@@ -711,11 +709,9 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid #333;
             border-radius: 6px;
-            padding: 0.6rem 0.8rem;
+            padding: 0.8rem 1rem;
             color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.9rem;
-            height: 36px;
+            font-family: inherit;
             transition: var(--transition);
         }
 
@@ -729,7 +725,7 @@
             background-color: var(--purple);
             color: white;
             font-weight: 700;
-            padding: 0.8rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
             display: inline-block;
@@ -737,7 +733,7 @@
             border: none;
             cursor: pointer;
             width: 100%;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -749,27 +745,10 @@
         }
 
         .privacy {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             opacity: 0.7;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             text-align: center;
-            color: var(--light);
-        }
-
-        @media (max-width: 768px) {
-            .apuntes-modal .modal-content {
-                padding: 1rem;
-                max-width: 95%;
-            }
-            .features {
-                flex-direction: column;
-            }
-            .feature {
-                padding: 0.8rem;
-            }
-            .form-box {
-                padding: 1rem;
-            }
         }
     </style>
 </head>
@@ -815,7 +794,7 @@
                     <a href="#" class="tool-button" id="freeNotesButton">
                         <i class="fas fa-gift"></i> Apuntes Gratis
                     </a>
-                    <a href="herramientas.pdf" download class="tool-button">
+                    <a href="#" class="tool-button" id="hackingToolsButton">
                         <i class="fab fa-github"></i> Hacking Tools
                     </a>
                 </div>
@@ -1011,8 +990,6 @@
                                                     <option value="bash">Bash</option>
                                                     <option value="bug-bounty">Bug Bounty</option>
                                                     <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
-                                                    <option value="clases-particulares">Clases Particulares</option>
-                                                    <option value="conseguir-trabajo">Conseguir Trabajo</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1125,4 +1102,4 @@
         fetch("https://assets.mailerlite.com/jsonp/1666597/forms/161913152330532255/takel");
     </script>
 </body>
-</html>
+</html> 
