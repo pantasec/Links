@@ -824,6 +824,22 @@
             font-family: 'IBM Plex Mono', monospace !important;
         }
 
+        .formkit-alert-error {
+            text-align: center !important;
+            padding: 1rem !important;
+            background: rgba(255, 0, 0, 0.1) !important;
+            border: 1px solid #ff0000 !important;
+            border-radius: 6px !important;
+            display: none;
+        }
+
+        .formkit-alert-error p {
+            color: #ff0000 !important;
+            font-size: 0.85rem !important;
+            font-family: 'IBM Plex Mono', monospace !important;
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .modal-content {
                 padding: 1rem;
@@ -997,12 +1013,6 @@
                                     <option value="conseguir-trabajo">Conseguir Trabajo</option>
                                 </select>
                             </div>
-                            <div class="formkit-field">
-                                <label>
-                                    <input type="checkbox" name="opt_in" value="1" required>
-                                    Marca esta casilla para recibir tu descuento y comunicaciones sobre ciberseguridad.
-                                </label>
-                            </div>
                             <div class="formkit-privacy">
                                 <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
                             </div>
@@ -1013,6 +1023,9 @@
                         <div class="formkit-alert-success" style="display: none;">
                             <h4>¡Solicitud exitosa!</h4>
                             <p>Revisa tu correo electrónico para recibir tu código de descuento. ¡Gracias por unirte a LionxSecurity!</p>
+                        </div>
+                        <div class="formkit-alert-error" style="display: none;">
+                            <p>Error al enviar el formulario. Por favor, verifica tus datos o intenta de nuevo más tarde.</p>
                         </div>
                     </form>
                 </div>
@@ -1066,12 +1079,6 @@
                                     <option value="conseguir-trabajo">Conseguir Trabajo</option>
                                 </select>
                             </div>
-                            <div class="formkit-field">
-                                <label>
-                                    <input type="checkbox" name="opt_in" value="1" required>
-                                    Marca esta casilla para recibir tus apuntes y comunicaciones sobre ciberseguridad.
-                                </label>
-                            </div>
                             <div class="formkit-privacy">
                                 <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
                             </div>
@@ -1082,6 +1089,9 @@
                         <div class="formkit-alert-success" style="display: none;">
                             <h4>¡Solicitud exitosa!</h4>
                             <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
+                        </div>
+                        <div class="formkit-alert-error" style="display: none;">
+                            <p>Error al enviar el formulario. Por favor, verifica tus datos o intenta de nuevo más tarde.</p>
                         </div>
                     </form>
                 </div>
@@ -1142,12 +1152,6 @@
                                     <option value="conseguir-trabajo">Conseguir Trabajo</option>
                                 </select>
                             </div>
-                            <div class="formkit-field">
-                                <label>
-                                    <input type="checkbox" name="opt_in" value="1" required>
-                                    Marca esta casilla para recibir las herramientas y comunicaciones sobre ciberseguridad.
-                                </label>
-                            </div>
                             <div class="formkit-privacy">
                                 <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
                             </div>
@@ -1158,6 +1162,9 @@
                         <div class="formkit-alert-success" style="display: none;">
                             <h4>¡Solicitud exitosa!</h4>
                             <p>Revisa tu correo electrónico para acceder a las herramientas de hacking. ¡Gracias por unirte a LionxSecurity!</p>
+                        </div>
+                        <div class="formkit-alert-error" style="display: none;">
+                            <p>Error al enviar el formulario. Por favor, verifica tus datos o intenta de nuevo más tarde.</p>
                         </div>
                     </form>
                 </div>
@@ -1207,6 +1214,13 @@
             apuntesModal.style.display = 'none';
             hackingToolsModal.style.display = 'none';
             document.body.style.overflow = 'auto';
+            // Reset forms and alerts
+            document.querySelectorAll('.formkit-form').forEach(form => {
+                form.querySelector('.formkit-form-content').style.display = 'block';
+                form.querySelector('.formkit-alert-success').style.display = 'none';
+                form.querySelector('.formkit-alert-error').style.display = 'none';
+                form.reset();
+            });
         }
 
         bookIcon.addEventListener('click', openFormModal);
@@ -1242,24 +1256,46 @@
                 e.preventDefault();
                 const form = e.target;
                 const formId = form.getAttribute('data-fk-form-id');
+                const apiKey = 'ltfJgO29M1ZXDnhhtIFUgg'; // Replace with your ConvertKit API key
                 const formData = new FormData(form);
+                const data = {
+                    api_key: apiKey,
+                    email: formData.get('email_address'),
+                    first_name: formData.get('fields[first_name]'),
+                    fields: {
+                        interes: formData.get('fields[interes]')
+                    }
+                };
+
                 fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
                     method: 'POST',
-                    body: formData,
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(data)
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     if (data.subscription) {
                         form.querySelector('.formkit-form-content').style.display = 'none';
                         form.querySelector('.formkit-alert-success').style.display = 'block';
+                        form.querySelector('.formkit-alert-error').style.display = 'none';
                         setTimeout(closeModalFunc, 5000);
+                    } else {
+                        throw new Error('Subscription failed');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
+                    form.querySelector('.formkit-form-content').style.display = 'none';
+                    form.querySelector('.formkit-alert-success').style.display = 'none';
+                    form.querySelector('.formkit-alert-error').style.display = 'block';
                 });
             }
         });
