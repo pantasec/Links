@@ -944,7 +944,7 @@
                 </div>
             </a>
             <div class="podcast-embed">
-                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axYg7j3N" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axY7j3N" allow="encrypted-media"></iframe>
             </div>
         </div>
 
@@ -997,7 +997,7 @@
                             <h4>¡Obtén tu descuento del 15%!</h4>
                             <p>Completa el formulario para acceder a la oferta exclusiva.</p>
                         </div>
-                        <form class="brevo-form" action="https://app.brevo.com/contact/form/subscription/68bb29e52319e79ea43f0197" method="post">
+                        <form class="brevo-form" action="[Replace with Brevo action URL for Descuento form, e.g., https://[your-account].sibforms.com/serve/68bb29e52319e79ea43f0197]" method="post">
                             <div class="brevo-form-field">
                                 <input type="text" name="NAME" placeholder="Nombre completo" required>
                             </div>
@@ -1068,7 +1068,7 @@
                                 <h4>¡Obtén acceso inmediato!</h4>
                                 <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
                             </div>
-                            <form class="brevo-form" action="https://app.brevo.com/contact/form/subscription/68bb2a3d2319e79ea43f01a0" method="post">
+                            <form class="brevo-form" action="[Replace with Brevo action URL for Apuntes form, e.g., https://[your-account].sibforms.com/serve/68bb2a3d2319e79ea43f01a0]" method="post">
                                 <div class="brevo-form-field">
                                     <input type="text" name="NAME" placeholder="Nombre completo" required>
                                 </div>
@@ -1140,7 +1140,7 @@
                                 <h4>¡Obtén acceso inmediato!</h4>
                                 <p>Completa el formulario para recibir tus herramientas de hacking gratis.</p>
                             </div>
-                            <form class="brevo-form" action="https://app.brevo.com/contact/form/subscription/68bb2328bb08e626a3693e50" method="post">
+                            <form class="brevo-form" action="[Replace with Brevo action URL for Herramientas form, e.g., https://[your-account].sibforms.com/serve/68bb2328bb08e626a3693e50]" method="post">
                                 <div class="brevo-form-field">
                                     <input type="text" name="NAME" placeholder="Nombre completo" required>
                                 </div>
@@ -1280,8 +1280,8 @@
                 return;
             }
 
-            // Submit form to Brevo via fetch to debug 405 errors
-            const formData = new FormData(form);
+            // Submit form to Brevo via fetch
+            const formData = new FormFormData(form);
             fetch(form.action, {
                 method: 'POST',
                 body: formData,
@@ -1291,7 +1291,9 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    return response.text().then(text => {
+                        throw new Error(`HTTP error! Status: ${response.status}, Response: ${text}`);
+                    });
                 }
                 return response.json();
             })
@@ -1305,7 +1307,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Error al enviar el formulario: ' + error.message + '. Por favor, verifica la URL de acción del formulario en Brevo.');
+                alert(`Error al enviar el formulario: ${error.message}. Verifica la URL de acción del formulario en Brevo y asegúrate de que sea correcta (por ejemplo, https://[tu-cuenta].sibforms.com/serve/[form-id]).`);
             });
         }
 
