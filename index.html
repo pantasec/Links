@@ -584,6 +584,10 @@
             background: rgba(255, 193, 7, 0.1);
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
+
+        .iframe-container {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -754,7 +758,11 @@
                 ¡Registro exitoso! Te hemos enviado los apuntes a tu correo electrónico.
             </div>
             
-            <form id="apuntesForm" class="simple-form" action="https://89dafa00.sibforms.com/serve/MUIFAN4t9af7wkKxsZNMBq9x55hjFVsTvyLgDXRcyppNMJagT_kDq6GN6RxmQ5XF-Jxikqx1wgCmNGcIw26P0zcxg2mwtdHoLdjn7CueydV5gRMNnvNd8DpLYl_MuTl818QnfjdiKyop4FVDgXcAYIOughisw-MoFg3rErnHc86hBzSyNga9S8a0EilG4B26uvjUfYb40c-QIuL1" method="POST">
+            <!-- Formulario para apuntes - usando iframe como solución alternativa -->
+            <iframe name="hiddenIframeApuntes" id="hiddenIframeApuntes" class="iframe-container"></iframe>
+            <form id="apuntesForm" class="simple-form" action="https://89dafa00.sibforms.com/serve/MUIFAN4t9af7wkKxsZNMBq9x55hjFVsTvyLgDXRcyppNMJagT_kDq6GN6RxmQ5XF-Jxikqx1wgCmNGcIw26P0zcxg2mwtdHoLdjn7CueydV5gRMNnvNd8DpLYl_MuTl818QnfjdiKyop4FVDgXcAYIOughisw-MoFg3rErnHc86hBzSyNga9S8a0EilG4B26uvjUfYb40c-QIuL1" method="POST" target="hiddenIframeApuntes">
+                <input type="hidden" name="locale" value="es">
+                <input type="hidden" name="html_type" value="simple">
                 <div class="form-group">
                     <input type="text" id="nameApuntes" name="NAME" placeholder="Nombre completo" required>
                 </div>
@@ -779,7 +787,6 @@
                         <span>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</span>
                     </label>
                 </div>
-                <input type="hidden" name="locale" value="es">
                 <div class="privacy">Usamos Brevo como plataforma de marketing. Al enviar este formulario, aceptas que los datos personales que proporcionaste se transferirán a Brevo para su procesamiento, de acuerdo con la <a href="https://www.brevo.com/es/legal/privacypolicy/" target="_blank" style="color: var(--purple); text-decoration: underline;">Política de privacidad de Brevo</a>.</div>
                 <button type="submit" class="submit-button">
                     <i class="fas fa-download"></i> OBTENER APUNTES
@@ -803,7 +810,11 @@
                 ¡Registro exitoso! Te hemos enviado las herramientas a tu correo electrónico.
             </div>
             
-            <form id="toolsForm" class="simple-form" action="https://89dafa00.sibforms.com/serve/MUIFAKfe1RLQP09tD_EtoANYaq3H3dQkp9x1mPY3PulzK3d7iGBM9MSaPoQX-uZknUn114jZCyc0tE28_op3HnoNjma-9L_au3j-salRo4LUQE5vXthio7qEZazWL2opvTYGBHrCTmHe8vNvSk6DZosHT-6mL2WFjdcgYno-o3bhYztNVVC-6bHd1AW2H16X0w5jdWARDrLax5kh" method="POST">
+            <!-- Formulario para herramientas - usando iframe como solución alternativa -->
+            <iframe name="hiddenIframeTools" id="hiddenIframeTools" class="iframe-container"></iframe>
+            <form id="toolsForm" class="simple-form" action="https://89dafa00.sibforms.com/serve/MUIFAKfe1RLQP09tD_EtoANYaq3H3dQkp9x1mPY3PulzK3d7iGBM9MSaPoQX-uZknUn114jZCyc0tE28_op3HnoNjma-9L_au3j-salRo4LUQE5vXthio7qEZazWL2opvTYGBHrCTmHe8vNvSk6DZosHT-6mL2WFjdcgYno-o3bhYztNVVC-6bHd1AW2H16X0w5jdWARDrLax5kh" method="POST" target="hiddenIframeTools">
+                <input type="hidden" name="locale" value="es">
+                <input type="hidden" name="html_type" value="simple">
                 <div class="form-group">
                     <input type="text" id="nameTools" name="NAME" placeholder="Nombre completo" required>
                 </div>
@@ -828,7 +839,6 @@
                         <span>Marca esta casilla para recibir las herramientas gratis y comunicaciones sobre ciberseguridad.</span>
                     </label>
                 </div>
-                <input type="hidden" name="locale" value="es">
                 <div class="privacy">Usamos Brevo como plataforma de marketing. Al enviar este formulario, aceptas que los datos personales que proporcionaste se transferirán a Brevo para su procesamiento, de acuerdo con la <a href="https://www.brevo.com/es/legal/privacypolicy/" target="_blank" style="color: var(--yellow); text-decoration: underline;">Política de privacidad de Brevo</a>.</div>
                 <button type="submit" class="submit-button">
                     <i class="fas fa-download"></i> OBTENER HERRAMIENTAS
@@ -917,34 +927,6 @@
             errorMessageTools.style.display = 'none';
         }
 
-        // Handle form submission with fetch API
-        function handleFormSubmission(form, successMessage, errorMessage, formData) {
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    successMessage.style.display = 'block';
-                    errorMessage.style.display = 'none';
-                    form.style.display = 'none';
-                    
-                    // Close modal after 5 seconds
-                    setTimeout(closeModalFunc, 5000);
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting form:', error);
-                successMessage.style.display = 'none';
-                errorMessage.style.display = 'block';
-            });
-        }
-
         // Attach event listeners
         if (bookIcon) bookIcon.addEventListener('click', openFormModal);
         if (academyLink) {
@@ -1022,67 +1004,26 @@
             });
         }
 
-        if (apuntesForm) {
-            apuntesForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple validation
-                const name = document.getElementById('nameApuntes').value;
-                const email = document.getElementById('emailApuntes').value;
-                const interest = document.getElementById('interestApuntes').value;
-                const optin = document.getElementById('optinApuntes').checked;
-                
-                if (!name || !email || !interest || !optin) {
-                    errorMessageApuntes.style.display = 'block';
-                    successMessageApuntes.style.display = 'none';
-                    return;
-                }
-                
-                // Email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    errorMessageApuntes.textContent = 'Por favor, introduce una dirección de correo electrónico válida.';
-                    errorMessageApuntes.style.display = 'block';
-                    successMessageApuntes.style.display = 'none';
-                    return;
-                }
-                
-                // Submit form using FormData
-                const formData = new FormData(apuntesForm);
-                handleFormSubmission(apuntesForm, successMessageApuntes, errorMessageApuntes, formData);
-            });
-        }
+        // Configurar eventos para los iframes
+        document.getElementById('hiddenIframeApuntes').onload = function() {
+            // Cuando el iframe se carga (después del envío del formulario)
+            successMessageApuntes.style.display = 'block';
+            errorMessageApuntes.style.display = 'none';
+            apuntesForm.style.display = 'none';
+            
+            // Cerrar el modal después de 5 segundos
+            setTimeout(closeModalFunc, 5000);
+        };
 
-        if (toolsForm) {
-            toolsForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple validation
-                const name = document.getElementById('nameTools').value;
-                const email = document.getElementById('emailTools').value;
-                const interest = document.getElementById('interestTools').value;
-                const optin = document.getElementById('optinTools').checked;
-                
-                if (!name || !email || !interest || !optin) {
-                    errorMessageTools.style.display = 'block';
-                    successMessageTools.style.display = 'none';
-                    return;
-                }
-                
-                // Email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    errorMessageTools.textContent = 'Por favor, introduce una dirección de correo electrónico válida.';
-                    errorMessageTools.style.display = 'block';
-                    successMessageTools.style.display = 'none';
-                    return;
-                }
-                
-                // Submit form using FormData
-                const formData = new FormData(toolsForm);
-                handleFormSubmission(toolsForm, successMessageTools, errorMessageTools, formData);
-            });
-        }
+        document.getElementById('hiddenIframeTools').onload = function() {
+            // Cuando el iframe se carga (después del envío del formulario)
+            successMessageTools.style.display = 'block';
+            errorMessageTools.style.display = 'none';
+            toolsForm.style.display = 'none';
+            
+            // Cerrar el modal después de 5 segundos
+            setTimeout(closeModalFunc, 5000);
+        };
 
         // Animation for link cards
         document.addEventListener('DOMContentLoaded', function() {
@@ -1091,6 +1032,11 @@
                 card.style.opacity = '1';
             });
         });
+
+        // Para evitar que los correos lleguen a spam, es importante:
+        // 1. Configurar correctamente los DNS (SPF, DKIM, DMARC) en Brevo
+        // 2. Usar contenido que no active los filtros de spam
+        // 3. Mantener una buena reputación de envío
     </script>
 </body>
 </html>
