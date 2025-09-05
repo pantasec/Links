@@ -561,6 +561,25 @@
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
         }
 
+        .sib-form-message-panel {
+            text-align: center !important;
+            padding: 1rem !important;
+            color: var(--light) !important;
+            font-size: 0.9rem !important;
+        }
+
+        #error-message, #error-message-apuntes, #error-message-tools {
+            background: rgba(255, 0, 0, 0.2) !important;
+            border: 1px solid rgba(255, 0, 0, 0.5) !important;
+            border-radius: 6px !important;
+        }
+
+        #success-message, #success-message-apuntes, #success-message-tools {
+            background: rgba(0, 255, 0, 0.2) !important;
+            border: 1px solid rgba(0, 255, 0, 0.5) !important;
+            border-radius: 6px !important;
+        }
+
         .apuntes-modal .modal-content {
             border-color: var(--purple);
             max-width: 500px;
@@ -885,19 +904,18 @@
                     <h4 class="sib-form-block__title">¡Obtén tu descuento del 15%!</h4>
                     <p class="sib-form-block__description">Completa el formulario para acceder a la oferta exclusiva.</p>
                 </div>
-                <!-- Brevo Form -->
-                <div id="sib-form-container" class="sib-form-container">
-                    <div id="error-message" class="sib-form-message-panel" style="display: none;"></div>
-                    <div id="success-message" class="sib-form-message-panel" style="display: none;"></div>
-                    <form id="sib-form" name="sib-form" method="POST" action="https://app.brevo.com/contact/forms/subscription/68bb2328bb08e626a3693e50" data-type="subscription">
+                <div id="sib-form-container-discount" class="sib-form-container">
+                    <div id="error-message-discount" class="sib-form-message-panel" style="display: none;"></div>
+                    <div id="success-message-discount" class="sib-form-message-panel" style="display: none;">¡Registro exitoso! Te hemos enviado el código de descuento a tu correo electrónico. ¡Bienvenido a LionxSecurity!</div>
+                    <form id="sib-form-discount" name="sib-form" method="POST" action="https://app.brevo.com/contact/forms/subscription/68bb2328bb08e626a3693e50" data-type="subscription">
                         <div class="sib-input sib-form-block">
-                            <input type="text" name="NAME" id="NAME" placeholder="Nombre completo" required>
+                            <input type="text" name="NAME" id="NAME_DISCOUNT" placeholder="Nombre completo" required>
                         </div>
                         <div class="sib-input sib-form-block">
-                            <input type="email" name="EMAIL" id="EMAIL" placeholder="Correo electrónico" required>
+                            <input type="email" name="EMAIL" id="EMAIL_DISCOUNT" placeholder="Correo electrónico" required>
                         </div>
                         <div class="sib-select sib-form-block">
-                            <select name="INTERES" id="INTERES" required>
+                            <select name="INTERES" id="INTERES_DISCOUNT" required>
                                 <option value="" disabled selected>Selecciona tu área de interés</option>
                                 <option value="hacking-etico">Hacking Ético</option>
                                 <option value="redes">Redes</option>
@@ -956,11 +974,10 @@
                         <h4 class="sib-form-block__title">¡Obtén acceso inmediato!</h4>
                         <p class="sib-form-block__description">Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
                     </div>
-                    <!-- Brevo Form -->
                     <div id="sib-form-container-apuntes" class="sib-form-container">
-                        <div id="error-message-apuntes" class="sib-form-message-panel" style="display: none;"></div>
-                        <div id="success-message-apuntes" class="sib-form-message-panel" style="display: none;"></div>
-                        <form id="sib-form-apuntes" name="sib-form" method="POST" action="https://app.brevo.com/contact/forms/subscription/68bb2328bb08e626a3693e50" data-type="subscription">
+                        <div id="error-message-apuntes" class="sib-form-message-panel" style="display: none;">No hemos podido validar su suscripción.</div>
+                        <div id="success-message-apuntes" class="sib-form-message-panel" style="display: none;">Se ha realizado su suscripción.</div>
+                        <form id="sib-form-apuntes" name="sib-form" method="POST" action="https://89dafa00.sibforms.com/serve/MUIFAN4t9af7wkKxsZNMBq9x55hjFVsTvyLgDXRcyppNMJagT_kDq6GN6RxmQ5XF-Jxikqx1wgCmNGcIw26P0zcxg2mwtdHoLdjn7CueydV5gRMNnvNd8DpLYl_MuTl818QnfjdiKyop4FVDgXcAYIOughisw-MoFg3rErnHc86hBzSyNga9S8a0EilG4B26uvjUfYb40c-QIuL1" data-type="subscription">
                             <div class="sib-input sib-form-block">
                                 <input type="text" name="NAME" id="NAME_APUNTES" placeholder="Nombre completo" required>
                             </div>
@@ -986,7 +1003,7 @@
                                 </label>
                             </div>
                             <div class="sib-form-block">
-                                <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                                <p class="privacy">Usamos Brevo como plataforma de marketing. Al enviar este formulario, aceptas que los datos personales que proporcionaste se transferirán a Brevo para su procesamiento, de acuerdo con la <a href="https://www.brevo.com/es/legal/privacypolicy/" target="_blank" style="color: var(--purple); text-decoration: underline;">Política de privacidad de Brevo</a>.</p>
                             </div>
                             <div class="sib-form-block">
                                 <button class="sib-form-block__button" type="submit"><i class="fas fa-download"></i> Obtener Apuntes</button>
@@ -1028,11 +1045,10 @@
                         <h4 class="sib-form-block__title">¡Obtén acceso inmediato!</h4>
                         <p class="sib-form-block__description">Completa el formulario para recibir tus herramientas de hacking gratis.</p>
                     </div>
-                    <!-- Brevo Form -->
                     <div id="sib-form-container-tools" class="sib-form-container">
-                        <div id="error-message-tools" class="sib-form-message-panel" style="display: none;"></div>
-                        <div id="success-message-tools" class="sib-form-message-panel" style="display: none;"></div>
-                        <form id="sib-form-tools" name="sib-form" method="POST" action="https://app.brevo.com/contact/forms/subscription/68bb2328bb08e626a3693e50" data-type="subscription">
+                        <div id="error-message-tools" class="sib-form-message-panel" style="display: none;">No hemos podido validar su suscripción.</div>
+                        <div id="success-message-tools" class="sib-form-message-panel" style="display: none;">Se ha realizado su suscripción.</div>
+                        <form id="sib-form-tools" name="sib-form" method="POST" action="https://89dafa00.sibforms.com/serve/MUIFAKfe1RLQP09tD_EtoANYaq3H3dQkp9x1mPY3PulzK3d7iGBM9MSaPoQX-uZknUn114jZCyc0tE28_op3HnoNjma-9L_au3j-salRo4LUQE5vXthio7qEZazWL2opvTYGBHrCTmHe8vNvSk6DZosHT-6mL2WFjdcgYno-o3bhYztNVVC-6bHd1AW2H16X0w5jdWARDrLax5kh" data-type="subscription">
                             <div class="sib-input sib-form-block">
                                 <input type="text" name="NAME" id="NAME_TOOLS" placeholder="Nombre completo" required>
                             </div>
@@ -1058,7 +1074,7 @@
                                 </label>
                             </div>
                             <div class="sib-form-block">
-                                <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                                <p class="privacy">Usamos Brevo como plataforma de marketing. Al enviar este formulario, aceptas que los datos personales que proporcionaste se transferirán a Brevo para su procesamiento, de acuerdo con la <a href="https://www.brevo.com/es/legal/privacypolicy/" target="_blank" style="color: var(--yellow); text-decoration: underline;">Política de privacidad de Brevo</a>.</p>
                             </div>
                             <div class="sib-form-block">
                                 <button class="sib-form-block__button" type="submit"><i class="fas fa-download"></i> Obtener Herramientas</button>
@@ -1091,15 +1107,21 @@
         const hackingToolsModal = document.getElementById('hackingToolsModal');
         const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
 
-        // Reset form inputs
+        // Reset form inputs and messages
         function resetForm(modalId, formId) {
             const modal = document.getElementById(modalId);
-            const form = modal.querySelector(`#${formId}`);
-            const successMessage = modal.querySelector(`#success-message${formId.includes('apuntes') ? '-apuntes' : formId.includes('tools') ? '-tools' : ''}`);
-            const errorMessage = modal.querySelector(`#error-message${formId.includes('apuntes') ? '-apuntes' : formId.includes('tools') ? '-tools' : ''}`);
-            if (form) form.reset();
-            if (successMessage) successMessage.style.display = 'none';
-            if (errorMessage) errorMessage.style.display = 'none';
+            const form = document.getElementById(formId);
+            const successMessage = document.getElementById(`success-message${modalId.includes('apuntes') ? '-apuntes' : modalId.includes('tools') ? '-tools' : '-discount'}`);
+            const errorMessage = document.getElementById(`error-message${modalId.includes('apuntes') ? '-apuntes' : modalId.includes('tools') ? '-tools' : '-discount'}`);
+            if (form && typeof form.reset === 'function') {
+                form.reset();
+            }
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
         }
 
         // Open discount modal
@@ -1109,7 +1131,7 @@
                 apuntesModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('formModal', 'sib-form');
+                resetForm('formModal', 'sib-form-discount');
             }
         }
 
@@ -1142,7 +1164,7 @@
                 apuntesModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
-                resetForm('formModal', 'sib-form');
+                resetForm('formModal', 'sib-form-discount');
                 resetForm('apuntesModal', 'sib-form-apuntes');
                 resetForm('hackingToolsModal', 'sib-form-tools');
             }
@@ -1186,6 +1208,52 @@
                 if (e.target === hackingToolsModal) closeModalFunc();
             });
         }
+
+        // Form submission handling
+        function handleFormSubmission(formId, successMessageId, errorMessageId) {
+            const form = document.getElementById(formId);
+            const successMessage = document.getElementById(successMessageId);
+            const errorMessage = document.getElementById(errorMessageId);
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            if (successMessage) {
+                                successMessage.style.display = 'block';
+                                form.style.display = 'none';
+                                setTimeout(closeModalFunc, 5000); // Close modal after 5 seconds
+                            }
+                        } else {
+                            if (errorMessage) {
+                                errorMessage.textContent = 'No hemos podido validar su suscripción.';
+                                errorMessage.style.display = 'block';
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        if (errorMessage) {
+                            errorMessage.textContent = 'No hemos podido validar su suscripción.';
+                            errorMessage.style.display = 'block';
+                        }
+                        console.error('Form submission error:', error);
+                    });
+                });
+            }
+        }
+
+        // Initialize form submission handlers
+        handleFormSubmission('sib-form-discount', 'success-message-discount', 'error-message-discount');
+        handleFormSubmission('sib-form-apuntes', 'success-message-apuntes', 'error-message-apuntes');
+        handleFormSubmission('sib-form-tools', 'success-message-tools', 'error-message-tools');
     </script>
     <script async src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
