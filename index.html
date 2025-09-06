@@ -503,31 +503,6 @@
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
-        .form-container .form-success {
-            text-align: center;
-            padding: 2rem;
-            display: none;
-        }
-
-        .form-container .form-success h4 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .form-container .form-success p {
-            color: var(--light);
-            opacity: 0.9;
-        }
-
-        .form-container .form-error {
-            text-align: center;
-            padding: 1rem;
-            display: none;
-            color: #ff4444;
-            font-size: 0.9rem;
-        }
-
         .apuntes-modal .modal-content {
             border-color: var(--purple);
             max-width: 500px;
@@ -568,10 +543,6 @@
             box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
         }
 
-        .apuntes-modal .form-container .form-success h4 {
-            color: var(--purple);
-        }
-
         .hacking-tools-modal .modal-content {
             border-color: var(--yellow);
             max-width: 500px;
@@ -610,10 +581,6 @@
         .hacking-tools-modal .form-container .btn-primary:hover {
             background-color: #ffca28;
             box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
-        }
-
-        .hacking-tools-modal .form-container .form-success h4 {
-            color: var(--yellow);
         }
 
         .features {
@@ -837,7 +804,7 @@
                     <h4>¡Obtén tu descuento del 15%!</h4>
                     <p>Completa el formulario para acceder a la oferta exclusiva.</p>
                 </div>
-                <form class="form" id="discountForm" action="https://eocampaign1.com/web-form/6678d19e-8b1f-11f0-808e-af63b4293a21" method="post" target="_blank">
+                <form class="form" action="https://emailoctopus.com/forms/6678d19e-8b1f-11f0-808e-af63b4293a21/subscribe" method="post" target="_blank">
                     <div class="form-content">
                         <div class="form-field">
                             <input aria-label="email" type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -858,10 +825,6 @@
                         <button type="submit" class="btn-primary"><i class="fas fa-percentage"></i> QUIERO MI DESCUENTO</button>
                     </div>
                 </form>
-                <div class="form-success" style="display: none">
-                    <h4>¡Registro exitoso!</h4>
-                    <p>Te hemos enviado el código de descuento a tu correo electrónico. ¡Bienvenido a LionxSecurity!</p>
-                </div>
             </div>
         </div>
     </div>
@@ -894,7 +857,7 @@
                         <h4>¡Obtén acceso inmediato!</h4>
                         <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
                     </div>
-                    <form class="form" id="apuntesForm" action="https://eocampaign1.com/web-form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55" method="post" target="_blank">
+                    <form class="form" action="https://emailoctopus.com/forms/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55/subscribe" method="post" target="_blank">
                         <div class="form-content">
                             <div class="form-field">
                                 <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -915,10 +878,6 @@
                             <button type="submit" class="btn-primary"><i class="fas fa-download"></i> Obtener Apuntes</button>
                         </div>
                     </form>
-                    <div class="form-success" style="display: none">
-                        <h4>¡Solicitud exitosa!</h4>
-                        <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -952,7 +911,7 @@
                         <h4>¡Obtén acceso inmediato!</h4>
                         <p>Completa el formulario para recibir tus herramientas de hacking gratis.</p>
                     </div>
-                    <form class="form" id="hackingToolsForm" action="https://eocampaign1.com/web-form/baf22084-8b3a-11f0-93d9-af63b4293a21" method="post" target="_blank">
+                    <form class="form" action="https://emailoctopus.com/forms/baf22084-8b3a-11f0-93d9-af63b4293a21/subscribe" method="post" target="_blank">
                         <div class="form-content">
                             <div class="form-field">
                                 <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -973,10 +932,6 @@
                             <button type="submit" class="btn-primary"><i class="fas fa-download"></i> Obtener Herramientas</button>
                         </div>
                     </form>
-                    <div class="form-success" style="display: none">
-                        <h4>¡Solicitud exitosa!</h4>
-                        <p>Revisa tu correo electrónico para descargar tus herramientas de hacking gratis. ¡Gracias por unirte a LionxSecurity!</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -995,16 +950,12 @@
         const hackingToolsModal = document.getElementById('hackingToolsModal');
         const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
 
-        // Reset form inputs and hide success/error messages
+        // Reset form inputs
         function resetForm(modalId, formContainerId) {
             const modal = document.getElementById(modalId);
             if (!modal) return;
             const form = modal.querySelector('form');
-            const successBody = modal.querySelector(`#${formContainerId} .form-success`);
-            const formBody = modal.querySelector(`#${formContainerId} .form-content`);
             if (form) form.reset();
-            if (successBody) successBody.style.display = 'none';
-            if (formBody) formBody.style.display = 'block';
         }
 
         // Open discount modal
