@@ -451,7 +451,6 @@
             font-size: 1.5rem;
         }
 
-        /* Estilos mejorados para formularios EmailOctopus */
         .eo-form-container {
             width: 100% !important;
             max-width: 100% !important;
@@ -506,6 +505,16 @@
             border: 1px solid rgba(255, 122, 0, 0.3);
         }
 
+        .apuntes-modal .eo-form-checkbox {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .hacking-tools-modal .eo-form-checkbox {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
         .eo-form-checkbox input {
             margin-top: 0.2rem;
         }
@@ -539,21 +548,22 @@
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
         }
 
-        .eo-form-success {
-            text-align: center;
-            padding: 2rem;
+        .apuntes-modal .eo-form-button {
+            background-color: var(--purple) !important;
         }
 
-        .eo-form-success h4 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .apuntes-modal .eo-form-button:hover {
+            background-color: #9932CC !important;
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3) !important;
         }
 
-        .eo-form-success p {
-            color: var(--light);
-            opacity: 0.9;
-            line-height: 1.5;
+        .hacking-tools-modal .eo-form-button {
+            background-color: var(--yellow) !important;
+        }
+
+        .hacking-tools-modal .eo-form-button:hover {
+            background-color: #ffca28 !important;
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3) !important;
         }
 
         .form-description {
@@ -577,20 +587,6 @@
             box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2) !important;
         }
 
-        .apuntes-modal .eo-form-checkbox {
-            background: rgba(138, 43, 226, 0.1);
-            border: 1px solid rgba(138, 43, 226, 0.3);
-        }
-
-        .apuntes-modal .eo-form-button {
-            background-color: var(--purple) !important;
-        }
-
-        .apuntes-modal .eo-form-button:hover {
-            background-color: #9932CC !important;
-            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3) !important;
-        }
-
         .hacking-tools-modal .modal-content {
             border-color: var(--yellow);
         }
@@ -604,91 +600,11 @@
             box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
         }
 
-        .hacking-tools-modal .eo-form-checkbox {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-        }
-
-        .hacking-tools-modal .eo-form-button {
-            background-color: var(--yellow) !important;
-        }
-
-        .hacking-tools-modal .eo-form-button:hover {
-            background-color: #ffca28 !important;
-            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3) !important;
-        }
-
-        .features {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin: 1rem 0;
-            justify-content: center;
-        }
-
-        .feature {
-            flex: 1 1 200px;
-            background: rgba(138, 43, 226, 0.1);
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .hacking-tools-modal .feature {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-        }
-
-        .feature:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
-        }
-
-        .hacking-tools-modal .feature:hover {
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
-        }
-
-        .feature-icon {
-            font-size: 1.8rem;
-            color: var(--purple);
-            margin-bottom: 0.5rem;
-        }
-
-        .hacking-tools-modal .feature-icon {
-            color: var(--yellow);
-        }
-
-        .feature-title {
-            color: var(--purple);
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hacking-tools-modal .feature-title {
-            color: var(--yellow);
-        }
-
-        .feature-desc {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            line-height: 1.4;
-            color: var(--light);
-        }
-
         @media (max-width: 768px) {
             .apuntes-modal .modal-content,
             .hacking-tools-modal .modal-content {
                 padding: 1rem;
                 max-width: 95%;
-            }
-            .features {
-                flex-direction: column;
-            }
-            .feature {
-                padding: 0.8rem;
             }
             .eo-form-input {
                 padding: 0.7rem 0.9rem !important;
@@ -823,24 +739,7 @@
     <div class="modal-overlay apuntes-modal" id="apuntesModal">
         <div class="modal-content">
             <span class="close-modal" id="closeApuntesModal">×</span>
-            <h3 class="modal-title">LionxSecurity</h3>
-            <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 15px;">APUNTES GRATIS DE CIBERSEGURIDAD</p>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3 class="feature-title">Teoría Completa</h3>
-                    <p class="feature-desc">Conceptos fundamentales explicados de forma clara y práctica</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3 class="feature-title">Laboratorios</h3>
-                    <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
-                </div>
-            </div>
+            <h3 class="modal-title">Apuntes Gratis de Ciberseguridad</h3>
             <p class="form-description">Introduce tu email para recibir los apuntes gratis de ciberseguridad.</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55.js" data-form="a29ac8e2-8b3a-11f0-b213-f7de3fefbf55"></script>
@@ -851,24 +750,7 @@
     <div class="modal-overlay hacking-tools-modal" id="hackingToolsModal">
         <div class="modal-content">
             <span class="close-modal" id="closeHackingToolsModal">×</span>
-            <h3 class="modal-title">LionxSecurity</h3>
-            <p class="tagline" style="text-align: center; margin-top: -10px; margin-bottom: 15px;">HERRAMIENTAS DE HACKING GRATIS</p>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="feature-title">Herramientas Esenciales</h3>
-                    <p class="feature-desc">Accede a una lista curada de herramientas para hacking ético</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="feature-title">Guías Prácticas</h3>
-                    <p class="feature-desc">Instrucciones para usar herramientas de forma segura y efectiva</p>
-                </div>
-            </div>
+            <h3 class="modal-title">Herramientas de Hacking Gratis</h3>
             <p class="form-description">Introduce tu email para recibir las herramientas de hacking gratis.</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
@@ -936,77 +818,94 @@
         }
 
         // Attach event listeners
-        if (bookIcon) bookIcon.addEventListener('click', openFormModal);
+        if (bookIcon) {
+            bookIcon.addEventListener('click', openFormModal);
+        }
+
         if (academyLink) {
             academyLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 openFormModal();
             });
         }
+
         if (freeNotesButton) {
             freeNotesButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 openApuntesModal();
             });
         }
+
         if (hackingToolsButton) {
             hackingToolsButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 openHackingToolsModal();
             });
         }
-        if (closeModal) closeModal.addEventListener('click', closeModalFunc);
-        if (closeApuntesModal) closeApuntesModal.addEventListener('click', closeModalFunc);
-        if (closeHackingToolsModal) closeHackingToolsModal.addEventListener('click', closeModalFunc);
-        if (formModal) {
-            formModal.addEventListener('click', (e) => {
-                if (e.target === formModal) closeModalFunc();
-            });
-        }
-        if (apuntesModal) {
-            apuntesModal.addEventListener('click', (e) => {
-                if (e.target === apuntesModal) closeModalFunc();
-            });
-        }
-        if (hackingToolsModal) {
-            hackingToolsModal.addEventListener('click', (e) => {
-                if (e.target === hackingToolsModal) closeModalFunc();
-            });
+
+        if (closeModal) {
+            closeModal.addEventListener('click', closeModalFunc);
         }
 
-        // Wait for EmailOctopus forms to load and apply custom styles
-        function styleEmailOctopusForms() {
-            setTimeout(() => {
-                document.querySelectorAll('.emailoctopus-form-row').forEach(row => {
-                    row.classList.add('eo-form-row');
-                });
-                
-                document.querySelectorAll('.emailoctopus-form-row input[type="email"]').forEach(input => {
-                    input.classList.add('eo-form-input');
-                    input.placeholder = "Tu correo electrónico";
-                });
-                
-                document.querySelectorAll('.emailoctopus-form-row-checkbox').forEach(checkbox => {
-                    checkbox.classList.add('eo-form-checkbox');
-                });
-                
-                document.querySelectorAll('.emailoctopus-form-row button').forEach(button => {
-                    button.classList.add('eo-form-button');
-                });
-            }, 1000);
+        if (closeApuntesModal) {
+            closeApuntesModal.addEventListener('click', closeModalFunc);
         }
 
-        // Run styling function when page loads
-        document.addEventListener('DOMContentLoaded', styleEmailOctopusForms);
-        
-        // Also run when modals are opened
-        const modalTriggers = [bookIcon, academyLink, freeNotesButton, hackingToolsButton];
-        modalTriggers.forEach(trigger => {
-            if (trigger) {
-                trigger.addEventListener('click', () => {
-                    setTimeout(styleEmailOctopusForms, 500);
+        if (closeHackingToolsModal) {
+            closeHackingToolsModal.addEventListener('click', closeModalFunc);
+        }
+
+        // Close modals when clicking outside the modal content
+        [formModal, apuntesModal, hackingToolsModal].forEach(modal => {
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModalFunc();
+                    }
                 });
             }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModalFunc();
+            }
+        });
+
+        // Ensure EmailOctopus forms are properly styled and centered after loading
+        document.addEventListener('DOMContentLoaded', () => {
+            const eoForms = document.querySelectorAll('.eo-form-container');
+            eoForms.forEach(form => {
+                form.style.display = 'flex';
+                form.style.flexDirection = 'column';
+                form.style.alignItems = 'center';
+                form.style.width = '100%';
+                form.style.maxWidth = '100%';
+
+                const observer = new MutationObserver(() => {
+                    const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
+                    const buttons = form.querySelectorAll('button[type="submit"]');
+                    const checkboxes = form.querySelectorAll('input[type="checkbox"] + label');
+                    
+                    inputs.forEach(input => {
+                        input.classList.add('eo-form-input');
+                    });
+
+                    buttons.forEach(button => {
+                        button.classList.add('eo-form-button');
+                    });
+
+                    checkboxes.forEach(checkbox => {
+                        const parent = checkbox.parentElement;
+                        if (parent) {
+                            parent.classList.add('eo-form-checkbox');
+                        }
+                    });
+                });
+
+                observer.observe(form, { childList: true, subtree: true });
+            });
         });
     </script>
 </body>
