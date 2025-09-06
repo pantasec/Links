@@ -877,34 +877,45 @@
         document.addEventListener('DOMContentLoaded', () => {
             const eoForms = document.querySelectorAll('.eo-form-container');
             eoForms.forEach(form => {
+                if (!form) return; // Skip if form container is not found
                 form.style.display = 'flex';
                 form.style.flexDirection = 'column';
                 form.style.alignItems = 'center';
                 form.style.width = '100%';
                 form.style.maxWidth = '100%';
 
-                const observer = new MutationObserver(() => {
-                    const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
-                    const buttons = form.querySelectorAll('button[type="submit"]');
-                    const checkboxes = form.querySelectorAll('input[type="checkbox"] + label');
-                    
-                    inputs.forEach(input => {
-                        input.classList.add('eo-form-input');
+                // Retry observing if form content isn't loaded yet
+                const observeForm = () => {
+                    if (!form.isConnected) return; // Skip if form is no longer in DOM
+                    const observer = new MutationObserver(() => {
+                        const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
+                        const buttons = form.querySelectorAll('button[type="submit"]');
+                        const checkboxes = form.querySelectorAll('input[type="checkbox"] + label');
+
+                        inputs.forEach(input => {
+                            input.classList.add('eo-form-input');
+                        });
+
+                        buttons.forEach(button => {
+                            button.classList.add('eo-form-button');
+                        });
+
+                        checkboxes.forEach(checkbox => {
+                            const parent = checkbox.parentElement;
+                            if (parent) {
+                                parent.classList.add('eo-form-checkbox');
+                            }
+                        });
                     });
 
-                    buttons.forEach(button => {
-                        button.classList.add('eo-form-button');
-                    });
+                    observer.observe(form, { childList: true, subtree: true });
+                };
 
-                    checkboxes.forEach(checkbox => {
-                        const parent = checkbox.parentElement;
-                        if (parent) {
-                            parent.classList.add('eo-form-checkbox');
-                        }
-                    });
-                });
+                // Initial attempt to observe
+                observeForm();
 
-                observer.observe(form, { childList: true, subtree: true });
+                // Retry after a delay if form content isn't loaded
+                setTimeout(observeForm, 1000); // Retry after 1 second
             });
         });
     </script>
