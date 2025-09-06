@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Brevo Styles -->
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
     <style>
         :root {
             --primary: #FF7A00;
@@ -329,43 +331,6 @@
             border: none;
         }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .tagline { font-size: 1rem; }
-            .link-card { padding: 1rem; flex-direction: column; text-align: center; }
-            .link-icon { width: 40px; height: 40px; margin-right: 0; margin-bottom: 0.8rem; }
-            .link-icon i { font-size: 1.2rem; }
-            .link-text { margin-right: 0; margin-bottom: 0.8rem; }
-            .course-button { padding: 0.7rem 1rem; font-size: 0.85rem; }
-            .tools-box { padding: 1rem; }
-            .tools-buttons { flex-direction: column; gap: 0.6rem; }
-            .tool-button { padding: 0.7rem; font-size: 0.9rem; }
-            #background-video { display: none; }
-            .podcast-embed iframe { height: 132px; }
-            .floating-book { width: 50px; height: 50px; bottom: 20px; right: 20px; }
-            .floating-book i { font-size: 20px; }
-            .modal-content { padding: 1.5rem; }
-            .modal-title { font-size: 1.3rem; }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .link-card:nth-child(1) { animation-delay: 0.1s; }
-        .link-card:nth-child(2) { animation-delay: 0.2s; }
-        .link-card:nth-child(3) { animation-delay: 0.3s; }
-        .link-card:nth-child(4) { animation-delay: 0.4s; }
-        .link-card:nth-child(5) { animation-delay: 0.5s; }
-        .link-card:nth-child(6) { animation-delay: 0.6s; }
-        .link-card:nth-child(7) { animation-delay: 0.7s; }
-
         .floating-book {
             position: fixed;
             bottom: 30px;
@@ -451,245 +416,249 @@
             font-size: 1.5rem;
         }
 
-        /* Estilos para formularios de Brevo */
-        .brevo-form-container {
-            width: 100% !important;
-            max-width: 100% !important;
-        }
-
-        .brevo-form-wrapper {
+        /* Brevo Form Custom Styles */
+        .sib-form {
             background-color: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
             padding: 0 !important;
+            font-family: 'IBM Plex Mono', monospace !important;
         }
 
-        .brevo-form-body {
-            padding: 0 !important;
+        .sib-form-container {
+            max-width: 100% !important;
+            width: 100% !important;
         }
 
-        .brevo-form-content h4 {
+        .sib-form-message-panel {
+            font-size: 0.9rem !important;
+            font-family: 'IBM Plex Mono', monospace !important;
             color: var(--light) !important;
+            background-color: rgba(255, 122, 0, 0.1) !important;
+            border-color: var(--primary) !important;
+            border-radius: 6px !important;
+            padding: 0.8rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .sib-form-message-panel__inner-text {
+            color: var(--light) !important;
+        }
+
+        #error-message {
+            background-color: rgba(255, 75, 75, 0.2) !important;
+            border-color: #ff4949 !important;
+        }
+
+        #success-message {
+            background-color: rgba(138, 43, 226, 0.2) !important;
+            border-color: var(--purple) !important;
+        }
+
+        .sib-container {
+            background-color: transparent !important;
+            border: 1px solid var(--grey) !important;
+            border-radius: 6px !important;
+            padding: 1rem !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            backdrop-filter: blur(5px) !important;
+        }
+
+        .sib-form-block {
+            font-family: 'IBM Plex Mono', monospace !important;
+            color: var(--light) !important;
+        }
+
+        .sib-form-block p {
             font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            color: var(--light) !important;
             margin-bottom: 0.5rem !important;
         }
 
-        .brevo-form-content p {
-            color: var(--light) !important;
-            opacity: 0.8;
-            margin-bottom: 1.5rem !important;
-        }
-
-        .brevo-form-field input {
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid var(--grey) !important;
-            color: var(--light) !important;
-            padding: 0.6rem 0.8rem !important;
-            margin-bottom: 1rem !important;
-            width: 100% !important;
-            border-radius: 6px !important;
-            transition: var(--transition);
-            font-size: 0.9rem !important;
-            height: 36px !important;
-            font-family: 'IBM Plex Mono', monospace !important;
-        }
-
-        .brevo-form-field select {
-            background-color: var(--dark) !important;
-            border: 1px solid var(--grey) !important;
-            color: var(--light) !important;
-            padding: 0.6rem 0.8rem !important;
-            margin-bottom: 1rem !important;
-            width: 100% !important;
-            border-radius: 6px !important;
-            transition: var(--transition);
-            appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FF7A00"><path d="M8 11L3 6h10z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            background-size: 16px;
-            font-size: 0.9rem !important;
-            height: 36px !important;
-            font-family: 'IBM Plex Mono', monospace !important;
-        }
-
-        .brevo-form-field select option {
-            background-color: var(--dark) !important;
-            color: var(--light) !important;
-        }
-
-        .brevo-form-field input:focus, .brevo-form-field select:focus {
-            border-color: var(--primary) !important;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2) !important;
-        }
-
-        .brevo-form-field input::placeholder, .brevo-form-field select::placeholder {
-            color: rgba(245, 245, 245, 0.6) !important;
-        }
-
-        .brevo-form-checkbox {
-            margin: 1rem 0 !important;
-            padding: 0.8rem !important;
-            background: rgba(255, 122, 0, 0.1) !important;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 122, 0, 0.3);
-        }
-
-        .brevo-form-checkbox label {
-            color: var(--light) !important;
+        .sib-text-form-block p {
             font-size: 0.85rem !important;
-            line-height: 1.5 !important;
+            font-weight: 400 !important;
+            opacity: 0.8 !important;
+            margin-bottom: 1rem !important;
         }
 
-        .brevo-form-submit button {
+        .entry__label {
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            color: var(--light) !important;
+            margin-bottom: 0.4rem !important;
+        }
+
+        .entry__field input, .entry__field select {
+            background-color: rgba(38, 38, 38, 0.9) !important;
+            border: 1px solid var(--grey) !important;
+            color: var(--light) !important;
+            padding: 0.6rem 0.8rem !important;
+            border-radius: 6px !important;
+            font-size: 0.9rem !important;
+            font-family: 'IBM Plex Mono', monospace !important;
+            width: 100% !important;
+            height: 38px !important;
+            transition: var(--transition) !important;
+        }
+
+        .entry__field select {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FF7A00"><path d="M8 11L3 6h10z"/></svg>') !important;
+            background-repeat: no-repeat !important;
+            background-position: right 12px center !important;
+            background-size: 16px !important;
+            appearance: none !important;
+        }
+
+        .entry__field input:focus, .entry__field select:focus {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2) !important;
+            outline: none !important;
+            background-color: rgba(50, 50, 50, 0.9) !important;
+        }
+
+        .entry__field input::placeholder {
+            color: rgba(245, 245, 245, 0.7) !important;
+        }
+
+        .entry__error {
+            font-size: 0.85rem !important;
+            color: var(--light) !important;
+            background-color: rgba(255, 75, 75, 0.2) !important;
+            border-color: #ff4949 !important;
+            padding: 0.4rem !important;
+            border-radius: 4px !important;
+        }
+
+        .entry__specification {
+            font-size: 0.75rem !important;
+            color: var(--light) !important;
+            opacity: 0.7 !important;
+        }
+
+        .sib-form-block__button {
             background-color: var(--primary) !important;
-            border: none !important;
             color: var(--dark) !important;
             font-weight: 700 !important;
             padding: 0.8rem 1.2rem !important;
-            width: 100% !important;
             border-radius: 6px !important;
-            transition: var(--transition) !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
-            cursor: pointer;
             font-size: 0.9rem !important;
+            border: none !important;
+            transition: var(--transition) !important;
+            width: 100% !important;
+            cursor: pointer !important;
         }
 
-        .brevo-form-submit button:hover {
+        .sib-form-block__button:hover {
             background-color: #ff8a00 !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
         }
 
-        .brevo-form-success {
-            text-align: center !important;
-            padding: 2rem !important;
-            display: none;
+        .sib-form-block__button-with-loader .sib-form-block__button-loader {
+            border-color: var(--dark) transparent transparent transparent !important;
         }
 
-        .brevo-form-success h4 {
-            color: var(--primary) !important;
-            font-size: 1.5rem !important;
-            margin-bottom: 1rem !important;
+        .sib-optin .entry__choice label {
+            display: flex !important;
+            align-items: center !important;
+            background: rgba(255, 122, 0, 0.1) !important;
+            border: 1px solid rgba(255, 122, 0, 0.3) !important;
+            border-radius: 6px !important;
+            padding: 0.8rem !important;
         }
 
-        .brevo-form-success p {
+        .sib-optin .entry__choice span {
+            font-size: 0.85rem !important;
             color: var(--light) !important;
-            opacity: 0.9;
+            line-height: 1.5 !important;
         }
 
+        .sib-form__declaration {
+            font-size: 0.75rem !important;
+            color: var(--light) !important;
+            opacity: 0.7 !important;
+            text-align: center !important;
+            margin-top: 1rem !important;
+        }
+
+        .sib-form__declaration a {
+            color: var(--primary) !important;
+        }
+
+        /* Apuntes Modal Styles */
         .apuntes-modal .modal-content {
             border-color: var(--purple);
-            max-width: 500px;
-            padding: 1.2rem;
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         .apuntes-modal .modal-title {
             color: var(--purple);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
 
-        .apuntes-modal .tagline {
-            color: var(--purple);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .apuntes-modal .brevo-form-field select {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>');
-            background-color: var(--dark) !important;
-            color: var(--light) !important;
-        }
-
-        .apuntes-modal .brevo-form-field select option {
-            background-color: var(--dark) !important;
-            color: var(--light) !important;
-        }
-
-        .apuntes-modal .brevo-form-field input:focus,
-        .apuntes-modal .brevo-form-field select:focus {
-            border-color: var(--purple) !important;
-            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2) !important;
-        }
-
-        .apuntes-modal .brevo-form-checkbox {
-            background: rgba(138, 43, 226, 0.1) !important;
-            border: 1px solid rgba(138, 43, 226, 0.3);
-        }
-
-        .apuntes-modal .brevo-form-submit button {
+        .apuntes-modal .sib-form-block__button {
             background-color: var(--purple) !important;
         }
 
-        .apuntes-modal .brevo-form-submit button:hover {
+        .apuntes-modal .sib-form-block__button:hover {
             background-color: #9932CC !important;
             box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3) !important;
         }
 
-        .apuntes-modal .brevo-form-success h4 {
-            color: var(--purple) !important;
+        .apuntes-modal .entry__field select {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>') !important;
         }
 
+        .apuntes-modal .entry__field input:focus, .apuntes-modal .entry__field select:focus {
+            border-color: var(--purple) !important;
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2) !important;
+        }
+
+        .apuntes-modal .sib-optin .entry__choice label {
+            background: rgba(138, 43, 226, 0.1) !important;
+            border: 1px solid rgba(138, 43, 226, 0.3) !important;
+        }
+
+        .apuntes-modal #success-message {
+            background-color: rgba(138, 43, 226, 0.2) !important;
+            border-color: var(--purple) !important;
+        }
+
+        /* Hacking Tools Modal Styles */
         .hacking-tools-modal .modal-content {
             border-color: var(--yellow);
-            max-width: 500px;
-            padding: 1.2rem;
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         .hacking-tools-modal .modal-title {
             color: var(--yellow);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
 
-        .hacking-tools-modal .tagline {
-            color: var(--yellow);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .hacking-tools-modal .brevo-form-field select {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFC107"><path d="M8 11L3 6h10z"/></svg>');
-            background-color: var(--dark) !important;
-            color: var(--light) !important;
-        }
-
-        .hacking-tools-modal .brevo-form-field select option {
-            background-color: var(--dark) !important;
-            color: var(--light) !important;
-        }
-
-        .hacking-tools-modal .brevo-form-field input:focus,
-        .hacking-tools-modal .brevo-form-field select:focus {
-            border-color: var(--yellow) !important;
-            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
-        }
-
-        .hacking-tools-modal .brevo-form-checkbox {
-            background: rgba(255, 193, 7, 0.1) !important;
-            border: 1px solid rgba(255, 193, 7, 0.3);
-        }
-
-        .hacking-tools-modal .brevo-form-submit button {
+        .hacking-tools-modal .sib-form-block__button {
             background-color: var(--yellow) !important;
         }
 
-        .hacking-tools-modal .brevo-form-submit button:hover {
+        .hacking-tools-modal .sib-form-block__button:hover {
             background-color: #ffca28 !important;
             box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3) !important;
         }
 
-        .hacking-tools-modal .brevo-form-success h4 {
-            color: var(--yellow) !important;
+        .hacking-tools-modal .entry__field select {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFC107"><path d="M8 11L3 6h10z"/></svg>') !important;
+        }
+
+        .hacking-tools-modal .entry__field input:focus, .hacking-tools-modal .entry__field select:focus {
+            border-color: var(--yellow) !important;
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
+        }
+
+        .hacking-tools-modal .sib-optin .entry__choice label {
+            background: rgba(255, 193, 7, 0.1) !important;
+            border: 1px solid rgba(255, 193, 7, 0.3) !important;
+        }
+
+        .hacking-tools-modal #success-message {
+            background-color: rgba(255, 193, 7, 0.2) !important;
+            border-color: var(--yellow) !important;
         }
 
         .features {
@@ -780,74 +749,6 @@
             color: var(--yellow);
         }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-            color: var(--light);
-            font-size: 0.9rem;
-        }
-
-        .form-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #333;
-            border-radius: 6px;
-            padding: 0.6rem 0.8rem;
-            color: var(--light);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.9rem;
-            height: 36px;
-            transition: var(--transition);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--purple);
-            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
-        }
-
-        .hacking-tools-modal .form-input:focus {
-            border-color: var(--yellow);
-            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3);
-        }
-
-        .btn {
-            background-color: var(--purple);
-            color: white;
-            font-weight: 700;
-            padding: 0.8rem 1.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            background-color: #9932CC;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
-        }
-
-        .hacking-tools-modal .btn {
-            background-color: var(--yellow);
-        }
-
-        .hacking-tools-modal .btn:hover {
-            background-color: #ffca28;
-            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
-        }
-
         .privacy {
             font-size: 0.75rem;
             opacity: 0.7;
@@ -857,21 +758,52 @@
         }
 
         @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .tagline { font-size: 1rem; }
+            .link-card { padding: 1rem; flex-direction: column; text-align: center; }
+            .link-icon { width: 40px; height: 40px; margin-right: 0; margin-bottom: 0.8rem; }
+            .link-icon i { font-size: 1.2rem; }
+            .link-text { margin-right: 0; margin-bottom: 0.8rem; }
+            .course-button { padding: 0.7rem 1rem; font-size: 0.85rem; }
+            .tools-box { padding: 1rem; }
+            .tools-buttons { flex-direction: column; gap: 0.6rem; }
+            .tool-button { padding: 0.7rem; font-size: 0.9rem; }
+            #background-video { display: none; }
+            .podcast-embed iframe { height: 132px; }
+            .floating-book { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .floating-book i { font-size: 20px; }
+            .modal-content { padding: 1.5rem; }
+            .modal-title { font-size: 1.3rem; }
             .apuntes-modal .modal-content,
-            .hacking-tools-modal .modal-content {
-                padding: 1rem;
-                max-width: 95%;
-            }
-            .features {
-                flex-direction: column;
-            }
-            .feature {
-                padding: 0.8rem;
-            }
-            .form-box {
-                padding: 1rem;
-            }
+            .hacking-tools-modal .modal-content { padding: 1rem; max-width: 95%; }
+            .features { flex-direction: column; }
+            .feature { padding: 0.8rem; }
+            .form-box { padding: 1rem; }
+            .sib-form-block p { font-size: 1rem !important; }
+            .sib-text-form-block p { font-size: 0.8rem !important; }
+            .entry__label { font-size: 0.85rem !important; }
+            .entry__field input, .entry__field select { font-size: 0.85rem !important; height: 34px !important; }
+            .sib-form-block__button { font-size: 0.85rem !important; padding: 0.7rem 1rem !important; }
+            .sib-optin .entry__choice span { font-size: 0.8rem !important; }
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .link-card:nth-child(1) { animation-delay: 0.1s; }
+        .link-card:nth-child(2) { animation-delay: 0.2s; }
+        .link-card:nth-child(3) { animation-delay: 0.3s; }
+        .link-card:nth-child(4) { animation-delay: 0.4s; }
+        .link-card:nth-child(5) { animation-delay: 0.5s; }
+        .link-card:nth-child(6) { animation-delay: 0.6s; }
+        .link-card:nth-child(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
@@ -990,46 +922,125 @@
             <span class="close-modal" id="closeModal">×</span>
             <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
             <p style="text-align: center; margin-bottom: 1.5rem; color: var(--light); opacity: 0.9;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético (solo para los primeros 100 registrados).</p>
-            <div class="brevo-form-container" id="brevo-discount-form">
-                <div class="brevo-form-wrapper">
-                    <div class="brevo-form-body">
-                        <div class="brevo-form-content">
-                            <h4>¡Obtén tu descuento del 15%!</h4>
-                            <p>Completa el formulario para acceder a la oferta exclusiva.</p>
+            <div class="sib-form">
+                <div id="sib-form-container" class="sib-form-container">
+                    <div id="error-message" class="sib-form-message-panel">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">No hemos podido validar su suscripción.</span>
                         </div>
-                        <form class="brevo-form" action="[Replace with Brevo action URL for Descuento form, e.g., https://[your-account].sibforms.com/serve/68bb29e52319e79ea43f0197]" method="post">
-                            <div class="brevo-form-field">
-                                <input type="text" name="NAME" placeholder="Nombre completo" required>
+                    </div>
+                    <div id="success-message" class="sib-form-message-panel">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.20c4.668 4.705 4.637 12.303-.068 16.97z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">Se ha realizado su suscripción.</span>
+                        </div>
+                    </div>
+                    <div id="sib-container" class="sib-container--large sib-container--vertical">
+                        <form id="sib-form" method="POST" action="https://YOUR_BREVO_DISCOUNT_FORM_URL" data-type="subscription">
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form-block">
+                                    <p>¡Obtén tu descuento del 15%!</p>
+                                </div>
                             </div>
-                            <div class="brevo-form-field">
-                                <input type="email" name="EMAIL" placeholder="Correo electrónico" required>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form-block">
+                                    <div class="sib-text-form-block">
+                                        <p>Completa el formulario para acceder a la oferta exclusiva.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="brevo-form-field">
-                                <select name="INTERES" required>
-                                    <option value="" disabled selected>Selecciona tu área de interés</option>
-                                    <option value="hacking-etico">Hacking Ético</option>
-                                    <option value="redes">Redes</option>
-                                    <option value="bash">Bash</option>
-                                    <option value="bug-bounty">Bug Bounty</option>
-                                    <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
-                                    <option value="clases-particulares">Clases Particulares</option>
-                                    <option value="conseguir-trabajo">Conseguir Trabajo</option>
-                                </select>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label" for="NOMBRE" data-required="*">Nombre completo</label>
+                                            <div class="entry__field">
+                                                <input class="input" maxlength="200" type="text" id="NOMBRE" name="NOMBRE" autocomplete="off" placeholder="Nombre completo" data-required="true" required />
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary"></label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="brevo-form-checkbox">
-                                <label>
-                                    <input type="checkbox" name="optin" required>
-                                    <span>Marca esta casilla para recibir información sobre nuestros cursos y el descuento del 15%.</span>
-                                </label>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label" for="EMAIL" data-required="*">Correo electrónico</label>
+                                            <div class="entry__field">
+                                                <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Correo electrónico" data-required="true" required />
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary"></label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="brevo-form-submit">
-                                <button type="submit"><i class="fas fa-percentage"></i> QUIERO MI DESCUENTO</button>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label" for="INTERES" data-required="*">Área de interés</label>
+                                            <div class="entry__field">
+                                                <select class="input" id="INTERES" name="INTERES" data-required="true" required>
+                                                    <option value="" disabled selected>Selecciona tu área de interés</option>
+                                                    <option value="hacking-etico">Hacking Ético</option>
+                                                    <option value="redes">Redes</option>
+                                                    <option value="bash">Bash</option>
+                                                    <option value="bug-bounty">Bug Bounty</option>
+                                                    <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                                                    <option value="clases-particulares">Clases Particulares</option>
+                                                    <option value="conseguir-trabajo">Conseguir Trabajo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary"></label>
+                                    </div>
+                                </div>
                             </div>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label" for="DISCOUNT_CODE">Código de descuento (opcional)</label>
+                                            <div class="entry__field">
+                                                <input class="input" maxlength="200" type="text" id="DISCOUNT_CODE" name="DISCOUNT_CODE" autocomplete="off" placeholder="Código de descuento" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-optin sib-form-block">
+                                    <div class="form__entry entry_mcq">
+                                        <div class="form__label-row">
+                                            <div class="entry__choice">
+                                                <label>
+                                                    <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                                                    <span class="checkbox checkbox_tick_positive"></span>
+                                                    <span>Marca esta casilla para recibir información sobre nuestros cursos y el descuento del 15%.</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary"></label>
+                                        <label class="entry__specification">Puedes cancelar tu suscripción cuando quieras mediante el enlace de nuestra newsletter.</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form-block">
+                                    <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                                        <i class="fas fa-percentage"></i> QUIERO MI DESCUENTO
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="text" name="email_address_check" value="" class="input--hidden">
+                            <input type="hidden" name="locale" value="es">
                         </form>
-                        <div class="brevo-form-success" style="display: none;">
-                            <h4>¡Registro exitoso!</h4>
-                            <p>Te hemos enviado el código de descuento a tu correo electrónico. ¡Bienvenido a LionxSecurity!</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1061,46 +1072,113 @@
             </div>
             <div class="form-box">
                 <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
-                <div class="brevo-form-container" id="brevo-notes-form">
-                    <div class="brevo-form-wrapper">
-                        <div class="brevo-form-body">
-                            <div class="brevo-form-content">
-                                <h4>¡Obtén acceso inmediato!</h4>
-                                <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
+                <div class="sib-form">
+                    <div id="sib-form-container" class="sib-form-container">
+                        <div id="error-message" class="sib-form-message-panel">
+                            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                    <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                                </svg>
+                                <span class="sib-form-message-panel__inner-text">No hemos podido validar su suscripción.</span>
                             </div>
-                            <form class="brevo-form" action="[Replace with Brevo action URL for Apuntes form, e.g., https://[your-account].sibforms.com/serve/68bb2a3d2319e79ea43f01a0]" method="post">
-                                <div class="brevo-form-field">
-                                    <input type="text" name="NAME" placeholder="Nombre completo" required>
+                        </div>
+                        <div id="success-message" class="sib-form-message-panel">
+                            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                    <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.20c4.668 4.705 4.637 12.303-.068 16.97z" />
+                                </svg>
+                                <span class="sib-form-message-panel__inner-text">Se ha realizado su suscripción.</span>
+                            </div>
+                        </div>
+                        <div id="sib-container" class="sib-container--large sib-container--vertical">
+                            <form id="sib-form" method="POST" action="https://YOUR_BREVO_APUNTES_FORM_URL" data-type="subscription">
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block">
+                                        <p>¡Obtén acceso inmediato!</p>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-field">
-                                    <input type="email" name="EMAIL" placeholder="Correo electrónico" required>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block">
+                                        <div class="sib-text-form-block">
+                                            <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-field">
-                                    <select name="INTERES" required>
-                                        <option value="" disabled selected>Selecciona tu área de interés</option>
-                                        <option value="hacking-etico">Hacking Ético</option>
-                                        <option value="redes">Redes</option>
-                                        <option value="bash">Bash</option>
-                                        <option value="bug-bounty">Bug Bounty</option>
-                                        <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
-                                        <option value="clases-particulares">Clases Particulares</option>
-                                        <option value="conseguir-trabajo">Conseguir Trabajo</option>
-                                    </select>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-input sib-form-block">
+                                        <div class="form__entry entry_block">
+                                            <div class="form__label-row">
+                                                <label class="entry__label" for="NOMBRE" data-required="*">Nombre completo</label>
+                                                <div class="entry__field">
+                                                    <input class="input" maxlength="200" type="text" id="NOMBRE" name="NOMBRE" autocomplete="off" placeholder="Nombre completo" data-required="true" required />
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="optin" required>
-                                        <span>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</span>
-                                    </label>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-input sib-form-block">
+                                        <div class="form__entry entry_block">
+                                            <div class="form__label-row">
+                                                <label class="entry__label" for="EMAIL" data-required="*">Correo electrónico</label>
+                                                <div class="entry__field">
+                                                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Correo electrónico" data-required="true" required />
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-submit">
-                                    <button type="submit"><i class="fas fa-download"></i> Obtener Apuntes</button>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-input sib-form-block">
+                                        <div class="form__entry entry_block">
+                                            <div class="form__label-row">
+                                                <label class="entry__label" for="INTERES" data-required="*">Área de interés</label>
+                                                <div class="entry__field">
+                                                    <select class="input" id="INTERES" name="INTERES" data-required="true" required>
+                                                        <option value="" disabled selected>Selecciona tu área de interés</option>
+                                                        <option value="hacking-etico">Hacking Ético</option>
+                                                        <option value="redes">Redes</option>
+                                                        <option value="bash">Bash</option>
+                                                        <option value="bug-bounty">Bug Bounty</option>
+                                                        <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                                                        <option value="clases-particulares">Clases Particulares</option>
+                                                        <option value="conseguir-trabajo">Conseguir Trabajo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-optin sib-form-block">
+                                        <div class="form__entry entry_mcq">
+                                            <div class="form__label-row">
+                                                <div class="entry__choice">
+                                                    <label>
+                                                        <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                                                        <span class="checkbox checkbox_tick_positive"></span>
+                                                        <span>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                            <label class="entry__specification">Puedes cancelar tu suscripción cuando quieras mediante el enlace de nuestra newsletter.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block">
+                                        <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                                            <i class="fas fa-download"></i> Obtener Apuntes
+                                        </button>
+                                    </div>
+                                </div>
+                                <input type="text" name="email_address_check" value="" class="input--hidden">
+                                <input type="hidden" name="locale" value="es">
                             </form>
-                            <div class="brevo-form-success" style="display: none;">
-                                <h4>¡Solicitud exitosa!</h4>
-                                <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1133,46 +1211,113 @@
             </div>
             <div class="form-box">
                 <h2 class="form-title">¡Descarga Tus Herramientas Gratis!</h2>
-                <div class="brevo-form-container" id="brevo-tools-form">
-                    <div class="brevo-form-wrapper">
-                        <div class="brevo-form-body">
-                            <div class="brevo-form-content">
-                                <h4>¡Obtén acceso inmediato!</h4>
-                                <p>Completa el formulario para recibir tus herramientas de hacking gratis.</p>
+                <div class="sib-form">
+                    <div id="sib-form-container" class="sib-form-container">
+                        <div id="error-message" class="sib-form-message-panel">
+                            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                    <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                                </svg>
+                                <span class="sib-form-message-panel__inner-text">No hemos podido validar su suscripción.</span>
                             </div>
-                            <form class="brevo-form" action="[Replace with Brevo action URL for Herramientas form, e.g., https://[your-account].sibforms.com/serve/68bb2328bb08e626a3693e50]" method="post">
-                                <div class="brevo-form-field">
-                                    <input type="text" name="NAME" placeholder="Nombre completo" required>
+                        </div>
+                        <div id="success-message" class="sib-form-message-panel">
+                            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                    <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.20c4.668 4.705 4.637 12.303-.068 16.97z" />
+                                </svg>
+                                <span class="sib-form-message-panel__inner-text">Se ha realizado su suscripción.</span>
+                            </div>
+                        </div>
+                        <div id="sib-container" class="sib-container--large sib-container--vertical">
+                            <form id="sib-form" method="POST" action="https://YOUR_BREVO_TOOLS_FORM_URL" data-type="subscription">
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block">
+                                        <p>¡Obtén acceso inmediato!</p>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-field">
-                                    <input type="email" name="EMAIL" placeholder="Correo electrónico" required>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block">
+                                        <div class="sib-text-form-block">
+                                            <p>Completa el formulario para recibir tus herramientas de hacking gratis.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-field">
-                                    <select name="INTERES" required>
-                                        <option value="" disabled selected>Selecciona tu área de interés</option>
-                                        <option value="hacking-etico">Hacking Ético</option>
-                                        <option value="redes">Redes</option>
-                                        <option value="bash">Bash</option>
-                                        <option value="bug-bounty">Bug Bounty</option>
-                                        <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
-                                        <option value="clases-particulares">Clases Particulares</option>
-                                        <option value="conseguir-trabajo">Conseguir Trabajo</option>
-                                    </select>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-input sib-form-block">
+                                        <div class="form__entry entry_block">
+                                            <div class="form__label-row">
+                                                <label class="entry__label" for="NOMBRE" data-required="*">Nombre completo</label>
+                                                <div class="entry__field">
+                                                    <input class="input" maxlength="200" type="text" id="NOMBRE" name="NOMBRE" autocomplete="off" placeholder="Nombre completo" data-required="true" required />
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="optin" required>
-                                        <span>Marca esta casilla para recibir las herramientas gratis y comunicaciones sobre ciberseguridad.</span>
-                                    </label>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-input sib-form-block">
+                                        <div class="form__entry entry_block">
+                                            <div class="form__label-row">
+                                                <label class="entry__label" for="EMAIL" data-required="*">Correo electrónico</label>
+                                                <div class="entry__field">
+                                                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Correo electrónico" data-required="true" required />
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="brevo-form-submit">
-                                    <button type="submit"><i class="fas fa-download"></i> Obtener Herramientas</button>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-input sib-form-block">
+                                        <div class="form__entry entry_block">
+                                            <div class="form__label-row">
+                                                <label class="entry__label" for="INTERES" data-required="*">Área de interés</label>
+                                                <div class="entry__field">
+                                                    <select class="input" id="INTERES" name="INTERES" data-required="true" required>
+                                                        <option value="" disabled selected>Selecciona tu área de interés</option>
+                                                        <option value="hacking-etico">Hacking Ético</option>
+                                                        <option value="redes">Redes</option>
+                                                        <option value="bash">Bash</option>
+                                                        <option value="bug-bounty">Bug Bounty</option>
+                                                        <option value="oscp-ejpt-ecppt">OSCP-eJPT-eCPPT</option>
+                                                        <option value="clases-particulares">Clases Particulares</option>
+                                                        <option value="conseguir-trabajo">Conseguir Trabajo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-optin sib-form-block">
+                                        <div class="form__entry entry_mcq">
+                                            <div class="form__label-row">
+                                                <div class="entry__choice">
+                                                    <label>
+                                                        <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                                                        <span class="checkbox checkbox_tick_positive"></span>
+                                                        <span>Marca esta casilla para recibir las herramientas gratis y comunicaciones sobre ciberseguridad.</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <label class="entry__error entry__error--primary"></label>
+                                            <label class="entry__specification">Puedes cancelar tu suscripción cuando quieras mediante el enlace de nuestra newsletter.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 8px 0;">
+                                    <div class="sib-form-block">
+                                        <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                                            <i class="fas fa-download"></i> Obtener Herramientas
+                                        </button>
+                                    </div>
+                                </div>
+                                <input type="text" name="email_address_check" value="" class="input--hidden">
+                                <input type="hidden" name="locale" value="es">
                             </form>
-                            <div class="brevo-form-success" style="display: none;">
-                                <h4>¡Solicitud exitosa!</h4>
-                                <p>Revisa tu correo electrónico para descargar tus herramientas de hacking gratis. ¡Gracias por unirte a LionxSecurity!</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1200,17 +1345,6 @@
         const hackingToolsModal = document.getElementById('hackingToolsModal');
         const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
 
-        // Reset form inputs and hide success message
-        function resetForm(modalId, formId) {
-            const modal = document.getElementById(modalId);
-            const form = modal.querySelector(`#${formId} form`);
-            const successBody = modal.querySelector(`#${formId} .brevo-form-success`);
-            const formBody = modal.querySelector(`#${formId} .brevo-form-body`);
-            if (form) form.reset();
-            if (successBody) successBody.style.display = 'none';
-            if (formBody) formBody.style.display = 'block';
-        }
-
         // Open discount modal
         function openFormModal() {
             if (formModal && apuntesModal && hackingToolsModal) {
@@ -1218,7 +1352,6 @@
                 apuntesModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('formModal', 'brevo-discount-form');
             }
         }
 
@@ -1229,7 +1362,6 @@
                 formModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('apuntesModal', 'brevo-notes-form');
             }
         }
 
@@ -1240,7 +1372,6 @@
                 formModal.style.display = 'none';
                 apuntesModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('hackingToolsModal', 'brevo-tools-form');
             }
         }
 
@@ -1251,64 +1382,9 @@
                 apuntesModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
-                resetForm('formModal', 'brevo-discount-form');
-                resetForm('apuntesModal', 'brevo-notes-form');
-                resetForm('hackingToolsModal', 'brevo-tools-form');
+                // Reset all forms
+                document.querySelectorAll('#sib-form').forEach(form => form.reset());
             }
-        }
-
-        // Handle form submission
-        function handleFormSubmission(event, formId) {
-            event.preventDefault();
-            const form = event.target;
-            const nameInput = form.querySelector('input[name="NAME"]');
-            const emailInput = form.querySelector('input[name="EMAIL"]');
-            const interestSelect = form.querySelector('select[name="INTERES"]');
-            const optinCheckbox = form.querySelector('input[name="optin"]');
-            const successBody = form.closest('.brevo-form-wrapper').querySelector('.brevo-form-success');
-            const formBody = form.closest('.brevo-form-wrapper').querySelector('.brevo-form-body');
-
-            // Validation
-            if (!nameInput.value || !emailInput.value || !interestSelect.value || !optinCheckbox.checked) {
-                alert('Por favor, completa todos los campos obligatorios.');
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value)) {
-                alert('Por favor, introduce una dirección de correo electrónico válida.');
-                return;
-            }
-
-            // Submit form to Brevo via fetch
-            const formData = new FormFormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        throw new Error(`HTTP error! Status: ${response.status}, Response: ${text}`);
-                    });
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Success:', data);
-                if (successBody && formBody) {
-                    formBody.style.display = 'none';
-                    successBody.style.display = 'block';
-                    setTimeout(closeModalFunc, 5000);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert(`Error al enviar el formulario: ${error.message}. Verifica la URL de acción del formulario en Brevo y asegúrate de que sea correcta (por ejemplo, https://[tu-cuenta].sibforms.com/serve/[form-id]).`);
-            });
         }
 
         // Attach event listeners
@@ -1349,21 +1425,23 @@
                 if (e.target === hackingToolsModal) closeModalFunc();
             });
         }
-
-        // Attach form submission handlers
-        const discountForm = document.querySelector('#brevo-discount-form form');
-        const notesForm = document.querySelector('#brevo-notes-form form');
-        const toolsForm = document.querySelector('#brevo-tools-form form');
-
-        if (discountForm) {
-            discountForm.addEventListener('submit', (e) => handleFormSubmission(e, 'brevo-discount-form'));
-        }
-        if (notesForm) {
-            notesForm.addEventListener('submit', (e) => handleFormSubmission(e, 'brevo-notes-form'));
-        }
-        if (toolsForm) {
-            toolsForm.addEventListener('submit', (e) => handleFormSubmission(e, 'brevo-tools-form'));
-        }
     </script>
+    <script>
+        window.REQUIRED_CODE_ERROR_MESSAGE = 'Elija un código de país';
+        window.LOCALE = 'es';
+        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+        window.REQUIRED_ERROR_MESSAGE = "Este campo no puede quedarse vacío.";
+        window.GENERIC_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+        window.translation = {
+            common: {
+                selectedList: '{quantity} lista seleccionada',
+                selectedLists: '{quantity} listas seleccionadas',
+                selectedOption: '{quantity} seleccionado',
+                selectedOptions: '{quantity} seleccionados',
+            }
+        };
+        var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
