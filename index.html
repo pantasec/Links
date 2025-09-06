@@ -451,6 +451,7 @@
             font-size: 1.5rem;
         }
 
+        /* Estilos mejorados para formularios EmailOctopus */
         .eo-form-container {
             width: 100% !important;
             max-width: 100% !important;
@@ -458,184 +459,163 @@
             text-align: center;
         }
 
-        .eo-form-container .form-control {
+        .eo-form-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .eo-form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .eo-form-input {
             background-color: rgba(255, 255, 255, 0.1) !important;
             border: 1px solid var(--grey) !important;
             color: var(--light) !important;
-            padding: 0.6rem 0.8rem !important;
-            margin-bottom: 1rem !important;
-            width: 100% !important;
-            border-radius: 6px !important;
+            padding: 0.8rem 1rem !important;
+            border-radius: 8px !important;
             transition: var(--transition);
-            font-size: 0.9rem !important;
-            height: 36px !important;
+            font-size: 0.95rem !important;
             font-family: 'IBM Plex Mono', monospace !important;
+            width: 100% !important;
+            box-sizing: border-box;
         }
 
-        .eo-form-container select.form-control {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FF7A00"><path d="M8 11L3 6h10z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            background-size: 16px;
-            appearance: none;
-        }
-
-        .eo-form-container .form-control:focus {
+        .eo-form-input:focus {
             border-color: var(--primary) !important;
             outline: none;
             box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2) !important;
         }
 
-        .eo-form-container .form-control::placeholder {
+        .eo-form-input::placeholder {
             color: rgba(245, 245, 245, 0.6) !important;
         }
 
-        .eo-form-container .form-checkbox {
-            margin: 1rem 0 !important;
-            padding: 0.8rem !important;
-            background: rgba(255, 122, 0, 0.1) !important;
-            border-radius: 6px;
+        .eo-form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 122, 0, 0.1);
+            border-radius: 8px;
             border: 1px solid rgba(255, 122, 0, 0.3);
         }
 
-        .eo-form-container .form-checkbox label {
-            color: var(--light) !important;
-            font-size: 0.85rem !important;
-            line-height: 1.5 !important;
+        .eo-form-checkbox input {
+            margin-top: 0.2rem;
         }
 
-        .eo-form-container .btn-primary {
+        .eo-form-checkbox label {
+            color: var(--light);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .eo-form-button {
             background-color: var(--primary) !important;
             border: none !important;
             color: var(--dark) !important;
             font-weight: 700 !important;
-            padding: 0.8rem 1.2rem !important;
+            padding: 1rem 1.5rem !important;
             width: 100% !important;
-            border-radius: 6px !important;
+            border-radius: 8px !important;
             transition: var(--transition) !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
             cursor: pointer;
-            font-size: 0.9rem !important;
+            font-size: 1rem !important;
+            font-family: 'IBM Plex Mono', monospace !important;
         }
 
-        .eo-form-container .btn-primary:hover {
+        .eo-form-button:hover {
             background-color: #ff8a00 !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
         }
 
-        .eo-form-container .form-success {
-            text-align: center !important;
-            padding: 2rem !important;
-            display: none;
+        .eo-form-success {
+            text-align: center;
+            padding: 2rem;
         }
 
-        .eo-form-container .form-success h4 {
-            color: var(--primary) !important;
-            font-size: 1.5rem !important;
-            margin-bottom: 1rem !important;
+        .eo-form-success h4 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .eo-form-container .form-success p {
-            color: var(--light) !important;
+        .eo-form-success p {
+            color: var(--light);
             opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .form-description {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
         .apuntes-modal .modal-content {
             border-color: var(--purple);
-            max-width: 500px;
-            padding: 1.2rem;
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         .apuntes-modal .modal-title {
             color: var(--purple);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
 
-        .apuntes-modal .tagline {
-            color: var(--purple);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .apuntes-modal .eo-form-container select.form-control {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%238A2BE2"><path d="M8 11L3 6h10z"/></svg>');
-        }
-
-        .apuntes-modal .eo-form-container .form-control:focus {
+        .apuntes-modal .eo-form-input:focus {
             border-color: var(--purple) !important;
             box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2) !important;
         }
 
-        .apuntes-modal .eo-form-container .form-checkbox {
-            background: rgba(138, 43, 226, 0.1) !important;
+        .apuntes-modal .eo-form-checkbox {
+            background: rgba(138, 43, 226, 0.1);
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
-        .apuntes-modal .eo-form-container .btn-primary {
+        .apuntes-modal .eo-form-button {
             background-color: var(--purple) !important;
         }
 
-        .apuntes-modal .eo-form-container .btn-primary:hover {
+        .apuntes-modal .eo-form-button:hover {
             background-color: #9932CC !important;
             box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3) !important;
         }
 
-        .apuntes-modal .eo-form-container .form-success h4 {
-            color: var(--purple) !important;
-        }
-
         .hacking-tools-modal .modal-content {
             border-color: var(--yellow);
-            max-width: 500px;
-            padding: 1.2rem;
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         .hacking-tools-modal .modal-title {
             color: var(--yellow);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
 
-        .hacking-tools-modal .tagline {
-            color: var(--yellow);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .hacking-tools-modal .eo-form-container select.form-control {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFC107"><path d="M8 11L3 6h10z"/></svg>');
-        }
-
-        .hacking-tools-modal .eo-form-container .form-control:focus {
+        .hacking-tools-modal .eo-form-input:focus {
             border-color: var(--yellow) !important;
             box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
         }
 
-        .hacking-tools-modal .eo-form-container .form-checkbox {
-            background: rgba(255, 193, 7, 0.1) !important;
+        .hacking-tools-modal .eo-form-checkbox {
+            background: rgba(255, 193, 7, 0.1);
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
 
-        .hacking-tools-modal .eo-form-container .btn-primary {
+        .hacking-tools-modal .eo-form-button {
             background-color: var(--yellow) !important;
         }
 
-        .hacking-tools-modal .eo-form-container .btn-primary:hover {
+        .hacking-tools-modal .eo-form-button:hover {
             background-color: #ffca28 !important;
             box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3) !important;
-        }
-
-        .hacking-tools-modal .eo-form-container .form-success h4 {
-            color: var(--yellow) !important;
         }
 
         .features {
@@ -709,6 +689,12 @@
             }
             .feature {
                 padding: 0.8rem;
+            }
+            .eo-form-input {
+                padding: 0.7rem 0.9rem !important;
+            }
+            .eo-form-button {
+                padding: 0.9rem 1.2rem !important;
             }
         }
     </style>
@@ -827,7 +813,7 @@
         <div class="modal-content">
             <span class="close-modal" id="closeModal">×</span>
             <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
-            <p style="text-align: center; margin-bottom: 1.5rem; color: var(--light); opacity: 0.9;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético (solo para los primeros 100 registrados).</p>
+            <p class="form-description">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético (solo para los primeros 100 registrados).</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/6678d19e-8b1f-11f0-808e-af63b4293a21.js" data-form="6678d19e-8b1f-11f0-808e-af63b4293a21"></script>
             </div>
@@ -855,6 +841,7 @@
                     <p class="feature-desc">Entornos controlados para practicar sin riesgos</p>
                 </div>
             </div>
+            <p class="form-description">Introduce tu email para recibir los apuntes gratis de ciberseguridad.</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55.js" data-form="a29ac8e2-8b3a-11f0-b213-f7de3fefbf55"></script>
             </div>
@@ -882,109 +869,164 @@
                     <p class="feature-desc">Instrucciones para usar herramientas de forma segura y efectiva</p>
                 </div>
             </div>
+            <p class="form-description">Introduce tu email para recibir las herramientas de hacking gratis.</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
             </div>
         </div>
     </div>
 
-    <script>
-        // Hide background video on mobile devices
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            const video = document.getElementById('background-video');
-            if (video) video.style.display = 'none';
+  <script>
+    // Hide background video on mobile devices
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        const video = document.getElementById('background-video');
+        if (video) video.style.display = 'none';
+    }
+
+    // Get DOM elements
+    const bookIcon = document.getElementById('bookIcon');
+    const academyLink = document.getElementById('academyLink');
+    const freeNotesButton = document.getElementById('freeNotesButton');
+    const hackingToolsButton = document.getElementById('hackingToolsButton');
+    const formModal = document.getElementById('formModal');
+    const closeModal = document.getElementById('closeModal');
+    const apuntesModal = document.getElementById('apuntesModal');
+    const closeApuntesModal = document.getElementById('closeApuntesModal');
+    const hackingToolsModal = document.getElementById('hackingToolsModal');
+    const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
+
+    // Close modals
+    function closeModalFunc() {
+        if (formModal && apuntesModal && hackingToolsModal) {
+            formModal.style.display = 'none';
+            apuntesModal.style.display = 'none';
+            hackingToolsModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
+    }
 
-        // Get DOM elements
-        const bookIcon = document.getElementById('bookIcon');
-        const academyLink = document.getElementById('academyLink');
-        const freeNotesButton = document.getElementById('freeNotesButton');
-        const hackingToolsButton = document.getElementById('hackingToolsButton');
-        const formModal = document.getElementById('formModal');
-        const closeModal = document.getElementById('closeModal');
-        const apuntesModal = document.getElementById('apuntesModal');
-        const closeApuntesModal = document.getElementById('closeApuntesModal');
-        const hackingToolsModal = document.getElementById('hackingToolsModal');
-        const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
-
-        // Close modals
-        function closeModalFunc() {
-            if (formModal && apuntesModal && hackingToolsModal) {
-                formModal.style.display = 'none';
-                apuntesModal.style.display = 'none';
-                hackingToolsModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+    // Open discount modal
+    function openFormModal() {
+        if (formModal && apuntesModal && hackingToolsModal) {
+            formModal.style.display = 'flex';
+            apuntesModal.style.display = 'none';
+            hackingToolsModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
         }
+    }
 
-        // Open discount modal
-        function openFormModal() {
-            if (formModal && apuntesModal && hackingToolsModal) {
-                formModal.style.display = 'flex';
-                apuntesModal.style.display = 'none';
-                hackingToolsModal.style.display = 'none';
-                document.body.style.overflow = 'hidden';
-            }
+    // Open apuntes modal
+    function openApuntesModal() {
+        if (apuntesModal && formModal && hackingToolsModal) {
+            apuntesModal.style.display = 'flex';
+            formModal.style.display = 'none';
+            hackingToolsModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
         }
+    }
 
-        // Open apuntes modal
-        function openApuntesModal() {
-            if (apuntesModal && formModal && hackingToolsModal) {
-                apuntesModal.style.display = 'flex';
-                formModal.style.display = 'none';
-                hackingToolsModal.style.display = 'none';
-                document.body.style.overflow = 'hidden';
-            }
+    // Open hacking tools modal
+    function openHackingToolsModal() {
+        if (hackingToolsModal && formModal && apuntesModal) {
+            hackingToolsModal.style.display = 'flex';
+            formModal.style.display = 'none';
+            apuntesModal.style.display = 'none';
+            document.body.style.overflow = 'hidden';
         }
+    }
 
-        // Open hacking tools modal
-        function openHackingToolsModal() {
-            if (hackingToolsModal && formModal && apuntesModal) {
-                hackingToolsModal.style.display = 'flex';
-                formModal.style.display = 'none';
-                apuntesModal.style.display = 'none';
-                document.body.style.overflow = 'hidden';
-            }
-        }
+    // Attach event listeners
+    if (bookIcon) {
+        bookIcon.addEventListener('click', openFormModal);
+    }
 
-        // Attach event listeners
-        if (bookIcon) bookIcon.addEventListener('click', openFormModal);
-        if (academyLink) {
-            academyLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                openFormModal();
+    if (academyLink) {
+        academyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openFormModal();
+        });
+    }
+
+    if (freeNotesButton) {
+        freeNotesButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            openApuntesModal();
+        });
+    }
+
+    if (hackingToolsButton) {
+        hackingToolsButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            openHackingToolsModal();
+        });
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', closeModalFunc);
+    }
+
+    if (closeApuntesModal) {
+        closeApuntesModal.addEventListener('click', closeModalFunc);
+    }
+
+    if (closeHackingToolsModal) {
+        closeHackingToolsModal.addEventListener('click', closeModalFunc);
+    }
+
+    // Close modals when clicking outside the modal content
+    [formModal, apuntesModal, hackingToolsModal].forEach(modal => {
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModalFunc();
+                }
             });
         }
-        if (freeNotesButton) {
-            freeNotesButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                openApuntesModal();
-            });
+    });
+
+    // Close modals with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModalFunc();
         }
-        if (hackingToolsButton) {
-            hackingToolsButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                openHackingToolsModal();
+    });
+
+    // Ensure EmailOctopus forms are properly styled and centered after loading
+    document.addEventListener('DOMContentLoaded', () => {
+        const eoForms = document.querySelectorAll('.eo-form-container');
+        eoForms.forEach(form => {
+            // Ensure form container is centered
+            form.style.display = 'flex';
+            form.style.flexDirection = 'column';
+            form.style.alignItems = 'center';
+            form.style.width = '100%';
+            form.style.maxWidth = '100%';
+
+            // Observe form elements to apply custom styles after they load
+            const observer = new MutationObserver(() => {
+                const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
+                const buttons = form.querySelectorAll('button[type="submit"]');
+                const checkboxes = form.querySelectorAll('input[type="checkbox"] + label');
+                
+                inputs.forEach(input => {
+                    input.classList.add('eo-form-input');
+                });
+
+                buttons.forEach(button => {
+                    button.classList.add('eo-form-button');
+                });
+
+                checkboxes.forEach(checkbox => {
+                    const parent = checkbox.parentElement;
+                    if (parent) {
+                        parent.classList.add('eo-form-checkbox');
+                    }
+                });
             });
-        }
-        if (closeModal) closeModal.addEventListener('click', closeModalFunc);
-        if (closeApuntesModal) closeApuntesModal.addEventListener('click', closeModalFunc);
-        if (closeHackingToolsModal) closeHackingToolsModal.addEventListener('click', closeModalFunc);
-        if (formModal) {
-            formModal.addEventListener('click', (e) => {
-                if (e.target === formModal) closeModalFunc();
-            });
-        }
-        if (apuntesModal) {
-            apuntesModal.addEventListener('click', (e) => {
-                if (e.target === apuntesModal) closeModalFunc();
-            });
-        }
-        if (hackingToolsModal) {
-            hackingToolsModal.addEventListener('click', (e) => {
-                if (e.target === hackingToolsModal) closeModalFunc();
-            });
-        }
-    </script>
+
+            observer.observe(form, { childList: true, subtree: true });
+        });
+    });
+</script>
 </body>
 </html>
