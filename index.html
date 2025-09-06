@@ -36,19 +36,6 @@
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
         }
 
-        #background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -100;
-            object-fit: cover;
-            filter: brightness(0.2) blur(4px);
-        }
-
         .container {
             max-width: 680px;
             width: 90%;
@@ -340,7 +327,6 @@
             .tools-box { padding: 1rem; }
             .tools-buttons { flex-direction: column; gap: 0.6rem; }
             .tool-button { padding: 0.7rem; font-size: 0.9rem; }
-            #background-video { display: none; }
             .podcast-embed iframe { height: 132px; }
             .floating-book { width: 50px; height: 50px; bottom: 20px; right: 20px; }
             .floating-book i { font-size: 20px; }
@@ -737,14 +723,6 @@
     </style>
 </head>
 <body>
-    <!-- Comment out the video element if the media warning persists -->
-    <!--
-    <video autoplay muted loop playsinline id="background-video">
-        <source src="background-video.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-    -->
-
     <div class="container">
         <header>
             <h1>PANTASEC</h1>
@@ -859,7 +837,7 @@
                     <h4>¡Obtén tu descuento del 15%!</h4>
                     <p>Completa el formulario para acceder a la oferta exclusiva.</p>
                 </div>
-                <form class="form" action="https://eocampaign1.com/web-form/6678d19e-8b1f-11f0-808e-af63b4293a21" method="post">
+                <form class="form" id="discountForm" action="https://eocampaign1.com/web-form/6678d19e-8b1f-11f0-808e-af63b4293a21" method="post" target="_blank">
                     <div class="form-content">
                         <div class="form-field">
                             <input aria-label="email" type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -878,9 +856,6 @@
                     </div>
                     <div class="form-submit">
                         <button type="submit" class="btn-primary"><i class="fas fa-percentage"></i> QUIERO MI DESCUENTO</button>
-                    </div>
-                    <div class="form-error" style="display: none">
-                        <p>Error al enviar el formulario. Por favor, intenta de nuevo.</p>
                     </div>
                 </form>
                 <div class="form-success" style="display: none">
@@ -919,7 +894,7 @@
                         <h4>¡Obtén acceso inmediato!</h4>
                         <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
                     </div>
-                    <form class="form" action="https://eocampaign1.com/web-form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55" method="post">
+                    <form class="form" id="apuntesForm" action="https://eocampaign1.com/web-form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55" method="post" target="_blank">
                         <div class="form-content">
                             <div class="form-field">
                                 <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -938,9 +913,6 @@
                         </div>
                         <div class="form-submit">
                             <button type="submit" class="btn-primary"><i class="fas fa-download"></i> Obtener Apuntes</button>
-                        </div>
-                        <div class="form-error" style="display: none">
-                            <p>Error al enviar el formulario. Por favor, intenta de nuevo.</p>
                         </div>
                     </form>
                     <div class="form-success" style="display: none">
@@ -980,7 +952,7 @@
                         <h4>¡Obtén acceso inmediato!</h4>
                         <p>Completa el formulario para recibir tus herramientas de hacking gratis.</p>
                     </div>
-                    <form class="form" action="https://eocampaign1.com/web-form/baf22084-8b3a-11f0-93d9-af63b4293a21" method="post">
+                    <form class="form" id="hackingToolsForm" action="https://eocampaign1.com/web-form/baf22084-8b3a-11f0-93d9-af63b4293a21" method="post" target="_blank">
                         <div class="form-content">
                             <div class="form-field">
                                 <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -1000,9 +972,6 @@
                         <div class="form-submit">
                             <button type="submit" class="btn-primary"><i class="fas fa-download"></i> Obtener Herramientas</button>
                         </div>
-                        <div class="form-error" style="display: none">
-                            <p>Error al enviar el formulario. Por favor, intenta de nuevo.</p>
-                        </div>
                     </form>
                     <div class="form-success" style="display: none">
                         <h4>¡Solicitud exitosa!</h4>
@@ -1014,13 +983,7 @@
     </div>
 
     <script>
-        // Disable background video on mobile devices
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            const video = document.getElementById('background-video');
-            if (video) video.style.display = 'none';
-        }
-
-        // Get DOM elements
+        // Get DOM elements with null checks
         const bookIcon = document.getElementById('bookIcon');
         const academyLink = document.getElementById('academyLink');
         const freeNotesButton = document.getElementById('freeNotesButton');
@@ -1038,11 +1001,9 @@
             if (!modal) return;
             const form = modal.querySelector('form');
             const successBody = modal.querySelector(`#${formContainerId} .form-success`);
-            const errorBody = modal.querySelector(`#${formContainerId} .form-error`);
             const formBody = modal.querySelector(`#${formContainerId} .form-content`);
             if (form) form.reset();
             if (successBody) successBody.style.display = 'none';
-            if (errorBody) errorBody.style.display = 'none';
             if (formBody) formBody.style.display = 'block';
         }
 
@@ -1092,40 +1053,6 @@
             }
         }
 
-        // Handle form submission
-        function handleFormSubmit(formContainerId, form) {
-            const formContainer = document.getElementById(formContainerId);
-            const formContent = formContainer.querySelector('.form-content');
-            const formSuccess = formContainer.querySelector('.form-success');
-            const formError = formContainer.querySelector('.form-error');
-
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    formContent.style.display = 'none';
-                    formSuccess.style.display = 'block';
-                    formError.style.display = 'none';
-                    setTimeout(closeModalFunc, 5000);
-                } else {
-                    formContent.style.display = 'block';
-                    formSuccess.style.display = 'none';
-                    formError.style.display = 'block';
-                }
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                formContent.style.display = 'block';
-                formSuccess.style.display = 'none';
-                formError.style.display = 'block';
-            });
-        }
-
         // Attach event listeners
         if (bookIcon) {
             bookIcon.addEventListener('click', openFormModal);
@@ -1170,31 +1097,6 @@
         if (hackingToolsModal) {
             hackingToolsModal.addEventListener('click', (e) => {
                 if (e.target === hackingToolsModal) closeModalFunc();
-            });
-        }
-
-        // Form submission handlers
-        const discountForm = document.querySelector('#discountFormContainer form');
-        if (discountForm) {
-            discountForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                handleFormSubmit('discountFormContainer', discountForm);
-            });
-        }
-
-        const apuntesForm = document.querySelector('#apuntesFormContainer form');
-        if (apuntesForm) {
-            apuntesForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                handleFormSubmit('apuntesFormContainer', apuntesForm);
-            });
-        }
-
-        const hackingToolsForm = document.querySelector('#hackingToolsFormContainer form');
-        if (hackingToolsForm) {
-            hackingToolsForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                handleFormSubmit('hackingToolsFormContainer', hackingToolsForm);
             });
         }
     </script>
