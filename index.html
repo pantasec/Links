@@ -451,38 +451,48 @@
             font-size: 1.5rem;
         }
 
-        .form-container {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: center;
+        /* Estilos para los formularios de EmailOctopus */
+        .emailoctopus-form-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
-        .form-container .form-control {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--grey);
-            color: var(--light);
-            padding: 0.6rem 0.8rem;
+        .emailoctopus-form-row {
             margin-bottom: 1rem;
+        }
+
+        .emailoctopus-form-row label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+
+        .emailoctopus-form-row input {
             width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
             border-radius: 6px;
-            transition: var(--transition);
+            padding: 0.6rem 0.8rem;
+            color: var(--light);
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.9rem;
             height: 36px;
-            font-family: 'IBM Plex Mono', monospace;
+            transition: var(--transition);
         }
 
-        .form-container .form-control:focus {
-            border-color: var(--primary);
+        .emailoctopus-form-row input:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.3);
         }
 
-        .form-container .form-control::placeholder {
+        .emailoctopus-form-row input::placeholder {
             color: rgba(245, 245, 245, 0.6);
         }
 
-        .form-container .form-checkbox {
+        .emailoctopus-form-row-checkbox {
             margin: 1rem 0;
             padding: 0.8rem;
             background: rgba(255, 122, 0, 0.1);
@@ -490,48 +500,64 @@
             border: 1px solid rgba(255, 122, 0, 0.3);
         }
 
-        .form-container .form-checkbox label {
+        .emailoctopus-form-row-checkbox label {
+            display: flex;
+            align-items: flex-start;
             color: var(--light);
             font-size: 0.85rem;
             line-height: 1.5;
         }
 
-        .form-container .btn-primary {
-            background-color: var(--primary);
-            border: none;
-            color: var(--dark);
-            font-weight: 700;
-            padding: 0.8rem 1.2rem;
-            width: 100%;
-            border-radius: 6px;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .emailoctopus-form-row-checkbox input {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        .emailoctopus-form-button {
+            background-color: var(--primary) !important;
+            border: none !important;
+            color: var(--dark) !important;
+            font-weight: 700 !important;
+            padding: 0.8rem 1.2rem !important;
+            width: 100% !important;
+            border-radius: 6px !important;
+            transition: var(--transition) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.9rem !important;
+            font-family: 'IBM Plex Mono', monospace !important;
         }
 
-        .form-container .btn-primary:hover {
-            background-color: #ff8a00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+        .emailoctopus-form-button:hover {
+            background-color: #ff8a00 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
         }
 
-        .form-container .form-success {
-            text-align: center;
-            padding: 2rem;
+        .emailoctopus-success-message {
+            text-align: center !important;
+            padding: 2rem !important;
             display: none;
         }
 
-        .form-container .form-success h4 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .emailoctopus-success-message h4 {
+            color: var(--primary) !important;
+            font-size: 1.5rem !important;
+            margin-bottom: 1rem !important;
         }
 
-        .form-container .form-success p {
-            color: var(--light);
+        .emailoctopus-success-message p {
+            color: var(--light) !important;
             opacity: 0.9;
+        }
+
+        .privacy {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+            text-align: center;
+            color: var(--light);
         }
 
         .apuntes-modal .modal-content {
@@ -555,26 +581,35 @@
             margin-bottom: 1rem;
         }
 
-        .apuntes-modal .form-container .form-control:focus {
-            border-color: var(--purple);
-            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+        .apuntes-modal .emailoctopus-form-row input:focus {
+            border-color: var(--purple) !important;
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2) !important;
         }
 
-        .apuntes-modal .form-container .form-checkbox {
-            background: rgba(138, 43, 226, 0.1);
+        .apuntes-modal .emailoctopus-form-row-checkbox {
+            background: rgba(138, 43, 226, 0.1) !important;
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
-        .apuntes-modal .form-container .btn-primary {
-            background-color: var(--purple);
+        .apuntes-modal .emailoctopus-form-button {
+            background-color: var(--purple) !important;
         }
 
-        .apuntes-modal .form-container .btn-primary:hover {
-            background-color: #9932CC;
-            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+        .apuntes-modal .emailoctopus-form-button:hover {
+            background-color: #9932CC !important;
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3) !important;
         }
 
-        .apuntes-modal .form-container .form-success h4 {
+        .apuntes-modal .emailoctopus-success-message h4 {
+            color: var(--purple) !important;
+        }
+
+        .apuntes-modal .form-box {
+            border-color: var(--purple);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+        }
+
+        .apuntes-modal .form-title {
             color: var(--purple);
         }
 
@@ -599,26 +634,35 @@
             margin-bottom: 1rem;
         }
 
-        .hacking-tools-modal .form-container .form-control:focus {
-            border-color: var(--yellow);
-            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+        .hacking-tools-modal .emailoctopus-form-row input:focus {
+            border-color: var(--yellow) !important;
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
         }
 
-        .hacking-tools-modal .form-container .form-checkbox {
-            background: rgba(255, 193, 7, 0.1);
+        .hacking-tools-modal .emailoctopus-form-row-checkbox {
+            background: rgba(255, 193, 7, 0.1) !important;
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
 
-        .hacking-tools-modal .form-container .btn-primary {
-            background-color: var(--yellow);
+        .hacking-tools-modal .emailoctopus-form-button {
+            background-color: var(--yellow) !important;
         }
 
-        .hacking-tools-modal .form-container .btn-primary:hover {
-            background-color: #ffca28;
-            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        .hacking-tools-modal .emailoctopus-form-button:hover {
+            background-color: #ffca28 !important;
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3) !important;
         }
 
-        .hacking-tools-modal .form-container .form-success h4 {
+        .hacking-tools-modal .emailoctopus-success-message h4 {
+            color: var(--yellow) !important;
+        }
+
+        .hacking-tools-modal .form-box {
+            border-color: var(--yellow);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
+        }
+
+        .hacking-tools-modal .form-title {
             color: var(--yellow);
         }
 
@@ -693,11 +737,6 @@
             text-align: left;
         }
 
-        .hacking-tools-modal .form-box {
-            border-color: var(--yellow);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
-        }
-
         .form-title {
             color: var(--purple);
             font-size: 1.2rem;
@@ -706,8 +745,63 @@
             font-weight: 700;
         }
 
-        .hacking-tools-modal .form-title {
-            color: var(--yellow);
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 0.6rem 0.8rem;
+            color: var(--light);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            height: 36px;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
+        }
+
+        .hacking-tools-modal .form-input:focus {
+            border-color: var(--yellow);
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn {
+            background-color: var(--purple);
+            color: white;
+            font-weight: 700;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #9932CC;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -843,36 +937,32 @@
             <span class="close-modal" id="closeModal">×</span>
             <h3 class="modal-title">🎁 Acceso Exclusivo LionxSecurity</h3>
             <p style="text-align: center; margin-bottom: 1.5rem; color: var(--light); opacity: 0.9;">Regístrate y consigue un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético (solo para los primeros 100 registrados).</p>
-            <div class="form-container" id="discountFormContainer">
-                <div class="form-content">
-                    <h4>¡Obtén tu descuento del 15%!</h4>
-                    <p>Completa el formulario para acceder a la oferta exclusiva.</p>
+            
+            <!-- Formulario de EmailOctopus para el descuento -->
+            <div class="emailoctopus-form-wrapper">
+                <p style="text-align: center; color: var(--light); margin-bottom: 1rem;">Introduce tu email para recibir tu descuento:</p>
+                <div class="emailoctopus-form-row">
+                    <input type="email" placeholder="Correo electrónico" required>
                 </div>
-                <form class="form" action="https://eocampaign1.com/web-form/6678d19e-8b1f-11f0-808e-af63b4293a21" method="post" target="_blank">
-                    <div class="form-content">
-                        <div class="form-field">
-                            <input aria-label="email" type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
+                <div class="emailoctopus-form-row-checkbox">
+                    <label>
+                        <input type="checkbox" required>
+                        <div class="label-description">
+                            <p>Marca esta casilla para recibir información sobre nuestros cursos y el descuento del 15%.</p>
                         </div>
-                    </div>
-                    <div class="form-checkbox">
-                        <label class="checkbox">
-                            <input type="checkbox" name="consent" required>
-                            <div class="label-description">
-                                <p>Marca esta casilla para recibir información sobre nuestros cursos y el descuento del 15%.</p>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-permissions">
-                        <p style="font-size: 0.8rem; opacity: 0.7;">Al registrarte aceptas nuestra política de privacidad. Puedes darte de baja en cualquier momento.</p>
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn-primary"><i class="fas fa-percentage"></i> QUIERO MI DESCUENTO</button>
-                    </div>
-                </form>
-                <div class="form-success" style="display: none">
-                    <h4>¡Registro exitoso!</h4>
-                    <p>Te hemos enviado el código de descuento a tu correo electrónico. ¡Bienvenido a LionxSecurity!</p>
+                    </label>
                 </div>
+                <div class="emailoctopus-form-row">
+                    <button type="submit" class="emailoctopus-form-button">
+                        <i class="fas fa-percentage"></i> QUIERO MI DESCUENTO
+                    </button>
+                </div>
+                <p class="privacy">Al registrarte aceptas nuestra política de privacidad. Puedes darte de baja en cualquier momento.</p>
+            </div>
+            
+            <div class="emailoctopus-success-message" style="display: none;">
+                <h4>¡Registro exitoso!</h4>
+                <p>Te hemos enviado el código de descuento a tu correo electrónico. ¡Bienvenido a LionxSecurity!</p>
             </div>
         </div>
     </div>
@@ -900,36 +990,31 @@
             </div>
             <div class="form-box">
                 <h2 class="form-title">¡Descarga Tus Apuntes Gratis!</h2>
-                <div class="form-container" id="apuntesFormContainer">
-                    <div class="form-content">
-                        <h4>¡Obtén acceso inmediato!</h4>
-                        <p>Completa el formulario para recibir tus apuntes gratis de ciberseguridad.</p>
+                <!-- Formulario de EmailOctopus para apuntes -->
+                <div class="emailoctopus-form-wrapper">
+                    <p style="text-align: center; color: var(--light); margin-bottom: 1rem;">Introduce tu email para recibir los apuntes:</p>
+                    <div class="emailoctopus-form-row">
+                        <input type="email" placeholder="Correo electrónico" required>
                     </div>
-                    <form class="form" action="https://eocampaign1.com/web-form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55" method="post" target="_blank">
-                        <div class="form-content">
-                            <div class="form-field">
-                                <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
+                    <div class="emailoctopus-form-row-checkbox">
+                        <label>
+                            <input type="checkbox" required>
+                            <div class="label-description">
+                                <p>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
                             </div>
-                        </div>
-                        <div class="form-checkbox">
-                            <label class="checkbox">
-                                <input type="checkbox" name="consent" required>
-                                <div class="label-description">
-                                    <p>Marca esta casilla para recibir los apuntes gratis y comunicaciones sobre ciberseguridad.</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="form-permissions">
-                            <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
-                        </div>
-                        <div class="form-submit">
-                            <button type="submit" class="btn-primary"><i class="fas fa-download"></i> Obtener Apuntes</button>
-                        </div>
-                    </form>
-                    <div class="form-success" style="display: none">
-                        <h4>¡Solicitud exitosa!</h4>
-                        <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
+                        </label>
                     </div>
+                    <div class="emailoctopus-form-row">
+                        <button type="submit" class="emailoctopus-form-button">
+                            <i class="fas fa-download"></i> OBTENER APUNTES
+                        </button>
+                    </div>
+                    <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                </div>
+                
+                <div class="emailoctopus-success-message" style="display: none;">
+                    <h4>¡Solicitud exitosa!</h4>
+                    <p>Revisa tu correo electrónico para descargar tus apuntes gratis. ¡Gracias por unirte a LionxSecurity!</p>
                 </div>
             </div>
         </div>
@@ -958,36 +1043,31 @@
             </div>
             <div class="form-box">
                 <h2 class="form-title">¡Descarga Tus Herramientas Gratis!</h2>
-                <div class="form-container" id="hackingToolsFormContainer">
-                    <div class="form-content">
-                        <h4>¡Obtén acceso inmediato!</h4>
-                        <p>Completa el formulario para recibir tus herramientas de hacking gratis.</p>
+                <!-- Formulario de EmailOctopus para hacking tools -->
+                <div class="emailoctopus-form-wrapper">
+                    <p style="text-align: center; color: var(--light); margin-bottom: 1rem;">Introduce tu email para recibir las herramientas:</p>
+                    <div class="emailoctopus-form-row">
+                        <input type="email" placeholder="Correo electrónico" required>
                     </div>
-                    <form class="form" action="https://eocampaign1.com/web-form/baf22084-8b3a-11f0-93d9-af63b4293a21" method="post" target="_blank">
-                        <div class="form-content">
-                            <div class="form-field">
-                                <input type="email" class="form-control" name="email" placeholder="Correo electrónico" autocomplete="email" required>
+                    <div class="emailoctopus-form-row-checkbox">
+                        <label>
+                            <input type="checkbox" required>
+                            <div class="label-description">
+                                <p>Marca esta casilla para recibir las herramientas gratis y comunicaciones sobre ciberseguridad.</p>
                             </div>
-                        </div>
-                        <div class="form-checkbox">
-                            <label class="checkbox">
-                                <input type="checkbox" name="consent" required>
-                                <div class="label-description">
-                                    <p>Marca esta casilla para recibir las herramientas gratis y comunicaciones sobre ciberseguridad.</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="form-permissions">
-                            <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
-                        </div>
-                        <div class="form-submit">
-                            <button type="submit" class="btn-primary"><i class="fas fa-download"></i> Obtener Herramientas</button>
-                        </div>
-                    </form>
-                    <div class="form-success" style="display: none">
-                        <h4>¡Solicitud exitosa!</h4>
-                        <p>Revisa tu correo electrónico para descargar tus herramientas de hacking gratis. ¡Gracias por unirte a LionxSecurity!</p>
+                        </label>
                     </div>
+                    <div class="emailoctopus-form-row">
+                        <button type="submit" class="emailoctopus-form-button">
+                            <i class="fas fa-download"></i> OBTENER HERRAMIENTAS
+                        </button>
+                    </div>
+                    <p class="privacy">Al enviar este formulario, aceptas recibir comunicaciones sobre ciberseguridad. Respetamos tu privacidad y nunca compartiremos tu información.</p>
+                </div>
+                
+                <div class="emailoctopus-success-message" style="display: none;">
+                    <h4>¡Solicitud exitosa!</h4>
+                    <p>Revisa tu correo electrónico para descargar tus herramientas de hacking gratis. ¡Gracias por unirte a LionxSecurity!</p>
                 </div>
             </div>
         </div>
@@ -1013,14 +1093,14 @@
         const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
 
         // Reset form inputs and hide success message
-        function resetForm(modalId, formContainerId) {
+        function resetForm(modalId) {
             const modal = document.getElementById(modalId);
             const form = modal.querySelector('form');
-            const successBody = modal.querySelector(`#${formContainerId} .form-success`);
-            const formBody = modal.querySelector(`#${formContainerId} .form-content`);
+            const successMessage = modal.querySelector('.emailoctopus-success-message');
+            const formWrapper = modal.querySelector('.emailoctopus-form-wrapper');
             if (form) form.reset();
-            if (successBody) successBody.style.display = 'none';
-            if (formBody) formBody.style.display = 'block';
+            if (successMessage) successMessage.style.display = 'none';
+            if (formWrapper) formWrapper.style.display = 'block';
         }
 
         // Open discount modal
@@ -1030,7 +1110,7 @@
                 apuntesModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('formModal', 'discountFormContainer');
+                resetForm('formModal');
             }
         }
 
@@ -1041,7 +1121,7 @@
                 formModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('apuntesModal', 'apuntesFormContainer');
+                resetForm('apuntesModal');
             }
         }
 
@@ -1052,7 +1132,7 @@
                 formModal.style.display = 'none';
                 apuntesModal.style.display = 'none';
                 document.body.style.overflow = 'hidden';
-                resetForm('hackingToolsModal', 'hackingToolsFormContainer');
+                resetForm('hackingToolsModal');
             }
         }
 
@@ -1063,20 +1143,10 @@
                 apuntesModal.style.display = 'none';
                 hackingToolsModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
-                resetForm('formModal', 'discountFormContainer');
-                resetForm('apuntesModal', 'apuntesFormContainer');
-                resetForm('hackingToolsModal', 'hackingToolsFormContainer');
+                resetForm('formModal');
+                resetForm('apuntesModal');
+                resetForm('hackingToolsModal');
             }
-        }
-
-        // Handle form submission
-        function handleFormSubmit(formContainerId) {
-            const formContainer = document.getElementById(formContainerId);
-            const formContent = formContainer.querySelector('.form-content');
-            const formSuccess = formContainer.querySelector('.form-success');
-            formContent.style.display = 'none';
-            formSuccess.style.display = 'block';
-            setTimeout(closeModalFunc, 5000);
         }
 
         // Attach event listeners
@@ -1118,63 +1188,33 @@
             });
         }
 
-        // Form submission handlers
-        document.querySelector('#discountFormContainer form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const form = e.target;
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    handleFormSubmit('discountFormContainer');
-                } else {
-                    console.error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting discount form:', error);
-            });
-        });
-
-        document.querySelector('#apuntesFormContainer form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const form = e.target;
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    handleFormSubmit('apuntesFormContainer');
-                } else {
-                    console.error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting apuntes form:', error);
-            });
-        });
-
-        document.querySelector('#hackingToolsFormContainer form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const form = e.target;
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    handleFormSubmit('hackingToolsFormContainer');
-                } else {
-                    console.error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting hacking tools form:', error);
+        // Handle form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.emailoctopus-form-wrapper');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulate form submission success
+                    const modal = this.closest('.modal-content');
+                    const successMessage = modal.querySelector('.emailoctopus-success-message');
+                    const formWrapper = modal.querySelector('.emailoctopus-form-wrapper');
+                    
+                    if (successMessage && formWrapper) {
+                        formWrapper.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        
+                        // Close modal after 5 seconds
+                        setTimeout(closeModalFunc, 5000);
+                    }
+                });
             });
         });
     </script>
+
+    <!-- Scripts de EmailOctopus para todos los formularios -->
+    <script async src="https://eocampaign1.com/form/6678d19e-8b1f-11f0-808e-af63b4293a21.js" data-form="6678d19e-8b1f-11f0-808e-af63b4293a21"></script>
+    <script async src="https://eocampaign1.com/form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55.js" data-form="a29ac8e2-8b3a-11f0-b213-f7de3fefbf55"></script>
+    <script async src="https://eocampaign1.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
 </body>
 </html>
