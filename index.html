@@ -876,157 +876,138 @@
         </div>
     </div>
 
-  <script>
-    // Hide background video on mobile devices
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        const video = document.getElementById('background-video');
-        if (video) video.style.display = 'none';
-    }
-
-    // Get DOM elements
-    const bookIcon = document.getElementById('bookIcon');
-    const academyLink = document.getElementById('academyLink');
-    const freeNotesButton = document.getElementById('freeNotesButton');
-    const hackingToolsButton = document.getElementById('hackingToolsButton');
-    const formModal = document.getElementById('formModal');
-    const closeModal = document.getElementById('closeModal');
-    const apuntesModal = document.getElementById('apuntesModal');
-    const closeApuntesModal = document.getElementById('closeApuntesModal');
-    const hackingToolsModal = document.getElementById('hackingToolsModal');
-    const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
-
-    // Close modals
-    function closeModalFunc() {
-        if (formModal && apuntesModal && hackingToolsModal) {
-            formModal.style.display = 'none';
-            apuntesModal.style.display = 'none';
-            hackingToolsModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+    <script>
+        // Hide background video on mobile devices
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            const video = document.getElementById('background-video');
+            if (video) video.style.display = 'none';
         }
-    }
 
-    // Open discount modal
-    function openFormModal() {
-        if (formModal && apuntesModal && hackingToolsModal) {
-            formModal.style.display = 'flex';
-            apuntesModal.style.display = 'none';
-            hackingToolsModal.style.display = 'none';
-            document.body.style.overflow = 'hidden';
+        // Get DOM elements
+        const bookIcon = document.getElementById('bookIcon');
+        const academyLink = document.getElementById('academyLink');
+        const freeNotesButton = document.getElementById('freeNotesButton');
+        const hackingToolsButton = document.getElementById('hackingToolsButton');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.getElementById('closeModal');
+        const apuntesModal = document.getElementById('apuntesModal');
+        const closeApuntesModal = document.getElementById('closeApuntesModal');
+        const hackingToolsModal = document.getElementById('hackingToolsModal');
+        const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
+
+        // Close modals
+        function closeModalFunc() {
+            if (formModal && apuntesModal && hackingToolsModal) {
+                formModal.style.display = 'none';
+                apuntesModal.style.display = 'none';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
-    }
 
-    // Open apuntes modal
-    function openApuntesModal() {
-        if (apuntesModal && formModal && hackingToolsModal) {
-            apuntesModal.style.display = 'flex';
-            formModal.style.display = 'none';
-            hackingToolsModal.style.display = 'none';
-            document.body.style.overflow = 'hidden';
+        // Open discount modal
+        function openFormModal() {
+            if (formModal && apuntesModal && hackingToolsModal) {
+                formModal.style.display = 'flex';
+                apuntesModal.style.display = 'none';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
         }
-    }
 
-    // Open hacking tools modal
-    function openHackingToolsModal() {
-        if (hackingToolsModal && formModal && apuntesModal) {
-            hackingToolsModal.style.display = 'flex';
-            formModal.style.display = 'none';
-            apuntesModal.style.display = 'none';
-            document.body.style.overflow = 'hidden';
+        // Open apuntes modal
+        function openApuntesModal() {
+            if (apuntesModal && formModal && hackingToolsModal) {
+                apuntesModal.style.display = 'flex';
+                formModal.style.display = 'none';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
         }
-    }
 
-    // Attach event listeners
-    if (bookIcon) {
-        bookIcon.addEventListener('click', openFormModal);
-    }
+        // Open hacking tools modal
+        function openHackingToolsModal() {
+            if (hackingToolsModal && formModal && apuntesModal) {
+                hackingToolsModal.style.display = 'flex';
+                formModal.style.display = 'none';
+                apuntesModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
+        }
 
-    if (academyLink) {
-        academyLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            openFormModal();
-        });
-    }
-
-    if (freeNotesButton) {
-        freeNotesButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            openApuntesModal();
-        });
-    }
-
-    if (hackingToolsButton) {
-        hackingToolsButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            openHackingToolsModal();
-        });
-    }
-
-    if (closeModal) {
-        closeModal.addEventListener('click', closeModalFunc);
-    }
-
-    if (closeApuntesModal) {
-        closeApuntesModal.addEventListener('click', closeModalFunc);
-    }
-
-    if (closeHackingToolsModal) {
-        closeHackingToolsModal.addEventListener('click', closeModalFunc);
-    }
-
-    // Close modals when clicking outside the modal content
-    [formModal, apuntesModal, hackingToolsModal].forEach(modal => {
-        if (modal) {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModalFunc();
-                }
+        // Attach event listeners
+        if (bookIcon) bookIcon.addEventListener('click', openFormModal);
+        if (academyLink) {
+            academyLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                openFormModal();
             });
         }
-    });
-
-    // Close modals with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModalFunc();
+        if (freeNotesButton) {
+            freeNotesButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                openApuntesModal();
+            });
         }
-    });
+        if (hackingToolsButton) {
+            hackingToolsButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                openHackingToolsModal();
+            });
+        }
+        if (closeModal) closeModal.addEventListener('click', closeModalFunc);
+        if (closeApuntesModal) closeApuntesModal.addEventListener('click', closeModalFunc);
+        if (closeHackingToolsModal) closeHackingToolsModal.addEventListener('click', closeModalFunc);
+        if (formModal) {
+            formModal.addEventListener('click', (e) => {
+                if (e.target === formModal) closeModalFunc();
+            });
+        }
+        if (apuntesModal) {
+            apuntesModal.addEventListener('click', (e) => {
+                if (e.target === apuntesModal) closeModalFunc();
+            });
+        }
+        if (hackingToolsModal) {
+            hackingToolsModal.addEventListener('click', (e) => {
+                if (e.target === hackingToolsModal) closeModalFunc();
+            });
+        }
 
-    // Ensure EmailOctopus forms are properly styled and centered after loading
-    document.addEventListener('DOMContentLoaded', () => {
-        const eoForms = document.querySelectorAll('.eo-form-container');
-        eoForms.forEach(form => {
-            // Ensure form container is centered
-            form.style.display = 'flex';
-            form.style.flexDirection = 'column';
-            form.style.alignItems = 'center';
-            form.style.width = '100%';
-            form.style.maxWidth = '100%';
-
-            // Observe form elements to apply custom styles after they load
-            const observer = new MutationObserver(() => {
-                const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
-                const buttons = form.querySelectorAll('button[type="submit"]');
-                const checkboxes = form.querySelectorAll('input[type="checkbox"] + label');
-                
-                inputs.forEach(input => {
-                    input.classList.add('eo-form-input');
+        // Wait for EmailOctopus forms to load and apply custom styles
+        function styleEmailOctopusForms() {
+            setTimeout(() => {
+                document.querySelectorAll('.emailoctopus-form-row').forEach(row => {
+                    row.classList.add('eo-form-row');
                 });
-
-                buttons.forEach(button => {
+                
+                document.querySelectorAll('.emailoctopus-form-row input[type="email"]').forEach(input => {
+                    input.classList.add('eo-form-input');
+                    input.placeholder = "Tu correo electrónico";
+                });
+                
+                document.querySelectorAll('.emailoctopus-form-row-checkbox').forEach(checkbox => {
+                    checkbox.classList.add('eo-form-checkbox');
+                });
+                
+                document.querySelectorAll('.emailoctopus-form-row button').forEach(button => {
                     button.classList.add('eo-form-button');
                 });
+            }, 1000);
+        }
 
-                checkboxes.forEach(checkbox => {
-                    const parent = checkbox.parentElement;
-                    if (parent) {
-                        parent.classList.add('eo-form-checkbox');
-                    }
+        // Run styling function when page loads
+        document.addEventListener('DOMContentLoaded', styleEmailOctopusForms);
+        
+        // Also run when modals are opened
+        const modalTriggers = [bookIcon, academyLink, freeNotesButton, hackingToolsButton];
+        modalTriggers.forEach(trigger => {
+            if (trigger) {
+                trigger.addEventListener('click', () => {
+                    setTimeout(styleEmailOctopusForms, 500);
                 });
-            });
-
-            observer.observe(form, { childList: true, subtree: true });
+            }
         });
-    });
-</script>
+    </script>
 </body>
 </html>
