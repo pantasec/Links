@@ -3,62 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LionxSecurity | Academia de Ciberseguridad</title>
+    <title>Pantasec | Creador Digital - Ciberseguridad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #FF7A00;
-            --primary-light: rgba(255, 122, 0, 0.2);
-            --primary-dark: #e06a00;
+            --primary-light: rgba(255, 122, 0, 0.3);
             --dark: #0a0a0a;
-            --darker: #050505;
             --light: #f5f5f5;
-            --lighter: #ffffff;
             --grey: #1a1a1a;
-            --grey-light: #2a2a2a;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --icon-color: #FF7A00;
-            --whatsapp: #25D366;
-            --whatsapp-hover: #20B956;
-            --whatsapp-light: rgba(37, 211, 102, 0.15);
             --purple: #8A2BE2;
-            --purple-light: rgba(138, 43, 226, 0.15);
+            --purple-light: rgba(138, 43, 226, 0.3);
             --yellow: #FFC107;
-            --yellow-light: rgba(255, 193, 7, 0.15);
-            --blue: #2196F3;
-            --blue-light: rgba(33, 150, 243, 0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --yellow-light: rgba(255, 193, 7, 0.3);
+            --whatsapp-green: #25D366;
+            --whatsapp-green-hover: #20B956;
         }
 
         body {
             color: var(--light);
             font-family: 'IBM Plex Mono', monospace;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, var(--grey) 100%);
+            margin: 0;
+            padding: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             position: relative;
             overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: -1;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
         }
 
         #background-video {
@@ -69,87 +46,81 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: -2;
+            z-index: -100;
             object-fit: cover;
-            filter: brightness(0.15) blur(5px) contrast(1.2);
+            filter: brightness(0.2) blur(4px);
         }
 
         .container {
-            max-width: 750px;
-            width: 92%;
-            margin: 2.5rem auto;
-            padding: 2.5rem;
+            max-width: 680px;
+            width: 90%;
+            margin: 2rem auto;
+            padding: 2rem;
             position: relative;
             z-index: 1;
             text-align: center;
-            backdrop-filter: blur(8px);
-            background: rgba(10, 10, 10, 0.7);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 122, 0, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
         }
 
         header {
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
             animation: fadeIn 0.8s ease-out;
         }
 
         h1 {
-            color: var(--lighter);
-            font-size: 3.2rem;
+            color: var(--light);
+            font-size: 2.8rem;
             margin: 0;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-weight: 700;
-            text-shadow: 0 0 20px rgba(255, 122, 0, 0.4);
+            text-shadow: 0 0 15px rgba(255, 122, 0, 0.3);
             position: relative;
             display: inline-block;
-            padding-bottom: 0.5rem;
         }
 
         h1::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            transition: var(--transition);
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
         }
 
         h1:hover::after {
-            width: 120px;
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .tagline {
             color: var(--primary);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-top: 1.2rem;
-            letter-spacing: 1.2px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .links {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.2rem;
-            margin-bottom: 2.5rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .section-title {
             color: var(--primary);
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 2.5rem 0 1.2rem 0;
+            letter-spacing: 1px;
+            margin: 2rem 0 1rem 0;
             text-align: left;
             position: relative;
-            padding-left: 20px;
-            display: flex;
-            align-items: center;
+            padding-left: 15px;
         }
 
         .section-title::before {
@@ -158,22 +129,16 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            height: 70%;
-            width: 5px;
-            background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
-            border-radius: 2px;
-        }
-
-        .section-title i {
-            margin-right: 12px;
-            font-size: 1.4rem;
+            height: 60%;
+            width: 4px;
+            background: var(--primary);
         }
 
         .link-card {
-            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.9));
-            border: 1px solid var(--grey-light);
-            border-radius: 12px;
-            padding: 1.5rem;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--grey);
+            border-radius: 8px;
+            padding: 1.2rem;
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -181,108 +146,64 @@
             transition: var(--transition);
             animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
-            overflow: hidden;
-        }
-
-        .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
         }
 
         .link-card.featured {
             border: 2px solid var(--primary);
-            background: linear-gradient(145deg, rgba(38, 38, 38, 0.95), rgba(30, 30, 30, 0.95));
-            box-shadow: 0 8px 25px rgba(255, 122, 0, 0.25);
-        }
-
-        .link-card.featured::after {
-            content: '⭐';
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: var(--primary);
-            color: var(--dark);
-            font-size: 0.8rem;
-            padding: 5px 8px;
-            border-radius: 50%;
-            transform: rotate(15deg);
-            box-shadow: 0 3px 10px rgba(255, 122, 0, 0.4);
+            background: rgba(38, 38, 38, 0.9);
+            box-shadow: 0 6px 12px rgba(255, 122, 0, 0.3);
         }
 
         .link-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(255, 122, 0, 0.3);
-            background: linear-gradient(145deg, rgba(40, 40, 40, 0.95), rgba(32, 32, 32, 0.95));
+            box-shadow: 0 6px 12px rgba(255, 122, 0, 0.2);
+            background: rgba(38, 38, 38, 0.9);
         }
 
         .link-icon {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1.8rem;
+            margin-right: 1.5rem;
             flex-shrink: 0;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.08);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .link-icon::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, transparent, var(--primary-light), transparent);
-            opacity: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
 
         .link-card:hover .link-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .link-card:hover .link-icon::before {
-            opacity: 1;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .link-icon i {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             transition: var(--transition);
-            color: var(--primary);
-            position: relative;
-            z-index: 1;
+            color: var(--icon-color);
         }
 
         .link-card:hover .link-icon i {
-            color: var(--lighter);
             filter: drop-shadow(0 0 8px var(--primary));
         }
 
         .link-text {
             text-align: left;
             flex: 1 1 auto;
-            margin-right: 1.5rem;
+            margin-right: 1rem;
         }
 
         .link-title {
             font-weight: 700;
-            font-size: 1.3rem;
-            margin: 0 0 0.4rem 0;
-            color: var(--lighter);
+            font-size: 1.2rem;
+            margin: 0 0 0.2rem 0;
+            color: var(--light);
             transition: var(--transition);
-            letter-spacing: 0.5px;
         }
 
         .link-card:hover .link-title {
@@ -290,54 +211,187 @@
         }
 
         .link-desc {
-            font-size: 0.9rem;
-            opacity: 0.85;
+            font-size: 0.85rem;
+            opacity: 0.8;
             margin: 0;
-            line-height: 1.5;
-            font-weight: 400;
+            line-height: 1.4;
         }
 
         .course-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background-color: var(--primary);
             color: var(--dark);
             font-weight: 700;
-            padding: 0.9rem 1.5rem;
-            border-radius: 10px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             transition: var(--transition);
             text-decoration: none;
             flex-shrink: 0;
             text-align: center;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
-            border: none;
-            cursor: pointer;
-            min-width: 120px;
+            display: inline-block;
+            font-size: 0.9rem;
         }
 
         .course-button:hover {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(255, 122, 0, 0.4);
+            background-color: #ff8a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
-        .course-button i {
-            margin-left: 8px;
-            font-size: 1.1rem;
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            background-color: var(--whatsapp-green-hover);
+        }
+
+        .floating-whatsapp i {
+            color: white;
+            font-size: 24px;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .eo-form-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .eo-form-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .eo-form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .eo-form-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--grey);
+            color: var(--light);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            font-family: 'IBM Plex Mono', monospace;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .eo-form-input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2);
+        }
+
+        .eo-form-input::placeholder {
+            color: rgba(245, 245, 245, 0.6);
+        }
+
+        .eo-form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 122, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 122, 0, 0.3);
+        }
+
+        .eo-form-checkbox input {
+            margin-top: 0.2rem;
+        }
+
+        .eo-form-checkbox label {
+            color: var(--light);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .eo-form-button {
+            background-color: var(--primary);
+            border: none;
+            color: var(--dark);
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            width: 100%;
+            border-radius: 8px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .eo-form-button:hover {
+            background-color: #ff8a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+        }
+
+        .mentoring-button {
+            background-color: var(--whatsapp-green);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            font-size: 0.9rem;
+            font-family: 'IBM Plex Mono', monospace;
+            margin: 0 auto;
+        }
+
+        .mentoring-button:hover {
+            background-color: var(--whatsapp-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
         .tools-box {
-            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(20, 20, 20, 0.8));
-            border: 1px solid var(--primary-light);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin-top: 0.8rem;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.15);
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-top: 0.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.15);
             position: relative;
             overflow: hidden;
         }
@@ -353,284 +407,35 @@
             animation: shimmer 3s infinite linear;
         }
 
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
         .tools-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
         }
 
         .tool-button {
-            background: rgba(255, 122, 0, 0.1);
+            flex: 1;
+            background: rgba(255, 122, 0, 0.15);
             color: var(--light);
-            font-weight: 600;
-            padding: 1rem;
-            border-radius: 10px;
+            font-weight: 700;
+            padding: 0.8rem;
+            border-radius: 6px;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            border: 1px solid rgba(255, 122, 0, 0.2);
+            border: 1px solid rgba(255, 122, 0, 0.3);
             position: relative;
             overflow: hidden;
-            text-align: center;
-            flex-direction: column;
-            gap: 0.5rem;
         }
 
         .tool-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: 0.6s;
-        }
-
-        .tool-button:hover {
-            background: rgba(255, 122, 0, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.25);
-            border-color: var(--primary);
-        }
-
-        .tool-button:hover::before {
-            left: 100%;
-        }
-
-        .tool-button i {
-            font-size: 1.4rem;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .tool-button:hover i {
-            transform: scale(1.2);
-            filter: drop-shadow(0 0 6px var(--primary));
-        }
-
-        .tool-button span {
-            font-size: 0.9rem;
-        }
-
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-            border: none;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-            background: linear-gradient(135deg, var(--whatsapp-hover), #0E766A);
-        }
-
-        .floating-whatsapp i {
-            color: white;
-            font-size: 28px;
-            transition: var(--transition);
-        }
-
-        .floating-whatsapp:hover i {
-            transform: scale(1.1);
-        }
-
-        .podcast-embed {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid var(--grey-light);
-            border-radius: 14px;
-            padding: 1.2rem;
-            margin: 0.8rem 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .podcast-embed::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
-        }
-
-        .podcast-embed iframe {
-            width: 100%;
-            height: 152px;
-            border-radius: 10px;
-            border: none;
-        }
-
-        footer {
-            background: rgba(15, 15, 15, 0.9);
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            margin-top: auto;
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 122, 0, 0.1);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: var(--light);
-            font-size: 0.85rem;
-            text-decoration: none;
-            opacity: 0.7;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .footer-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .footer-link:hover {
-            opacity: 1;
-            color: var(--primary);
-        }
-
-        .footer-link:hover::after {
-            width: 100%;
-        }
-
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(8px);
-            padding: 1rem;
-        }
-
-        .modal-content {
-            background: linear-gradient(145deg, rgba(20, 20, 20, 0.98), rgba(15, 15, 15, 0.98));
-            border: 1px solid var(--primary);
-            border-radius: 16px;
-            max-width: 500px;
-            width: 100%;
-            padding: 2.5rem;
-            position: relative;
-            animation: modalFadeIn 0.4s ease-out;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-        }
-
-        .modal-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: var(--light);
-            font-size: 26px;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .close-modal:hover {
-            color: var(--primary);
-            background: rgba(255, 122, 0, 0.1);
-            transform: rotate(90deg);
-        }
-
-        .modal-title {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 1.8rem;
-            font-size: 1.7rem;
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
-        }
-
-        .form-description {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--light);
-            opacity: 0.9;
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-
-        .mentoring-button {
-            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
-            color: white;
-            font-weight: 700;
-            padding: 1.1rem 2rem;
-            border-radius: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: var(--transition);
-            text-decoration: none;
-            text-align: center;
-            display: block;
-            font-size: 1rem;
-            font-family: 'IBM Plex Mono', monospace;
-            margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mentoring-button::before {
             content: '';
             position: absolute;
             top: 0;
@@ -641,122 +446,136 @@
             transition: 0.5s;
         }
 
-        .mentoring-button:hover {
-            background: linear-gradient(135deg, var(--whatsapp-hover), #0E766A);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        .tool-button:hover {
+            background: rgba(255, 122, 0, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 122, 0, 0.3);
+            border-color: var(--primary);
         }
 
-        .mentoring-button:hover::before {
+        .tool-button:hover::before {
             left: 100%;
         }
 
-        .mentoring-button i {
-            margin-right: 10px;
-            font-size: 1.2rem;
+        .tool-button i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+            color: var(--icon-color);
         }
 
-        .eo-form-container {
+        .podcast-embed {
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid var(--grey);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .podcast-embed iframe {
             width: 100%;
-            max-width: 100%;
-            margin: 1.8rem 0;
-        }
-
-        .eo-form-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .eo-form-row {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .eo-form-input {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--grey-light);
-            color: var(--light);
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-            transition: var(--transition);
-            font-size: 1rem;
-            font-family: 'IBM Plex Mono', monospace;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .eo-form-input:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .eo-form-input::placeholder {
-            color: rgba(245, 245, 245, 0.6);
-        }
-
-        .eo-form-checkbox {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin: 1.2rem 0;
-            padding: 1.2rem;
-            background: rgba(255, 122, 0, 0.08);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 122, 0, 0.2);
-        }
-
-        .eo-form-checkbox input {
-            margin-top: 0.3rem;
-        }
-
-        .eo-form-checkbox label {
-            color: var(--light);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            text-align: left;
-        }
-
-        .eo-form-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            height: 152px;
+            border-radius: 12px;
             border: none;
-            color: var(--dark);
-            font-weight: 700;
-            padding: 1.2rem 1.8rem;
-            width: 100%;
-            border-radius: 10px;
+        }
+
+        footer {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid var(--grey);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-link {
+            color: var(--light);
+            font-size: 0.8rem;
+            text-decoration: none;
+            opacity: 0.6;
             transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: rgba(26, 26, 26, 0.95);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--light);
+            font-size: 24px;
             cursor: pointer;
-            font-size: 1.05rem;
-            font-family: 'IBM Plex Mono', monospace;
-            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+            transition: color 0.3s;
         }
 
-        .eo-form-button:hover {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+        .close-modal:hover {
+            color: var(--primary);
         }
 
-        /* Modal specific styles */
+        .modal-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
         .mentoring-modal .modal-content {
-            border-color: var(--whatsapp);
+            border-color: var(--whatsapp-green);
         }
 
         .mentoring-modal .modal-title {
-            color: var(--whatsapp);
+            color: var(--whatsapp-green);
         }
 
         .mentoring-modal .form-description {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.6;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .discount-modal .modal-content {
@@ -769,21 +588,21 @@
 
         .discount-modal .eo-form-input:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
+            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2);
         }
 
         .discount-modal .eo-form-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background-color: var(--primary);
         }
 
         .discount-modal .eo-form-button:hover {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+            background-color: #ff8a00;
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
         }
 
         .discount-modal .eo-form-checkbox {
-            background: rgba(255, 122, 0, 0.08);
-            border: 1px solid rgba(255, 122, 0, 0.2);
+            background: rgba(255, 122, 0, 0.1);
+            border: 1px solid rgba(255, 122, 0, 0.3);
         }
 
         .apuntes-modal .modal-content {
@@ -796,21 +615,21 @@
 
         .apuntes-modal .eo-form-input:focus {
             border-color: var(--purple);
-            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
         }
 
         .apuntes-modal .eo-form-button {
-            background: linear-gradient(135deg, var(--purple), #7B1FA2);
+            background-color: var(--purple);
         }
 
         .apuntes-modal .eo-form-button:hover {
-            background: linear-gradient(135deg, #7B1FA2, var(--purple));
-            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+            background-color: #9932CC;
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
         }
 
         .apuntes-modal .eo-form-checkbox {
-            background: rgba(138, 43, 226, 0.08);
-            border: 1px solid rgba(138, 43, 226, 0.2);
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
         .hacking-tools-modal .modal-content {
@@ -823,51 +642,64 @@
 
         .hacking-tools-modal .eo-form-input:focus {
             border-color: var(--yellow);
-            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
         }
 
         .hacking-tools-modal .eo-form-button {
-            background: linear-gradient(135deg, var(--yellow), #FFA000);
+            background-color: var(--yellow);
         }
 
         .hacking-tools-modal .eo-form-button:hover {
-            background: linear-gradient(135deg, #FFA000, var(--yellow));
-            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+            background-color: #ffca28;
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
         }
 
         .hacking-tools-modal .eo-form-checkbox {
-            background: rgba(255, 193, 7, 0.08);
-            border: 1px solid rgba(255, 193, 7, 0.2);
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
         }
 
-        /* Animations */
+        .form-description {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .tagline { font-size: 1rem; }
+            .link-card { padding: 1rem; flex-direction: column; text-align: center; }
+            .link-icon { width: 40px; height: 40px; margin-right: 0; margin-bottom: 0.8rem; }
+            .link-icon i { font-size: 1.2rem; }
+            .link-text { margin-right: 0; margin-bottom: 0.8rem; }
+            .course-button { padding: 0.7rem 1rem; font-size: 0.85rem; }
+            .mentoring-button { padding: 0.7rem 1rem; font-size: 0.85rem; }
+            .tools-box { padding: 1rem; }
+            .tools-buttons { flex-direction: column; gap: 0.6rem; }
+            .tool-button { padding: 0.7rem; font-size: 0.9rem; }
+            #background-video { display: none; }
+            .podcast-embed iframe { height: 132px; }
+            .floating-whatsapp { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .floating-whatsapp i { font-size: 20px; }
+            .modal-content { padding: 1.5rem; }
+            .modal-title { font-size: 1.3rem; }
+            .eo-form-input { padding: 0.7rem 0.9rem; }
+            .eo-form-button { padding: 0.9rem 1.2rem; }
+            .footer-links { flex-direction: column; gap: 0.5rem; }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* Animation delays */
         .link-card:nth-child(1) { animation-delay: 0.1s; }
         .link-card:nth-child(2) { animation-delay: 0.2s; }
         .link-card:nth-child(3) { animation-delay: 0.3s; }
@@ -875,153 +707,9 @@
         .link-card:nth-child(5) { animation-delay: 0.5s; }
         .link-card:nth-child(6) { animation-delay: 0.6s; }
         .link-card:nth-child(7) { animation-delay: 0.7s; }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.8rem;
-                margin: 1.5rem auto;
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .link-card {
-                padding: 1.2rem;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .link-icon {
-                width: 45px;
-                height: 45px;
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .link-icon i {
-                font-size: 1.4rem;
-            }
-
-            .link-text {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .course-button {
-                padding: 0.8rem 1.2rem;
-                font-size: 0.9rem;
-                min-width: 110px;
-            }
-
-            .mentoring-button {
-                padding: 1rem 1.5rem;
-                font-size: 0.95rem;
-            }
-
-            .tools-box {
-                padding: 1.2rem;
-            }
-
-            .tools-buttons {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .tool-button {
-                padding: 0.9rem;
-                font-size: 0.9rem;
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-
-            #background-video {
-                display: none;
-            }
-
-            .podcast-embed iframe {
-                height: 140px;
-            }
-
-            .floating-whatsapp {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .floating-whatsapp i {
-                font-size: 22px;
-            }
-
-            .modal-content {
-                padding: 1.8rem;
-            }
-
-            .modal-title {
-                font-size: 1.5rem;
-            }
-
-            .eo-form-input {
-                padding: 0.9rem 1.1rem;
-            }
-
-            .eo-form-button {
-                padding: 1.1rem 1.5rem;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .section-title {
-                font-size: 1.2rem;
-                padding-left: 18px;
-            }
-
-            .section-title i {
-                font-size: 1.2rem;
-                margin-right: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .container {
-                padding: 1.5rem;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-            }
-
-            .modal-title {
-                font-size: 1.4rem;
-            }
-
-            .form-description {
-                font-size: 0.95rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="noise-overlay"></div>
-    
     <video autoplay muted loop playsinline id="background-video">
         <source src="background-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
@@ -1030,44 +718,41 @@
     <div class="container">
         <header>
             <h1>PANTASEC</h1>
-            <p class="tagline">Creador Digital | Ciberseguridad </p>
+            <p class="tagline">Creador Digital - Ciberseguridad</p>
         </header>
 
-        <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Academia Principal</h3>
+        <h3 class="section-title">LionxSecurity</h3>
         <div class="links">
             <a href="https://lionxsecurity.es" class="link-card featured" target="_blank">
                 <div class="link-icon">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="link-text">
-                    <p class="link-title">LionxSecurity Academy</p>
-                    <p class="link-desc">Formación especializada en hacking ético, ciberseguridad y preparación para certificaciones eJPT/OSCP</p>
+                    <p class="link-title">Academia LionxSecurity</p>
+                    <p class="link-desc">Únete a nuestra academia de ciberseguridad en LionxSecurity.es</p>
                 </div>
-                <span class="course-button">Visitar <i class="fas fa-arrow-right"></i></span>
+                <span class="course-button" aria-label="Visitar Academia LionxSecurity">Visitar Academia</span>
             </a>
         </div>
 
-        <h3 class="section-title"><i class="fas fa-gift"></i> Recursos Gratuitos</h3>
+        <h3 class="section-title">Descuentos, Apuntes y Herramientas</h3>
         <div class="links">
             <div class="tools-box">
                 <div class="tools-buttons">
                     <a href="#" class="tool-button" id="discountButton">
-                        <i class="fas fa-tag"></i>
-                        <span>Descuento 15%</span>
+                        <i class="fas fa-tag"></i> Descuento 15%
                     </a>
                     <a href="#" class="tool-button" id="freeNotesButton">
-                        <i class="fas fa-book"></i>
-                        <span>Apuntes Gratis</span>
+                        <i class="fas fa-gift"></i> Apuntes Gratis
                     </a>
                     <a href="#" class="tool-button" id="hackingToolsButton">
-                        <i class="fas fa-tools"></i>
-                        <span>Hacking Tools</span>
+                        <i class="fab fa-github"></i> Hacking Tools
                     </a>
                 </div>
             </div>
         </div>
 
-        <h3 class="section-title"><i class="fas fa-broadcast-tower"></i> Contenido Principal</h3>
+        <h3 class="section-title">Contenido Principal</h3>
         <div class="links">
             <a href="https://t.me/LionxSecurity" target="_blank" class="link-card">
                 <div class="link-icon">
@@ -1092,7 +777,7 @@
             </div>
         </div>
 
-        <h3 class="section-title"><i class="fas fa-hashtag"></i> Redes Sociales</h3>
+        <h3 class="section-title">Redes Sociales</h3>
         <div class="links">
             <a href="https://www.instagram.com/pantasec.yt/" target="_blank" class="link-card">
                 <div class="link-icon">
@@ -1131,7 +816,7 @@
         </div>
     </footer>
 
-    <a href="#" class="floating-whatsapp" id="mentoringButton" aria-label="Consultar mentorías">
+    <a href="#" class="floating-whatsapp" id="mentoringButton" aria-label="Abrir información de mentorías">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1140,12 +825,10 @@
             <span class="close-modal" id="closeMentoringModal">×</span>
             <h3 class="modal-title">Mentorías Personalizadas</h3>
             <p class="form-description">
-                <strong style="color: var(--whatsapp);">🚀 ¡Eleva tu carrera en ciberseguridad!</strong><br><br>
-                Ofrecemos mentorías 1:1, asesoramiento personalizado, clases privadas y preparación para certificaciones 🎓 eJPT/OSCP con apoyo de inserción laboral.
+                <strong style="color: var(--whatsapp-green);">🚀 ¡Eleva tu carrera en ciberseguridad!</strong><br>
+                💻 Mentorías 1:1, asesoramiento personalizado, clases privadas y apoyo para certificaciones 🎓 eJPT/OSCP con inserción laboral.
             </p>
-            <a href="https://wa.me/+34624898460?text=Hola%2C%20quiero%20agendar%20mi%20primera%20reuni%C3%B3n%20gratis%20para%20las%20mentor%C3%ADas%201%3A1%20de%20LionxSecurity%20sobre%20ciberseguridad.%20%C2%A1Dame%20m%C3%A1s%20detalles!" class="mentoring-button" target="_blank">
-                <i class="fab fa-whatsapp"></i> Agendar Primera Reunión Gratis
-            </a>
+            <a href="https://wa.me/+34624898460?text=Hola%2C%20quiero%20agendar%20mi%20primera%20reuni%C3%B3n%20gratis%20para%20las%20mentor%C3%ADas%201%3A1%20de%20LionxSecurity%20sobre%20ciberseguridad.%20%C2%A1Dame%20m%C3%A1s%20detalles!" class="mentoring-button" target="_blank" aria-label="Agendar primera reunión gratis">📅 Primera Reunión Gratis</a>
         </div>
     </div>
 
@@ -1164,7 +847,7 @@
         <div class="modal-content">
             <span class="close-modal" id="closeApuntesModal">×</span>
             <h3 class="modal-title">Apuntes Gratis de Ciberseguridad</h3>
-            <p class="form-description">Introduce tu email para recibir apuntes exclusivos de ciberseguridad.</p>
+            <p class="form-description">Introduce tu email para recibir los apuntes gratis de ciberseguridad.</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55.js" data-form="a29ac8e2-8b3a-11f0-b213-f7de3fefbf55"></script>
             </div>
@@ -1175,7 +858,7 @@
         <div class="modal-content">
             <span class="close-modal" id="closeHackingToolsModal">×</span>
             <h3 class="modal-title">Herramientas de Hacking Gratis</h3>
-            <p class="form-description">Introduce tu email para recibir herramientas exclusivas de hacking.</p>
+            <p class="form-description">Introduce tu email para recibir las herramientas de hacking gratis.</p>
             <div class="eo-form-container">
                 <script async src="https://eocampaign1.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
             </div>
@@ -1203,19 +886,57 @@
         const hackingToolsModal = document.getElementById('hackingToolsModal');
         const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
 
-        // Close all modals
-        function closeAllModals() {
-            [mentoringModal, discountModal, apuntesModal, hackingToolsModal].forEach(modal => {
-                if (modal) modal.style.display = 'none';
-            });
-            document.body.style.overflow = 'auto';
+        // Close modals
+        function closeModalFunc() {
+            if (mentoringModal && discountModal && apuntesModal && hackingToolsModal) {
+                mentoringModal.style.display = 'none';
+                discountModal.style.display = 'none';
+                apuntesModal.style.display = 'none';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
-        // Open specific modal
-        function openModal(modal) {
-            closeAllModals();
-            if (modal) {
-                modal.style.display = 'flex';
+        // Open mentoring modal
+        function openMentoringModal() {
+            if (mentoringModal && discountModal && apuntesModal && hackingToolsModal) {
+                mentoringModal.style.display = 'flex';
+                discountModal.style.display = 'none';
+                apuntesModal.style.display = 'none';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Open discount modal
+        function openDiscountModal() {
+            if (mentoringModal && discountModal && apuntesModal && hackingToolsModal) {
+                mentoringModal.style.display = 'none';
+                discountModal.style.display = 'flex';
+                apuntesModal.style.display = 'none';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Open apuntes modal
+        function openApuntesModal() {
+            if (mentoringModal && discountModal && apuntesModal && hackingToolsModal) {
+                mentoringModal.style.display = 'none';
+                discountModal.style.display = 'none';
+                apuntesModal.style.display = 'flex';
+                hackingToolsModal.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Open hacking tools modal
+        function openHackingToolsModal() {
+            if (mentoringModal && discountModal && apuntesModal && hackingToolsModal) {
+                mentoringModal.style.display = 'none';
+                discountModal.style.display = 'none';
+                apuntesModal.style.display = 'none';
+                hackingToolsModal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             }
         }
@@ -1224,95 +945,109 @@
         if (mentoringButton) {
             mentoringButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                openModal(mentoringModal);
+                openMentoringModal();
             });
         }
 
         if (discountButton) {
             discountButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                openModal(discountModal);
+                openDiscountModal();
             });
         }
 
         if (freeNotesButton) {
             freeNotesButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                openModal(apuntesModal);
+                openApuntesModal();
             });
         }
 
         if (hackingToolsButton) {
             hackingToolsButton.addEventListener('click', (e) => {
                 e.preventDefault();
-                openModal(hackingToolsModal);
+                openHackingToolsModal();
             });
         }
 
-        // Close buttons
-        const closeButtons = [
-            { button: closeMentoringModal, modal: mentoringModal },
-            { button: closeDiscountModal, modal: discountModal },
-            { button: closeApuntesModal, modal: apuntesModal },
-            { button: closeHackingToolsModal, modal: hackingToolsModal }
-        ];
+        if (closeMentoringModal) {
+            closeMentoringModal.addEventListener('click', closeModalFunc);
+        }
 
-        closeButtons.forEach(({ button, modal }) => {
-            if (button) {
-                button.addEventListener('click', closeAllModals);
-            }
-        });
+        if (closeDiscountModal) {
+            closeDiscountModal.addEventListener('click', closeModalFunc);
+        }
 
-        // Close modals when clicking outside
-        const modals = [mentoringModal, discountModal, apuntesModal, hackingToolsModal];
-        modals.forEach(modal => {
+        if (closeApuntesModal) {
+            closeApuntesModal.addEventListener('click', closeModalFunc);
+        }
+
+        if (closeHackingToolsModal) {
+            closeHackingToolsModal.addEventListener('click', closeModalFunc);
+        }
+
+        // Close modals when clicking outside the modal content
+        [mentoringModal, discountModal, apuntesModal, hackingToolsModal].forEach(modal => {
             if (modal) {
                 modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeAllModals();
+                    if (e.target === modal) {
+                        closeModalFunc();
+                    }
                 });
             }
         });
 
-        // Close with Escape key
+        // Close modals with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeAllModals();
+            if (e.key === 'Escape') {
+                closeModalFunc();
+            }
         });
 
-        // Style EmailOctopus forms after they load
+        // Ensure EmailOctopus forms are properly styled and centered after loading
         document.addEventListener('DOMContentLoaded', () => {
-            const styleForm = (form) => {
-                if (!form) return;
-                
-                const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
-                const buttons = form.querySelectorAll('button[type="submit"]');
-                const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-                
-                inputs.forEach(input => {
-                    input.classList.add('eo-form-input');
-                });
-                
-                buttons.forEach(button => {
-                    button.classList.add('eo-form-button');
-                });
-                
-                checkboxes.forEach(checkbox => {
-                    const label = checkbox.nextElementSibling;
-                    if (label && label.tagName === 'LABEL') {
-                        const container = document.createElement('div');
-                        container.classList.add('eo-form-checkbox');
-                        checkbox.parentNode.insertBefore(container, checkbox);
-                        container.appendChild(checkbox);
-                        container.appendChild(label);
-                    }
-                });
-            };
+            const eoForms = document.querySelectorAll('.eo-form-container');
+            eoForms.forEach(form => {
+                if (!form) return; // Skip if form container is not found
+                form.style.display = 'flex';
+                form.style.flexDirection = 'column';
+                form.style.alignItems = 'center';
+                form.style.width = '100%';
+                form.style.maxWidth = '100%';
 
-            document.querySelectorAll('.eo-form-container').forEach(styleForm);
-            
-            // Retry after a delay in case forms load slowly
-            setTimeout(() => {
-                document.querySelectorAll('.eo-form-container').forEach(styleForm);
-            }, 1000);
+                // Retry observing if form content isn't loaded yet
+                const observeForm = () => {
+                    if (!form.isConnected) return; // Skip if form is no longer in DOM
+                    const observer = new MutationObserver(() => {
+                        const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
+                        const buttons = form.querySelectorAll('button[type="submit"]');
+                        const checkboxes = form.querySelectorAll('input[type="checkbox"] + label');
+
+                        inputs.forEach(input => {
+                            input.classList.add('eo-form-input');
+                        });
+
+                        buttons.forEach(button => {
+                            button.classList.add('eo-form-button');
+                        });
+
+                        checkboxes.forEach(checkbox => {
+                            const parent = checkbox.parentElement;
+                            if (parent) {
+                                parent.classList.add('eo-form-checkbox');
+                            }
+                        });
+                    });
+
+                    observer.observe(form, { childList: true, subtree: true });
+                };
+
+                // Initial attempt to observe
+                observeForm();
+
+                // Retry after a delay if form content isn't loaded
+                setTimeout(observeForm, 1000); // Retry after 1 second
+            });
         });
     </script>
 </body>
