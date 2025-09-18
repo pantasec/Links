@@ -645,6 +645,7 @@
             background: linear-gradient(135deg, var(--whatsapp-hover), #0E766A);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            color: white;
         }
 
         .mentoring-button:hover::before {
@@ -741,6 +742,7 @@
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+            color: var(--dark);
         }
 
         /* Modal specific styles */
@@ -944,6 +946,11 @@
             #background-video {
                 display: none;
             }
+            
+            /* Cambio específico para el fondo en móviles */
+            body {
+                background: #000000; /* Fondo negro en móviles */
+            }
 
             .podcast-embed iframe {
                 height: 140px;
@@ -1088,7 +1095,7 @@
                 </div>
             </a>
             <div class="podcast-embed">
-                <iframe src="https://open.spotify.com/embed/show/0cuZ7kTlix1kV7axYg7j3N" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify/embed/show/0cuZ7kTlix1kV7axYg7j3N" allow="encrypted-media"></iframe>
             </div>
         </div>
 
