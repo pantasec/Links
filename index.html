@@ -705,7 +705,6 @@
             margin: 1.2rem 0;
             padding: 1.2rem;
             background: rgba(255, 122, 0, 0.08);
-            border-radius: 10px;
             border: 1px solid rgba(255, 122, 0, 0.2);
         }
 
@@ -945,6 +944,10 @@
                 display: none;
             }
 
+            body {
+                background: var(--darker);
+            }
+
             .podcast-embed iframe {
                 height: 140px;
             }
@@ -1017,6 +1020,39 @@
                 font-size: 0.95rem;
             }
         }
+
+        .event-button {
+            background: linear-gradient(135deg, var(--blue), #1976D2);
+            color: white;
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+            border: none;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .event-button:hover {
+            background: linear-gradient(135deg, #1976D2, var(--blue));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(33, 150, 243, 0.4);
+        }
+
+        .event-button i {
+            margin-left: 8px;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -1032,6 +1068,16 @@
             <h1>PANTASEC</h1>
             <p class="tagline">Creador Digital | Ciberseguridad </p>
         </header>
+
+        <a href="https://discord.com/channels/1418929770187456565/1420467884756439110" class="event-button" target="_blank">
+            Evento Ciberseguridad: Únete ya 19:00 (España) Domingo <i class="fab fa-discord"></i>
+        </a>
+        <p class="form-description" style="margin-bottom: 2rem;">
+            📢 <strong>Evento de Ciberseguridad en Discord</strong><br>
+            🗓️ Este domingo a las 19:00 (hora España) nos vemos en nuestro servidor de Discord para un evento exclusivo de ciberseguridad.<br>
+            🎁 Entre todos los que participéis vamos a regalar 5 cursos completos de Hacking y Redes.<br>
+            👉 ¡Y si traes a un amigo, tendrás más posibilidades de ganar!
+        </p>
 
         <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Academia Principal</h3>
         <div class="links">
