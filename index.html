@@ -1059,6 +1059,7 @@
             opacity: 0;
             transition: var(--transition);
             backdrop-filter: blur(2px);
+            pointer-events: none; /* ¡ESTO ES CLAVE! Permite que los clics pasen a la imagen */
         }
 
         .masterclass-container:hover .masterclass-overlay {
@@ -1245,7 +1246,7 @@
                  class="masterclass-cover" 
                  id="masterclassCover">
             
-            <!-- Overlay con animaciones -->
+            <!-- Overlay con animaciones - AHORA NO BLOQUEA LOS CLICS -->
             <div class="masterclass-overlay">
                 <div class="masterclass-gift">🎁</div>
                 <div class="masterclass-click-text">¡Haz click para más info!</div>
