@@ -1021,35 +1021,180 @@
             }
         }
 
-        .event-button {
-            background: linear-gradient(135deg, var(--blue), #1976D2);
-            color: white;
+        /* Nuevos estilos para la sección de masterclass */
+        .masterclass-section {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.9));
+            border: 1px solid var(--grey-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--light);
+            transition: var(--transition);
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+
+        .masterclass-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+        }
+
+        .masterclass-section:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(255, 122, 0, 0.3);
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.95), rgba(32, 32, 32, 0.95));
+        }
+
+        .masterclass-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.8rem;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .masterclass-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, var(--primary-light), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .masterclass-section:hover .masterclass-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .masterclass-section:hover .masterclass-icon::before {
+            opacity: 1;
+        }
+
+        .masterclass-icon i {
+            font-size: 1.6rem;
+            transition: var(--transition);
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .masterclass-section:hover .masterclass-icon i {
+            color: var(--lighter);
+            filter: drop-shadow(0 0 8px var(--primary));
+        }
+
+        .masterclass-text {
+            text-align: left;
+            flex: 1 1 auto;
+            margin-right: 1.5rem;
+        }
+
+        .masterclass-title {
             font-weight: 700;
-            padding: 1rem 1.5rem;
+            font-size: 1.3rem;
+            margin: 0 0 0.4rem 0;
+            color: var(--lighter);
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .masterclass-section:hover .masterclass-title {
+            color: var(--primary);
+        }
+
+        .masterclass-desc {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .masterclass-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--dark);
+            font-weight: 700;
+            padding: 0.9rem 1.5rem;
             border-radius: 10px;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             transition: var(--transition);
             text-decoration: none;
+            flex-shrink: 0;
             text-align: center;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
             border: none;
             cursor: pointer;
-            margin-bottom: 1.5rem;
+            min-width: 120px;
+        }
+
+        .masterclass-button:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(255, 122, 0, 0.4);
+        }
+
+        .masterclass-button i {
+            margin-left: 8px;
+            font-size: 1.1rem;
+        }
+
+        .discord-button {
+            background: linear-gradient(135deg, #5865F2, #4752C4);
+            color: white;
+            font-weight: 700;
+            padding: 0.9rem 1.5rem;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: var(--transition);
+            text-decoration: none;
+            flex-shrink: 0;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(88, 101, 242, 0.3);
+            border: none;
+            cursor: pointer;
+            min-width: 120px;
+            margin-top: 1.5rem;
             width: 100%;
         }
 
-        .event-button:hover {
-            background: linear-gradient(135deg, #1976D2, var(--blue));
+        .discord-button:hover {
+            background: linear-gradient(135deg, #4752C4, #5865F2);
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(33, 150, 243, 0.4);
+            box-shadow: 0 6px 18px rgba(88, 101, 242, 0.4);
         }
 
-        .event-button i {
+        .discord-button i {
             margin-left: 8px;
             font-size: 1.1rem;
         }
@@ -1069,14 +1214,17 @@
             <p class="tagline">Creador Digital | Ciberseguridad </p>
         </header>
 
-        <a href="https://discord.com/channels/1418929770187456565/1420467884756439110" class="event-button" target="_blank">
-            🎯 Evento Exclusivo: Únete Domingo 19:00 (España) <i class="fab fa-discord"></i>
+        <!-- Nueva sección de Masterclass -->
+        <a href="https://lionxsecurity.es" class="masterclass-section" target="_blank">
+            <div class="masterclass-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="masterclass-text">
+                <p class="masterclass-title">Hackea Empresas Legalmente!</p>
+                <p class="masterclass-desc">Descubre cómo las empresas contratan hackers éticos y cómo puedes acceder a estos trabajos bien remunerados</p>
+            </div>
+            <span class="masterclass-button">Comprar Ahora <i class="fas fa-arrow-right"></i></span>
         </a>
-        <p class="form-description" style="margin-bottom: 2rem;">
-            🗓️ <strong>Todos los domingos a las 19:00 (hora España)</strong><br>
-            🎁 <strong>Sorteamos 5 cursos de Hacking y Redes</strong> mensualmente <br>
-            💬 Resolvemos dudas y networking en directo
-        </p>
 
         <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Academia Principal</h3>
         <div class="links">
@@ -1090,6 +1238,16 @@
                 </div>
                 <span class="course-button">Visitar <i class="fas fa-arrow-right"></i></span>
             </a>
+            
+            <!-- Botón de Discord movido aquí -->
+            <a href="https://tally.so/forms/n9V88E/summary" class="discord-button" target="_blank">
+                🎯 Evento Exclusivo: Únete Domingo 19:00 (España) <i class="fab fa-discord"></i>
+            </a>
+            <p class="form-description" style="margin-bottom: 2rem; text-align: center;">
+                🗓️ <strong>Todos los domingos a las 19:00 (hora España)</strong><br>
+                🎁 <strong>Sorteamos 5 cursos de Hacking y Redes</strong> mensualmente <br>
+                💬 Resolvemos dudas y networking en directo
+            </p>
         </div>
 
         <h3 class="section-title"><i class="fas fa-gift"></i> Recursos Gratuitos</h3>
