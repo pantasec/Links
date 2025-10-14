@@ -1029,6 +1029,12 @@
             position: relative;
         }
 
+        .masterclass-image-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
         .masterclass-cover {
             width: 100%;
             border-radius: 12px;
@@ -1062,7 +1068,7 @@
             pointer-events: none; /* Permite que los clics pasen a la imagen */
         }
 
-        .masterclass-container:hover .masterclass-overlay {
+        .masterclass-image-wrapper:hover .masterclass-overlay {
             opacity: 1;
         }
 
@@ -1247,7 +1253,7 @@
                      class="masterclass-cover" 
                      id="masterclassCover">
                 
-                <!-- Overlay con animaciones - AHORA NO SE MUEVE AL HACER CLIC -->
+                <!-- Overlay con animaciones - AHORA PERMANECE FIJO AL HACER CLIC -->
                 <div class="masterclass-overlay">
                     <div class="masterclass-gift">🎁</div>
                     <div class="masterclass-click-text">¡Haz click para más info!</div>
