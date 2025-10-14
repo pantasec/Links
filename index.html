@@ -1026,6 +1026,7 @@
             margin-bottom: 2.5rem;
             animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
+            position: relative;
         }
 
         .masterclass-cover {
@@ -1035,11 +1036,52 @@
             transition: var(--transition);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 122, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
         }
 
         .masterclass-cover:hover {
             transform: scale(1.02);
             box-shadow: 0 12px 30px rgba(255, 122, 0, 0.2);
+        }
+
+        .masterclass-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            backdrop-filter: blur(2px);
+        }
+
+        .masterclass-container:hover .masterclass-overlay {
+            opacity: 1;
+        }
+
+        .masterclass-gift {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 122, 0, 0.5));
+        }
+
+        .masterclass-click-text {
+            color: var(--lighter);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 122, 0, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            animation: pulse-text 2s infinite;
         }
 
         .masterclass-info {
@@ -1161,6 +1203,25 @@
             margin-left: 8px;
             font-size: 1.1rem;
         }
+
+        /* Nuevas animaciones para la portada */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes pulse-text {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -1177,16 +1238,24 @@
             <p class="tagline">Creador Digital | Ciberseguridad </p>
         </header>
 
-        <!-- Sección de Masterclass con portada interactiva -->
+        <!-- Sección de Masterclass con portada interactiva mejorada -->
         <div class="masterclass-container">
-<img src="https://raw.githubusercontent.com/pantasec/Links/main/bug.png" 
-     alt="Masterclass: Hackea Empresas Legalmente" 
-     class="masterclass-cover" 
-     id="masterclassCover">            
+            <img src="https://raw.githubusercontent.com/pantasec/Links/main/bug.png" 
+                 alt="Masterclass: Hackea Empresas Legalmente" 
+                 class="masterclass-cover" 
+                 id="masterclassCover">
+            
+            <!-- Overlay con animaciones -->
+            <div class="masterclass-overlay">
+                <div class="masterclass-gift">🎁</div>
+                <div class="masterclass-click-text">¡Haz click para más info!</div>
+            </div>
+            
             <div class="masterclass-info" id="masterclassInfo">
                 <p class="masterclass-subtitle">☕ Hacking Ético por 1 € — Bug Bounty desde cero y legalmente</p>
                 <p class="masterclass-description">
                     👨🏽‍💻 En esta Masterclass aprenderás, paso a paso, a hackear empresas legalmente, dominar metodologías reales de pentesting y empezar tu camino en la ciberseguridad profesional.
+                </p>
                 <a href="https://lionxsecurity.es/masterclass/" class="masterclass-button" target="_blank">
                     Comprar Ahora <i class="fas fa-arrow-right"></i>
                 </a>
