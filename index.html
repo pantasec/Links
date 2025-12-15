@@ -1229,6 +1229,71 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+
+        /* Estilos para el título encima de la imagen */
+        .masterclass-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .masterclass-main-title {
+            color: var(--lighter);
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 20px rgba(255, 122, 0, 0.5);
+            animation: title-glow 2s ease-in-out infinite alternate;
+            position: relative;
+            display: inline-block;
+        }
+
+        .masterclass-main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            border-radius: 2px;
+        }
+
+        .masterclass-subheader {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        @keyframes title-glow {
+            0% { text-shadow: 0 0 20px rgba(255, 122, 0, 0.5), 0 0 40px rgba(255, 122, 0, 0.3); }
+            100% { text-shadow: 0 0 25px rgba(255, 122, 0, 0.7), 0 0 50px rgba(255, 122, 0, 0.5); }
+        }
+
+        @media (max-width: 768px) {
+            .masterclass-main-title {
+                font-size: 2rem;
+            }
+            
+            .masterclass-subheader {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .masterclass-main-title {
+                font-size: 1.8rem;
+            }
+            
+            .masterclass-subheader {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1247,6 +1312,11 @@
 
         <!-- Sección de Masterclass con portada interactiva mejorada -->
         <div class="masterclass-container">
+            <div class="masterclass-header">
+                <h2 class="masterclass-main-title">Consigue tu primer Empleo en Ciberseguridad</h2>
+                <p class="masterclass-subheader">Agenda tu primera reunión gratuita</p>
+            </div>
+            
             <div class="masterclass-image-wrapper">
                 <img src="https://raw.githubusercontent.com/pantasec/Links/main/ciberseguridad_empresas.jpg" 
                      alt="Agenda tu primera reunión gratuita" 
