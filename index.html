@@ -1104,6 +1104,11 @@
             overflow: hidden;
         }
 
+        .masterclass-info.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
         .masterclass-info::before {
             content: '';
             position: absolute;
@@ -1112,11 +1117,6 @@
             right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--primary), transparent);
-        }
-
-        .masterclass-info.active {
-            display: block;
-            animation: fadeInUp 0.5s ease-out;
         }
 
         .masterclass-title {
@@ -1248,25 +1248,26 @@
         <!-- Sección de Masterclass con portada interactiva mejorada -->
         <div class="masterclass-container">
             <div class="masterclass-image-wrapper">
-                <img src="https://raw.githubusercontent.com/pantasec/Links/main/bug.png" 
-                     alt="Masterclass: Hackea Empresas Legalmente" 
+                <img src="https://raw.githubusercontent.com/pantasec/Links/main/ciberseguridad_empresas.jpg" 
+                     alt="Agenda tu primera reunión gratuita" 
                      class="masterclass-cover" 
-                     id="masterclassCover">
+                     id="masterclassCover" 
+                     onclick="window.open('https://cal.com/lionxsecurity-gmg0n1/30min', '_blank')">
                 
                 <!-- Overlay con animaciones - AHORA PERMANECE FIJO AL HACER CLIC -->
                 <div class="masterclass-overlay">
-                    <div class="masterclass-gift">🎁</div>
-                    <div class="masterclass-click-text">¡Haz click para más info!</div>
+                    <div class="masterclass-gift">🎯</div>
+                    <div class="masterclass-click-text">¡Haz click para agendar!</div>
                 </div>
             </div>
             
             <div class="masterclass-info" id="masterclassInfo">
-                <p class="masterclass-subtitle">☕ Hacking Ético por 1 € — Bug Bounty desde cero y legalmente</p>
+                <p class="masterclass-subtitle">Agenda tu primera reunión gratuita</p>
                 <p class="masterclass-description">
-                    👨🏽‍💻 En esta Masterclass aprenderás, paso a paso, a hackear empresas legalmente, dominar metodologías reales de pentesting y empezar tu camino en la ciberseguridad profesional.
+                    Consigue tu primer empleo en ciberseguridad. Te ayudamos con inserción laboral, preparación para certificaciones eJPT, OSCP, eWPT y mentorías personalizadas.
                 </p>
-                <a href="https://lionxsecurity.es/masterclass/" class="masterclass-button" target="_blank">
-                    Comprar Ahora <i class="fas fa-arrow-right"></i>
+                <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="masterclass-button" target="_blank">
+                    Empieza Ahora <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -1283,16 +1284,6 @@
                 </div>
                 <span class="course-button">Visitar <i class="fas fa-arrow-right"></i></span>
             </a>
-            
-            <!-- Botón de Discord movido aquí -->
-            <a href="https://tally.so/forms/n9V88E/summary" class="discord-button" target="_blank">
-                🎯 Evento Exclusivo: Únete Domingo 19:00 (España) <i class="fab fa-discord"></i>
-            </a>
-            <p class="form-description" style="margin-bottom: 2rem; text-align: center;">
-                🗓️ <strong>Todos los domingos a las 19:00 (hora España)</strong><br>
-                🎁 <strong>Sorteamos 5 cursos de Hacking y Redes</strong> mensualmente <br>
-                💬 Resolvemos dudas y networking en directo
-            </p>
         </div>
 
         <h3 class="section-title"><i class="fas fa-gift"></i> Recursos Gratuitos</h3>
@@ -1313,6 +1304,16 @@
                     </a>
                 </div>
             </div>
+            
+            <!-- Evento Exclusivo movido aquí -->
+            <a href="https://tally.so/forms/n9V88E/summary" class="discord-button" target="_blank">
+                🎯 Evento Exclusivo: Únete Domingo 19:00 (España) <i class="fab fa-discord"></i>
+            </a>
+            <p class="form-description" style="margin-bottom: 2rem; text-align: center;">
+                🗓️ <strong>Todos los domingos a las 19:00 (hora España)</strong><br>
+                🎁 <strong>Sorteamos 5 cursos de Hacking y Redes</strong> mensualmente <br>
+                💬 Resolvemos dudas y networking en directo
+            </p>
         </div>
 
         <h3 class="section-title"><i class="fas fa-broadcast-tower"></i> Contenido Principal</h3>
@@ -1443,8 +1444,19 @@
         const masterclassInfo = document.getElementById('masterclassInfo');
 
         if (masterclassCover && masterclassInfo) {
-            masterclassCover.addEventListener('click', () => {
-                masterclassInfo.classList.toggle('active');
+            // Al hacer clic en la imagen, abre el enlace externo
+            masterclassCover.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open('https://cal.com/lionxsecurity-gmg0n1/30min', '_blank');
+            });
+            
+            // Alternar la información al hacer clic en la imagen (para móviles)
+            masterclassCover.addEventListener('click', (e) => {
+                // Solo alternar en móviles para no interferir con el enlace
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    masterclassInfo.classList.toggle('active');
+                }
             });
         }
 
