@@ -758,33 +758,6 @@
             margin-bottom: 2rem;
         }
 
-        .discount-modal .modal-content {
-            border-color: var(--primary);
-        }
-
-        .discount-modal .modal-title {
-            color: var(--primary);
-        }
-
-        .discount-modal .eo-form-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
-        }
-
-        .discount-modal .eo-form-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        }
-
-        .discount-modal .eo-form-button:hover {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
-        }
-
-        .discount-modal .eo-form-checkbox {
-            background: rgba(255, 122, 0, 0.08);
-            border: 1px solid rgba(255, 122, 0, 0.2);
-        }
-
         .apuntes-modal .modal-content {
             border-color: var(--purple);
         }
@@ -1360,10 +1333,7 @@
         <div class="links">
             <div class="tools-box">
                 <div class="tools-buttons">
-                    <a href="#" class="tool-button" id="discountButton">
-                        <i class="fas fa-tag"></i>
-                        <span>Descuento 15%</span>
-                    </a>
+                    <!-- ELIMINADO EL BOTÓN DE DESCUENTO 15% -->
                     <a href="#" class="tool-button" id="freeNotesButton">
                         <i class="fas fa-book"></i>
                         <span>Apuntes Gratis</span>
@@ -1469,16 +1439,7 @@
         </div>
     </div>
 
-    <div class="modal-overlay discount-modal" id="discountModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeDiscountModal">×</span>
-            <h3 class="modal-title">Descuento 15% en Cursos</h3>
-            <p class="form-description">Regístrate para obtener un <strong style="color: var(--primary);">15% de descuento</strong> en nuestros cursos de hacking ético.</p>
-            <div class="eo-form-container">
-                <script async src="https://eocampaign1.com/form/6678d19e-8b1f-11f0-808e-af63b4293a21.js" data-form="6678d19e-8b1f-11f0-808e-af63b4293a21"></script>
-            </div>
-        </div>
-    </div>
+    <!-- MODAL ELIMINADO: discountModal (del 15% de descuento) -->
 
     <div class="modal-overlay apuntes-modal" id="apuntesModal">
         <div class="modal-content">
@@ -1532,13 +1493,10 @@
 
         // Get DOM elements
         const mentoringButton = document.getElementById('mentoringButton');
-        const discountButton = document.getElementById('discountButton');
         const freeNotesButton = document.getElementById('freeNotesButton');
         const hackingToolsButton = document.getElementById('hackingToolsButton');
         const mentoringModal = document.getElementById('mentoringModal');
         const closeMentoringModal = document.getElementById('closeMentoringModal');
-        const discountModal = document.getElementById('discountModal');
-        const closeDiscountModal = document.getElementById('closeDiscountModal');
         const apuntesModal = document.getElementById('apuntesModal');
         const closeApuntesModal = document.getElementById('closeApuntesModal');
         const hackingToolsModal = document.getElementById('hackingToolsModal');
@@ -1546,7 +1504,7 @@
 
         // Close all modals
         function closeAllModals() {
-            [mentoringModal, discountModal, apuntesModal, hackingToolsModal].forEach(modal => {
+            [mentoringModal, apuntesModal, hackingToolsModal].forEach(modal => {
                 if (modal) modal.style.display = 'none';
             });
             document.body.style.overflow = 'auto';
@@ -1569,13 +1527,6 @@
             });
         }
 
-        if (discountButton) {
-            discountButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal(discountModal);
-            });
-        }
-
         if (freeNotesButton) {
             freeNotesButton.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1593,7 +1544,6 @@
         // Close buttons
         const closeButtons = [
             { button: closeMentoringModal, modal: mentoringModal },
-            { button: closeDiscountModal, modal: discountModal },
             { button: closeApuntesModal, modal: apuntesModal },
             { button: closeHackingToolsModal, modal: hackingToolsModal }
         ];
@@ -1605,7 +1555,7 @@
         });
 
         // Close modals when clicking outside
-        const modals = [mentoringModal, discountModal, apuntesModal, hackingToolsModal];
+        const modals = [mentoringModal, apuntesModal, hackingToolsModal];
         modals.forEach(modal => {
             if (modal) {
                 modal.addEventListener('click', (e) => {
