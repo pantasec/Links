@@ -447,7 +447,7 @@
             line-height: 1.6;
         }
 
-        /* Sección Recursos Gratuitos */
+        /* Sección Recursos Gratuitos - NUEVO ESTILO CON BOTONES */
         .free-resources {
             margin: 80px 0;
             padding: 40px;
@@ -468,124 +468,299 @@
             background: linear-gradient(90deg, transparent, var(--primary), transparent);
         }
 
-        .resources-grid {
+        .resources-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .resource-card {
+        .resource-button {
             background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
-            border: 1px solid rgba(255, 122, 0, 0.4);
+            border: 2px solid rgba(255, 122, 0, 0.4);
             border-radius: 15px;
-            padding: 30px;
+            padding: 40px 30px;
             transition: var(--transition);
+            text-decoration: none;
+            color: var(--light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
         }
 
-        .resource-card:hover {
-            transform: translateY(-5px);
+        .resource-button:hover {
+            transform: translateY(-8px);
             border-color: var(--primary);
             box-shadow: 0 15px 35px rgba(255, 122, 0, 0.3);
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
         }
 
-        .resource-icon {
-            width: 60px;
-            height: 60px;
+        .resource-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .resource-button:hover::before {
+            transform: scaleX(1);
+        }
+
+        .resource-button-icon {
+            width: 80px;
+            height: 80px;
             background: rgba(255, 122, 0, 0.15);
-            border-radius: 12px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 25px;
+            font-size: 32px;
             color: var(--primary);
             transition: var(--transition);
         }
 
-        .resource-card:hover .resource-icon {
+        .resource-button:hover .resource-button-icon {
             background: var(--primary);
             color: var(--black);
+            transform: scale(1.1) rotate(10deg);
         }
 
-        .resource-card h4 {
+        .resource-button h4 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
             color: var(--light);
         }
 
-        .resource-card p {
+        .resource-button p {
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             line-height: 1.6;
+            font-size: 1.05rem;
         }
 
-        .resource-form {
-            margin-top: 15px;
+        .resource-button .btn-resource {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--black);
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .resource-form form {
+        .resource-button:hover .btn-resource {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+        }
+
+        /* Modales para los recursos gratuitos */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.98), rgba(15, 15, 15, 0.98));
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+            animation: modalFadeIn 0.4s ease-out;
+            box-shadow: 0 20px 60px rgba(255, 122, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 122, 0, 0.3);
+            color: var(--light);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10001;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 122, 0, 0.2);
+            color: var(--primary);
+            transform: rotate(90deg);
+            border-color: var(--primary);
+        }
+
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .form-description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .eo-form-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .eo-form-wrapper {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
-        .form-input {
+        .eo-form-input {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 122, 0, 0.3);
             color: var(--light);
-            padding: 12px 15px;
-            border-radius: 8px;
+            padding: 15px 18px;
+            border-radius: 10px;
+            font-size: 1rem;
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.95rem;
+            width: 100%;
             transition: var(--transition);
         }
 
-        .form-input:focus {
+        .eo-form-input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
             background: rgba(255, 255, 255, 0.12);
         }
 
-        .form-checkbox {
+        .eo-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .eo-form-checkbox {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin: 10px 0;
-        }
-
-        .form-checkbox input {
-            margin-top: 5px;
-        }
-
-        .form-checkbox label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.4;
-        }
-
-        .form-submit {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--black);
-            border: none;
-            padding: 12px 20px;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 122, 0, 0.08);
+            border: 1px solid rgba(255, 122, 0, 0.2);
             border-radius: 8px;
+        }
+
+        .eo-form-checkbox input[type="checkbox"] {
+            margin-top: 3px;
+            accent-color: var(--primary);
+        }
+
+        .eo-form-checkbox label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .eo-form-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            color: var(--black);
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 10px;
             font-family: 'Orbitron', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             cursor: pointer;
             transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            width: 100%;
+            margin-top: 10px;
+            box-shadow: 0 8px 25px rgba(255, 122, 0, 0.3);
         }
 
-        .form-submit:hover {
+        .eo-form-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 122, 0, 0.4);
+            box-shadow: 0 12px 30px rgba(255, 122, 0, 0.4);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+
+        /* Modales específicos */
+        .apuntes-modal .modal-content {
+            border-color: var(--primary);
+        }
+
+        .apuntes-modal .modal-title {
+            color: var(--primary);
+        }
+
+        .apuntes-modal .eo-form-checkbox {
+            background: rgba(255, 122, 0, 0.08);
+            border-color: rgba(255, 122, 0, 0.2);
+        }
+
+        .hacking-tools-modal .modal-content {
+            border-color: var(--terminal);
+        }
+
+        .hacking-tools-modal .modal-title {
+            color: var(--terminal);
+        }
+
+        .hacking-tools-modal .eo-form-checkbox {
+            background: rgba(0, 255, 0, 0.08);
+            border-color: rgba(0, 255, 0, 0.2);
         }
 
         /* Sección Redes Sociales */
@@ -841,6 +1016,11 @@
             50% { transform: translateY(-15px); }
         }
 
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero {
@@ -860,7 +1040,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .resources-grid {
+            .resources-buttons {
                 grid-template-columns: 1fr;
             }
 
@@ -902,6 +1082,14 @@
             .social-grid {
                 grid-template-columns: 1fr;
             }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -929,6 +1117,20 @@
             .footer-links {
                 flex-direction: column;
                 gap: 20px;
+            }
+
+            .resource-button {
+                padding: 30px 20px;
+            }
+
+            .resource-button-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .resource-button h4 {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -1021,54 +1223,39 @@
                 </div>
             </section>
 
+            <!-- Sección Recursos Gratuitos con BOTONES -->
             <section class="free-resources">
                 <div class="section-title">
                     <h3>Recursos Gratuitos</h3>
                 </div>
                 
                 <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin-left: auto; margin-right: auto;">
-                    Accede a recursos exclusivos de ciberseguridad. Introduce tu email para recibir contenido premium gratuito.
+                    Descarga contenido exclusivo de ciberseguridad. Haz clic en el recurso que te interese.
                 </p>
 
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <div class="resource-icon">
+                <div class="resources-buttons">
+                    <!-- Botón Apuntes -->
+                    <div class="resource-button" id="openApuntesModal">
+                        <div class="resource-button-icon">
                             <i class="fas fa-book"></i>
                         </div>
                         <h4>Apuntes de Hacking</h4>
                         <p>Recibe apuntes exclusivos con técnicas avanzadas de pentesting, metodologías y herramientas.</p>
-                        <div class="resource-form">
-                            <form id="notesForm" onsubmit="event.preventDefault(); submitForm('notesForm');">
-                                <input type="email" class="form-input" placeholder="Tu email profesional" required>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="notesPrivacy" required>
-                                    <label for="notesPrivacy">Acepto la política de privacidad y recibir contenido sobre ciberseguridad</label>
-                                </div>
-                                <button type="submit" class="form-submit">
-                                    <i class="fas fa-download"></i> Descargar Apuntes
-                                </button>
-                            </form>
-                        </div>
+                        <button class="btn-resource">
+                            <i class="fas fa-download"></i> Descargar Gratis
+                        </button>
                     </div>
 
-                    <div class="resource-card">
-                        <div class="resource-icon">
+                    <!-- Botón Herramientas -->
+                    <div class="resource-button" id="openToolsModal">
+                        <div class="resource-button-icon">
                             <i class="fas fa-tools"></i>
                         </div>
                         <h4>Herramientas de Hacking</h4>
                         <p>Kit completo de herramientas gratuitas, scripts y recursos para pruebas de penetración.</p>
-                        <div class="resource-form">
-                            <form id="toolsForm" onsubmit="event.preventDefault(); submitForm('toolsForm');">
-                                <input type="email" class="form-input" placeholder="Tu email profesional" required>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="toolsPrivacy" required>
-                                    <label for="toolsPrivacy">Acepto la política de privacidad y recibir contenido sobre ciberseguridad</label>
-                                </div>
-                                <button type="submit" class="form-submit">
-                                    <i class="fas fa-download"></i> Descargar Herramientas
-                                </button>
-                            </form>
-                        </div>
+                        <button class="btn-resource">
+                            <i class="fas fa-download"></i> Descargar Gratis
+                        </button>
                     </div>
                 </div>
             </section>
@@ -1148,6 +1335,29 @@
         </footer>
     </div>
 
+    <!-- Modales para recursos gratuitos -->
+    <div class="modal-overlay apuntes-modal" id="apuntesModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeApuntesModal">×</span>
+            <h3 class="modal-title">Apuntes Gratis de Ciberseguridad</h3>
+            <p class="form-description">Introduce tu email para recibir apuntes exclusivos de ciberseguridad.</p>
+            <div class="eo-form-container">
+                <script async src="https://eocampaign1.com/form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55.js" data-form="a29ac8e2-8b3a-11f0-b213-f7de3fefbf55"></script>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay hacking-tools-modal" id="hackingToolsModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeHackingToolsModal">×</span>
+            <h3 class="modal-title">Herramientas de Hacking Gratis</h3>
+            <p class="form-description">Introduce tu email para recibir herramientas exclusivas de hacking.</p>
+            <div class="eo-form-container">
+                <script async src="https://eocampaign1.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Efectos interactivos
         document.addEventListener('DOMContentLoaded', function() {
@@ -1204,7 +1414,7 @@
             }, observerOptions);
 
             // Aplicar a elementos que queremos animar
-            document.querySelectorAll('.feature-card, .resource-card, .social-card, .discord-section').forEach(el => {
+            document.querySelectorAll('.feature-card, .resource-button, .social-card, .discord-section').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1220,61 +1430,87 @@
             title.addEventListener('mouseleave', () => {
                 title.style.textShadow = '0 0 30px rgba(255, 122, 0, 0.5)';
             });
-        });
 
-        // Simulación de envío de formularios
-        function submitForm(formId) {
-            const form = document.getElementById(formId);
-            const button = form.querySelector('.form-submit');
-            const originalText = button.innerHTML;
+            // Funcionalidad de los modales
+            const apuntesModal = document.getElementById('apuntesModal');
+            const hackingToolsModal = document.getElementById('hackingToolsModal');
+            const openApuntesBtn = document.getElementById('openApuntesModal');
+            const openToolsBtn = document.getElementById('openToolsModal');
+            const closeApuntesModal = document.getElementById('closeApuntesModal');
+            const closeHackingToolsModal = document.getElementById('closeHackingToolsModal');
+
+            // Abrir modal de apuntes
+            openApuntesBtn.addEventListener('click', () => {
+                closeAllModals();
+                apuntesModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+
+            // Abrir modal de herramientas
+            openToolsBtn.addEventListener('click', () => {
+                closeAllModals();
+                hackingToolsModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+
+            // Cerrar modales
+            closeApuntesModal.addEventListener('click', closeAllModals);
+            closeHackingToolsModal.addEventListener('click', closeAllModals);
+
+            // Cerrar al hacer clic fuera del modal
+            [apuntesModal, hackingToolsModal].forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeAllModals();
+                });
+            });
+
+            // Cerrar con Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeAllModals();
+            });
+
+            function closeAllModals() {
+                [apuntesModal, hackingToolsModal].forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            }
+
+            // Estilizar formularios EmailOctopus cuando se carguen
+            const styleForm = (form) => {
+                if (!form) return;
+                
+                const inputs = form.querySelectorAll('input[type="email"], input[type="text"]');
+                const buttons = form.querySelectorAll('button[type="submit"]');
+                const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                
+                inputs.forEach(input => {
+                    input.classList.add('eo-form-input');
+                });
+                
+                buttons.forEach(button => {
+                    button.classList.add('eo-form-button');
+                });
+                
+                checkboxes.forEach(checkbox => {
+                    const label = checkbox.nextElementSibling;
+                    if (label && label.tagName === 'LABEL') {
+                        const container = document.createElement('div');
+                        container.classList.add('eo-form-checkbox');
+                        checkbox.parentNode.insertBefore(container, checkbox);
+                        container.appendChild(checkbox);
+                        container.appendChild(label);
+                    }
+                });
+            };
+
+            // Aplicar estilos a los formularios
+            document.querySelectorAll('.eo-form-container').forEach(styleForm);
             
-            // Simular envío
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-            button.disabled = true;
-            
+            // Retry después de un tiempo por si los forms cargan lentamente
             setTimeout(() => {
-                button.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
-                button.style.background = 'linear-gradient(135deg, var(--terminal), #00CC00)';
-                
-                // Mostrar mensaje de éxito
-                const successMessage = document.createElement('div');
-                successMessage.innerHTML = `
-                    <div style="
-                        background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 200, 0, 0.05));
-                        border: 1px solid var(--terminal);
-                        border-radius: 8px;
-                        padding: 15px;
-                        margin-top: 15px;
-                        color: var(--terminal);
-                        font-size: 0.9rem;
-                        text-align: center;
-                    ">
-                        <i class="fas fa-check-circle"></i> ¡Perfecto! Te hemos enviado el recurso a tu email.
-                        Revisa tu bandeja de entrada y la carpeta de spam.
-                    </div>
-                `;
-                form.appendChild(successMessage);
-                
-                // Reiniciar formulario después de 5 segundos
-                setTimeout(() => {
-                    form.reset();
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    button.style.background = '';
-                    successMessage.remove();
-                }, 5000);
-            }, 1500);
-        }
-
-        // Integración con EmailOctopus (simulada)
-        // En producción, reemplazar con el código real de EmailOctopus
-        window.addEventListener('load', function() {
-            // Simular carga de formularios EmailOctopus
-            console.log('Cargando formularios de recursos gratuitos...');
-            
-            // Aquí iría el código real de EmailOctopus:
-            // <script async src="https://eocampaign1.com/form/a29ac8e2-8b3a-11f0-b213-f7de3fefbf55.js" data-form="a29ac8e2-8b3a-11f0-b213-f7de3fefbf55"></script>
-            // <script async src="https://eocampaign1.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
+                document.querySelectorAll('.eo-form-container').forEach(styleForm);
+            }, 1000);
         });
     </script>
 </body>
