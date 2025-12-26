@@ -249,6 +249,7 @@
 
         .hero-image {
             position: relative;
+            cursor: pointer;
         }
 
         .hero-image img {
@@ -654,16 +655,20 @@
             line-height: 1.6;
         }
 
+        /* Centrar los formularios EmailOctopus */
         .eo-form-container {
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
         }
 
         .eo-form-wrapper {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            width: 100%;
         }
 
         .eo-form-input {
@@ -763,109 +768,7 @@
             border-color: rgba(0, 255, 0, 0.2);
         }
 
-        /* Sección Redes Sociales */
-        .social-section {
-            margin: 80px 0;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .social-card {
-            background: linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(15, 15, 15, 0.9));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            text-decoration: none;
-            color: var(--light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(255, 122, 0, 0.2);
-        }
-
-        .social-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .social-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 24px;
-            transition: var(--transition);
-        }
-
-        /* Colores específicos para cada red social */
-        .telegram-card .social-icon {
-            background: rgba(0, 136, 204, 0.15);
-            color: var(--telegram);
-        }
-        
-        .youtube-card .social-icon {
-            background: rgba(255, 0, 0, 0.15);
-            color: var(--youtube);
-        }
-        
-        .instagram-card .social-icon {
-            background: rgba(228, 64, 95, 0.15);
-            color: var(--instagram);
-        }
-        
-        .linkedin-card .social-icon {
-            background: rgba(10, 102, 194, 0.15);
-            color: var(--linkedin);
-        }
-        
-        .tiktok-card .social-icon {
-            background: rgba(0, 0, 0, 0.15);
-            color: var(--tiktok);
-        }
-
-        .social-card:hover .social-icon {
-            transform: scale(1.1) rotate(5deg);
-            filter: brightness(1.2);
-        }
-
-        .social-card h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--light);
-        }
-
-        .social-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        /* Sección Discord */
+        /* Sección Discord (movida arriba de redes sociales) */
         .discord-section {
             background: linear-gradient(135deg, rgba(88, 101, 242, 0.1), rgba(88, 101, 242, 0.05));
             border: 2px solid var(--discord);
@@ -928,6 +831,108 @@
         .btn-discord:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(88, 101, 242, 0.6);
+        }
+
+        /* Sección Redes Sociales - NUEVO ORDEN */
+        .social-section {
+            margin: 80px 0;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-card {
+            background: linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(15, 15, 15, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 122, 0, 0.2);
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .social-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            transition: var(--transition);
+        }
+
+        /* Colores específicos para cada red social - NUEVO ORDEN */
+        .youtube-card .social-icon {
+            background: rgba(255, 0, 0, 0.15);
+            color: var(--youtube);
+        }
+        
+        .instagram-card .social-icon {
+            background: rgba(228, 64, 95, 0.15);
+            color: var(--instagram);
+        }
+        
+        .tiktok-card .social-icon {
+            background: rgba(0, 0, 0, 0.15);
+            color: var(--tiktok);
+        }
+        
+        .linkedin-card .social-icon {
+            background: rgba(10, 102, 194, 0.15);
+            color: var(--linkedin);
+        }
+        
+        .telegram-card .social-icon {
+            background: rgba(0, 136, 204, 0.15);
+            color: var(--telegram);
+        }
+
+        .social-card:hover .social-icon {
+            transform: scale(1.1) rotate(5deg);
+            filter: brightness(1.2);
+        }
+
+        .social-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .social-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
         /* Footer */
@@ -1177,9 +1182,9 @@
                     </div>
                 </div>
 
-                <div class="hero-image">
-                    <img src="https://raw.githubusercontent.com/pantasec/Links/main/ciberseguridad_empresas.jpg" 
-                         alt="Formación en Ciberseguridad">
+                <div class="hero-image" onclick="window.open('https://lionxsecurity.es/', '_blank')" title="Ir a la Academia LionX Security">
+                    <img src="https://raw.githubusercontent.com/pantasec/Links/main/ciber.jpeg" 
+                         alt="Formación en Ciberseguridad - Haz clic para ir a la Academia">
                 </div>
             </section>
 
@@ -1260,58 +1265,7 @@
                 </div>
             </section>
 
-            <section class="social-section">
-                <div class="section-title">
-                    <h3>Sígueme en Redes</h3>
-                </div>
-                
-                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Contenido diario sobre ciberseguridad, tutoriales, análisis de vulnerabilidades y más.
-                </p>
-
-                <div class="social-grid">
-                    <a href="https://t.me/LionxSecurity" class="social-card telegram-card" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-telegram"></i>
-                        </div>
-                        <h4>Telegram</h4>
-                        <p>Comunidad exclusiva y contenido premium</p>
-                    </a>
-
-                    <a href="https://www.youtube.com/@Pantasec" class="social-card youtube-card" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <h4>YouTube</h4>
-                        <p>Tutoriales en profundidad y análisis</p>
-                    </a>
-
-                    <a href="https://www.instagram.com/pantasec.yt/" class="social-card instagram-card" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h4>Instagram</h4>
-                        <p>Tips rápidos y contenido diario</p>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/pantasec/" class="social-card linkedin-card" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <h4>LinkedIn</h4>
-                        <p>Networking y perfil profesional</p>
-                    </a>
-
-                    <a href="https://www.tiktok.com/@pantasec" class="social-card tiktok-card" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-tiktok"></i>
-                        </div>
-                        <h4>TikTok</h4>
-                        <p>Vídeos cortos y virales</p>
-                    </a>
-                </div>
-            </section>
-
+            <!-- Sección Discord (movida arriba de redes sociales) -->
             <section class="discord-section">
                 <div class="discord-icon">
                     <i class="fab fa-discord"></i>
@@ -1322,16 +1276,74 @@
                     <i class="fab fa-discord"></i> Unirse a Discord
                 </a>
             </section>
+
+            <!-- Sección Redes Sociales con NUEVO ORDEN -->
+            <section class="social-section">
+                <div class="section-title">
+                    <h3>Sígueme en Redes</h3>
+                </div>
+                
+                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Contenido diario sobre ciberseguridad, tutoriales, análisis de vulnerabilidades y más.
+                </p>
+
+                <div class="social-grid">
+                    <!-- YouTube (primero) -->
+                    <a href="https://www.youtube.com/@Pantasec" class="social-card youtube-card" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h4>YouTube</h4>
+                        <p>Tutoriales en profundidad y análisis</p>
+                    </a>
+
+                    <!-- Instagram (segundo) -->
+                    <a href="https://www.instagram.com/pantasec.yt/" class="social-card instagram-card" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h4>Instagram</h4>
+                        <p>Tips rápidos y contenido diario</p>
+                    </a>
+
+                    <!-- TikTok (tercero) -->
+                    <a href="https://www.tiktok.com/@pantasec" class="social-card tiktok-card" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <h4>TikTok</h4>
+                        <p>Vídeos cortos y virales</p>
+                    </a>
+
+                    <!-- LinkedIn (cuarto) -->
+                    <a href="https://www.linkedin.com/in/pantasec/" class="social-card linkedin-card" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <p>Networking y perfil profesional</p>
+                    </a>
+
+                    <!-- Telegram (quinto) -->
+                    <a href="https://t.me/LionxSecurity" class="social-card telegram-card" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <h4>Telegram</h4>
+                        <p>Comunidad exclusiva y contenido premium</p>
+                    </a>
+                </div>
+            </section>
         </main>
 
         <footer>
             <div class="footer-links">
-                <a href="https://lionxsecurity.es" class="footer-link" target="_blank">Academia</a>
+                <!-- Solo privacidad y legal como solicitado -->
                 <a href="https://privacy.lionxsecurity.es/" class="footer-link" target="_blank">Privacidad</a>
                 <a href="https://legal.lionxsecurity.es/" class="footer-link" target="_blank">Legal</a>
-                <a href="https://www.youtube.com/@Pantasec" class="footer-link" target="_blank">YouTube</a>
             </div>
-            <p class="copyright">© 2024 PANTASEC. Todos los derechos reservados.</p>
+            <!-- Cambiado a 2026 -->
+            <p class="copyright">© 2026 PANTASEC. Todos los derechos reservados.</p>
         </footer>
     </div>
 
@@ -1511,6 +1523,17 @@
             setTimeout(() => {
                 document.querySelectorAll('.eo-form-container').forEach(styleForm);
             }, 1000);
+
+            // Agregar funcionalidad de clic a la imagen para ir a la academia
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                heroImage.addEventListener('click', function() {
+                    window.open('https://lionxsecurity.es/', '_blank');
+                });
+                
+                // Agregar tooltip
+                heroImage.setAttribute('title', 'Haz clic para ir a la Academia LionX Security');
+            }
         });
     </script>
 </body>
