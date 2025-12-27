@@ -320,6 +320,7 @@
             gap: 50px;
             align-items: center;
             margin-bottom: 60px;
+            position: relative;
         }
 
         .hero-content h2 {
@@ -371,26 +372,14 @@
             font-size: 1.2rem;
         }
 
-        /* Contenedor de imagen con efectos hover */
-        .hero-image {
+        /* Contenedor de imagen con efectos hover - ACCESS GRANTED FUERA */
+        .image-wrapper {
             position: relative;
-            cursor: pointer;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .hero-image img {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-            filter: sepia(0.3) contrast(1.1);
         }
 
-        /* Efecto hover en la imagen */
-        .hero-image::before {
-            content: 'ACCESS GRANTED';
+        /* Etiqueta ACCESS GRANTED FUERA del contenedor de imagen */
+        .access-granted {
             position: absolute;
             top: -20px;
             right: -20px;
@@ -403,9 +392,29 @@
             border-radius: 5px;
             transform: rotate(5deg);
             animation: flicker 2s infinite;
-            z-index: 3;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
+        .hero-image {
+            position: relative;
+            cursor: pointer;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 50px rgba(255, 122, 0, 0.3);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            filter: sepia(0.3) contrast(1.1);
+        }
+
+        /* Efecto hover en la imagen */
         .hero-image::after {
             content: '';
             position: absolute;
@@ -482,6 +491,12 @@
         .hero-image:hover .lion-icon,
         .hero-image:hover .academy-text {
             transform: translateY(0);
+        }
+
+        /* ACCESS GRANTED también se anima al hacer hover */
+        .image-wrapper:hover .access-granted {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
         }
 
         /* Botones principales */
@@ -1279,6 +1294,13 @@
             .academy-text {
                 font-size: 1.5rem;
             }
+            
+            .access-granted {
+                top: -15px;
+                right: -15px;
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1323,13 +1345,6 @@
                 font-size: 1.5rem;
             }
             
-            .hero-image::before {
-                font-size: 1rem;
-                padding: 8px 15px;
-                top: -15px;
-                right: -15px;
-            }
-            
             .lion-icon {
                 font-size: 50px;
             }
@@ -1337,6 +1352,13 @@
             .academy-text {
                 font-size: 1.3rem;
                 padding: 8px 15px;
+            }
+            
+            .access-granted {
+                top: -10px;
+                right: -10px;
+                font-size: 0.9rem;
+                padding: 6px 12px;
             }
         }
 
@@ -1389,11 +1411,11 @@
                 font-size: 1.1rem;
             }
             
-            .hero-image::before {
-                font-size: 0.9rem;
-                padding: 6px 12px;
-                top: -10px;
-                right: -10px;
+            .access-granted {
+                top: -8px;
+                right: -8px;
+                font-size: 0.8rem;
+                padding: 5px 10px;
             }
         }
     </style>
@@ -1444,18 +1466,24 @@
                     </div>
                 </div>
 
-                <!-- Imagen con efecto hover mejorado -->
-                <div class="hero-image" onclick="window.open('https://lionxsecurity.es/', '_blank')" title="Haz clic para ir a la Academia LionX Security">
-                    <img src="https://raw.githubusercontent.com/pantasec/Links/main/ciber.jpeg" 
-                         alt="Formación en Ciberseguridad - Haz clic para ir a la Academia">
+                <!-- Contenedor de imagen con ACCESS GRANTED FUERA -->
+                <div class="image-wrapper">
+                    <!-- Etiqueta ACCESS GRANTED FUERA del contenedor de imagen -->
+                    <div class="access-granted">ACCESS GRANTED</div>
                     
-                    <!-- Overlay que aparece al pasar el ratón -->
-                    <div class="image-overlay">
-                        <div class="lion-icon">
-                            <i class="fas fa-lion"></i>
-                        </div>
-                        <div class="academy-text">
-                            Academia aquí!
+                    <!-- Imagen con efecto hover -->
+                    <div class="hero-image" onclick="window.open('https://lionxsecurity.es/', '_blank')" title="Haz clic para ir a la Academia LionX Security">
+                        <img src="https://raw.githubusercontent.com/pantasec/Links/main/ciber.jpeg" 
+                             alt="Formación en Ciberseguridad - Haz clic para ir a la Academia">
+                        
+                        <!-- Overlay que aparece al pasar el ratón -->
+                        <div class="image-overlay">
+                            <div class="lion-icon">
+                                <i class="fas fa-lion"></i>
+                            </div>
+                            <div class="academy-text">
+                                Academia aquí!
+                            </div>
                         </div>
                     </div>
                 </div>
