@@ -27,6 +27,8 @@
             --instagram: #E4405F;
             --linkedin: #0A66C2;
             --tiktok: #000000;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1DA851;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
@@ -43,6 +45,121 @@
             min-height: 100vh;
             overflow-x: hidden;
             line-height: 1.6;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 34px;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            z-index: 9999;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: whatsappPulse 2.5s infinite, whatsappFloat 3s ease-in-out infinite;
+            overflow: hidden;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
+            animation: none; /* Para la animación al hover */
+        }
+        
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark), #fff);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .whatsapp-float:hover::before {
+            opacity: 0.3;
+            animation: rotate 2s linear infinite;
+        }
+        
+        @keyframes whatsappPulse {
+            0% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 30px 10px rgba(37, 211, 102, 0.6);
+            }
+            100% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+        }
+        
+        @keyframes whatsappFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        /* Tooltip para WhatsApp */
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(10, 10, 10, 0.95);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            width: 180px;
+            border: 1px solid var(--whatsapp);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            text-align: center;
+            z-index: 10000;
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 80px;
+        }
+        
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            border-width: 6px 0 6px 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--whatsapp);
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* FONDO FUTURISTA HACKING NEGRO-NARANJA OPTIMIZADO */
@@ -1245,11 +1362,6 @@
             50% { opacity: 0.8; transform: rotate(3deg); }
         }
 
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
@@ -1260,7 +1372,22 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Responsive */
+        /* Responsive para WhatsApp */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+            
+            .whatsapp-tooltip {
+                display: none; /* Ocultar tooltip en móviles */
+            }
+        }
+
+        /* Responsive general */
         @media (max-width: 992px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -1421,6 +1548,15 @@
     </style>
 </head>
 <body>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/34600000000?text=Hola%20Pantasec,%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20clases%20particulares,%20mentor%C3%ADas%20e%20inserci%C3%B3n%20laboral!" 
+       target="_blank" 
+       class="whatsapp-float"
+       id="whatsappButton">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Consulta sobre clases particulares y mentorías</span>
+    </a>
+
     <!-- Fondo Futurista Hacking Negro-Naranja -->
     <div class="matrix-bg"></div>
     <div class="grid-overlay"></div>
@@ -1835,6 +1971,50 @@
                 // Agregar tooltip
                 heroImage.setAttribute('title', 'Haz clic para ir a la Academia LionX Security');
             }
+
+            // WhatsApp button interaction effects
+            const whatsappButton = document.getElementById('whatsappButton');
+            
+            // Efecto adicional al hacer clic
+            whatsappButton.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.9)';
+            });
+            
+            whatsappButton.addEventListener('mouseup', function() {
+                this.style.transform = 'scale(1.15) rotate(5deg)';
+            });
+            
+            // Cambiar animación al pasar el mouse
+            whatsappButton.addEventListener('mouseenter', function() {
+                // Añadir efecto de brillo
+                const shine = document.createElement('div');
+                shine.style.position = 'absolute';
+                shine.style.top = '-50%';
+                shine.style.left = '-50%';
+                shine.style.width = '200%';
+                shine.style.height = '200%';
+                shine.style.background = 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)';
+                shine.style.transform = 'rotate(45deg)';
+                shine.style.transition = 'all 0.5s';
+                shine.style.zIndex = '-1';
+                this.appendChild(shine);
+                
+                setTimeout(() => {
+                    if (shine.parentNode === this) {
+                        this.removeChild(shine);
+                    }
+                }, 500);
+            });
+            
+            // Animación de sonido de notificación (opcional)
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    whatsappButton.style.animation = 'whatsappPulse 1s ease, whatsappFloat 3s ease-in-out infinite';
+                    setTimeout(() => {
+                        whatsappButton.style.animation = 'whatsappPulse 2.5s infinite, whatsappFloat 3s ease-in-out infinite';
+                    }, 1000);
+                }
+            }, 15000); // Cada 15 segundos
         });
     </script>
 </body>
