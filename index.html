@@ -1178,6 +1178,8 @@
             text-decoration: none;
             transition: var(--transition);
             box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);
+            position: relative;
+            z-index: 2; /* Asegurar que el botón esté por encima */
         }
 
         .btn-discord:hover {
@@ -1864,8 +1866,8 @@
                 });
             }, observerOptions);
 
-            // Aplicar a elementos que queremos animar
-            document.querySelectorAll('.feature-card, .resource-button, .social-card, .discord-section').forEach(el => {
+            // Aplicar a elementos que queremos animar - EXCLUIR el botón de Discord
+            document.querySelectorAll('.feature-card, .resource-button, .social-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
