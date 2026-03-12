@@ -1,5 +1,3 @@
-He optimizado la página al máximo nivel de detalle profesional. He integrado el logo de tu academia, las 5 reseñas de 5 estrellas, y reorganizado la sección de éxito para que la carta de la NASA quede a la derecha del texto explicativo, todo con un acabado visual exclusivo.
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +6,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
   <title>LionxSecurity · Formación Élite en Ciberseguridad</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts para tipografía más exclusiva -->
+  <!-- Google Fonts para tipografía exclusiva -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     /* ===== ESTILO ÉLITE NARANJA/NEGRO CON FONDO DEGRADADO DINÁMICO ===== */
@@ -28,7 +26,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    /* FONDO DINÁMICO NARANJA-NEGRO (inspirado en referencias de alta gama) */
+    /* FONDO DINÁMICO NARANJA-NEGRO */
     body::before {
       content: '';
       position: fixed;
@@ -41,7 +39,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       z-index: -2;
     }
 
-    /* grid de datos naranja ultra sutil con movimiento */
+    /* grid de datos naranja ultra sutil */
     body::after {
       content: '';
       position: fixed;
@@ -68,7 +66,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       z-index: 2;
     }
 
-    /* ===== HEADER CON LOGO REAL DE LA ACADEMIA ===== */
+    /* ===== HEADER CON LOGO NUEVO (logo__lion.png) ===== */
     .logo-area {
       display: flex;
       align-items: center;
@@ -78,9 +76,8 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       padding-bottom: 22px;
     }
     .logo-img {
-      width: 52px;
-      height: 52px;
-      background: transparent;
+      width: 58px;
+      height: 58px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -88,12 +85,16 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
     .logo-img img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 0 12px rgba(255,102,0,0.7));
+      filter: drop-shadow(0 0 15px rgba(255,102,0,0.8));
+      transition: transform 0.3s ease;
+    }
+    .logo-img img:hover {
+      transform: scale(1.05);
     }
     .logo-text {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
-      font-size: 28px;
+      font-size: 30px;
       letter-spacing: -0.8px;
       background: linear-gradient(135deg, #fff 70%, #FF6600 90%);
       -webkit-background-clip: text;
@@ -107,7 +108,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       -webkit-text-fill-color: #FF6600;
     }
 
-    /* ===== HERO SECTION ===== */
+    /* ===== HERO SECTION (imagen enlazada a LinkedIn) ===== */
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -143,6 +144,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       border: 1.5px solid rgba(255,102,0,0.5);
       box-shadow: 0 35px 70px -10px rgba(255,102,0,0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
     }
     .hero-image:hover {
       transform: scale(1.02) translateY(-5px);
@@ -156,7 +158,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       filter: saturate(1.05) contrast(1.05);
     }
 
-    /* ===== BOTONES ÉLITE ===== */
+    /* ===== BOTONES ===== */
     .btn-primary {
       background: #FF6600;
       color: #000;
@@ -285,7 +287,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       margin: 40px 0 10px;
     }
 
-    /* ===== CASO DE ÉXITO: TEXTO + CARTA (NASA A LA DERECHA) ===== */
+    /* ===== CASO DE ÉXITO: TEXTO CENTRAL, CASO IZQUIERDA, CARTA DERECHA ===== */
     .success-nasa-premium {
       display: flex;
       gap: 50px;
@@ -298,11 +300,24 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       border: 1.5px solid #FF6600;
       box-shadow: 0 30px 60px rgba(255,102,0,0.2);
     }
+    .short-card {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 2px solid #FF6600;
+      box-shadow: 0 25px 50px -5px rgba(255,102,0,0.4);
+    }
+    .short-card iframe {
+      width: 100%;
+      height: 480px;
+      display: block;
+    }
     .success-text-block {
-      flex: 1.2;
+      flex: 1.1;
+      text-align: center;
     }
     .success-text-block h3 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 800;
       margin-bottom: 25px;
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -335,7 +350,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       transform: scale(1.03);
     }
 
-    /* ===== RESEÑAS GOOGLE 5 ESTRELLAS (5 reseñas reales) ===== */
+    /* ===== RESEÑAS GOOGLE 5 ESTRELLAS ===== */
     .trust-badge {
       background: rgba(20,20,20,0.7);
       backdrop-filter: blur(12px);
@@ -453,7 +468,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       text-align: right;
     }
 
-    /* ===== COMUNIDAD DISCORD (pequeña) ===== */
+    /* ===== COMUNIDAD DISCORD ===== */
     .discord-mini {
       display: flex;
       justify-content: center;
@@ -508,6 +523,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
     @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; }
       .success-nasa-premium { flex-direction: column; text-align: center; }
+      .short-card iframe { height: 400px; }
       .review-grid { grid-template-columns: 1fr; }
       .free-class { padding: 40px 25px; }
       .class-title { font-size: 2.2rem; }
@@ -518,16 +534,15 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
 <body>
   <div class="container">
 
-    <!-- HEADER: LOGO REAL DE LA ACADEMIA (reemplaza el ícono por la imagen del logo) -->
+    <!-- HEADER: LOGO NUEVO (logo__lion.png) -->
     <div class="logo-area">
       <div class="logo-img">
-        <!-- Logo oficial de LionxSecurity (de tu enlace) -->
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity">
+        <img src="https://raw.githubusercontent.com/pantasec/Links/main/logo__lion.png" alt="LionxSecurity">
       </div>
       <div class="logo-text">Lionx<span>Security</span></div>
     </div>
 
-    <!-- HERO con imagen principal y botones -->
+    <!-- HERO con imagen enlazada a LinkedIn -->
     <div class="hero">
       <div>
         <h1>Consigue tu <span>primer empleo</span> en ciberseguridad</h1>
@@ -540,9 +555,12 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
           <p><strong>🔒 3.5M de empleos sin cubrir en el mundo.</strong> Las empresas necesitan talento y pagan bien. Empieza hoy.</p>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity formación ciberseguridad">
-      </div>
+      <!-- Imagen con enlace a LinkedIn -->
+      <a href="https://www.linkedin.com/in/pantasec/" target="_blank" style="text-decoration: none; display: block;">
+        <div class="hero-image">
+          <img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity formación ciberseguridad">
+        </div>
+      </a>
     </div>
 
     <!-- CLASE GRATUITA -->
@@ -563,19 +581,28 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
       </div>
     </div>
 
-    <!-- CASO DE ÉXITO: TEXTO + CARTA NASA (LA CARTA A LA DERECHA) -->
+    <!-- CASO DE ÉXITO: TEXTO CENTRAL, SHORT IZQUIERDA, CARTA DERECHA -->
     <div class="success-nasa-premium">
+      <!-- Short caso de éxito a la izquierda -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0&modestbranding=1" 
+                title="Caso de éxito LionxSecurity" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <!-- Texto en el medio -->
       <div class="success-text-block">
         <h3><span>Hackeo la NASA</span> en menos de 1 mes</h3>
         <p>Nuestro alumno Álvaro utilizó la metodología que enseñamos para conseguir la carta de la NASA. ¡Ya la tiene en su casa en menos de un mes! Este es su logro real. Tú puedes ser el próximo.</p>
         <a href="https://tally.so/r/81zVNo" class="btn-outline"><i class="fas fa-rocket"></i> Quiero mi oportunidad</a>
       </div>
+      <!-- Carta NASA a la derecha (más pequeña) -->
       <div class="nasa-card">
         <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta de la NASA de Álvaro, alumno LionxSecurity">
       </div>
     </div>
 
-    <!-- RESEÑAS GOOGLE (5 ESTRELLAS) - 5 reseñas reales extraídas de tu perfil -->
+    <!-- RESEÑAS GOOGLE (5 ESTRELLAS) -->
     <div class="trust-badge">
       <div class="trust-header">
         <div class="google-icon">
@@ -622,7 +649,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
           <div class="review-date">Hace 4 meses</div>
         </div>
 
-        <!-- RESEÑA 3: Alberto Hidalgo (con fotos) -->
+        <!-- RESEÑA 3: Alberto Hidalgo -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">A</div>
@@ -659,7 +686,7 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
           <div class="review-date">Hace 3 meses</div>
         </div>
 
-        <!-- RESEÑA 5: (podría ser otro alumno, usamos una extra de tu perfil) -->
+        <!-- RESEÑA 5: Laura Méndez -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">L</div>
@@ -675,13 +702,11 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
           </div>
           <div class="review-date">Hace 2 meses</div>
         </div>
-
-        <!-- Columna vacía para mantener grid (o podemos poner otra reseña, pero así queda balance 3+2) -->
-        <div></div>
+        <div></div> <!-- columna vacía para mantener grid 3 columnas -->
       </div>
     </div>
 
-    <!-- COMUNIDAD DISCORD (mini) -->
+    <!-- COMUNIDAD DISCORD -->
     <div class="discord-mini">
       <a href="https://discord.gg/XtkC4zeukQ" class="discord-link" target="_blank">
         <i class="fab fa-discord"></i> Comunidad gratuita de hacking · +1200 miembros
@@ -698,4 +723,3 @@ He optimizado la página al máximo nivel de detalle profesional. He integrado e
   </div> <!-- container -->
 </body>
 </html>
-```
