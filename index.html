@@ -1,5 +1,3 @@
-He actualizado la página con todos los cambios que me has pedido. Ahora el diseño tiene el fondo degradado dinámico que querías, la nueva imagen principal, los enlaces a Tally.so para agendar y el caso de éxito con la historia de Álvaro y su carta de la NASA.
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -98,7 +96,7 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       text-shadow: 0 0 15px rgba(255,102,0,0.6);
     }
 
-    /* HERO section con nueva imagen */
+    /* HERO section */
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -144,7 +142,7 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       display: block;
     }
 
-    /* Botones principales (estilo más agresivo) */
+    /* Botones principales */
     .btn-primary {
       background: #FF6600;
       color: #000;
@@ -266,72 +264,81 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       margin: 35px 0 10px;
     }
 
-    /* CASO DE ÉXITO (NASA) */
-    .success-case {
+    /* CASO DE ÉXITO (NASA + SHORT) - DISEÑO REVISADO */
+    .success-nasa-short {
       display: flex;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
-      background: rgba(17,17,17,0.7);
+      background: rgba(17,17,17,0.6);
       backdrop-filter: blur(12px);
       border-radius: 40px;
       padding: 45px;
-      margin: 60px 0;
+      margin: 70px 0;
       border: 1px solid #FF6600;
-      box-shadow: 0 20px 40px rgba(255,102,0,0.15);
+      box-shadow: 0 25px 50px rgba(255,102,0,0.2);
     }
-    .nasa-image {
-      flex: 1;
+    .nasa-card {
+      flex: 0.7;
       border-radius: 24px;
       overflow: hidden;
       border: 3px solid #FF6600;
-      box-shadow: 0 20px 40px -5px #000;
+      box-shadow: 0 20px 30px -5px #000;
     }
-    .nasa-image img {
+    .nasa-card img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .success-text {
+    .short-card {
+      flex: 0.9;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 2px solid #FF6600;
+      box-shadow: 0 25px 40px -5px rgba(255,102,0,0.4);
+    }
+    .short-card iframe {
+      width: 100%;
+      height: 500px;
+      display: block;
+    }
+    .success-nasa-short .success-text {
       flex: 1;
     }
-    .success-text h3 {
+    .success-nasa-short .success-text h3 {
       font-size: 2.2rem;
       font-weight: 800;
       margin-bottom: 20px;
-      line-height: 1.3;
     }
-    .success-text h3 span {
+    .success-nasa-short .success-text h3 span {
       color: #FF6600;
       border-bottom: 2px solid #FF6600;
       padding-bottom: 4px;
     }
-    .success-text p {
+    .success-nasa-short .success-text p {
       color: #bbb;
       font-size: 1.15rem;
       margin-bottom: 25px;
     }
-    .success-text .btn-outline {
-      margin-top: 10px;
-      background: rgba(255,102,0,0.05);
-    }
 
-    /* RESEÑAS GOOGLE (ahora debajo del short) */
+    /* RESEÑAS GOOGLE CON ESTILO MAPS (icono, respuestas, fotos) */
     .trust-badge {
-      background: rgba(17,17,17,0.6);
-      backdrop-filter: blur(8px);
+      background: rgba(20,20,20,0.7);
+      backdrop-filter: blur(10px);
       border: 1px solid #333;
       border-radius: 36px;
-      padding: 40px;
-      margin: 50px 0 60px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+      padding: 45px;
+      margin: 60px 0 50px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.8);
     }
     .trust-header {
       display: flex;
       align-items: center;
       gap: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      border-bottom: 1px solid #2a2a2a;
+      padding-bottom: 25px;
     }
-    .trust-header img {
+    .google-icon img {
       width: 44px;
       height: 44px;
     }
@@ -340,22 +347,28 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       font-size: 24px;
       letter-spacing: 5px;
     }
+    .rating-text {
+      color: #aaa;
+      font-size: 1.1rem;
+    }
     .review-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 25px;
+      gap: 30px;
     }
     .review-card {
-      background: #1d1d1d;
-      border-radius: 24px;
-      padding: 25px;
-      border: 1px solid #2f2f2f;
+      background: #1c1c1c;
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid #333;
       transition: 0.2s;
+      display: flex;
+      flex-direction: column;
     }
     .review-card:hover {
       border-color: #FF6600;
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px rgba(255,102,0,0.15);
     }
     .reviewer {
       display: flex;
@@ -364,34 +377,64 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       margin-bottom: 18px;
     }
     .reviewer-avatar {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       background: #FF6600;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 22px;
       color: #000;
+      box-shadow: 0 5px 12px rgba(255,102,0,0.5);
     }
     .reviewer-info h4 {
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .reviewer-info span {
-      font-size: 0.8rem;
-      color: #888;
+    .local-guide {
+      background: #3c3c3c;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 30px;
+      color: #aaa;
+      font-weight: 400;
+    }
+    .review-stars {
+      color: #FFA500;
+      font-size: 1rem;
+      margin: 6px 0;
+      letter-spacing: 3px;
     }
     .review-text {
       font-size: 0.95rem;
-      color: #ccc;
-      margin: 15px 0 8px;
-      font-style: italic;
+      color: #ddd;
+      line-height: 1.5;
+      margin: 12px 0 10px;
+    }
+    .review-owner-reply {
+      background: #252525;
+      border-left: 3px solid #FF6600;
+      padding: 12px 15px;
+      border-radius: 12px;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+    .review-owner-reply strong {
+      color: #FF6600;
+    }
+    .review-owner-reply p {
+      color: #bbb;
+      margin-top: 5px;
     }
     .review-date {
       font-size: 0.75rem;
-      color: #666;
+      color: #777;
+      margin-top: 12px;
       text-align: right;
     }
 
@@ -444,9 +487,9 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
     }
 
     /* responsive */
-    @media (max-width: 950px) {
+    @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; }
-      .success-case { flex-direction: column; text-align: center; }
+      .success-nasa-short { flex-direction: column; text-align: center; }
       .review-grid { grid-template-columns: 1fr; }
       .free-class { padding: 35px 20px; }
       .class-title { font-size: 2rem; }
@@ -458,7 +501,7 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
 
     <!-- Logo real LionxSecurity -->
     <div class="logo-area">
-      <div class="logo-icon"><i class="fas fa-shield-halos"></i>🛡️</div>
+      <div class="logo-icon">🛡️</div>
       <div class="logo-text">Lionx<span>Security</span></div>
     </div>
 
@@ -501,9 +544,17 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       </div>
     </div>
 
-    <!-- CASO DE ÉXITO: NASA (Álvaro) -->
-    <div class="success-case">
-      <div class="nasa-image">
+    <!-- CASO DE ÉXITO: NASA + SHORT (lado a lado, con la carta más pequeña a la derecha y short a la izquierda) -->
+    <div class="success-nasa-short">
+      <!-- Short YouTube a la izquierda -->
+      <div class="short-card">
+        <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0&modestbranding=1" 
+                title="Caso de éxito LionxSecurity" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <!-- Carta NASA más pequeña a la derecha -->
+      <div class="nasa-card">
         <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta de la NASA de Álvaro, alumno LionxSecurity">
       </div>
       <div class="success-text">
@@ -513,57 +564,92 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
       </div>
     </div>
 
-    <!-- RESEÑAS GOOGLE (ahora debajo del caso NASA) -->
+    <!-- RESEÑAS GOOGLE con estilo MAPS (icono, respuestas, estrellitas, fotos de perfil) -->
     <div class="trust-badge">
       <div class="trust-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google">
+        <div class="google-icon">
+          <img src="https://raw.githubusercontent.com/pantasec/Links/main/google-maps.png" alt="Google Maps" style="width:44px; height:44px; border-radius: 50%;">
+        </div>
         <div>
           <div class="trust-stars">★★★★★</div>
-          <span style="color: #888;">4.9 · 47 reseñas de Google</span>
+          <span class="rating-text">4.9 · 47 reseñas de Google</span>
         </div>
       </div>
 
       <div class="review-grid">
-        <!-- Reseña 1 (adaptada de tu perfil real) -->
+        <!-- RESEÑA 1: Victor Manuel (con respuesta) -->
         <div class="review-card">
           <div class="reviewer">
-            <div class="reviewer-avatar">A</div>
+            <div class="reviewer-avatar">V</div>
             <div class="reviewer-info">
-              <h4>Álvaro Gómez</h4>
-              <span>Alumno certificado</span>
+              <h4>Victor Manuel</h4>
             </div>
           </div>
-          <div class="review-text">"La academia tiene un trato muy cercano. Las clases son muy prácticas y se nota que los profesores trabajan en el sector. 100% recomendable."</div>
-          <div class="review-date">Hace 2 semanas</div>
-        </div>
-        <!-- Reseña 2 -->
-        <div class="review-card">
-          <div class="reviewer">
-            <div class="reviewer-avatar">M</div>
-            <div class="reviewer-info">
-              <h4>Marta Lozano</h4>
-              <span>Growth Operator</span>
-            </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Increíble experiencia en la academia. El contenido de Bug Bounty y Pentesting es 100% práctico y está totalmente actualizado. Gracias a lo aprendido y al apoyo de los instructores, he conseguido mi primera carta de agradecimiento de la NASA en Bugcrowd. Muy recomendable!"</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Victor! Y lo que está por venir 😊🙌🏼</p>
           </div>
-          <div class="review-text">"Gracias a LionxSecurity conseguí mi primer empleo en ciberseguridad en menos de 5 meses. El acompañamiento es increíble."</div>
-          <div class="review-date">Hace 1 mes</div>
+          <div class="review-date">Hace 17 horas</div>
         </div>
-        <!-- Reseña 3 -->
+
+        <!-- RESEÑA 2: Jesus Yeste (con local guide) -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">J</div>
             <div class="reviewer-info">
-              <h4>Javier Rojas</h4>
-              <span>Pentester en formación</span>
+              <h4>Jesus Yeste ramirez <span class="local-guide">Local Guide · 6 reseñas</span></h4>
             </div>
           </div>
-          <div class="review-text">"Contenido actualizado y profesores que resuelven dudas incluso fuera de clase. El mejor lugar para formarse en hacking ético."</div>
-          <div class="review-date">Hace 3 semanas</div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Una academia sin duda recomendable, con buenos instructores los cuales se nota que de verdad su prioridad es enseñar y disfrutan con ellos. Los cursos están muy bien explicados. Además acaban de añadir dos cursos nuevos de Bug Bounty y Azure."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Jesús! Espero que te gusten los últimos dos cursos 😊🙌🏼</p>
+          </div>
+          <div class="review-date">Hace 4 meses</div>
+        </div>
+
+        <!-- RESEÑA 3: Alberto Hidalgo (con fotos) -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">A</div>
+            <div class="reviewer-info">
+              <h4>Alberto Hidalgo <span style="font-size:0.8rem; color:#aaa;"> · 5 reseñas · 3 fotos</span></h4>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Desde el primer momento el trato es genial, academia bien montada y contenido actualizado con docentes de calidad. Actualmente cursando BugBounty, pero sin duda voy a repetir en futuras ocasiones."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Nos alegra leer tu opinión Alberto, todo un profesional y gran alumno! 🫶🏻😊</p>
+          </div>
+          <div class="review-date">Hace 4 meses</div>
         </div>
       </div>
-      <div style="text-align:center; margin-top:30px; color:#FF6600; font-weight:600;">
-        ⚡ +100 alumnos formados · Nota media 4.9 ⚡
+      <!-- agregamos cuarta reseña destacada de Emmanuel para que se vea más completo, pero respetamos grid de 3, así que la incluimos en la siguiente fila (con otro row) -->
+    </div>
+    <!-- Segunda fila de reseñas para incluir a Emmanuel (opcional, pero queda bien) -->
+    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap:30px; margin-top:30px;">
+      <div class="review-card">
+        <div class="reviewer">
+          <div class="reviewer-avatar">E</div>
+          <div class="reviewer-info">
+            <h4>Emmanuel</h4>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"De las mejores academias para entrar en el mundo de la ciberseguridad o avanzar en ella. Incluso sus masterclass están a otro nivel, pues demuestran que el profe tiene una gran experiencia y conocimiento."</div>
+        <div class="review-owner-reply">
+          <strong>LionxSecurity (propietario)</strong>
+          <p>Muchas gracias Emmanuel, la masterclass es única en el sector desde luego. Un placer haberte conocido! 👏🏻</p>
+        </div>
+        <div class="review-date">Hace 3 meses</div>
       </div>
+      <!-- Podríamos poner dos columnas vacías o repetir alguna, pero así queda simétrico -->
+      <div></div>
+      <div></div>
     </div>
 
     <!-- COMUNIDAD DISCORD (pequeña, al fondo) -->
@@ -583,4 +669,3 @@ He actualizado la página con todos los cambios que me has pedido. Ahora el dise
   </div> <!-- container -->
 </body>
 </html>
-```
