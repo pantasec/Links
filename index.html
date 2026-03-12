@@ -1,4 +1,4 @@
-Aquí tienes el código HTML de la nueva landing page, adaptada según tus instrucciones. El diseño es limpio y está centrado en la venta, con la clase de prueba gratuita como elemento principal, el caso de éxito en YouTube y las reseñas de Google en formato de captura para dar confianza.
+He actualizado la página con todos los cambios que me has pedido. Ahora el diseño tiene el fondo degradado dinámico que querías, la nueva imagen principal, los enlaces a Tally.so para agendar y el caso de éxito con la historia de Álvaro y su carta de la NASA.
 ```html
 <!DOCTYPE html>
 <html lang="es">
@@ -6,8 +6,10 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LionxSecurity · Clase Gratuita de Ciberseguridad</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ===== ESTILO PROFESIONAL NARANJA/NEGRO ===== */
+    /* ===== ESTILO PROFESIONAL NARANJA/NEGRO CON FONDO DEGRADADO DINÁMICO ===== */
     * {
       margin: 0;
       padding: 0;
@@ -16,70 +18,96 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
     }
 
     body {
-      background-color: #0a0a0a;
+      background: #0a0a0a;
       color: #ffffff;
       line-height: 1.5;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* Fondo con grid naranja muy sutil */
+    /* FONDO DINÁMICO NARANJA-NEGRO (inspirado en la web de referencia) */
     body::before {
       content: '';
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 122, 0, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 102, 0, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 40% 80%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #050505 0%, #121212 100%);
+      z-index: -2;
+    }
+
+    /* grid naranja sutil (datalines) */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
       background-image: 
-        linear-gradient(rgba(255, 102, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 102, 0, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+        linear-gradient(rgba(255, 102, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 102, 0, 0.04) 1px, transparent 1px);
+      background-size: 45px 45px;
       pointer-events: none;
       z-index: -1;
+      animation: gridPulse 10s ease-in-out infinite;
+    }
+
+    @keyframes gridPulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.4; }
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto;
-      padding: 40px 20px 60px;
+      padding: 30px 25px 60px;
+      position: relative;
+      z-index: 2;
     }
 
-    /* Header minimal */
+    /* Header con logo real (texto con icono) */
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       margin-bottom: 40px;
-      border-bottom: 1px solid rgba(255,102,0,0.3);
-      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,102,0,0.35);
+      padding-bottom: 20px;
     }
     .logo-icon {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       background: linear-gradient(145deg, #FF6600, #CC5200);
-      border-radius: 12px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 24px;
-      box-shadow: 0 8px 20px rgba(255,102,0,0.3);
+      font-weight: 800;
+      font-size: 28px;
+      box-shadow: 0 12px 25px rgba(255,102,0,0.5);
+      color: #000;
     }
     .logo-text {
       font-weight: 700;
-      font-size: 22px;
-      letter-spacing: -0.5px;
+      font-size: 26px;
+      letter-spacing: -0.8px;
     }
     .logo-text span {
       color: #FF6600;
+      text-shadow: 0 0 15px rgba(255,102,0,0.6);
     }
 
-    /* Hero section */
+    /* HERO section con nueva imagen */
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 50px;
       align-items: center;
-      margin: 30px 0 50px;
+      margin: 20px 0 60px;
     }
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 3.1rem;
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 20px;
@@ -88,78 +116,27 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
       color: #FF6600;
       border-bottom: 3px solid #FF6600;
       display: inline-block;
-      padding-bottom: 4px;
+      padding-bottom: 6px;
+      text-shadow: 0 0 20px rgba(255,102,0,0.3);
     }
     .hero p {
-      color: #b0b0b0;
+      color: #c0c0c0;
       font-size: 1.2rem;
       margin-bottom: 30px;
+      max-width: 500px;
     }
 
-    .highlight-box {
-      background: #111;
-      border-left: 6px solid #FF6600;
-      padding: 20px 25px;
-      border-radius: 0 16px 16px 0;
-      margin: 30px 0 20px;
-    }
-    .highlight-box p {
-      font-size: 1.1rem;
-      color: #ddd;
-      margin: 0;
-    }
-    .highlight-box strong {
-      color: #FF6600;
-      font-weight: 600;
-    }
-
-    /* Botones principales */
-    .btn-primary {
-      background: #FF6600;
-      color: #000;
-      border: none;
-      padding: 18px 38px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      border-radius: 50px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 12px 30px rgba(255,102,0,0.4);
-      margin-right: 15px;
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(255,102,0,0.5);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #FF6600;
-      color: white;
-      padding: 16px 30px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .btn-outline:hover {
-      background: rgba(255,102,0,0.1);
-      border-color: #ff8533;
-    }
-
-    /* imagen hero */
     .hero-image {
-      background: #1a1a1a;
+      background: #151515;
       border-radius: 30px;
       overflow: hidden;
-      border: 1px solid #333;
-      box-shadow: 0 25px 50px -8px rgba(255,102,0,0.2);
+      border: 1px solid #FF6600;
+      box-shadow: 0 30px 60px -8px rgba(255,102,0,0.35);
+      transition: transform 0.3s ease;
+    }
+    .hero-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 70px -5px #FF6600;
     }
     .hero-image img {
       width: 100%;
@@ -167,62 +144,235 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
       display: block;
     }
 
-    /* Sección de confianza: reseñas google estilo captura */
-    .trust-badge {
-      background: #111;
-      border: 1px solid #2a2a2a;
+    /* Botones principales (estilo más agresivo) */
+    .btn-primary {
+      background: #FF6600;
+      color: #000;
+      border: none;
+      padding: 16px 35px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: 0.2s;
+      box-shadow: 0 12px 35px rgba(255,102,0,0.6);
+      margin-right: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .btn-primary:hover {
+      background: #ff751a;
+      transform: translateY(-3px);
+      box-shadow: 0 22px 45px rgba(255,102,0,0.8);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #FF6600;
+      color: white;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: 0.2s;
+      backdrop-filter: blur(5px);
+    }
+    .btn-outline:hover {
+      background: rgba(255,102,0,0.2);
+      border-color: #ff8c40;
+      box-shadow: 0 0 25px #FF6600;
+    }
+
+    .highlight-box {
+      background: rgba(17, 17, 17, 0.8);
+      backdrop-filter: blur(8px);
+      border-left: 6px solid #FF6600;
+      padding: 22px 28px;
+      border-radius: 0 24px 24px 0;
+      margin: 35px 0 20px;
+    }
+    .highlight-box p {
+      font-size: 1.15rem;
+      color: #ddd;
+      margin: 0;
+    }
+    .highlight-box strong {
+      color: #FF6600;
+      font-weight: 700;
+    }
+
+    /* CLASE GRATUITA */
+    .free-class {
+      background: linear-gradient(145deg, #0f0f0f, #070707);
+      border-radius: 50px;
+      padding: 55px 50px;
+      margin: 70px 0;
+      border: 1px solid #333;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    }
+    .free-class::after {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      background: #FF6600;
+      filter: blur(120px);
+      opacity: 0.2;
+      border-radius: 50%;
+    }
+    .class-tag {
+      display: inline-block;
+      background: #FF6600;
+      color: #000;
+      font-weight: 800;
+      padding: 7px 22px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .class-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      line-height: 1.2;
+    }
+    .class-title span {
+      color: #FF6600;
+    }
+    .video-wrapper {
+      max-width: 750px;
+      margin: 30px auto;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(255,102,0,0.4);
+      border: 2px solid #FF6600;
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
+    .cta-under-video {
+      text-align: center;
+      margin: 35px 0 10px;
+    }
+
+    /* CASO DE ÉXITO (NASA) */
+    .success-case {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      background: rgba(17,17,17,0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 40px;
+      padding: 45px;
+      margin: 60px 0;
+      border: 1px solid #FF6600;
+      box-shadow: 0 20px 40px rgba(255,102,0,0.15);
+    }
+    .nasa-image {
+      flex: 1;
       border-radius: 24px;
-      padding: 30px;
-      margin: 50px 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      overflow: hidden;
+      border: 3px solid #FF6600;
+      box-shadow: 0 20px 40px -5px #000;
+    }
+    .nasa-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .success-text {
+      flex: 1;
+    }
+    .success-text h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .success-text h3 span {
+      color: #FF6600;
+      border-bottom: 2px solid #FF6600;
+      padding-bottom: 4px;
+    }
+    .success-text p {
+      color: #bbb;
+      font-size: 1.15rem;
+      margin-bottom: 25px;
+    }
+    .success-text .btn-outline {
+      margin-top: 10px;
+      background: rgba(255,102,0,0.05);
+    }
+
+    /* RESEÑAS GOOGLE (ahora debajo del short) */
+    .trust-badge {
+      background: rgba(17,17,17,0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid #333;
+      border-radius: 36px;
+      padding: 40px;
+      margin: 50px 0 60px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
     }
     .trust-header {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 18px;
+      margin-bottom: 30px;
     }
     .trust-header img {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
     }
     .trust-stars {
       color: #FFA500;
-      font-size: 22px;
-      letter-spacing: 4px;
+      font-size: 24px;
+      letter-spacing: 5px;
     }
     .review-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 25px;
       margin-top: 25px;
     }
     .review-card {
-      background: #1a1a1a;
-      border-radius: 20px;
-      padding: 20px;
-      border: 1px solid #2a2a2a;
+      background: #1d1d1d;
+      border-radius: 24px;
+      padding: 25px;
+      border: 1px solid #2f2f2f;
       transition: 0.2s;
     }
     .review-card:hover {
       border-color: #FF6600;
+      transform: translateY(-5px);
     }
     .reviewer {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
+      gap: 15px;
+      margin-bottom: 18px;
     }
     .reviewer-avatar {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       background: #FF6600;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 20px;
       color: #000;
     }
     .reviewer-info h4 {
@@ -236,7 +386,7 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
     .review-text {
       font-size: 0.95rem;
       color: #ccc;
-      margin: 12px 0 8px;
+      margin: 15px 0 8px;
       font-style: italic;
     }
     .review-date {
@@ -245,192 +395,99 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
       text-align: right;
     }
 
-    /* SECCIÓN VIDEO CLASE GRATIS (prioritaria) */
-    .free-class {
-      background: linear-gradient(145deg, #0f0f0f, #080808);
-      border-radius: 40px;
-      padding: 50px;
-      margin: 60px 0;
-      border: 1px solid #2a2a2a;
-      position: relative;
-      overflow: hidden;
-    }
-    .free-class::after {
-      content: '';
-      position: absolute;
-      top: -50px; right: -50px;
-      width: 200px; height: 200px;
-      background: #FF6600;
-      filter: blur(100px);
-      opacity: 0.15;
-      border-radius: 50%;
-    }
-    .class-tag {
-      display: inline-block;
-      background: #FF6600;
-      color: #000;
-      font-weight: 700;
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 20px;
-    }
-    .class-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .class-title span {
-      color: #FF6600;
-    }
-    .video-wrapper {
-      max-width: 700px;
-      margin: 30px auto;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(255,102,0,0.25);
-      border: 2px solid #FF6600;
-    }
-    .video-wrapper iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      display: block;
-    }
-    .cta-under-video {
-      text-align: center;
-      margin: 30px 0 0;
-    }
-
-    /* Caso de éxito (YouTube Short) */
-    .success-case {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      background: #111;
-      border-radius: 30px;
-      padding: 40px;
-      margin: 50px 0;
-      border: 1px solid #292929;
-    }
-    .success-case iframe {
-      border-radius: 20px;
-      width: 340px;
-      height: 600px;
-      box-shadow: 0 25px 40px -10px #000;
-      border: 2px solid #FF6600;
-    }
-    .success-text h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .success-text h3 span {
-      color: #FF6600;
-    }
-    .success-text p {
-      color: #aaa;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-    .success-text .btn-outline {
-      margin-top: 15px;
-    }
-
-    /* Comunidad Discord (pequeñita abajo) */
+    /* COMUNIDAD DISCORD (mini) */
     .discord-mini {
       display: flex;
       justify-content: center;
-      margin: 40px 0 10px;
+      margin: 30px 0 10px;
     }
     .discord-link {
       background: #1e1e1e;
       color: #aaa;
-      padding: 12px 30px;
+      padding: 12px 32px;
       border-radius: 60px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: 1px solid #333;
+      border: 1px solid #444;
       transition: 0.2s;
     }
     .discord-link i {
       color: #5865F2;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     .discord-link:hover {
       border-color: #5865F2;
-      background: #252525;
+      background: #2a2a2a;
+      color: #fff;
     }
 
     /* Footer legal */
     .legal-footer {
-      border-top: 1px solid #222;
-      padding-top: 30px;
-      margin-top: 40px;
+      border-top: 1px solid #2a2a2a;
+      padding-top: 35px;
+      margin-top: 50px;
       display: flex;
       justify-content: center;
-      gap: 40px;
-      font-size: 0.8rem;
-      color: #555;
+      gap: 50px;
+      font-size: 0.85rem;
+      color: #666;
     }
     .legal-footer a {
-      color: #777;
+      color: #888;
       text-decoration: none;
     }
     .legal-footer a:hover {
       color: #FF6600;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
+    /* responsive */
+    @media (max-width: 950px) {
       .hero { grid-template-columns: 1fr; }
       .success-case { flex-direction: column; text-align: center; }
       .review-grid { grid-template-columns: 1fr; }
-      .free-class { padding: 30px 20px; }
-      .class-title { font-size: 1.8rem; }
+      .free-class { padding: 35px 20px; }
+      .class-title { font-size: 2rem; }
     }
   </style>
-  <!-- Font Awesome para iconos (opcional, se puede usar emojis) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
 
-    <!-- Header -->
+    <!-- Logo real LionxSecurity -->
     <div class="logo-area">
-      <div class="logo-icon">L</div>
+      <div class="logo-icon"><i class="fas fa-shield-halos"></i>🛡️</div>
       <div class="logo-text">Lionx<span>Security</span></div>
     </div>
 
-    <!-- HERO section -->
+    <!-- HERO con nueva imagen (main.png desde GitHub) y botón Tally -->
     <div class="hero">
       <div>
         <h1>Consigue tu <span>primer empleo</span> en ciberseguridad</h1>
         <p>Sin experiencia previa. Te guiamos paso a paso con mentores que trabajan en el sector.</p>
         <div>
-          <a href="#" class="btn-primary"><i class="fas fa-calendar-check"></i> Reunión gratis</a>
-          <a href="#" class="btn-outline"><i class="fas fa-play"></i> Ver clase</a>
+          <!-- Botón principal con enlace Tally actualizado -->
+          <a href="https://tally.so/r/81zVNo" class="btn-primary"><i class="fas fa-calendar-check"></i> Accede Aquí</a>
+          <a href="#clase-gratis" class="btn-outline"><i class="fas fa-play"></i> Ver clase</a>
         </div>
         <div class="highlight-box">
           <p><strong>🔒 3.5M de empleos sin cubrir en el mundo.</strong> Las empresas necesitan talento y pagan bien. Empieza hoy.</p>
         </div>
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1934&auto=format&fit=crop" alt="SOC analyst">
+        <!-- Imagen main.png desde GitHub (raw) -->
+        <img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity formación ciberseguridad">
       </div>
     </div>
 
-    <!-- CLASE DE PRUEBA GRATUITA (prioridad 1) -->
-    <div class="free-class">
+    <!-- CLASE GRATUITA (ancla) -->
+    <div id="clase-gratis" class="free-class">
       <div class="class-tag">🎓 CLASE GRATUITA</div>
       <h2 class="class-title">Aprende a hackear <span>de forma ética</span> sin tener ni idea</h2>
       <p style="text-align: center; color: #bbb; margin-bottom: 25px;">Accede ahora a la clase de prueba: "Primeros pasos en hacking ético con LionxSecurity"</p>
       
-      <!-- VIDEO CLASE PRINCIPAL (YouTube) -->
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/k61HkAG2OCI?rel=0&modestbranding=1&showinfo=0" 
                 title="Clase gratuita de ciberseguridad" frameborder="0" 
@@ -438,12 +495,25 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
                 allowfullscreen></iframe>
       </div>
       <div class="cta-under-video">
-        <a href="#" class="btn-primary" style="background:#FF6600; color:#000;">✅ Quiero la reunión gratuita</a>
+        <!-- Mismo enlace Tally -->
+        <a href="https://tally.so/r/81zVNo" class="btn-primary" style="background:#FF6600; color:#000;">✅ Haz click para acceder</a>
         <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">Sin spam. Analizamos tu perfil sin compromiso.</p>
       </div>
     </div>
 
-    <!-- BLOQUE DE RESEÑAS GOOGLE (capturas de pantalla reales de tu academia) -->
+    <!-- CASO DE ÉXITO: NASA (Álvaro) -->
+    <div class="success-case">
+      <div class="nasa-image">
+        <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta de la NASA de Álvaro, alumno LionxSecurity">
+      </div>
+      <div class="success-text">
+        <h3><span>Hackeo la NASA</span> en menos de 1 mes</h3>
+        <p>Nuestro alumno Álvaro utilizó la metodología que enseñamos para conseguir la carta de la NASA. ¡Ya la tiene en su casa en menos de un mes! Este es su logro real. Tú puedes ser el próximo.</p>
+        <a href="https://tally.so/r/81zVNo" class="btn-outline"><i class="fas fa-rocket"></i> Quiero mi oportunidad</a>
+      </div>
+    </div>
+
+    <!-- RESEÑAS GOOGLE (ahora debajo del caso NASA) -->
     <div class="trust-badge">
       <div class="trust-header">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google">
@@ -454,7 +524,7 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
       </div>
 
       <div class="review-grid">
-        <!-- Reseña 1 (extraída de tu enlace real) -->
+        <!-- Reseña 1 (adaptada de tu perfil real) -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">A</div>
@@ -491,33 +561,19 @@ Aquí tienes el código HTML de la nueva landing page, adaptada según tus instr
           <div class="review-date">Hace 3 semanas</div>
         </div>
       </div>
-      <!-- Sello adicional -->
-      <div style="text-align:center; margin-top:25px; color:#FF6600; font-weight:500;">
+      <div style="text-align:center; margin-top:30px; color:#FF6600; font-weight:600;">
         ⚡ +100 alumnos formados · Nota media 4.9 ⚡
       </div>
     </div>
 
-    <!-- CASO DE ÉXITO DESTACADO (YouTube Short) -->
-    <div class="success-case">
-      <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0&modestbranding=1" 
-              title="Caso de éxito LionxSecurity" frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen></iframe>
-      <div class="success-text">
-        <h3>De cero a <span>empleado</span> en ciberseguridad</h3>
-        <p>Mira cómo nuestro alumno consiguió su primer empleo como analista SOC después de 6 meses de formación con nosotros. Sin conocimientos previos.</p>
-        <a href="#" class="btn-outline"><i class="fas fa-user-graduate"></i> Ver historia completa</a>
-      </div>
-    </div>
-
-    <!-- COMUNIDAD DISCORD (pequeño, al fondo) -->
+    <!-- COMUNIDAD DISCORD (pequeña, al fondo) -->
     <div class="discord-mini">
       <a href="https://discord.gg/XtkC4zeukQ" class="discord-link" target="_blank">
-        <i class="fab fa-discord"></i> Únete a la comunidad gratuita de hacking · +1200 miembros
+        <i class="fab fa-discord"></i> Comunidad gratuita de hacking · +1200 miembros
       </a>
     </div>
 
-    <!-- Footer legal (solo privacidad y legal) -->
+    <!-- Footer legal -->
     <div class="legal-footer">
       <a href="https://privacy.lionxsecurity.es/">Privacidad</a>
       <a href="https://legal.lionxsecurity.es/">Legal</a>
