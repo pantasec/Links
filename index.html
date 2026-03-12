@@ -1,3 +1,5 @@
+Aquí tienes el código actualizado. Ahora, al hacer scroll hacia abajo en móvil, la imagen se sombrea y aparece el mensaje "🦁 ¡ACADEMIA! 🧑🏻‍💻", igual que al hacer clic o pasar el ratón.
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -166,7 +168,7 @@
       transition: opacity 0.3s ease;
     }
 
-    /* Overlay que aparece al hover/touch */
+    /* Overlay que aparece al hover/touch/scroll */
     .image-overlay {
       position: absolute;
       top: 0;
@@ -182,12 +184,17 @@
       transition: opacity 0.3s ease;
       border-radius: 30px;
       pointer-events: none;
+      z-index: 5;
     }
     .hero-image-wrapper:hover .image-overlay {
       opacity: 1;
     }
     /* Efecto táctil para móviles (al mantener pulsado) */
     .hero-image-wrapper:active .image-overlay {
+      opacity: 1;
+    }
+    /* Clase que se activará con JavaScript al hacer scroll */
+    .image-overlay.show-on-scroll {
       opacity: 1;
     }
     .overlay-text {
@@ -752,12 +759,12 @@
         </div>
       </div>
       
-      <!-- Wrapper con overlay para el mensaje al pasar el ratón -->
-      <a href="https://lionxsecurity.es/" target="_blank" class="hero-image-wrapper">
+      <!-- Wrapper con overlay para el mensaje al pasar el ratón / hacer scroll -->
+      <a href="https://lionxsecurity.es/" target="_blank" class="hero-image-wrapper" id="heroImageWrapper">
         <div class="hero-image">
           <img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity formación ciberseguridad">
         </div>
-        <div class="image-overlay">
+        <div class="image-overlay" id="heroOverlay">
           <span class="overlay-text">
             <span>🦁</span> ¡ACADEMIA! <span>🧑🏻‍💻</span>
           </span>
@@ -925,7 +932,7 @@
     Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 
-  <!-- Script para mejorar la experiencia táctil -->
+  <!-- Script para mejorar la experiencia táctil y efecto scroll -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Asegurar que todos los avatares sean perfectamente redondos
@@ -934,7 +941,42 @@
         avatar.style.borderRadius = '50%';
         avatar.style.overflow = 'hidden';
       });
+
+      // Efecto de scroll para mostrar el overlay en móvil
+      const heroOverlay = document.getElementById('heroOverlay');
+      const heroWrapper = document.getElementById('heroImageWrapper');
+      let lastScrollTop = 0;
+      let overlayTimeout;
+      const scrollThreshold = 50; // píxeles de desplazamiento para activar
+
+      if (heroOverlay && heroWrapper) {
+        window.addEventListener('scroll', function() {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollDifference = Math.abs(currentScroll - lastScrollTop);
+          
+          // Detectar si el usuario está en móvil (ancho de pantalla menor a 768px)
+          if (window.innerWidth <= 768) {
+            if (scrollDifference > scrollThreshold) {
+              // Añadir clase para mostrar overlay
+              heroOverlay.classList.add('show-on-scroll');
+              
+              // Limpiar timeout anterior
+              if (overlayTimeout) {
+                clearTimeout(overlayTimeout);
+              }
+              
+              // Ocultar después de 1.5 segundos
+              overlayTimeout = setTimeout(function() {
+                heroOverlay.classList.remove('show-on-scroll');
+              }, 1500);
+            }
+          }
+          
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+      }
     });
   </script>
 </body>
 </html>
+```
