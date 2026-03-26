@@ -1,3 +1,5 @@
+Aquí está la página HTML con la estructura que solicitaste. Ahora tu perfil (Jorge Pérez / Pantasec) aparece justo debajo de la foto del héroe y encima de la sección de clase gratuita, con una presentación clara y enlaces a tus redes y academia.
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +11,6 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ===== ESTILO ÉLITE NARANJA/NEGRO CON FONDO DEGRADADO DINÁMICO ===== */
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +27,6 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    /* FONDO DINÁMICO NARANJA-NEGRO */
     body::before {
       content: '';
       position: fixed;
@@ -65,7 +65,7 @@
       z-index: 2;
     }
 
-    /* ===== HEADER CON LOGO ===== */
+    /* HEADER */
     .logo-area {
       display: flex;
       align-items: center;
@@ -107,13 +107,13 @@
       -webkit-text-fill-color: #FF6600;
     }
 
-    /* ===== HERO SECTION ===== */
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 55px;
       align-items: center;
-      margin: 30px 0 70px;
+      margin: 30px 0 50px;
     }
     .hero h1 {
       font-size: 3.2rem;
@@ -139,7 +139,6 @@
       position: relative;
       display: block;
       text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
     }
     .hero-image {
       background: #151515;
@@ -148,7 +147,6 @@
       border: 1.5px solid rgba(255,102,0,0.5);
       box-shadow: 0 35px 70px -10px rgba(255,102,0,0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
     }
     .hero-image:hover {
       transform: scale(1.02) translateY(-5px);
@@ -175,7 +173,6 @@
       transition: opacity 0.3s ease;
       border-radius: 30px;
       pointer-events: none;
-      z-index: 5;
     }
     .hero-image-wrapper:hover .image-overlay {
       opacity: 1;
@@ -187,13 +184,12 @@
       font-size: 1.5rem;
       padding: 15px 30px;
       border-radius: 60px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    /* ===== BOTONES ===== */
+    /* BOTONES */
     .btn-primary {
       background: #FF6600;
       color: #000;
@@ -209,12 +205,10 @@
       transition: all 0.25s ease;
       box-shadow: 0 15px 35px rgba(255,102,0,0.5);
       margin-right: 18px;
-      border: 1px solid rgba(255,255,255,0.1);
     }
     .btn-primary:hover {
       background: #ff751a;
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(255,102,0,0.8);
     }
     .btn-outline {
       background: transparent;
@@ -248,13 +242,167 @@
     .highlight-box p {
       font-size: 1.2rem;
       color: #ddd;
-      margin: 0;
     }
     .highlight-box strong {
       color: #FF6600;
     }
 
-    /* ===== CLASE GRATUITA (AHORA PRIMERO) ===== */
+    /* PERFIL FUNDADOR - DEBAJO DE LA FOTO, ENCIMA DE CLASE GRATUITA */
+    .founder-profile-section {
+      margin: 30px 0 50px;
+    }
+    .founder-card {
+      background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
+      backdrop-filter: blur(16px);
+      border-radius: 40px;
+      border: 1px solid rgba(255, 102, 0, 0.5);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255,102,0,0.2);
+      padding: 30px 35px;
+      transition: all 0.3s ease;
+    }
+    .founder-card:hover {
+      border-color: #FF6600;
+      box-shadow: 0 30px 55px rgba(255,102,0,0.25);
+    }
+    .founder-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .founder-avatar-large {
+      flex-shrink: 0;
+    }
+    .founder-avatar-img {
+      width: 130px;
+      height: 130px;
+      background: linear-gradient(135deg, #FF6600, #cc5200);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+      font-weight: 800;
+      color: #000;
+      box-shadow: 0 0 0 4px rgba(255,102,0,0.3), 0 15px 35px rgba(0,0,0,0.5);
+    }
+    .founder-info-main {
+      flex: 2;
+      min-width: 260px;
+    }
+    .founder-badge-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 102, 0, 0.2);
+      padding: 5px 16px;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #FF6600;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255,102,0,0.4);
+    }
+    .founder-name-title {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    .founder-name-title span {
+      color: #FF6600;
+    }
+    .founder-bio-text {
+      color: #c0c0c0;
+      font-size: 1rem;
+      line-height: 1.55;
+      margin: 18px 0;
+      max-width: 600px;
+    }
+    .founder-bio-text i {
+      color: #FF6600;
+      width: 24px;
+      margin-right: 8px;
+    }
+    .founder-social-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 20px 0 10px;
+    }
+    .founder-social-buttons a {
+      color: #ddd;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(30,30,30,0.8);
+      padding: 8px 22px;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.25s;
+    }
+    .founder-social-buttons a i {
+      font-size: 1.3rem;
+    }
+    .founder-social-buttons a:hover {
+      color: #FF6600;
+      transform: translateY(-3px);
+      background: rgba(255,102,0,0.2);
+      border-color: #FF6600;
+    }
+    .academy-button-card {
+      flex: 1;
+      background: rgba(255, 102, 0, 0.08);
+      border-radius: 28px;
+      padding: 22px 28px;
+      text-align: center;
+      border: 1px solid rgba(255,102,0,0.4);
+      transition: all 0.3s;
+      min-width: 230px;
+    }
+    .academy-button-card:hover {
+      background: rgba(255, 102, 0, 0.18);
+      border-color: #FF6600;
+      transform: scale(1.02);
+    }
+    .academy-button-card h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .academy-button-card p {
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-bottom: 22px;
+    }
+    .btn-academy-orange {
+      background: #FF6600;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 8px 18px rgba(255,102,0,0.4);
+    }
+    .btn-academy-orange:hover {
+      background: #ff8533;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255,102,0,0.6);
+    }
+
+    /* CLASE GRATUITA */
     .free-class {
       background: linear-gradient(145deg, #0f0f0f, #070707);
       border-radius: 60px;
@@ -296,7 +444,6 @@
     }
     .class-title span {
       color: #FF6600;
-      text-shadow: 0 0 20px rgba(255,102,0,0.4);
     }
     .video-wrapper {
       max-width: 800px;
@@ -316,7 +463,7 @@
       margin: 40px 0 10px;
     }
 
-    /* ===== CASO DE ÉXITO NASA ===== */
+    /* CASO ÉXITO NASA */
     .success-nasa-premium {
       display: flex;
       gap: 50px;
@@ -327,7 +474,6 @@
       padding: 50px;
       margin: 40px 0 80px;
       border: 1.5px solid #FF6600;
-      box-shadow: 0 30px 60px rgba(255,102,0,0.2);
     }
     .short-card {
       flex: 1;
@@ -376,200 +522,7 @@
       transform: scale(1.03);
     }
 
-    /* ===== PERFIL FUNDADOR - TARJETA DESPLEGABLE AL SCROLL ===== */
-    .founder-scroll-section {
-      margin: 20px 0 40px;
-    }
-    .founder-reveal-card {
-      background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(10, 10, 10, 0.98));
-      backdrop-filter: blur(16px);
-      border-radius: 32px;
-      border: 1px solid rgba(255, 102, 0, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      padding: 0;
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .founder-reveal-card.visible {
-      max-height: 800px;
-      opacity: 1;
-      transform: translateY(0);
-      padding: 32px 36px;
-      pointer-events: auto;
-      margin-top: 25px;
-    }
-    .founder-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 35px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .founder-info-side {
-      flex: 2;
-      min-width: 260px;
-    }
-    .founder-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 102, 0, 0.2);
-      padding: 6px 18px;
-      border-radius: 60px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #FF6600;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,102,0,0.4);
-    }
-    .founder-title {
-      font-size: 1.9rem;
-      font-weight: 800;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-    .founder-title span {
-      color: #FF6600;
-    }
-    .founder-desc {
-      color: #c0c0c0;
-      font-size: 1rem;
-      line-height: 1.55;
-      margin: 18px 0;
-      max-width: 550px;
-    }
-    .founder-desc i {
-      color: #FF6600;
-      width: 24px;
-      margin-right: 6px;
-    }
-    .social-links-founder {
-      display: flex;
-      gap: 18px;
-      margin: 22px 0 15px;
-      flex-wrap: wrap;
-    }
-    .social-links-founder a {
-      color: #ddd;
-      transition: all 0.25s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(30,30,30,0.7);
-      padding: 8px 20px;
-      border-radius: 60px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .social-links-founder a i {
-      font-size: 1.3rem;
-    }
-    .social-links-founder a:hover {
-      color: #FF6600;
-      transform: translateY(-3px);
-      background: rgba(255,102,0,0.2);
-      border-color: #FF6600;
-    }
-    .academy-link-card {
-      flex: 1;
-      background: rgba(255, 102, 0, 0.08);
-      border-radius: 28px;
-      padding: 24px 28px;
-      text-align: center;
-      border: 1px solid rgba(255,102,0,0.35);
-      transition: all 0.3s;
-      min-width: 240px;
-    }
-    .academy-link-card:hover {
-      background: rgba(255, 102, 0, 0.18);
-      border-color: #FF6600;
-      transform: scale(1.02);
-    }
-    .academy-link-card h4 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-    .academy-link-card p {
-      font-size: 0.9rem;
-      color: #bbb;
-      margin-bottom: 24px;
-      line-height: 1.4;
-    }
-    .btn-academy {
-      background: #FF6600;
-      color: #000;
-      border: none;
-      padding: 14px 28px;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 60px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      transition: all 0.25s;
-      box-shadow: 0 8px 18px rgba(255,102,0,0.4);
-    }
-    .btn-academy:hover {
-      background: #ff8533;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(255,102,0,0.6);
-    }
-    .close-founder-reveal {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: #aaa;
-      cursor: pointer;
-      font-size: 14px;
-      border-radius: 30px;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.2s;
-      z-index: 10;
-    }
-    .close-founder-reveal:hover {
-      background: #FF6600;
-      color: #000;
-    }
-    .scroll-hint-founder {
-      text-align: center;
-      margin: 15px 0 5px;
-      font-size: 0.9rem;
-      color: #FF6600;
-      opacity: 0;
-      transition: opacity 0.4s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: rgba(0,0,0,0.5);
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 8px 20px;
-      border-radius: 60px;
-      backdrop-filter: blur(4px);
-    }
-    .scroll-hint-founder.visible {
-      opacity: 1;
-    }
-
-    /* ===== RESEÑAS GOOGLE ===== */
+    /* RESEÑAS */
     .trust-badge {
       background: rgba(20,20,20,0.7);
       backdrop-filter: blur(12px);
@@ -678,7 +631,6 @@
       align-items: center;
       gap: 12px;
       border: 1px solid #444;
-      transition: 0.25s;
     }
     .discord-link i {
       color: #5865F2;
@@ -707,7 +659,7 @@
       color: #FF6600;
     }
 
-    /* ===== RESPONSIVE MEJORADO ===== */
+    /* RESPONSIVE */
     @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; }
       .success-nasa-premium { flex-direction: column; text-align: center; }
@@ -715,45 +667,33 @@
       .review-grid { grid-template-columns: 1fr; }
       .free-class { padding: 40px 25px; }
       .class-title { font-size: 2.2rem; }
-      .founder-inner { flex-direction: column; text-align: center; }
-      .founder-desc { margin-left: auto; margin-right: auto; text-align: left; }
-      .social-links-founder { justify-content: center; }
+      .founder-flex { flex-direction: column; text-align: center; }
+      .founder-info-main { text-align: center; }
+      .founder-bio-text { margin-left: auto; margin-right: auto; text-align: left; }
+      .founder-social-buttons { justify-content: center; }
     }
     @media (max-width: 768px) {
       .container { padding: 20px 16px 40px; }
-      .logo-area { margin-bottom: 30px; }
       .logo-img { width: 48px; height: 48px; }
       .logo-text { font-size: 24px; }
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
       .btn-primary, .btn-outline { padding: 14px 24px; font-size: 1rem; width: 100%; justify-content: center; margin-right: 0; margin-bottom: 12px; }
       .hero div > div { display: flex; flex-direction: column; }
+      .founder-card { padding: 24px 20px; }
+      .founder-avatar-img { width: 100px; height: 100px; font-size: 42px; margin: 0 auto; }
+      .founder-name-title { font-size: 1.6rem; }
+      .founder-bio-text { font-size: 0.9rem; }
+      .founder-social-buttons a { padding: 6px 16px; font-size: 0.8rem; }
+      .academy-button-card { padding: 18px 20px; }
+      .academy-button-card h4 { font-size: 1.2rem; }
+      .btn-academy-orange { padding: 10px 20px; font-size: 0.9rem; }
       .free-class { padding: 30px 20px; margin: 40px 0 50px; }
       .class-title { font-size: 1.6rem; }
-      .success-nasa-premium { padding: 25px 20px; margin: 30px 0 50px; }
+      .success-nasa-premium { padding: 25px 20px; }
       .short-card iframe { height: 250px; }
       .success-text-block h3 { font-size: 1.5rem; }
-      .success-text-block p { font-size: 0.95rem; }
-      .founder-reveal-card.visible { padding: 24px 20px; }
-      .founder-title { font-size: 1.5rem; text-align: center; }
-      .founder-desc { font-size: 0.9rem; text-align: center; }
-      .founder-desc i { width: auto; }
-      .social-links-founder a { padding: 6px 14px; font-size: 0.8rem; }
-      .social-links-founder a i { font-size: 1.1rem; }
-      .academy-link-card { padding: 18px 16px; min-width: auto; width: 100%; }
-      .academy-link-card h4 { font-size: 1.2rem; }
-      .academy-link-card p { font-size: 0.8rem; }
-      .btn-academy { padding: 10px 20px; font-size: 0.9rem; }
       .trust-badge { padding: 30px 20px; }
-      .review-card { padding: 22px; }
-      .scroll-hint-founder { font-size: 0.75rem; padding: 5px 14px; }
-    }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.7rem; }
-      .class-title { font-size: 1.4rem; }
-      .founder-title { font-size: 1.3rem; }
-      .social-links-founder { gap: 10px; }
-      .social-links-founder a { padding: 5px 12px; font-size: 0.7rem; }
     }
   </style>
 </head>
@@ -782,7 +722,39 @@
       </a>
     </div>
 
-    <!-- CLASE GRATUITA (PRIMERO) -->
+    <!-- PERFIL FUNDADOR: DEBAJO DE LA FOTO, ENCIMA DE CLASE GRATUITA -->
+    <div class="founder-profile-section">
+      <div class="founder-card">
+        <div class="founder-flex">
+          <div class="founder-avatar-large">
+            <div class="founder-avatar-img">JP</div>
+          </div>
+          <div class="founder-info-main">
+            <div class="founder-badge-main"><i class="fas fa-crown"></i> Fundador & CEO</div>
+            <h2 class="founder-name-title">Jorge Pérez <span>(Pantasec)</span></h2>
+            <div class="founder-bio-text">
+              <i class="fas fa-graduation-cap"></i> Ingeniero en Telecomunicaciones especializado en Telemática.<br>
+              <i class="fas fa-shield-alt"></i> +3 años como consultor de ciberseguridad y auditor de riesgos IT.<br>
+              <i class="fas fa-chalkboard-user"></i> Creador de contenido técnico con más de <strong>55,000 seguidores</strong> y host del podcast <strong>TechTalk</strong>.
+            </div>
+            <div class="founder-social-buttons">
+              <a href="https://www.linkedin.com/in/pantasec/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+              <a href="https://www.instagram.com/pantasec.yt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+              <a href="https://www.youtube.com/@Pantasec" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+          <div class="academy-button-card">
+            <h4><i class="fas fa-graduation-cap"></i> LionxSecurity</h4>
+            <p>Formación élite en ciberseguridad. Metodología práctica, docentes en activo y comunidad real.</p>
+            <a href="https://lionxsecurity.es/" target="_blank" class="btn-academy-orange">
+              <i class="fas fa-external-link-alt"></i> Visitar Academia
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLASE GRATUITA -->
     <div id="clase-gratis" class="free-class">
       <div class="class-tag">🎓 CLASE GRATUITA</div>
       <h2 class="class-title">Aprende a hackear <span>de forma ética</span> sin tener ni idea</h2>
@@ -796,10 +768,10 @@
       </div>
     </div>
 
-    <!-- CASO DE ÉXITO NASA (SEGUNDO) -->
+    <!-- CASO ÉXITO NASA -->
     <div class="success-nasa-premium">
       <div class="short-card">
-        <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0" title="Caso éxito" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0" title="Caso éxito NASA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="success-text-block">
         <h3><span>Hackeó la NASA</span> en menos de 1 mes</h3>
@@ -808,39 +780,6 @@
       </div>
       <div class="nasa-card">
         <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta NASA">
-      </div>
-    </div>
-
-    <!-- SECCIÓN FUNDADOR DESPLEGABLE AL SCROLL -->
-    <div class="founder-scroll-section">
-      <div class="scroll-hint-founder" id="scrollHintFounder">
-        <i class="fas fa-arrow-down"></i> Desliza hacia abajo para conocer al fundador <i class="fas fa-user-astronaut"></i>
-      </div>
-      <div id="founderRevealCard" class="founder-reveal-card">
-        <button id="closeFounderBtn" class="close-founder-reveal"><i class="fas fa-times"></i></button>
-        <div class="founder-inner">
-          <div class="founder-info-side">
-            <div class="founder-badge"><i class="fas fa-crown"></i> Fundador & CEO</div>
-            <h2 class="founder-title">Jorge Pérez <span>(Pantasec)</span></h2>
-            <div class="founder-desc">
-              <i class="fas fa-graduation-cap"></i> Ingeniero en Telecomunicaciones especializado en Telemática.<br>
-              <i class="fas fa-shield-alt"></i> +3 años como consultor de ciberseguridad y auditor de riesgos IT.<br>
-              <i class="fas fa-chalkboard-user"></i> Creador de contenido técnico con más de <strong>55,000 seguidores</strong> y host del podcast <strong>TechTalk</strong>.
-            </div>
-            <div class="social-links-founder">
-              <a href="https://www.linkedin.com/in/pantasec/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-              <a href="https://www.instagram.com/pantasec.yt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.youtube.com/@Pantasec" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            </div>
-          </div>
-          <div class="academy-link-card">
-            <h4><i class="fas fa-graduation-cap"></i> LionxSecurity</h4>
-            <p>Formación élite en ciberseguridad. Metodología práctica, docentes en activo y comunidad real.</p>
-            <a href="https://lionxsecurity.es/" target="_blank" class="btn-academy">
-              <i class="fas fa-external-link-alt"></i> Visitar Academia
-            </a>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -879,41 +818,9 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const founderCard = document.getElementById('founderRevealCard');
-      const closeBtn = document.getElementById('closeFounderBtn');
-      const scrollHint = document.getElementById('scrollHintFounder');
-      let hasBeenShown = false;
-
-      function showFounderCard() {
-        if (founderCard && !founderCard.classList.contains('visible')) {
-          founderCard.classList.add('visible');
-          hasBeenShown = true;
-          if(scrollHint) scrollHint.classList.remove('visible');
-        }
-      }
-
-      window.addEventListener('scroll', function() {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollY > 320 && !hasBeenShown && founderCard && !founderCard.classList.contains('visible')) {
-          showFounderCard();
-        } else if (scrollY > 180 && !hasBeenShown && scrollHint && !scrollHint.classList.contains('visible')) {
-          scrollHint.classList.add('visible');
-        } else if (scrollY <= 150 && scrollHint) {
-          scrollHint.classList.remove('visible');
-        }
-      });
-
-      if(closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          founderCard.classList.remove('visible');
-          hasBeenShown = false;
-          if(scrollHint) scrollHint.classList.remove('visible');
-        });
-      }
-
       document.querySelectorAll('.reviewer-avatar').forEach(av => av.style.borderRadius = '50%');
     });
   </script>
 </body>
 </html>
+```
