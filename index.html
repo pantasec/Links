@@ -245,7 +245,7 @@
       color: #FF6600;
     }
 
-    /* PERFIL FUNDADOR - CON FOTO REAL DE GRADUACIÓN */
+    /* PERFIL FUNDADOR - CON FOTO REAL */
     .founder-profile-section {
       margin: 30px 0 50px;
     }
@@ -516,7 +516,7 @@
       transform: scale(1.03);
     }
 
-    /* RESEÑAS */
+    /* RESEÑAS GOOGLE - VERSIÓN ACTUALIZADA CON RESPUESTAS ESPECÍFICAS */
     .trust-badge {
       background: rgba(20,20,20,0.7);
       backdrop-filter: blur(12px);
@@ -543,9 +543,13 @@
       font-size: 26px;
       letter-spacing: 5px;
     }
+    .rating-text {
+      color: #aaa;
+      font-size: 1rem;
+    }
     .review-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
     .review-card {
@@ -603,8 +607,13 @@
     .review-owner-reply strong {
       color: #FF6600;
     }
+    .review-owner-reply p {
+      color: #bbb;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
     .review-date {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #777;
       margin-top: 18px;
       text-align: right;
@@ -716,7 +725,7 @@
       </a>
     </div>
 
-    <!-- PERFIL FUNDADOR: CON FOTO REAL DE GRADUACIÓN -->
+    <!-- PERFIL FUNDADOR -->
     <div class="founder-profile-section">
       <div class="founder-card">
         <div class="founder-flex">
@@ -777,18 +786,75 @@
       </div>
     </div>
 
-    <!-- RESEÑAS GOOGLE -->
+    <!-- RESEÑAS GOOGLE - VERSIÓN CON RESPUESTAS ESPECÍFICAS -->
     <div class="trust-badge">
       <div class="trust-header">
         <div class="google-icon"><img src="https://raw.githubusercontent.com/pantasec/Links/main/google-maps.png" alt="Google"></div>
-        <div><div class="trust-stars">★★★★★</div><span class="rating-text">5.0 · 5 reseñas de Google</span></div>
+        <div>
+          <div class="trust-stars">★★★★★</div>
+          <span class="rating-text">Reseñas de Google</span>
+        </div>
       </div>
       <div class="review-grid">
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">V</div><div class="reviewer-info"><h4>Victor Manuel</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"Increíble experiencia. He conseguido mi primera carta de la NASA."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Victor! 🙌🏼</p></div><div class="review-date">Hace 17 horas</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">J</div><div class="reviewer-info"><h4>Jesus Yeste</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"Academia recomendable, instructores que priorizan enseñar."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Jesús 😊</p></div><div class="review-date">Hace 4 meses</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">A</div><div class="reviewer-info"><h4>Alberto Hidalgo</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"Desde el primer momento el trato es genial, contenido actualizado."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Alberto! 🫶🏻</p></div><div class="review-date">Hace 4 meses</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">E</div><div class="reviewer-info"><h4>Emmanuel</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"De las mejores academias para entrar en ciberseguridad."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Emmanuel 👏🏻</p></div><div class="review-date">Hace 3 meses</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">L</div><div class="reviewer-info"><h4>Laura Méndez</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"La academia te prepara para certificaciones de verdad. Aprobé eJPT."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Enhorabuena Laura! 👏🏻</p></div><div class="review-date">Hace 2 meses</div></div>
+        <!-- Victor Manuel -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">V</div>
+            <div class="reviewer-info"><h4>Victor Manuel</h4></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Increíble experiencia en la academia. El contenido de Bug Bounty y Pentesting es 100% práctico y actualizado. Gracias a lo aprendido, he conseguido mi primera carta de agradecimiento de la NASA en Bugcrowd."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Victor! Y lo que está por venir 😊🙌🏼</p>
+          </div>
+          <div class="review-date">Hace 17 horas</div>
+        </div>
+
+        <!-- Jesus Yeste -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">J</div>
+            <div class="reviewer-info"><h4>Jesus Yeste ramirez</h4></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Una academia sin duda recomendable, con buenos instructores que priorizan enseñar. Cursos muy bien explicados. Además han añadido cursos nuevos de Bug Bounty y Azure."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Jesús! Espero que te gusten los últimos dos cursos 😊🙌🏼</p>
+          </div>
+          <div class="review-date">Hace 4 meses</div>
+        </div>
+
+        <!-- Alberto Hidalgo -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">A</div>
+            <div class="reviewer-info"><h4>Alberto Hidalgo</h4></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Desde el primer momento el trato es genial, academia bien montada y contenido actualizado con docentes de calidad. Actualmente cursando BugBounty."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Nos alegra leer tu opinión Alberto, todo un profesional y gran alumno! 🫶🏻😊</p>
+          </div>
+          <div class="review-date">Hace 4 meses</div>
+        </div>
+
+        <!-- Emmanuel -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">E</div>
+            <div class="reviewer-info"><h4>Emmanuel</h4></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"De las mejores academias para entrar en ciberseguridad o avanzar. Las masterclass demuestran la gran experiencia y conocimiento del profesor."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Emmanuel, la masterclass es única en el sector desde luego. Un placer haberte conocido! 👏🏻</p>
+          </div>
+          <div class="review-date">Hace 3 meses</div>
+        </div>
       </div>
     </div>
 
