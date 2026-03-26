@@ -339,211 +339,69 @@
       transform: scale(1.03);
     }
 
-    /* ===== PERFIL DEL FUNDADOR - TARJETA DESPLEGABLE AL HACER SCROLL (DEBAJO DE LA IMAGEN) ===== */
-    .founder-scroll-section {
-      margin: 20px 0 40px;
+    /* ===== CLASE GRATUITA ===== */
+    .free-class {
+      background: linear-gradient(145deg, #0f0f0f, #070707);
+      border-radius: 60px;
+      padding: 60px 50px;
+      margin: 60px 0 70px;
+      border: 1px solid #2a2a2a;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.9);
     }
-    
-    .founder-reveal-card {
-      background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(10, 10, 10, 0.98));
-      backdrop-filter: blur(16px);
-      border-radius: 32px;
-      border: 1px solid rgba(255, 102, 0, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 102, 0, 0.2);
-      padding: 0;
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      overflow: hidden;
-      pointer-events: none;
-    }
-    
-    .founder-reveal-card.visible {
-      max-height: 500px;
-      opacity: 1;
-      transform: translateY(0);
-      padding: 28px 32px;
-      pointer-events: auto;
-      margin-top: 25px;
-    }
-    
-    .founder-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .founder-info-side {
-      flex: 2;
-      min-width: 240px;
-    }
-    
-    .founder-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 102, 0, 0.2);
-      padding: 6px 16px;
-      border-radius: 60px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #FF6600;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,102,0,0.4);
-    }
-    
-    .founder-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-    
-    .founder-title span {
-      color: #FF6600;
-    }
-    
-    .founder-desc {
-      color: #c0c0c0;
-      font-size: 1rem;
-      line-height: 1.5;
-      margin: 16px 0;
-      max-width: 500px;
-    }
-    
-    .social-links-founder {
-      display: flex;
-      gap: 24px;
-      margin: 20px 0 20px;
-      flex-wrap: wrap;
-    }
-    
-    .social-links-founder a {
-      color: #ddd;
-      font-size: 1.8rem;
-      transition: all 0.25s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(30,30,30,0.6);
-      padding: 8px 16px;
-      border-radius: 60px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    
-    .social-links-founder a i {
-      font-size: 1.4rem;
-    }
-    
-    .social-links-founder a:hover {
-      color: #FF6600;
-      transform: translateY(-3px);
-      background: rgba(255,102,0,0.15);
-      border-color: #FF6600;
-    }
-    
-    .academy-link-card {
-      flex: 1;
-      background: rgba(255, 102, 0, 0.08);
-      border-radius: 28px;
-      padding: 20px 25px;
-      text-align: center;
-      border: 1px solid rgba(255,102,0,0.3);
-      transition: all 0.3s;
-      min-width: 220px;
-    }
-    
-    .academy-link-card:hover {
-      background: rgba(255, 102, 0, 0.18);
-      border-color: #FF6600;
-      transform: scale(1.02);
-    }
-    
-    .academy-link-card h4 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-    
-    .academy-link-card p {
-      font-size: 0.85rem;
-      color: #bbb;
-      margin-bottom: 20px;
-    }
-    
-    .btn-academy {
-      background: #FF6600;
-      color: #000;
-      border: none;
-      padding: 12px 28px;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 60px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      transition: all 0.25s;
-      box-shadow: 0 8px 18px rgba(255,102,0,0.4);
-    }
-    
-    .btn-academy:hover {
-      background: #ff8533;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(255,102,0,0.6);
-    }
-    
-    .close-founder-reveal {
+    .free-class::after {
+      content: '';
       position: absolute;
-      top: 20px;
-      right: 25px;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: #aaa;
-      cursor: pointer;
-      font-size: 14px;
-      border-radius: 30px;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.2s;
-      z-index: 10;
+      top: -100px; right: -100px;
+      width: 350px; height: 350px;
+      background: #FF6600;
+      filter: blur(140px);
+      opacity: 0.15;
+      border-radius: 50%;
     }
-    
-    .close-founder-reveal:hover {
+    .class-tag {
+      display: inline-block;
       background: #FF6600;
       color: #000;
+      font-weight: 800;
+      padding: 8px 26px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
-    
-    /* scroll hint */
-    .scroll-hint-founder {
-      text-align: center;
-      margin: 15px 0 5px;
-      font-size: 0.85rem;
+    .class-title {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      line-height: 1.2;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .class-title span {
       color: #FF6600;
-      opacity: 0;
-      transition: opacity 0.4s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      text-shadow: 0 0 20px rgba(255,102,0,0.4);
     }
-    
-    .scroll-hint-founder.visible {
-      opacity: 1;
+    .video-wrapper {
+      max-width: 800px;
+      margin: 35px auto;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(255,102,0,0.4);
+      border: 2px solid #FF6600;
     }
-    
+    .video-wrapper iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
+    .cta-under-video {
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+
     /* ===== RESEÑAS GOOGLE (solo 5 reseñas, 5 estrellas) ===== */
     .trust-badge {
       background: rgba(20,20,20,0.7);
@@ -725,7 +583,7 @@
       color: #FF6600;
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* ===== RESPONSIVE MEJORADO PARA MÓVIL ===== */
     @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; }
       .success-nasa-premium { flex-direction: column; text-align: center; }
@@ -734,39 +592,150 @@
       .free-class { padding: 40px 25px; }
       .class-title { font-size: 2.2rem; }
       .trust-badge { padding: 35px; }
-      .founder-inner { flex-direction: column; text-align: center; }
-      .founder-desc { margin-left: auto; margin-right: auto; }
-      .social-links-founder { justify-content: center; }
     }
 
     @media (max-width: 768px) {
-      .container { padding: 20px 16px 40px; }
-      .logo-area { margin-bottom: 30px; padding-bottom: 15px; }
-      .logo-img { width: 48px; height: 48px; }
-      .logo-text { font-size: 24px; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; }
-      .btn-primary, .btn-outline { padding: 14px 24px; font-size: 1rem; width: 100%; justify-content: center; margin-right: 0; margin-bottom: 12px; }
-      .hero div > div { display: flex; flex-direction: column; }
-      .highlight-box { padding: 18px 20px; }
-      .highlight-box p { font-size: 1rem; }
-      .success-nasa-premium { padding: 30px 20px; margin: 30px 0 50px; }
-      .short-card iframe { height: 350px; }
-      .success-text-block h3 { font-size: 1.8rem; }
-      .free-class { padding: 30px 20px; border-radius: 40px; }
-      .class-title { font-size: 1.8rem; }
-      .trust-badge { padding: 30px 20px; }
-      .founder-reveal-card.visible { padding: 20px; }
-      .founder-title { font-size: 1.4rem; }
-      .social-links-founder a { font-size: 0.85rem; padding: 6px 12px; }
-      .academy-link-card { padding: 15px; }
-      .btn-academy { padding: 10px 20px; font-size: 0.9rem; }
+      .container {
+        padding: 20px 16px 40px;
+      }
+      .logo-area {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+      }
+      .logo-img {
+        width: 48px;
+        height: 48px;
+      }
+      .logo-text {
+        font-size: 24px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .btn-primary, .btn-outline {
+        padding: 14px 24px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+      .hero div > div {
+        display: flex;
+        flex-direction: column;
+      }
+      .highlight-box {
+        padding: 18px 20px;
+      }
+      .highlight-box p {
+        font-size: 1rem;
+      }
+      .success-nasa-premium {
+        padding: 30px 20px;
+        margin: 30px 0 50px;
+      }
+      .short-card iframe {
+        height: 350px;
+      }
+      .success-text-block h3 {
+        font-size: 1.8rem;
+      }
+      .success-text-block p {
+        font-size: 1rem;
+      }
+      .free-class {
+        padding: 30px 20px;
+        border-radius: 40px;
+      }
+      .class-tag {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+      }
+      .class-title {
+        font-size: 1.8rem;
+      }
+      .video-wrapper {
+        margin: 20px auto;
+      }
+      .trust-badge {
+        padding: 30px 20px;
+        border-radius: 32px;
+      }
+      .trust-header {
+        gap: 12px;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+      }
+      .google-icon img {
+        width: 36px;
+        height: 36px;
+      }
+      .trust-stars {
+        font-size: 20px;
+      }
+      .rating-text {
+        font-size: 0.95rem;
+      }
+      .review-card {
+        padding: 22px;
+      }
+      .reviewer-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+      }
+      .reviewer-info h4 {
+        font-size: 1rem;
+      }
+      .review-text {
+        font-size: 0.9rem;
+      }
+      .review-owner-reply {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+      }
+      .discord-link {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: center;
+      }
+      .legal-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-top: 30px;
+        margin-top: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .class-title {
+        font-size: 1.5rem;
+      }
+      .short-card iframe {
+        height: 250px;
+      }
+      .success-text-block h3 {
+        font-size: 1.5rem;
+      }
+      .overlay-text {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- HEADER LOGO -->
+
+    <!-- HEADER: LOGO NUEVO (logo__lion.png) -->
     <div class="logo-area">
       <div class="logo-img">
         <img src="https://raw.githubusercontent.com/pantasec/Links/main/logo__lion.png" alt="LionxSecurity">
@@ -774,7 +743,7 @@
       <div class="logo-text">Lionx<span>Security</span></div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO con imagen enlazada a la academia y overlay con mensaje -->
     <div class="hero">
       <div>
         <h1>Consigue tu <span>primer empleo</span> en ciberseguridad</h1>
@@ -787,63 +756,35 @@
           <p><strong>📢  3.5M de empleos sin cubrir en el mundo.</strong> Las empresas necesitan talento y pagan bien. Empieza hoy.</p>
         </div>
       </div>
+      
+      <!-- Wrapper con overlay para el mensaje al pasar el ratón / hacer scroll -->
       <a href="https://lionxsecurity.es/" target="_blank" class="hero-image-wrapper" id="heroImageWrapper">
         <div class="hero-image">
           <img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity formación ciberseguridad">
         </div>
         <div class="image-overlay" id="heroOverlay">
-          <span class="overlay-text"><span>🦁</span> ¡ACADEMIA! <span>🧑🏻‍💻</span></span>
+          <span class="overlay-text">
+            <span>🦁</span> ¡ACADEMIA! <span>🧑🏻‍💻</span>
+          </span>
         </div>
       </a>
     </div>
 
-    <!-- SECCIÓN FUNDADOR DESPLEGABLE AL HACER SCROLL (debajo de la imagen principal) -->
-    <div class="founder-scroll-section">
-      <div class="scroll-hint-founder" id="scrollHintFounder">
-        <i class="fas fa-arrow-down"></i> Desliza hacia abajo para conocer al fundador <i class="fas fa-user-astronaut"></i>
-      </div>
-      <div id="founderRevealCard" class="founder-reveal-card">
-        <button id="closeFounderBtn" class="close-founder-reveal"><i class="fas fa-times"></i></button>
-        <div class="founder-inner">
-          <div class="founder-info-side">
-            <div class="founder-badge">
-              <i class="fas fa-crown"></i> Fundador & CEO
-            </div>
-            <h2 class="founder-title">Jorge Pérez <span>(Pantasec)</span></h2>
-            <div class="founder-desc">
-              <i class="fas fa-graduation-cap" style="color:#FF6600; margin-right: 8px;"></i> Ingeniero en Telecomunicaciones especializado en Telemática.<br>
-              <i class="fas fa-shield-alt" style="color:#FF6600; margin-right: 8px; margin-top: 8px; display: inline-block;"></i> +3 años como consultor de ciberseguridad y auditor de riesgos IT.<br>
-              <i class="fas fa-chalkboard-user" style="color:#FF6600; margin-right: 8px; margin-top: 8px; display: inline-block;"></i> Creador de contenido técnico con más de <strong>55,000 seguidores</strong> y host del podcast <strong>TechTalk</strong>.
-            </div>
-            <div class="social-links-founder">
-              <a href="https://www.linkedin.com/in/pantasec/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-              <a href="https://www.instagram.com/pantasec.yt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.youtube.com/@Pantasec" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            </div>
-          </div>
-          <div class="academy-link-card">
-            <h4><i class="fas fa-graduation-cap"></i> LionxSecurity</h4>
-            <p>Formación élite en ciberseguridad. Metodología práctica, docentes en activo y comunidad real.</p>
-            <a href="https://lionxsecurity.es/" target="_blank" class="btn-academy">
-              <i class="fas fa-external-link-alt"></i> Visitar Academia
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CASO ÉXITO NASA -->
+    <!-- CASO DE ÉXITO (primero) -->
     <div class="success-nasa-premium">
       <div class="short-card">
-        <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0&modestbranding=1" title="Caso de éxito" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ZgkOk3FNqU0?rel=0&modestbranding=1" 
+                title="Caso de éxito LionxSecurity" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
       </div>
       <div class="success-text-block">
         <h3><span>Hackeó la NASA</span> en menos de 1 mes</h3>
-        <p>Nuestro alumno Álvaro utilizó la metodología que enseñamos para conseguir la carta de la NASA. ¡Ya la tiene en su casa en menos de un mes! Tú puedes ser el próximo.</p>
+        <p>Nuestro alumno Álvaro utilizó la metodología que enseñamos para conseguir la carta de la NASA. ¡Ya la tiene en su casa en menos de un mes! Este es su logro real. Tú puedes ser el próximo.</p>
         <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="btn-outline"><i class="fas fa-rocket"></i> Quiero mi oportunidad</a>
       </div>
       <div class="nasa-card">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta NASA">
+        <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta de la NASA de Álvaro, alumno LionxSecurity">
       </div>
     </div>
 
@@ -852,42 +793,136 @@
       <div class="class-tag">🎓 CLASE GRATUITA</div>
       <h2 class="class-title">Aprende a hackear <span>de forma ética</span> sin tener ni idea</h2>
       <p style="text-align: center; color: #bbb; margin-bottom: 25px;">Accede ahora a la clase de prueba: "Primeros pasos en hacking ético con LionxSecurity"</p>
+      
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/LBiM8tTnjNU?rel=0&modestbranding=1" title="Clase gratuita" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/LBiM8tTnjNU?rel=0&modestbranding=1&showinfo=0" 
+                title="Clase gratuita de ciberseguridad" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
       </div>
       <div class="cta-under-video">
-        <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="btn-primary"><i class="fas fa-pointer"></i> Haz click para acceder</a>
+        <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="btn-primary" style="background:#FF6600; color:#000;"><i class="fas fa-pointer"></i> Haz click para acceder</a>
         <p style="margin-top: 18px; font-size: 0.9rem; color: #777;">Analizamos tu perfil sin compromiso.</p>
       </div>
     </div>
 
-    <!-- RESEÑAS GOOGLE -->
+    <!-- RESEÑAS GOOGLE (solo 5 reseñas, 5 estrellas) -->
     <div class="trust-badge">
       <div class="trust-header">
-        <div class="google-icon"><img src="https://raw.githubusercontent.com/pantasec/Links/main/google-maps.png" alt="Google Maps"></div>
-        <div><div class="trust-stars">★★★★★</div><span class="rating-text">5.0 · 5 reseñas de Google</span></div>
+        <div class="google-icon">
+          <img src="https://raw.githubusercontent.com/pantasec/Links/main/google-maps.png" alt="Google Maps">
+        </div>
+        <div>
+          <div class="trust-stars">★★★★★</div>
+          <span class="rating-text">5.0 · 5 reseñas de Google</span>
+        </div>
       </div>
+
       <div class="review-grid">
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">V</div><div class="reviewer-info"><h4>Victor Manuel</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"Increíble experiencia. He conseguido mi primera carta de la NASA en Bugcrowd."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Victor! 🙌🏼</p></div><div class="review-date">Hace 17 horas</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">J</div><div class="reviewer-info"><h4>Jesus Yeste ramirez <span class="local-guide">Local Guide</span></h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"Academia recomendable, instructores que priorizan enseñar. Cursos muy bien explicados."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Jesús 😊</p></div><div class="review-date">Hace 4 meses</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">A</div><div class="reviewer-info"><h4>Alberto Hidalgo</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"Desde el primer momento el trato es genial, contenido actualizado con docentes de calidad."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Alberto! 🫶🏻</p></div><div class="review-date">Hace 4 meses</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">E</div><div class="reviewer-info"><h4>Emmanuel</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"De las mejores academias para entrar en ciberseguridad. Las masterclass demuestran gran experiencia."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Gracias Emmanuel 👏🏻</p></div><div class="review-date">Hace 3 meses</div></div>
-        <div class="review-card"><div class="reviewer"><div class="reviewer-avatar">L</div><div class="reviewer-info"><h4>Laura Méndez</h4></div></div><div class="review-stars">★★★★★</div><div class="review-text">"La academia te prepara para certificaciones de verdad. Aprobé eJPT en mi primer intento."</div><div class="review-owner-reply"><strong>LionxSecurity</strong><p>Enhorabuena Laura! 👏🏻</p></div><div class="review-date">Hace 2 meses</div></div>
+        <!-- RESEÑA 1: Victor Manuel -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">V</div>
+            <div class="reviewer-info">
+              <h4>Victor Manuel</h4>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Increíble experiencia en la academia. El contenido de Bug Bounty y Pentesting es 100% práctico y actualizado. Gracias a lo aprendido, he conseguido mi primera carta de agradecimiento de la NASA en Bugcrowd."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Victor! Y lo que está por venir 😊🙌🏼</p>
+          </div>
+          <div class="review-date">Hace 17 horas</div>
+        </div>
+
+        <!-- RESEÑA 2: Jesus Yeste (con local-guide) -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">J</div>
+            <div class="reviewer-info">
+              <h4>Jesus Yeste ramirez <span class="local-guide">Local Guide · 6 reseñas</span></h4>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Una academia sin duda recomendable, con buenos instructores que priorizan enseñar. Cursos muy bien explicados. Además han añadido cursos nuevos de Bug Bounty y Azure."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Jesús! Espero que te gusten los últimos dos cursos 😊🙌🏼</p>
+          </div>
+          <div class="review-date">Hace 4 meses</div>
+        </div>
+
+        <!-- RESEÑA 3: Alberto Hidalgo -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">A</div>
+            <div class="reviewer-info">
+              <h4>Alberto Hidalgo <span style="font-size:0.8rem; color:#aaa;"> · 5 reseñas · 3 fotos</span></h4>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Desde el primer momento el trato es genial, academia bien montada y contenido actualizado con docentes de calidad. Actualmente cursando BugBounty."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Nos alegra leer tu opinión Alberto, todo un profesional y gran alumno! 🫶🏻😊</p>
+          </div>
+          <div class="review-date">Hace 4 meses</div>
+        </div>
+
+        <!-- RESEÑA 4: Emmanuel -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">E</div>
+            <div class="reviewer-info">
+              <h4>Emmanuel</h4>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"De las mejores academias para entrar en ciberseguridad o avanzar. Las masterclass demuestran la gran experiencia y conocimiento del profesor."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Muchas gracias Emmanuel, la masterclass es única en el sector. Un placer conocerte! 👏🏻</p>
+          </div>
+          <div class="review-date">Hace 3 meses</div>
+        </div>
+
+        <!-- RESEÑA 5: Laura Méndez -->
+        <div class="review-card">
+          <div class="reviewer">
+            <div class="reviewer-avatar">L</div>
+            <div class="reviewer-info">
+              <h4>Laura Méndez</h4>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"La academia te prepara para certificaciones de verdad. Con el curso de eJPT aprobé en mi primer intento gracias a los laboratorios prácticos y el soporte."</div>
+          <div class="review-owner-reply">
+            <strong>LionxSecurity (propietario)</strong>
+            <p>Enhorabuena Laura! Fue un placer verte crecer. 👏🏻</p>
+          </div>
+          <div class="review-date">Hace 2 meses</div>
+        </div>
       </div>
     </div>
 
+    <!-- COMUNIDAD DISCORD -->
     <div class="discord-mini">
-      <a href="https://discord.gg/XtkC4zeukQ" class="discord-link" target="_blank"><i class="fab fa-discord"></i> Comunidad gratuita de hacking</a>
+      <a href="https://discord.gg/XtkC4zeukQ" class="discord-link" target="_blank">
+        <i class="fab fa-discord"></i> Comunidad gratuita de hacking
+      </a>
     </div>
 
+    <!-- Footer legal -->
     <div class="legal-footer">
       <a href="https://privacy.lionxsecurity.es/">Privacidad</a>
       <a href="https://legal.lionxsecurity.es/">Legal</a>
       <span>© 2026 LionxSecurity</span>
     </div>
-  </div>
 
-  <!-- Cal embed -->
+  </div> <!-- container -->
+
+  <!-- Cal floating-popup embed code (actualizado con buttonText) -->
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "30min", {origin:"https://app.cal.com"});
@@ -895,71 +930,50 @@
     Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 
+  <!-- Script para mejorar la experiencia táctil y efecto scroll -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const founderCard = document.getElementById('founderRevealCard');
-      const closeBtn = document.getElementById('closeFounderBtn');
-      const scrollHint = document.getElementById('scrollHintFounder');
-      let hasBeenShown = false;
-      let scrollTimeout;
-
-      // Función para mostrar la tarjeta del fundador
-      function showFounderCard() {
-        if (founderCard && !founderCard.classList.contains('visible')) {
-          founderCard.classList.add('visible');
-          hasBeenShown = true;
-          if(scrollHint) scrollHint.classList.remove('visible');
-        }
-      }
-
-      // Detectar scroll hacia abajo
-      window.addEventListener('scroll', function() {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        // Al pasar los 300px mostramos la tarjeta de fundador (justo debajo del hero)
-        if (scrollY > 280 && !hasBeenShown && founderCard && !founderCard.classList.contains('visible')) {
-          showFounderCard();
-          if(scrollTimeout) clearTimeout(scrollTimeout);
-        } 
-        // Mostrar hint antes de que aparezca
-        else if (scrollY > 150 && !hasBeenShown && scrollHint && !scrollHint.classList.contains('visible')) {
-          scrollHint.classList.add('visible');
-        } 
-        else if (scrollY <= 100 && scrollHint) {
-          scrollHint.classList.remove('visible');
-        }
+      // Asegurar que todos los avatares sean perfectamente redondos
+      const avatars = document.querySelectorAll('.reviewer-avatar');
+      avatars.forEach(avatar => {
+        avatar.style.borderRadius = '50%';
+        avatar.style.overflow = 'hidden';
       });
 
-      // Botón cerrar tarjeta
-      if(closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          founderCard.classList.remove('visible');
-          hasBeenShown = false; // Permitir que vuelva a aparecer si se vuelve a hacer scroll después de cerrar
-          if(scrollHint) scrollHint.classList.remove('visible');
-        });
-      }
-
-      // Efecto overlay hero para móvil
+      // Efecto de scroll para mostrar el overlay en móvil
       const heroOverlay = document.getElementById('heroOverlay');
+      const heroWrapper = document.getElementById('heroImageWrapper');
       let lastScrollTop = 0;
       let overlayTimeout;
-      if(heroOverlay) {
+      const scrollThreshold = 50; // píxeles de desplazamiento para activar
+
+      if (heroOverlay && heroWrapper) {
         window.addEventListener('scroll', function() {
           const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-          const diff = Math.abs(currentScroll - lastScrollTop);
-          if(window.innerWidth <= 768 && diff > 50) {
-            heroOverlay.classList.add('show-on-scroll');
-            if(overlayTimeout) clearTimeout(overlayTimeout);
-            overlayTimeout = setTimeout(() => heroOverlay.classList.remove('show-on-scroll'), 1500);
+          const scrollDifference = Math.abs(currentScroll - lastScrollTop);
+          
+          // Detectar si el usuario está en móvil (ancho de pantalla menor a 768px)
+          if (window.innerWidth <= 768) {
+            if (scrollDifference > scrollThreshold) {
+              // Añadir clase para mostrar overlay
+              heroOverlay.classList.add('show-on-scroll');
+              
+              // Limpiar timeout anterior
+              if (overlayTimeout) {
+                clearTimeout(overlayTimeout);
+              }
+              
+              // Ocultar después de 1.5 segundos
+              overlayTimeout = setTimeout(function() {
+                heroOverlay.classList.remove('show-on-scroll');
+              }, 1500);
+            }
           }
+          
           lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
       }
-
-      // Avatares redondeados
-      document.querySelectorAll('.reviewer-avatar').forEach(av => av.style.borderRadius = '50%');
     });
   </script>
 </body>
 </html>
-```
