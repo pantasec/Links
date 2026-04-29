@@ -484,12 +484,37 @@
       transform: scale(1.05);
       box-shadow: 0 10px 20px rgba(88, 101, 242, 0.4);
     }
+    /* Estilo para el botón final de WhatsApp (mismo hover verde) */
+    .final-whatsapp-btn {
+      background: #1f1f1f;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #444;
+      transition: all 0.25s;
+      color: white;
+    }
+    .final-whatsapp-btn i {
+      font-size: 1.5rem;
+    }
+    .final-whatsapp-btn:hover {
+      background: #25D366;
+      border-color: #25D366;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+    }
     @media (max-width: 600px) {
       .community-card { padding: 30px 20px; }
       .community-title { font-size: 1.6rem; gap: 12px; }
       .community-title .lion-icon { font-size: 2.8rem; }
       .community-description { font-size: 1rem; }
-      .btn-community { padding: 10px 22px; font-size: 0.9rem; }
+      .btn-community, .final-whatsapp-btn { padding: 10px 22px; font-size: 0.9rem; }
     }
 
     /* CLASE GRATUITA */
@@ -612,7 +637,7 @@
       transform: scale(1.03);
     }
 
-    /* RESEÑAS GOOGLE - VERSIÓN ACTUALIZADA CON RESPUESTAS ESPECÍFICAS */
+    /* RESEÑAS GOOGLE */
     .trust-badge {
       background: rgba(20,20,20,0.7);
       backdrop-filter: blur(12px);
@@ -800,7 +825,7 @@
       </a>
     </div>
 
-    <!-- NUEVA SECCIÓN: ÚNETE A LA COMUNIDAD! LionxSecurity (Trabajo en Ciberseguridad) - AHORA ANTES DEL FUNDADOR -->
+    <!-- SECCIÓN: ÚNETE A LA COMUNIDAD! -->
     <div class="community-section">
       <div class="community-card">
         <div class="community-title">
@@ -815,7 +840,7 @@
       </div>
     </div>
 
-    <!-- PERFIL FUNDADOR -->
+    <!-- PERFIL FUNDADOR (SIN WHATSAPP, SOLO YT, LINKEDIN, INSTAGRAM) -->
     <div class="founder-profile-section">
       <div class="founder-card">
         <div class="founder-flex">
@@ -831,10 +856,10 @@
               <i class="fas fa-chalkboard-user"></i> Creador de contenido técnico con más de <strong>55,000 seguidores</strong> y host del podcast <strong>TechTalk</strong>.
             </div>
             <div class="founder-social-buttons">
-              <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <!-- Solo YT, LinkedIn, Instagram sin emoji de WhatsApp -->
+              <a href="https://www.youtube.com/@Pantasec" target="_blank"><i class="fab fa-youtube"></i> YT</a>
               <a href="https://www.linkedin.com/in/pantasec/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
               <a href="https://www.instagram.com/pantasec.yt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.youtube.com/@Pantasec" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
             </div>
           </div>
           <div class="academy-button-card">
@@ -873,7 +898,6 @@
         <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="btn-outline"><i class="fas fa-rocket"></i> Quiero mi oportunidad</a>
       </div>
       <div class="nasa-card">
-        <!-- IMAGEN CORREGIDA (USANDO RAW) -->
         <img src="https://raw.githubusercontent.com/pantasec/Links/main/image.webp" alt="Carta NASA">
       </div>
     </div>
@@ -888,7 +912,6 @@
         </div>
       </div>
       <div class="review-grid">
-        <!-- Victor Manuel -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">V</div>
@@ -902,8 +925,6 @@
           </div>
           <div class="review-date">Hace 17 horas</div>
         </div>
-
-        <!-- Jesus Yeste -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">J</div>
@@ -917,8 +938,6 @@
           </div>
           <div class="review-date">Hace 4 meses</div>
         </div>
-
-        <!-- Alberto Hidalgo -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">A</div>
@@ -932,8 +951,6 @@
           </div>
           <div class="review-date">Hace 4 meses</div>
         </div>
-
-        <!-- Emmanuel -->
         <div class="review-card">
           <div class="reviewer">
             <div class="reviewer-avatar">E</div>
@@ -950,9 +967,9 @@
       </div>
     </div>
 
-    <!-- Botón final de Comunidad: Reemplazado por el mismo diseño mejorado -->
+    <!-- Botón final de WhatsApp con hover verde como el otro -->
     <div class="final-community-link">
-      <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" class="btn-community whatsapp" style="background: #1f1f1f; border: 1px solid #444; box-shadow: none;"><i class="fab fa-whatsapp"></i> Comunidad gratuita de hacking</a>
+      <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" class="final-whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> Comunidad gratuita de hacking</a>
     </div>
 
     <div class="legal-footer">
