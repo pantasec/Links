@@ -1,3 +1,11 @@
+Aquí tienes el código HTML modificado con los cambios que me pediste:
+
+1.  **Moví la sección "Únete a la comunidad!"** para que aparezca antes del perfil del fundador.
+2.  **Añadí un icono de león (`🦁`)** a la izquierda del título de la comunidad, y le di más tamaño y estilo visual para que destaque.
+3.  **Reemplacé el botón final de WhatsApp ("Comunidad gratuita de hacking")** por el botón nuevo y más estilizado que creamos para la sección de comunidad (con el mismo diseño atractivo de la sección principal).
+4.  **Corregí la imagen de la carta de la NASA:** Usé un enlace directo a la imagen en formato `raw` para que se vea correctamente (el enlace anterior era a la página de GitHub, no al archivo en sí).
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -414,13 +422,28 @@
       transform: translateY(-5px);
       box-shadow: 0 30px 45px -5px rgba(255,102,0,0.2);
     }
-    .community-card h3 {
+    .community-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
       font-size: 2.2rem;
       font-weight: 800;
       font-family: 'Plus Jakarta Sans', sans-serif;
       margin-bottom: 15px;
+      flex-wrap: wrap;
     }
-    .community-card h3 span {
+    .community-title .lion-icon {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 0 12px #FF6600);
+      display: inline-block;
+      animation: subtlePulse 3s infinite;
+    }
+    @keyframes subtlePulse {
+      0%, 100% { transform: scale(1); text-shadow: 0 0 5px #FF6600; }
+      50% { transform: scale(1.08); text-shadow: 0 0 20px #FF6600; }
+    }
+    .community-title span {
       color: #FF6600;
       border-bottom: 2px solid #FF6600;
       display: inline-block;
@@ -430,7 +453,7 @@
       font-size: 1.1rem;
       color: #bbbbbb;
       max-width: 650px;
-      margin: 0 auto 30px auto;
+      margin: 10px auto 30px auto;
     }
     .community-buttons {
       display: flex;
@@ -471,7 +494,8 @@
     }
     @media (max-width: 600px) {
       .community-card { padding: 30px 20px; }
-      .community-card h3 { font-size: 1.6rem; }
+      .community-title { font-size: 1.6rem; gap: 12px; }
+      .community-title .lion-icon { font-size: 2.8rem; }
       .community-description { font-size: 1rem; }
       .btn-community { padding: 10px 22px; font-size: 0.9rem; }
     }
@@ -698,31 +722,10 @@
       margin-top: 18px;
       text-align: right;
     }
-    .discord-mini {
+    .final-community-link {
       display: flex;
       justify-content: center;
       margin: 40px 0 20px;
-    }
-    .discord-link {
-      background: #1a1a1a;
-      color: #aaa;
-      padding: 14px 38px;
-      border-radius: 60px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      border: 1px solid #444;
-    }
-    .discord-link i {
-      color: #25D366;
-      font-size: 1.3rem;
-    }
-    .discord-link:hover {
-      border-color: #25D366;
-      background: #2a2a2a;
-      color: #fff;
     }
     .legal-footer {
       border-top: 1px solid #2a2a2a;
@@ -805,6 +808,21 @@
       </a>
     </div>
 
+    <!-- NUEVA SECCIÓN: ÚNETE A LA COMUNIDAD! LionxSecurity (Trabajo en Ciberseguridad) - AHORA ANTES DEL FUNDADOR -->
+    <div class="community-section">
+      <div class="community-card">
+        <div class="community-title">
+          <i class="fas fa-lion lion-icon"></i>
+          <span>Únete a la comunidad! LionxSecurity<br>(Trabajo en Ciberseguridad) 🧑🏽‍💻🦁</span>
+        </div>
+        <p class="community-description">Accede a networking, ofertas de trabajo, recursos exclusivos y el acompañamiento de cientos de hackers éticos. ¡Prepárate para tu futuro profesional!</p>
+        <div class="community-buttons">
+          <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" class="btn-community whatsapp"><i class="fab fa-whatsapp"></i> Comunidad WhatsApp</a>
+          <a href="https://discord.gg/3PxqQTHrvU" target="_blank" class="btn-community discord"><i class="fab fa-discord"></i> Comunidad Discord</a>
+        </div>
+      </div>
+    </div>
+
     <!-- PERFIL FUNDADOR -->
     <div class="founder-profile-section">
       <div class="founder-card">
@@ -821,7 +839,6 @@
               <i class="fas fa-chalkboard-user"></i> Creador de contenido técnico con más de <strong>55,000 seguidores</strong> y host del podcast <strong>TechTalk</strong>.
             </div>
             <div class="founder-social-buttons">
-              <!-- Botón de WhatsApp añadido antes que LinkedIn -->
               <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
               <a href="https://www.linkedin.com/in/pantasec/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
               <a href="https://www.instagram.com/pantasec.yt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
@@ -835,18 +852,6 @@
               <i class="fas fa-calendar-plus"></i> Empezar ya
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NUEVA SECCIÓN: ÚNETE A LA COMUNIDAD! LionxSecurity (Trabajo en Ciberseguridad) -->
-    <div class="community-section">
-      <div class="community-card">
-        <h3>Únete a la comunidad! <span>LionxSecurity</span><br>(Trabajo en Ciberseguridad) 🧑🏽‍💻🦁</h3>
-        <p class="community-description">Accede a networking, ofertas de trabajo, recursos exclusivos y el acompañamiento de cientos de hackers éticos. ¡Prepárate para tu futuro profesional!</p>
-        <div class="community-buttons">
-          <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" class="btn-community whatsapp"><i class="fab fa-whatsapp"></i> Comunidad WhatsApp</a>
-          <a href="https://discord.gg/3PxqQTHrvU" target="_blank" class="btn-community discord"><i class="fab fa-discord"></i> Comunidad Discord</a>
         </div>
       </div>
     </div>
@@ -876,12 +881,12 @@
         <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="btn-outline"><i class="fas fa-rocket"></i> Quiero mi oportunidad</a>
       </div>
       <div class="nasa-card">
-        <!-- NUEVA FOTO DE LA CARTA NASA -->
-        <img src="https://github.com/pantasec/Links/blob/main/image.webp" alt="Carta NASA">
+        <!-- IMAGEN CORREGIDA (USANDO RAW) -->
+        <img src="https://raw.githubusercontent.com/pantasec/Links/main/image.webp" alt="Carta NASA">
       </div>
     </div>
 
-    <!-- RESEÑAS GOOGLE - VERSIÓN CON RESPUESTAS ESPECÍFICAS -->
+    <!-- RESEÑAS GOOGLE -->
     <div class="trust-badge">
       <div class="trust-header">
         <div class="google-icon"><img src="https://raw.githubusercontent.com/pantasec/Links/main/google-maps.png" alt="Google"></div>
@@ -953,9 +958,9 @@
       </div>
     </div>
 
-    <!-- Botón de comunidad gratuita con enlace de WhatsApp (reemplazo de Discord) -->
-    <div class="discord-mini">
-      <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" class="discord-link" target="_blank"><i class="fab fa-whatsapp"></i> Comunidad gratuita de hacking</a>
+    <!-- Botón final de Comunidad: Reemplazado por el mismo diseño mejorado -->
+    <div class="final-community-link">
+      <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" class="btn-community whatsapp" style="background: #1f1f1f; border: 1px solid #444; box-shadow: none;"><i class="fab fa-whatsapp"></i> Comunidad gratuita de hacking</a>
     </div>
 
     <div class="legal-footer">
@@ -979,3 +984,4 @@
   </script>
 </body>
 </html>
+```
