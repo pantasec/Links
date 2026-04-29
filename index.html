@@ -396,6 +396,86 @@
       box-shadow: 0 15px 30px rgba(255,102,0,0.6);
     }
 
+    /* NUEVA SECCION: UNETE A LA COMUNIDAD */
+    .community-section {
+      margin: 40px 0 50px;
+    }
+    .community-card {
+      background: linear-gradient(135deg, #111111, #0a0a0a);
+      border-radius: 48px;
+      padding: 45px 40px;
+      text-align: center;
+      border: 1px solid rgba(255, 102, 0, 0.6);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
+    }
+    .community-card:hover {
+      border-color: #FF6600;
+      transform: translateY(-5px);
+      box-shadow: 0 30px 45px -5px rgba(255,102,0,0.2);
+    }
+    .community-card h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-bottom: 15px;
+    }
+    .community-card h3 span {
+      color: #FF6600;
+      border-bottom: 2px solid #FF6600;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .community-description {
+      font-size: 1.1rem;
+      color: #bbbbbb;
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+    }
+    .community-buttons {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-community {
+      background: #1f1f1f;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #444;
+      transition: all 0.25s;
+      color: white;
+    }
+    .btn-community i {
+      font-size: 1.5rem;
+    }
+    .btn-community.whatsapp:hover {
+      background: #25D366;
+      border-color: #25D366;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+    }
+    .btn-community.discord:hover {
+      background: #5865F2;
+      border-color: #5865F2;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(88, 101, 242, 0.4);
+    }
+    @media (max-width: 600px) {
+      .community-card { padding: 30px 20px; }
+      .community-card h3 { font-size: 1.6rem; }
+      .community-description { font-size: 1rem; }
+      .btn-community { padding: 10px 22px; font-size: 0.9rem; }
+    }
+
     /* CLASE GRATUITA */
     .free-class {
       background: linear-gradient(145deg, #0f0f0f, #070707);
@@ -759,6 +839,18 @@
       </div>
     </div>
 
+    <!-- NUEVA SECCIÓN: ÚNETE A LA COMUNIDAD! LionxSecurity (Trabajo en Ciberseguridad) -->
+    <div class="community-section">
+      <div class="community-card">
+        <h3>Únete a la comunidad! <span>LionxSecurity</span><br>(Trabajo en Ciberseguridad) 🧑🏽‍💻🦁</h3>
+        <p class="community-description">Accede a networking, ofertas de trabajo, recursos exclusivos y el acompañamiento de cientos de hackers éticos. ¡Prepárate para tu futuro profesional!</p>
+        <div class="community-buttons">
+          <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" class="btn-community whatsapp"><i class="fab fa-whatsapp"></i> Comunidad WhatsApp</a>
+          <a href="https://discord.gg/3PxqQTHrvU" target="_blank" class="btn-community discord"><i class="fab fa-discord"></i> Comunidad Discord</a>
+        </div>
+      </div>
+    </div>
+
     <!-- CLASE GRATUITA -->
     <div id="clase-gratis" class="free-class">
       <div class="class-tag">🎓 CLASE GRATUITA</div>
@@ -784,7 +876,8 @@
         <a href="https://cal.com/lionxsecurity-gmg0n1/30min" class="btn-outline"><i class="fas fa-rocket"></i> Quiero mi oportunidad</a>
       </div>
       <div class="nasa-card">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/cartanasa.jpg" alt="Carta NASA">
+        <!-- NUEVA FOTO DE LA CARTA NASA -->
+        <img src="https://github.com/pantasec/Links/blob/main/image.webp" alt="Carta NASA">
       </div>
     </div>
 
