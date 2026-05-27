@@ -396,115 +396,112 @@
       box-shadow: 0 15px 30px rgba(255,102,0,0.6);
     }
 
-    /* SECCION SKOOL - HERO CONVERSIÓN */
+    /* SECCION SKOOL CONVERSIÓN (nuevo layout: imagen izquierda, texto derecha) */
     .skool-conversion {
       margin: 40px 0 50px;
     }
-    .skool-card {
+    .skool-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 45px;
       background: linear-gradient(135deg, #0f0f0f, #080808);
       border-radius: 48px;
-      padding: 45px 40px;
-      text-align: center;
+      padding: 45px 50px;
       border: 2px solid rgba(255, 102, 0, 0.7);
-      box-shadow: 0 25px 45px -10px rgba(0,0,0,0.8), 0 0 30px rgba(255,102,0,0.3);
+      box-shadow: 0 25px 45px -10px rgba(0,0,0,0.8), 0 0 30px rgba(255,102,0,0.2);
       transition: all 0.3s ease;
     }
-    .skool-card:hover {
+    .skool-grid:hover {
       border-color: #FF6600;
-      transform: translateY(-6px);
-      box-shadow: 0 35px 55px -8px rgba(255,102,0,0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 35px 55px -8px rgba(255,102,0,0.3);
     }
-    .skool-title {
-      display: flex;
+    .skool-image-side {
+      flex: 1.1;
+      min-width: 240px;
+    }
+    .skool-image-side img {
+      width: 100%;
+      border-radius: 32px;
+      border: 3px solid #FF6600;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+      display: block;
+    }
+    .skool-image-side img:hover {
+      transform: scale(1.02);
+    }
+    .skool-content-side {
+      flex: 1.2;
+    }
+    .skool-title-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
-      font-size: 2.4rem;
+      gap: 10px;
+      background: rgba(255,102,0,0.2);
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #FF6600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,102,0,0.4);
+    }
+    .skool-title-badge i {
+      font-size: 1.2rem;
+    }
+    .skool-main-title {
+      font-size: 2.2rem;
       font-weight: 800;
       font-family: 'Plus Jakarta Sans', sans-serif;
       margin-bottom: 20px;
-      flex-wrap: wrap;
+      line-height: 1.2;
     }
-    .skool-title i {
-      font-size: 3.5rem;
-      filter: drop-shadow(0 0 12px #FF6600);
+    .skool-main-title span {
       color: #FF6600;
     }
-    .skool-title span {
+    .feature-list {
+      list-style: none;
+      margin: 20px 0 25px;
+    }
+    .feature-list li {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.05rem;
+      color: #ddd;
+    }
+    .feature-list li i {
       color: #FF6600;
-      background: linear-gradient(135deg, #FF6600, #FFAA33);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: #FF6600;
+      font-size: 1.3rem;
+      width: 28px;
     }
-    .skool-description {
-      font-size: 1.2rem;
-      color: #cccccc;
-      max-width: 750px;
-      margin: 15px auto 25px auto;
-      line-height: 1.5;
-    }
-    .skool-description strong {
-      color: #FF6600;
-    }
-    .skool-image-wrapper {
-      max-width: 550px;
-      margin: 30px auto 25px;
-      border-radius: 32px;
-      overflow: hidden;
-      border: 3px solid #FF6600;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
-    }
-    .skool-image-wrapper img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.4s;
-    }
-    .skool-image-wrapper:hover img {
-      transform: scale(1.02);
-    }
-    .btn-skool {
+    .btn-skool-large {
       background: #FF6600;
       color: #000;
-      padding: 18px 48px;
-      font-size: 1.3rem;
+      padding: 16px 40px;
+      font-size: 1.25rem;
       font-weight: 800;
       border-radius: 60px;
       display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       text-decoration: none;
       transition: all 0.25s ease;
-      box-shadow: 0 20px 40px rgba(255,102,0,0.6);
-      margin-top: 20px;
-      letter-spacing: -0.3px;
+      box-shadow: 0 20px 35px rgba(255,102,0,0.5);
+      margin-top: 15px;
     }
-    .btn-skool:hover {
+    .btn-skool-large:hover {
       background: #ff8c33;
-      transform: scale(1.04) translateY(-4px);
-      box-shadow: 0 28px 50px rgba(255,102,0,0.9);
+      transform: scale(1.02) translateY(-3px);
+      box-shadow: 0 28px 45px rgba(255,102,0,0.7);
     }
-    .job-stats {
-      display: flex;
-      gap: 35px;
-      justify-content: center;
-      margin: 35px 0 10px;
-      flex-wrap: wrap;
-    }
-    .stat-item {
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      border-radius: 80px;
-      padding: 10px 28px;
-      border: 1px solid #FF6600;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-    .stat-item i {
-      color: #FF6600;
-      margin-right: 8px;
+    .small-note {
+      font-size: 0.85rem;
+      color: #FFAA66;
+      margin-top: 20px;
     }
 
     /* CASO ÉXITO NASA + INSIGNIAS */
@@ -701,8 +698,11 @@
       .founder-info-main { text-align: center; }
       .founder-bio-text { margin-left: auto; margin-right: auto; text-align: left; }
       .founder-social-buttons { justify-content: center; }
-      .skool-title { font-size: 1.8rem; }
-      .btn-skool { font-size: 1.1rem; padding: 14px 32px; }
+      .skool-grid { flex-direction: column; padding: 35px 25px; text-align: center; }
+      .skool-content-side { text-align: center; }
+      .feature-list li { justify-content: center; }
+      .btn-skool-large { justify-content: center; }
+      .skool-main-title { font-size: 1.9rem; }
     }
     @media (max-width: 768px) {
       .container { padding: 20px 16px 40px; }
@@ -711,11 +711,10 @@
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
       .btn-primary, .btn-outline { padding: 14px 24px; font-size: 1rem; width: 100%; justify-content: center; margin-right: 0; margin-bottom: 12px; }
-      .skool-card { padding: 30px 20px; }
-      .skool-title { font-size: 1.6rem; gap: 12px; }
-      .skool-description { font-size: 1rem; }
-      .stat-item { font-size: 0.9rem; padding: 6px 18px; }
-      .btn-skool { width: 100%; justify-content: center; }
+      .skool-grid { padding: 30px 20px; }
+      .skool-main-title { font-size: 1.6rem; }
+      .feature-list li { font-size: 0.95rem; }
+      .btn-skool-large { font-size: 1rem; padding: 12px 28px; width: 100%; justify-content: center; }
       .founder-avatar-img { width: 100px; height: 100px; margin: 0 auto; display: block; }
       .success-nasa-premium { padding: 25px 20px; }
       .short-card iframe { height: 250px; }
@@ -748,29 +747,27 @@
       </a>
     </div>
 
-    <!-- NUEVA SECCIÓN ESTRELLA: SKOOL CONVERSIÓN (empleo) -->
+    <!-- SECCIÓN PROFESIONAL SKOOL con imagen izquierda + texto derecho (datos reales solicitados) -->
     <div class="skool-conversion">
-      <div class="skool-card">
-        <div class="skool-title">
-          <i class="fas fa-users"></i>
-          <span>🚀 Comunidad Profesional · Skool "Trabajo en Ciberseguridad"</span>
-        </div>
-        <p class="skool-description">
-          🔐 <strong>La academia que cambia tu futuro:</strong> rutas de Pentesting, Bug Bounty, Azure Security, y preparación para certificaciones. Acompañamiento real, networking con reclutadores, ofertas de trabajo exclusivas y mentoría personalizada para que consigas tu <strong>primer empleo en menos de 6 meses</strong>.
-        </p>
-        <div class="job-stats">
-          <div class="stat-item"><i class="fas fa-chart-line"></i> 94% de empleabilidad</div>
-          <div class="stat-item"><i class="fas fa-certificate"></i> +12 rutas actualizadas</div>
-          <div class="stat-item"><i class="fas fa-bug"></i> Bug Bounty real</div>
-        </div>
-        <!-- IMAGEN DE SKOOL desde el enlace proporcionado -->
-        <div class="skool-image-wrapper">
+      <div class="skool-grid">
+        <div class="skool-image-side">
           <img src="https://raw.githubusercontent.com/pantasec/Links/main/ChatGPT%20Image%2024%20may%202026%2C%2012_59_16.png" alt="Skool LionxSecurity Academia" onerror="this.src='https://via.placeholder.com/800x450?text=Lionx+Skool+Academy'">
         </div>
-        <a href="https://www.skool.com/trabajo-en-ciber-5817" class="btn-skool" target="_blank">
-          <i class="fas fa-arrow-right-to-bracket"></i> ACCEDE AQUÍ — EMPIEZA TU ÉXITO
-        </a>
-        <p style="margin-top: 25px; font-size: 0.85rem; color: #FFAA66;">🔥 +800 alumnos activos · Clases en directo · Bolsa de empleo privada</p>
+        <div class="skool-content-side">
+          <div class="skool-title-badge"><i class="fas fa-graduation-cap"></i> Academia Oficial · Skool</div>
+          <h2 class="skool-main-title"><span>Certifícate con nosotros en 4-6 meses</span> y consigue tu primer empleo en ciberseguridad</h2>
+          <ul class="feature-list">
+            <li><i class="fas fa-chalkboard-user"></i> <strong>Mentores expertos</strong> en activo (Pentesting, Blue Team, Bug Bounty)</li>
+            <li><i class="fas fa-file-alt"></i> <strong>Optimización de CV</strong> y preparación de entrevistas técnicas</li>
+            <li><i class="fas fa-briefcase"></i> <strong>Guía de empleabilidad</strong> + bolsa de trabajo privada</li>
+            <li><i class="fas fa-certificate"></i> Ruta 100% práctica para certificarte y destacar</li>
+            <li><i class="fas fa-network-wired"></i> Networking con reclutadores y comunidad activa</li>
+          </ul>
+          <a href="https://www.skool.com/trabajo-en-ciber-5817" class="btn-skool-large" target="_blank">
+            <i class="fas fa-arrow-right-to-bracket"></i> ACCEDE AQUÍ — EMPIEZA TU ÉXITO
+          </a>
+          <div class="small-note"><i class="fas fa-users"></i> +800 alumnos · Clases en vivo · Proyectos reales</div>
+        </div>
       </div>
     </div>
 
@@ -863,9 +860,9 @@
       </div>
     </div>
 
-    <!-- Botón de acceso directo a Skool + comunidad gratuita (opcional) -->
+    <!-- Botón de acceso directo a Skool -->
     <div class="final-community-link">
-      <a href="https://www.skool.com/trabajo-en-ciber-5817" class="btn-skool" style="background: #FF6600; font-size:1.2rem; box-shadow:0 10px 25px rgba(255,102,0,0.7);"><i class="fab fa-schlix"></i> ACCEDER AHORA A SKOOL ACADEMY</a>
+      <a href="https://www.skool.com/trabajo-en-ciber-5817" class="btn-skool-large" style="background: #FF6600; font-size:1.2rem; padding: 16px 45px;"><i class="fab fa-schlix"></i> ACCEDER AHORA A SKOOL ACADEMY</a>
     </div>
 
     <div class="legal-footer">
