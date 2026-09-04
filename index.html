@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>eJPT · Consigue tu primer empleo en Ciberseguridad | LionxSecurity</title>
-  <meta name="description" content="Certifícate con eJPT y consigue tu primer empleo en ciberseguridad. Sin experiencia previa. Metodología práctica y docentes en activo. Agenda tu llamada ahora.">
+  <title>Fórmate con profesionales · Consigue tu empleo en Ciberseguridad | LionxSecurity</title>
+  <meta name="description" content="Fórmate con profesionales en activo y consigue tu primer empleo en ciberseguridad. Sin experiencia previa. Metodología práctica. Agenda tu llamada ahora.">
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts -->
@@ -17,43 +17,11 @@
     }
 
     body {
-      background: #0a0a0a;
-      color: #ffffff;
+      background: #ffffff;
+      color: #1a1a1a;
       line-height: 1.5;
       min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: 
-        radial-gradient(circle at 15% 25%, rgba(255, 102, 0, 0.2) 0%, transparent 45%),
-        radial-gradient(circle at 85% 70%, rgba(255, 102, 0, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 102, 0, 0.1) 0%, transparent 55%),
-        linear-gradient(145deg, #030303 0%, #151515 100%);
-      z-index: -2;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: 
-        linear-gradient(rgba(255, 102, 0, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 102, 0, 0.02) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: -1;
-      animation: gridBreath 12s ease-in-out infinite;
-    }
-
-    @keyframes gridBreath {
-      0%, 100% { opacity: 0.15; }
-      50% { opacity: 0.3; }
     }
 
     .container {
@@ -70,7 +38,7 @@
       align-items: center;
       gap: 16px;
       margin-bottom: 45px;
-      border-bottom: 1px solid rgba(255,102,0,0.25);
+      border-bottom: 2px solid #FF6600;
       padding-bottom: 22px;
     }
     .logo-img {
@@ -83,7 +51,7 @@
     .logo-img img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 0 15px rgba(255,102,0,0.8));
+      filter: drop-shadow(0 0 10px rgba(255,102,0,0.3));
       transition: transform 0.3s ease;
     }
     .logo-img img:hover {
@@ -94,16 +62,11 @@
       font-weight: 700;
       font-size: 30px;
       letter-spacing: -0.8px;
-      background: linear-gradient(135deg, #fff 70%, #FF6600 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #1a1a1a;
     }
     .logo-text span {
       font-weight: 800;
       color: #FF6600;
-      background: none;
-      -webkit-text-fill-color: #FF6600;
     }
 
     /* HERO */
@@ -120,16 +83,16 @@
       line-height: 1.2;
       margin-bottom: 20px;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1a1a1a;
     }
     .hero h1 span {
       color: #FF6600;
-      border-bottom: 3px solid #FF6600;
+      border-bottom: 4px solid #FF6600;
       display: inline-block;
       padding-bottom: 8px;
-      text-shadow: 0 0 25px rgba(255,102,0,0.5);
     }
     .hero p {
-      color: #c0c0c0;
+      color: #555;
       font-size: 1.2rem;
       margin-bottom: 30px;
       max-width: 520px;
@@ -141,17 +104,17 @@
       cursor: pointer;
     }
     .hero-image {
-      background: #151515;
+      background: #f5f5f5;
       border-radius: 30px;
       overflow: hidden;
-      border: 1.5px solid rgba(255,102,0,0.5);
-      box-shadow: 0 35px 70px -10px rgba(255,102,0,0.3);
+      border: 2px solid #FF6600;
+      box-shadow: 0 35px 70px -10px rgba(255,102,0,0.2);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     .hero-image:hover {
       transform: scale(1.02) translateY(-5px);
-      box-shadow: 0 40px 80px -5px #FF6600;
-      border-color: #FF6600;
+      box-shadow: 0 40px 80px -5px rgba(255,102,0,0.3);
+      border-color: #e65c00;
     }
     .hero-image img {
       width: 100%;
@@ -164,7 +127,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(4px);
       display: flex;
       align-items: center;
@@ -178,8 +141,8 @@
       opacity: 1;
     }
     .overlay-text {
-      background: rgba(255, 102, 0, 0.9);
-      color: #000;
+      background: #FF6600;
+      color: #fff;
       font-weight: 800;
       font-size: 1.5rem;
       padding: 15px 30px;
@@ -192,7 +155,7 @@
     /* BOTONES */
     .btn-primary {
       background: #FF6600;
-      color: #000;
+      color: #fff;
       border: none;
       padding: 18px 40px;
       font-size: 1.2rem;
@@ -203,18 +166,18 @@
       gap: 14px;
       text-decoration: none;
       transition: all 0.25s ease;
-      box-shadow: 0 15px 35px rgba(255,102,0,0.5);
+      box-shadow: 0 15px 35px rgba(255,102,0,0.3);
       margin-right: 18px;
     }
     .btn-primary:hover {
-      background: #ff751a;
+      background: #e65c00;
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 20px 45px rgba(255,102,0,0.6);
+      box-shadow: 0 20px 45px rgba(255,102,0,0.4);
     }
     .btn-outline {
       background: transparent;
       border: 2px solid #FF6600;
-      color: white;
+      color: #1a1a1a;
       padding: 16px 32px;
       font-size: 1.1rem;
       font-weight: 600;
@@ -224,17 +187,15 @@
       gap: 10px;
       text-decoration: none;
       transition: 0.25s;
-      backdrop-filter: blur(8px);
     }
     .btn-outline:hover {
-      background: rgba(255,102,0,0.15);
-      border-color: #ff944d;
-      box-shadow: 0 0 30px #FF6600;
+      background: rgba(255,102,0,0.08);
+      border-color: #e65c00;
+      box-shadow: 0 0 30px rgba(255,102,0,0.15);
       transform: translateY(-3px);
     }
     .highlight-box {
-      background: rgba(17, 17, 17, 0.7);
-      backdrop-filter: blur(12px);
+      background: #f8f4f0;
       border-left: 6px solid #FF6600;
       padding: 24px 30px;
       border-radius: 0 28px 28px 0;
@@ -242,177 +203,22 @@
     }
     .highlight-box p {
       font-size: 1.2rem;
-      color: #ddd;
+      color: #333;
     }
     .highlight-box strong {
       color: #FF6600;
     }
 
-    /* PERFIL FUNDADOR */
-    .founder-profile-section {
-      margin: 30px 0 50px;
-    }
-    .founder-card {
-      background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
-      backdrop-filter: blur(16px);
-      border-radius: 40px;
-      border: 1px solid rgba(255, 102, 0, 0.5);
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255,102,0,0.2);
-      padding: 30px 35px;
-      transition: all 0.3s ease;
-    }
-    .founder-card:hover {
-      border-color: #FF6600;
-      box-shadow: 0 30px 55px rgba(255,102,0,0.25);
-    }
-    .founder-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 35px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .founder-avatar-large {
-      flex-shrink: 0;
-    }
-    .founder-avatar-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #FF6600;
-      box-shadow: 0 0 0 4px rgba(255,102,0,0.3), 0 15px 35px rgba(0,0,0,0.5);
-      background: #1a1a1a;
-      transition: transform 0.2s ease;
-    }
-    .founder-avatar-img:hover {
-      transform: scale(1.02);
-    }
-    .founder-info-main {
-      flex: 2;
-      min-width: 260px;
-    }
-    .founder-badge-main {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 102, 0, 0.2);
-      padding: 5px 16px;
-      border-radius: 60px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #FF6600;
-      margin-bottom: 15px;
-      border: 1px solid rgba(255,102,0,0.4);
-    }
-    .founder-name-title {
-      font-size: 2rem;
-      font-weight: 800;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
-    }
-    .founder-name-title span {
-      color: #FF6600;
-    }
-    .founder-bio-text {
-      color: #c0c0c0;
-      font-size: 1rem;
-      line-height: 1.55;
-      margin: 18px 0;
-      max-width: 600px;
-    }
-    .founder-bio-text i {
-      color: #FF6600;
-      width: 24px;
-      margin-right: 8px;
-    }
-    .founder-social-buttons {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin: 20px 0 10px;
-    }
-    .founder-social-buttons a {
-      color: #ddd;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(30,30,30,0.8);
-      padding: 8px 22px;
-      border-radius: 60px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.25s;
-    }
-    .founder-social-buttons a i {
-      font-size: 1.3rem;
-    }
-    .founder-social-buttons a:hover {
-      color: #FF6600;
-      transform: translateY(-3px);
-      background: rgba(255,102,0,0.2);
-      border-color: #FF6600;
-    }
-    .academy-button-card {
-      flex: 1;
-      background: rgba(255, 102, 0, 0.08);
-      border-radius: 28px;
-      padding: 22px 28px;
-      text-align: center;
-      border: 1px solid rgba(255,102,0,0.4);
-      transition: all 0.3s;
-      min-width: 230px;
-    }
-    .academy-button-card:hover {
-      background: rgba(255, 102, 0, 0.18);
-      border-color: #FF6600;
-      transform: scale(1.02);
-    }
-    .academy-button-card h4 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-    .academy-button-card p {
-      font-size: 0.9rem;
-      color: #bbb;
-      margin-bottom: 22px;
-    }
-    .btn-start-now {
-      background: #FF6600;
-      color: #000;
-      border: none;
-      padding: 12px 28px;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 60px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      transition: all 0.25s;
-      box-shadow: 0 8px 18px rgba(255,102,0,0.4);
-    }
-    .btn-start-now:hover {
-      background: #ff8533;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(255,102,0,0.6);
-    }
-
     /* VIDEO SECTION */
     .video-section {
-      background: linear-gradient(145deg, #0f0f0f, #070707);
+      background: #f8f8f8;
       border-radius: 60px;
       padding: 60px 50px;
       margin: 60px 0 70px;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #e8e8e8;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
     .video-section::after {
       content: '';
@@ -421,13 +227,13 @@
       width: 350px; height: 350px;
       background: #FF6600;
       filter: blur(140px);
-      opacity: 0.15;
+      opacity: 0.06;
       border-radius: 50%;
     }
     .video-tag {
       display: inline-block;
       background: #FF6600;
-      color: #000;
+      color: #fff;
       font-weight: 800;
       padding: 8px 26px;
       border-radius: 60px;
@@ -442,6 +248,7 @@
       margin-bottom: 25px;
       line-height: 1.2;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1a1a1a;
     }
     .video-title span {
       color: #FF6600;
@@ -451,7 +258,7 @@
       margin: 35px auto;
       border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(255,102,0,0.4);
+      box-shadow: 0 30px 60px rgba(255,102,0,0.15);
       border: 2px solid #FF6600;
     }
     .video-wrapper iframe {
@@ -462,6 +269,9 @@
     .cta-under-video {
       text-align: center;
       margin: 40px 0 10px;
+    }
+    .video-section p {
+      color: #555;
     }
 
     /* CASOS DE ÉXITO */
@@ -474,15 +284,16 @@
       text-align: center;
       margin-bottom: 20px;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1a1a1a;
     }
     .success-section h2 span {
       color: #FF6600;
-      border-bottom: 3px solid #FF6600;
+      border-bottom: 4px solid #FF6600;
       padding-bottom: 6px;
     }
     .success-subtitle {
       text-align: center;
-      color: #b5b5b5;
+      color: #555;
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 45px auto;
@@ -493,17 +304,18 @@
       gap: 30px;
     }
     .success-card {
-      background: #151515;
+      background: #ffffff;
       border-radius: 32px;
       padding: 30px 25px;
       text-align: center;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #e8e8e8;
       transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
     }
     .success-card:hover {
       border-color: #FF6600;
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(255,102,0,0.15);
+      box-shadow: 0 20px 40px rgba(255,102,0,0.08);
     }
     .success-card img {
       width: 100%;
@@ -511,7 +323,7 @@
       object-fit: cover;
       border-radius: 20px;
       margin-bottom: 20px;
-      border: 2px solid #333;
+      border: 2px solid #f0f0f0;
       transition: transform 0.3s ease;
     }
     .success-card:hover img {
@@ -521,102 +333,61 @@
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 8px;
+      color: #1a1a1a;
     }
     .success-card .badge {
       display: inline-block;
-      background: rgba(255, 102, 0, 0.2);
+      background: rgba(255, 102, 0, 0.1);
       color: #FF6600;
       padding: 4px 16px;
       border-radius: 60px;
       font-size: 0.75rem;
       font-weight: 600;
       margin-bottom: 12px;
-      border: 1px solid rgba(255,102,0,0.3);
+      border: 1px solid rgba(255,102,0,0.2);
     }
     .success-card p {
-      color: #bbb;
+      color: #555;
       font-size: 0.95rem;
       line-height: 1.5;
     }
 
-    /* TRUST BADGE - LOGOS */
-    .trust-badge {
-      background: rgba(20,20,20,0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid #2a2a2a;
-      border-radius: 48px;
-      padding: 50px;
-      margin: 70px 0 60px;
-      text-align: center;
-    }
-    .trust-badge h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .trust-badge h3 span {
-      color: #FF6600;
-    }
-    .trust-badge p {
-      color: #aaa;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-    .trust-logos {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .trust-logos img {
-      height: 50px;
-      width: auto;
-      filter: grayscale(1) brightness(1.5);
-      transition: all 0.3s ease;
-      opacity: 0.7;
-    }
-    .trust-logos img:hover {
-      filter: grayscale(0) brightness(1);
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
     /* CTA FINAL */
     .final-cta {
-      background: linear-gradient(135deg, #0f0f0f, #070707);
+      background: #f8f8f8;
       border-radius: 50px;
       padding: 60px 50px;
       text-align: center;
-      border: 1px solid rgba(255,102,0,0.5);
+      border: 1px solid #e8e8e8;
       margin: 50px 0 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     }
     .final-cta h2 {
       font-size: 2.5rem;
       font-weight: 800;
       margin-bottom: 15px;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1a1a1a;
     }
     .final-cta h2 span {
       color: #FF6600;
     }
     .final-cta p {
-      color: #bbb;
+      color: #555;
       font-size: 1.1rem;
       max-width: 600px;
       margin: 0 auto 30px auto;
     }
 
     .legal-footer {
-      border-top: 1px solid #2a2a2a;
+      border-top: 1px solid #e8e8e8;
       padding-top: 40px;
       margin-top: 60px;
       display: flex;
       justify-content: center;
       gap: 60px;
       font-size: 0.85rem;
-      color: #666;
+      color: #999;
       flex-wrap: wrap;
     }
     .legal-footer a {
@@ -633,10 +404,6 @@
       .success-grid { grid-template-columns: repeat(2, 1fr); }
       .video-section { padding: 40px 25px; }
       .video-title { font-size: 2.2rem; }
-      .founder-flex { flex-direction: column; text-align: center; }
-      .founder-info-main { text-align: center; }
-      .founder-bio-text { margin-left: auto; margin-right: auto; text-align: left; }
-      .founder-social-buttons { justify-content: center; }
     }
     @media (max-width: 768px) {
       .container { padding: 20px 16px 40px; }
@@ -646,18 +413,12 @@
       .hero p { font-size: 1rem; }
       .btn-primary, .btn-outline { padding: 14px 24px; font-size: 1rem; width: 100%; justify-content: center; margin-right: 0; margin-bottom: 12px; }
       .hero div > div { display: flex; flex-direction: column; }
-      .founder-card { padding: 24px 20px; }
-      .founder-avatar-img { width: 100px; height: 100px; margin: 0 auto; display: block; }
-      .founder-name-title { font-size: 1.6rem; }
       .video-section { padding: 30px 20px; margin: 40px 0 50px; }
       .video-title { font-size: 1.6rem; }
       .success-grid { grid-template-columns: 1fr; }
       .success-card img { height: 220px; }
-      .trust-badge { padding: 30px 20px; }
       .final-cta { padding: 40px 25px; }
       .final-cta h2 { font-size: 1.8rem; }
-      .trust-logos { gap: 20px; }
-      .trust-logos img { height: 35px; }
     }
   </style>
 </head>
@@ -672,57 +433,27 @@
     <!-- HERO -->
     <div class="hero">
       <div>
-        <h1>Consigue tu <span>primer empleo</span> en ciberseguridad</h1>
-        <p>Sin experiencia previa. Con la certificación <strong>eJPT</strong> y nuestro sistema, accederás a roles de Red Team, Blue Team o Consultoría. Da igual tu sector de origen.</p>
+        <h1>Fórmate con <span>profesionales</span> del sector</h1>
+        <p>Consigue tu primer empleo en ciberseguridad sin experiencia previa. Te guiamos paso a paso con docentes que trabajan en el sector.</p>
         <div>
           <a href="#agendar" class="btn-primary"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
           <a href="#video" class="btn-outline"><i class="fas fa-play"></i> Ver video</a>
         </div>
-        <div class="highlight-box"><p><strong>📢 3.5M de empleos sin cubrir en el mundo.</strong> Las empresas ya no piden un grado, buscan experiencia demostrable. La eJPT es tu llave.</p></div>
+        <div class="highlight-box"><p><strong>📢 3.5M de empleos sin cubrir en el mundo.</strong> Las empresas buscan talento y pagan bien. Empieza hoy.</p></div>
       </div>
       <div class="hero-image-wrapper">
-        <div class="hero-image"><img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity eJPT"></div>
-        <div class="image-overlay"><span class="overlay-text"><span>🦁</span> ¡Certifícate con eJPT!</span></div>
-      </div>
-    </div>
-
-    <!-- PERFIL FUNDADOR -->
-    <div class="founder-profile-section">
-      <div class="founder-card">
-        <div class="founder-flex">
-          <div class="founder-avatar-large">
-            <img class="founder-avatar-img" src="https://raw.githubusercontent.com/pantasec/Links/main/Foto_graduaci%C3%B3n.jpg" alt="Jorge Pérez - Fundador">
-          </div>
-          <div class="founder-info-main">
-            <div class="founder-badge-main"><i class="fas fa-crown"></i> Fundador & CEO</div>
-            <h2 class="founder-name-title">Jorge Pérez <span>(Pantasec)</span></h2>
-            <div class="founder-bio-text">
-              <i class="fas fa-graduation-cap"></i> Ingeniero en Telecomunicaciones especializado en Telemática.<br>
-              <i class="fas fa-shield-alt"></i> +3 años como consultor de ciberseguridad y auditor de riesgos IT.<br>
-              <i class="fas fa-chalkboard-user"></i> Creador de contenido técnico con más de <strong>55,000 seguidores</strong> y host del podcast <strong>TechTalk</strong>.
-            </div>
-            <div class="founder-social-buttons">
-              <a href="https://www.youtube.com/@Pantasec" target="_blank"><i class="fab fa-youtube"></i> YT</a>
-              <a href="https://www.linkedin.com/in/pantasec/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-              <a href="https://www.instagram.com/pantasec.yt/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            </div>
-          </div>
-          <div class="academy-button-card">
-            <h4><i class="fas fa-bolt"></i> Empieza Ahora</h4>
-            <p>Descubre cómo la eJPT te abre las puertas del sector. Agenda una llamada sin compromiso.</p>
-            <a href="#agendar" class="btn-start-now"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
-          </div>
-        </div>
+        <div class="hero-image"><img src="https://raw.githubusercontent.com/pantasec/Links/main/main.png" alt="LionxSecurity"></div>
+        <div class="image-overlay"><span class="overlay-text"><span>🦁</span> ¡Formación de élite!</span></div>
       </div>
     </div>
 
     <!-- VIDEO SECCIÓN -->
     <div id="video" class="video-section">
-      <div class="video-tag">🎓 DESCUBRE EL SISTEMA</div>
-      <h2 class="video-title">Cómo conseguir tu <span>eJPT</span> y tu primer empleo</h2>
-      <p style="text-align: center; color: #bbb; margin-bottom: 25px;">Mira este video para entender por qué la eJPT es la certificación más solicitada y cómo nuestro sistema te garantiza el éxito.</p>
+      <div class="video-tag">🎓 FORMACIÓN DE ÉLITE</div>
+      <h2 class="video-title">Aprende de <span>profesionales en activo</span> y salta al mercado</h2>
+      <p style="text-align: center; margin-bottom: 25px;">Descubre cómo nuestro sistema te prepara para conseguir tu primer empleo en ciberseguridad.</p>
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/sNNLfqFaNgQ?rel=0" title="eJPT LionxSecurity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/sNNLfqFaNgQ?rel=0" title="Clase gratuita LionxSecurity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="cta-under-video">
         <a href="#agendar" class="btn-primary"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
@@ -733,51 +464,37 @@
     <!-- CASOS DE ÉXITO -->
     <div class="success-section">
       <h2>Ellos ya <span>lo consiguieron</span></h2>
-      <p class="success-subtitle">Alumnos certificados en eJPT que hoy trabajan en el sector de la ciberseguridad. Tú puedes ser el próximo.</p>
+      <p class="success-subtitle">Alumnos que hoy trabajan en el sector de la ciberseguridad gracias a nuestra formación. Tú puedes ser el próximo.</p>
       <div class="success-grid">
         <div class="success-card">
           <img src="https://raw.githubusercontent.com/pantasec/Links/main/jesus.jpg" alt="Jesús Yeste Ramírez">
           <h3>Jesús Yeste Ramírez</h3>
-          <span class="badge"><i class="fas fa-certificate"></i> eJPT Certified</span>
-          <p>"Gracias a la eJPT conseguí mi primer empleo en ciberseguridad. El sistema de LionxSecurity me guió paso a paso."</p>
+          <span class="badge"><i class="fas fa-shield-alt"></i> Ciberseguridad</span>
+          <p>"Gracias a la formación de LionxSecurity conseguí mi primer empleo en el sector. El acompañamiento de los docentes fue clave."</p>
         </div>
         <div class="success-card">
           <img src="https://raw.githubusercontent.com/pantasec/Links/main/Screenshot_1.jpg" alt="Salim El Hadri">
           <h3>Salim El Hadri</h3>
-          <span class="badge"><i class="fas fa-certificate"></i> eJPT Certified</span>
-          <p>"Vengo de otro sector y en menos de 6 meses estaba trabajando como analista de seguridad. La eJPT fue mi trampolín."</p>
+          <span class="badge"><i class="fas fa-shield-alt"></i> Ciberseguridad</span>
+          <p>"Vengo de otro sector y en menos de 6 meses estaba trabajando como analista de seguridad. La formación es 100% práctica."</p>
         </div>
         <div class="success-card">
           <img src="https://raw.githubusercontent.com/pantasec/Links/main/Screenshot_2.jpg" alt="Daniel Torres Alzate">
           <h3>Daniel Torres Alzate</h3>
-          <span class="badge"><i class="fas fa-certificate"></i> eJPT Certified</span>
-          <p>"Con la eJPT y el acompañamiento de la academia, conseguí mi primera oportunidad en Red Team. 100% recomendable."</p>
+          <span class="badge"><i class="fas fa-shield-alt"></i> Ciberseguridad</span>
+          <p>"Con la metodología de LionxSecurity conseguí mi primera oportunidad en el sector. Recomendable 100%."</p>
         </div>
-      </div>
-    </div>
-
-    <!-- TRUST BADGE -->
-    <div class="trust-badge">
-      <h3>Confían en <span>nuestro método</span></h3>
-      <p>Empresas de primer nivel buscan profesionales con la certificación eJPT. Así de simple.</p>
-      <div class="trust-logos">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/telefonica.png" alt="Telefónica">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/everis.png" alt="Everis">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/indra.png" alt="Indra">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/entelgy.png" alt="Entelgy">
-        <img src="https://raw.githubusercontent.com/pantasec/Links/main/cisco.png" alt="Cisco">
       </div>
     </div>
 
     <!-- CTA FINAL + CAL.COM -->
     <div id="agendar" class="final-cta">
       <h2>¿Listo para <span>tu primer empleo</span> en ciberseguridad?</h2>
-      <p>Agenda una llamada con nosotros y te explicaremos cómo la certificación eJPT + nuestro sistema te llevarán al éxito.</p>
-      <!-- Enlace directo a Cal.com -->
-      <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" class="btn-primary" style="font-size: 1.4rem; padding: 20px 50px;">
+      <p>Agenda una llamada con nosotros y te explicaremos cómo nuestra formación te llevará al éxito.</p>
+      <a href="https://cal.com/lionxsecurity-gmg0n1/30min-1" target="_blank" class="btn-primary" style="font-size: 1.4rem; padding: 20px 50px;">
         <i class="fas fa-calendar-check"></i> Agenda tu llamada ahora
       </a>
-      <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">Sin compromiso. Duración: 30 minutos.</p>
+      <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Sin compromiso. Duración: 30 minutos.</p>
     </div>
 
     <div class="legal-footer">
@@ -791,7 +508,7 @@
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "30min", {origin:"https://app.cal.com"});
-    Cal.ns["30min"]("floatingButton", {"calLink":"lionxsecurity-gmg0n1/30min","config":{"layout":"month_view"},"buttonText":"Agenda tu llamada"});
+    Cal.ns["30min"]("floatingButton", {"calLink":"lionxsecurity-gmg0n1/30min-1","config":{"layout":"month_view"},"buttonText":"Agenda tu llamada"});
   </script>
 </body>
 </html>
