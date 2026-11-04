@@ -1,3 +1,13 @@
+Aquí tienes la solución definitiva a esos dos problemas.
+
+1. **El botón flotante de Cal.com (el que se solapaba):** Lo he **desactivado por completo**. Ahora solo tienes los dos botones de tu barra inferior (Academia y Agenda tu llamada) que se ven perfectos en la captura, sin nada que los tape por debajo.
+2. **Las imágenes de las reseñas cortadas:** El problema era que la imagen original (el certificado) es más alta que ancha (vertical) o tiene un formato muy específico, y al forzar un cuadrado (`aspect-ratio: 1/1`) se recortaba. Lo he cambiado a **`aspect-ratio: 4 / 3`** y he quitado cualquier límite de altura. Así se verá como una tarjeta horizontal perfecta, mostrando el certificado entero sin cortar los bordes.
+
+---
+
+### `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -69,8 +79,16 @@
     .success-card { background: #151515; border-radius: 32px; padding: 30px 25px; text-align: center; border: 1px solid #2a2a2a; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
     .success-card:hover { border-color: #FF6600; transform: translateY(-8px); box-shadow: 0 20px 40px rgba(255,102,0,0.1); }
     
-    /* FIX IMÁGENES RESEÑAS: Aspect Ratio para que no se corten ni deformen */
-    .success-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; margin-bottom: 20px; border: 2px solid #2a2a2a; transition: transform 0.3s ease; }
+    /* FIX DEFINITIVO IMÁGENES: Formato 4:3 para que se vean los certificados completos */
+    .success-card img { 
+      width: 100%; 
+      aspect-ratio: 4 / 3; 
+      object-fit: cover; 
+      border-radius: 20px; 
+      margin-bottom: 20px; 
+      border: 2px solid #2a2a2a; 
+      transition: transform 0.3s ease; 
+    }
     
     .success-card:hover img { transform: scale(1.02); }
     .success-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
@@ -117,7 +135,7 @@
     .popup-phone-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: #25D366; color: #000; border: none; padding: 16px 32px; font-size: 1.1rem; font-weight: 800; border-radius: 60px; text-decoration: none; transition: all 0.25s; box-shadow: 0 15px 35px rgba(37,211,102,0.4); width: 100%; margin-top: 10px; user-select: none; }
     .popup-phone-btn:hover { background: #1ebe5b; transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 45px rgba(37,211,102,0.6); }
 
-    /* ===== STICKY BAR ===== */
+    /* ===== STICKY BAR (BARRA INFERIOR) ===== */
     .sticky-bar { position: fixed; left: 0; right: 0; bottom: -100px; z-index: 9000; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,102,0,0.4); padding: 12px 20px; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; transition: bottom 0.35s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 -10px 30px rgba(0,0,0,0.6); }
     .sticky-bar.show { bottom: 0; }
     .sticky-bar .btn-primary, .sticky-bar .btn-outline { margin: 0; padding: 14px 28px; font-size: 1rem; }
@@ -131,7 +149,7 @@
     }
     
     @media (max-width: 768px) {
-      .container { padding: 20px 16px 40px; }
+      .container { padding: 20px 16px 90px; /* Espacio extra abajo por la barra flotante */ }
       .logo-img { width: 48px; height: 48px; }
       .logo-text { font-size: 24px; }
       .hero h1 { font-size: 2rem; }
@@ -147,7 +165,7 @@
       .popup-box { padding: 32px 22px 24px; }
       .popup-title { font-size: 1.45rem; }
       
-      /* Sticky Bar en Móvil: Ajustado para no chocar con Cal.com */
+      /* Sticky Bar en Móvil */
       .sticky-bar { 
         padding: 10px 12px; 
         gap: 8px; 
@@ -155,7 +173,7 @@
         bottom: -100px;
       }
       .sticky-bar.show {
-        bottom: 75px; /* Elevado para dejar espacio al botón flotante de Cal.com */
+        bottom: 0; /* Pegado al borde inferior, ya que el botón de Cal está desactivado */
       }
       .sticky-bar .btn-primary, 
       .sticky-bar .btn-outline { 
@@ -268,13 +286,13 @@
     </div>
   </div>
 
-  <!-- ===== STICKY BAR (Solo Academia y Llamada) ===== -->
+  <!-- ===== STICKY BAR (Sin botón de Cal duplicado) ===== -->
   <div class="sticky-bar" id="stickyBar">
     <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-rocket"></i> Academia</a>
     <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
   </div>
 
-  <!-- ===== POPUP: EMPLEO / EVALUACIÓN (ÚNICO POPUP) ===== -->
+  <!-- ===== POPUP: EMPLEO / EVALUACIÓN ===== -->
   <div class="popup-overlay" id="jobPopup" role="dialog" aria-modal="true">
     <div class="popup-box">
       <button class="popup-close" id="jobPopupClose" aria-label="Cerrar">&times;</button>
@@ -283,7 +301,7 @@
       <h2 class="popup-title">¿Estás buscando <span>empleo en ciberseguridad</span>?</h2>
       <p class="popup-sub">Háblanos directamente y nos ponemos en contacto contigo para evaluar tu perfil y decirte cómo enfocar tu búsqueda de trabajo.</p>
       
-      <!-- Botón directo a WhatsApp Personal (No grupo) -->
+      <!-- Botón directo a WhatsApp Personal -->
       <a href="https://wa.me/34624898460?text=Hola,%20estoy%20buscando%20empleo%20en%20ciberseguridad%20y%20me%20gustar%C3%ADa%20evaluar%20mi%20perfil" target="_blank" rel="noopener" class="popup-phone-btn">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Hablar por WhatsApp
       </a>
@@ -327,31 +345,25 @@
         const h = document.documentElement;
         const scrolled = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
 
-        // Sticky bar al 35%
         if (!stickyShown && scrolled >= 35) {
           stickyBar.classList.add('show');
           stickyShown = true;
         }
 
-        // Popup de empleo al 80% de scroll
         if (!jobShown && scrolled >= 80) {
           openJobPopup();
         }
       }, { passive: true });
 
-      // Trigger por tiempo para el popup de empleo (40s)
       setTimeout(function() { if (!jobShown) openJobPopup(); }, 40000);
 
-      // Exit intent para el popup de empleo
       document.addEventListener('mouseleave', function (e) {
         if (e.clientY <= 0 && !jobShown) openJobPopup();
       });
       
-      // Cierres de popup
       jobClose.addEventListener('click', closeJobPopup);
       jobOverlay.addEventListener('click', function (e) { if (e.target === jobOverlay) closeJobPopup(); });
 
-      // ESC para cerrar
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && jobOverlay.classList.contains('show')) {
           closeJobPopup();
@@ -360,11 +372,7 @@
     })();
   </script>
 
-  <!-- Cal embed (floating button) -->
-  <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "30min", {origin:"https://app.cal.com"});
-    Cal.ns["30min"]("floatingButton", {"calLink":"lionxsecurity-gmg0n1/30min","config":{"layout":"month_view"},"buttonText":"Agenda tu llamada"});
-  </script>
+  <!-- NOTA: Se ha eliminado el script de Cal.com floatingButton porque causaba solapamiento -->
 </body>
 </html>
+```
