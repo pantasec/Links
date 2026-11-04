@@ -68,7 +68,10 @@
     .success-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .success-card { background: #151515; border-radius: 32px; padding: 30px 25px; text-align: center; border: 1px solid #2a2a2a; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
     .success-card:hover { border-color: #FF6600; transform: translateY(-8px); box-shadow: 0 20px 40px rgba(255,102,0,0.1); }
-    .success-card img { width: 100%; height: 280px; object-fit: cover; border-radius: 20px; margin-bottom: 20px; border: 2px solid #2a2a2a; transition: transform 0.3s ease; }
+    
+    /* FIX IMÁGENES RESEÑAS: Aspect Ratio para que no se corten ni deformen */
+    .success-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; margin-bottom: 20px; border: 2px solid #2a2a2a; transition: transform 0.3s ease; }
+    
     .success-card:hover img { transform: scale(1.02); }
     .success-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
     .success-card .badge { display: inline-block; background: rgba(255, 102, 0, 0.15); color: #FF6600; padding: 4px 16px; border-radius: 60px; font-size: 0.75rem; font-weight: 600; margin-bottom: 12px; border: 1px solid rgba(255,102,0,0.2); }
@@ -81,7 +84,7 @@
     .final-cta p { color: #bbb; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto; }
     .final-cta .btn-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-    /* NUEVA SECCIÓN: BOTONES FINALES (WHATSAPP Y HERRAMIENTAS) */
+    /* SECCIÓN FINAL: BOTONES WHATSAPP Y HERRAMIENTAS */
     .final-actions-section { text-align: center; margin: 40px 0 10px; padding: 40px 20px; background: #111; border-radius: 40px; border: 1px solid #222; }
     .final-actions-section p { color: #aaa; font-size: 1.05rem; margin-bottom: 20px; }
     .final-actions-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -89,7 +92,6 @@
     .btn-wa-final { background: #25D366; color: #000; border: none; padding: 18px 40px; font-size: 1.15rem; font-weight: 700; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.25s; box-shadow: 0 15px 35px rgba(37,211,102,0.35); font-family: inherit; text-decoration: none; }
     .btn-wa-final:hover { background: #1ebe5b; transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 45px rgba(37,211,102,0.55); }
 
-    /* BOTÓN DE HERRAMIENTAS (AHORA ENLACE DIRECTO AL GRUPO WA) */
     .btn-tools-final { background: #FF6600; color: #fff; border: none; padding: 18px 40px; font-size: 1.15rem; font-weight: 700; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.25s; box-shadow: 0 15px 35px rgba(255,102,0,0.35); font-family: inherit; text-decoration: none; }
     .btn-tools-final:hover { background: #e65c00; transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 45px rgba(255,102,0,0.55); }
 
@@ -120,7 +122,14 @@
     .sticky-bar.show { bottom: 0; }
     .sticky-bar .btn-primary, .sticky-bar .btn-outline { margin: 0; padding: 14px 28px; font-size: 1rem; }
 
-    /* FIX MÓVIL: Botones pegados y evitar que se solapen con Cal.com */
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; }
+      .success-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-section { padding: 40px 25px; }
+      .video-title { font-size: 2.2rem; }
+    }
+    
     @media (max-width: 768px) {
       .container { padding: 20px 16px 40px; }
       .logo-img { width: 48px; height: 48px; }
@@ -132,14 +141,13 @@
       .video-section { padding: 30px 20px; margin: 40px 0 50px; }
       .video-title { font-size: 1.6rem; }
       .success-grid { grid-template-columns: 1fr; }
-      .success-card img { height: 220px; }
       .final-cta { padding: 40px 25px; }
       .final-cta h2 { font-size: 1.8rem; }
       .final-cta .btn-row, .cta-under-video, .final-actions-row { flex-direction: column; }
       .popup-box { padding: 32px 22px 24px; }
       .popup-title { font-size: 1.45rem; }
       
-      /* Arreglo de la barra flotante en móvil: botones lado a lado y sin pisar a Cal */
+      /* Sticky Bar en Móvil: Ajustado para no chocar con Cal.com */
       .sticky-bar { 
         padding: 10px 12px; 
         gap: 8px; 
@@ -147,7 +155,7 @@
         bottom: -100px;
       }
       .sticky-bar.show {
-        bottom: 70px; /* Lo subimos para que no choque con el botón de Cal.com */
+        bottom: 75px; /* Elevado para dejar espacio al botón flotante de Cal.com */
       }
       .sticky-bar .btn-primary, 
       .sticky-bar .btn-outline { 
@@ -158,12 +166,6 @@
         white-space: nowrap;
         margin: 0;
       }
-    }
-    @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; }
-      .success-grid { grid-template-columns: repeat(2, 1fr); }
-      .video-section { padding: 40px 25px; }
-      .video-title { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -250,12 +252,9 @@
     <div class="final-actions-section">
       <p>👇 ¿Buscas empleo o quieres las herramientas de mis reels?</p>
       <div class="final-actions-row">
-        <!-- BOTÓN 1: GRUPO WHATSAPP -->
         <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-wa-final">
           <i class="fab fa-whatsapp"></i> Grupo WhatsApp
         </a>
-
-        <!-- BOTÓN 2: HERRAMIENTAS (ENLACE DIRECTO AL GRUPO WA) -->
         <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-tools-final">
           <i class="fas fa-tools"></i> Herramientas OSINT (Reels)
         </a>
@@ -269,10 +268,10 @@
     </div>
   </div>
 
-  <!-- ===== STICKY BAR ===== -->
+  <!-- ===== STICKY BAR (Solo Academia y Llamada) ===== -->
   <div class="sticky-bar" id="stickyBar">
     <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-rocket"></i> Academia</a>
-    <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-calendar-check"></i> Llamada</a>
+    <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
   </div>
 
   <!-- ===== POPUP: EMPLEO / EVALUACIÓN (ÚNICO POPUP) ===== -->
@@ -282,13 +281,14 @@
       <span class="popup-badge">💼 Evaluación de perfil</span>
       
       <h2 class="popup-title">¿Estás buscando <span>empleo en ciberseguridad</span>?</h2>
-      <p class="popup-sub">Únete a nuestro grupo de WhatsApp y hablamos. Evaluamos tu perfil y te decimos cómo enfocar tu búsqueda de trabajo.</p>
+      <p class="popup-sub">Háblanos directamente y nos ponemos en contacto contigo para evaluar tu perfil y decirte cómo enfocar tu búsqueda de trabajo.</p>
       
-      <!-- Enlace al grupo de WhatsApp -->
-      <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="popup-phone-btn">
-        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Entrar al Grupo de WhatsApp
+      <!-- Botón directo a WhatsApp Personal (No grupo) -->
+      <a href="https://wa.me/34624898460?text=Hola,%20estoy%20buscando%20empleo%20en%20ciberseguridad%20y%20me%20gustar%C3%ADa%20evaluar%20mi%20perfil" target="_blank" rel="noopener" class="popup-phone-btn">
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Hablar por WhatsApp
       </a>
       
+      <p style="font-size: 0.85rem; color: #888; margin-top: 16px;">+34 624 89 84 60</p>
       <p class="popup-privacy">Al continuar aceptas nuestra <a href="https://privacy.lionxsecurity.es/" target="_blank">política de privacidad</a>.</p>
     </div>
   </div>
