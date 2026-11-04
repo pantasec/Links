@@ -5,29 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Fórmate con profesionales · Consigue tu empleo en Ciberseguridad | LionxSecurity</title>
   <meta name="description" content="Fórmate con profesionales en activo y consigue tu primer empleo en ciberseguridad. Sin experiencia previa. Metodología práctica. Agenda tu llamada ahora.">
-  <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: #0a0a0a;
-      color: #ffffff;
-      line-height: 1.5;
-      min-height: 100vh;
+      background: #0a0a0a; color: #ffffff; line-height: 1.5; min-height: 100vh;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
     }
 
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 35px 30px 70px;
-      position: relative;
-      z-index: 2;
-    }
+    .container { max-width: 1300px; margin: 0 auto; padding: 35px 30px 70px; position: relative; z-index: 2; }
 
     /* HEADER */
     .logo-area { display: flex; align-items: center; gap: 16px; margin-bottom: 45px; border-bottom: 2px solid #FF6600; padding-bottom: 22px; }
@@ -52,9 +41,7 @@
     .btn-primary:hover { background: #e65c00; transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 45px rgba(255,102,0,0.5); }
     .btn-outline { background: transparent; border: 2px solid #FF6600; color: #ffffff; padding: 16px 32px; font-size: 1.1rem; font-weight: 600; border-radius: 60px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: 0.25s; margin-bottom: 12px; }
     .btn-outline:hover { background: rgba(255,102,0,0.15); border-color: #e65c00; box-shadow: 0 0 30px rgba(255,102,0,0.2); transform: translateY(-3px); }
-
-    /* NUEVO: botón WhatsApp verde */
-    .btn-whatsapp { background: #25D366; color: #000; border: none; padding: 16px 32px; font-size: 1.1rem; font-weight: 700; border-radius: 60px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: all 0.25s; box-shadow: 0 15px 35px rgba(37,211,102,0.3); margin-bottom: 12px; }
+    .btn-whatsapp { background: #25D366; color: #000; border: none; padding: 16px 32px; font-size: 1.1rem; font-weight: 700; border-radius: 60px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: all 0.25s; box-shadow: 0 15px 35px rgba(37,211,102,0.3); margin-bottom: 12px; cursor: pointer; border: none; font-family: inherit; }
     .btn-whatsapp:hover { background: #1ebe5b; transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 45px rgba(37,211,102,0.5); }
 
     .highlight-box { background: rgba(20, 20, 20, 0.8); border-left: 6px solid #FF6600; padding: 24px 30px; border-radius: 0 28px 28px 0; margin: 40px 0 20px; backdrop-filter: blur(8px); }
@@ -69,7 +56,7 @@
     .video-title span { color: #FF6600; }
     .video-wrapper { max-width: 800px; margin: 35px auto; border-radius: 32px; overflow: hidden; box-shadow: 0 30px 60px rgba(255,102,0,0.2); border: 2px solid #FF6600; }
     .video-wrapper iframe { width: 100%; aspect-ratio: 16 / 9; display: block; }
-    .cta-under-video { text-align: center; margin: 40px 0 10px; }
+    .cta-under-video { text-align: center; margin: 40px 0 10px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
     .video-section p { color: #bbb; }
 
     /* CASOS DE ÉXITO */
@@ -93,6 +80,12 @@
     .final-cta p { color: #bbb; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto; }
     .final-cta .btn-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
+    /* BOTÓN WHATSAPP INFERIOR (abre popup) */
+    .final-wa-section { text-align: center; margin: 40px 0 10px; }
+    .final-wa-section p { color: #888; font-size: 0.95rem; margin-bottom: 16px; }
+    .btn-wa-final { background: #25D366; color: #000; border: none; padding: 18px 40px; font-size: 1.15rem; font-weight: 700; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.25s; box-shadow: 0 15px 35px rgba(37,211,102,0.35); font-family: inherit; }
+    .btn-wa-final:hover { background: #1ebe5b; transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 45px rgba(37,211,102,0.55); }
+
     .legal-footer { border-top: 1px solid #2a2a2a; padding-top: 40px; margin-top: 60px; display: flex; justify-content: center; gap: 60px; font-size: 0.85rem; color: #666; flex-wrap: wrap; }
     .legal-footer a { color: #888; text-decoration: none; }
     .legal-footer a:hover { color: #FF6600; }
@@ -101,18 +94,18 @@
     .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; animation: fadeIn .3s ease; }
     .popup-overlay.show { display: flex; }
     @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    .popup-box { background: linear-gradient(145deg, #141414, #0a0a0a); border: 2px solid #FF6600; border-radius: 32px; max-width: 480px; width: 100%; padding: 40px 32px 32px; position: relative; text-align: center; box-shadow: 0 30px 80px rgba(255,102,0,0.35); animation: popIn .4s cubic-bezier(0.16,1,0.3,1); }
+    .popup-box { background: linear-gradient(145deg, #141414, #0a0a0a); border: 2px solid #FF6600; border-radius: 32px; max-width: 480px; width: 100%; padding: 40px 32px 32px; position: relative; text-align: center; box-shadow: 0 30px 80px rgba(255,102,0,0.35); animation: popIn .4s cubic-bezier(0.16,1,0.3,1); max-height: 92vh; overflow-y: auto; }
     @keyframes popIn { from{opacity:0; transform: scale(0.9) translateY(20px);} to{opacity:1; transform: scale(1) translateY(0);} }
     .popup-close { position: absolute; top: 14px; right: 18px; background: none; border: none; color: #888; font-size: 1.6rem; cursor: pointer; line-height: 1; transition: color .2s; }
     .popup-close:hover { color: #FF6600; }
     .popup-badge { display: inline-block; background: rgba(255,102,0,0.15); color: #FF6600; font-size: .75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 60px; margin-bottom: 18px; border: 1px solid rgba(255,102,0,0.35); }
-    .popup-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.75rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: #fff; }
+    .popup-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.7rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: #fff; }
     .popup-title span { color: #FF6600; }
-    .popup-sub { color: #bbb; font-size: .98rem; margin-bottom: 22px; line-height: 1.45; }
+    .popup-sub { color: #bbb; font-size: .95rem; margin-bottom: 22px; line-height: 1.45; }
     .popup-form-wrapper { text-align: left; }
     .popup-privacy { font-size: .72rem; color: #666; margin-top: 14px; line-height: 1.4; text-align: center; }
     .popup-privacy a { color: #888; }
-    /* Estilos suaves para el form de EmailOctopus dentro del popup */
+    /* Estilos para el form de EmailOctopus */
     #eom-form-wrapper input[type="text"],
     #eom-form-wrapper input[type="email"] { background: #0d0d0d !important; color: #fff !important; border: 1px solid #333 !important; border-radius: 60px !important; padding: 14px 20px !important; width: 100% !important; margin-bottom: 10px !important; font-family: inherit !important; }
     #eom-form-wrapper input[type="text"]:focus,
@@ -121,6 +114,25 @@
     #eom-form-wrapper input[type="submit"] { background: #FF6600 !important; color: #000 !important; border: none !important; border-radius: 60px !important; padding: 15px 24px !important; font-size: 1.05rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; transition: all .25s !important; box-shadow: 0 10px 25px rgba(255,102,0,0.4) !important; }
     #eom-form-wrapper button[type="submit"]:hover,
     #eom-form-wrapper input[type="submit"]:hover { background: #ff8533 !important; transform: translateY(-2px) !important; }
+
+    /* Pantalla de éxito del popup (botón WhatsApp final) */
+    .popup-success { display: none; padding: 6px 0 0; }
+    .popup-success i.success-icon { font-size: 3rem; color: #25D366; margin-bottom: 14px; display: block; }
+    .popup-success h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
+    .popup-success p { color: #bbb; font-size: .95rem; margin-bottom: 22px; line-height: 1.45; }
+    .popup-success a.btn-wa-popup { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #000; padding: 14px 28px; border-radius: 60px; font-weight: 800; text-decoration: none; transition: all .25s; box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
+    .popup-success a.btn-wa-popup:hover { background: #1ebe5b; transform: translateY(-2px); }
+    .popup-success a.btn-rocket-popup { display: inline-flex; align-items: center; gap: 10px; background: #FF6600; color: #000; padding: 14px 28px; border-radius: 60px; font-weight: 800; text-decoration: none; transition: all .25s; margin-top: 12px; box-shadow: 0 10px 25px rgba(255,102,0,0.4); }
+    .popup-success a.btn-rocket-popup:hover { background: #ff8533; transform: translateY(-2px); }
+
+    /* ===== STICKY BAR (aparece al hacer scroll) ===== */
+    .sticky-bar { position: fixed; left: 0; right: 0; bottom: -100px; z-index: 9000; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,102,0,0.4); padding: 12px 20px; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; transition: bottom 0.35s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 -10px 30px rgba(0,0,0,0.6); }
+    .sticky-bar.show { bottom: 0; }
+    .sticky-bar .btn-primary, .sticky-bar .btn-outline { margin: 0; padding: 14px 28px; font-size: 1rem; }
+    @media (max-width: 600px) {
+      .sticky-bar { padding: 10px 12px; gap: 8px; }
+      .sticky-bar .btn-primary, .sticky-bar .btn-outline { padding: 12px 18px; font-size: 0.9rem; flex: 1; justify-content: center; }
+    }
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
@@ -143,8 +155,10 @@
       .success-card img { height: 220px; }
       .final-cta { padding: 40px 25px; }
       .final-cta h2 { font-size: 1.8rem; }
+      .final-cta .btn-row, .cta-under-video { flex-direction: column; }
       .popup-box { padding: 32px 22px 24px; }
       .popup-title { font-size: 1.45rem; }
+      .btn-wa-final { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -156,20 +170,15 @@
       <div class="logo-text">Lionx<span>Security</span></div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO (1ª SECCIÓN) -->
     <div class="hero">
       <div>
         <h1>Fórmate con <span>profesionales</span> del sector</h1>
         <p>Consigue tu primer empleo en ciberseguridad sin experiencia previa. Te guiamos paso a paso con docentes que trabajan en el sector.</p>
         <div>
-          <!-- CTA originales -->
-          <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" class="btn-primary"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
-          <a href="#video" class="btn-outline"><i class="fas fa-play"></i> Ver video</a>
-        </div>
-        <div style="margin-top: 6px;">
-          <!-- NUEVOS botones -->
+          <!-- HERO: Academia + Ver video -->
           <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-rocket"></i> Accede a la Academia</a>
-          <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Grupo WhatsApp</a>
+          <a href="#video" class="btn-outline"><i class="fas fa-play"></i> Ver video</a>
         </div>
         <div class="highlight-box"><p><strong>📢 3.5M de empleos sin cubrir en el mundo.</strong> Las empresas buscan talento y pagan bien. Empieza hoy.</p></div>
       </div>
@@ -186,9 +195,10 @@
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/sNNLfqFaNgQ?rel=0" title="Clase gratuita LionxSecurity" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+      <!-- DEBAJO DEL VIDEO: Academia + Agenda -->
       <div class="cta-under-video">
-        <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" class="btn-primary"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
-        <p style="margin-top: 18px; font-size: 0.9rem; color: #777;">Sin compromiso. Te contamos cómo dar tu primer paso.</p>
+        <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-rocket"></i> Accede a la Academia</a>
+        <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
       </div>
     </div>
 
@@ -218,22 +228,27 @@
       </div>
     </div>
 
-    <!-- CTA FINAL + CAL.COM -->
+    <!-- CTA FINAL -->
     <div id="agendar" class="final-cta">
       <h2>¿Listo para <span>tu primer empleo</span> en ciberseguridad?</h2>
       <p>Agenda una llamada con nosotros y te explicaremos cómo nuestra formación te llevará al éxito.</p>
       <div class="btn-row">
-        <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" class="btn-primary" style="font-size: 1.2rem; padding: 18px 40px;">
-          <i class="fas fa-calendar-check"></i> Agenda tu llamada ahora
-        </a>
         <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary" style="font-size: 1.2rem; padding: 18px 40px;">
           <i class="fas fa-rocket"></i> Accede a la Academia
         </a>
-        <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-whatsapp" style="font-size: 1.2rem; padding: 18px 40px;">
-          <i class="fab fa-whatsapp"></i> Grupo WhatsApp
+        <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline" style="font-size: 1.2rem; padding: 18px 40px;">
+          <i class="fas fa-calendar-check"></i> Agenda tu llamada
         </a>
       </div>
       <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">Sin compromiso. Duración: 30 minutos.</p>
+    </div>
+
+    <!-- BOTÓN WHATSAPP FINAL (abre popup) -->
+    <div class="final-wa-section">
+      <p>🎁 Accede gratis a mis herramientas y recursos de hacking ético</p>
+      <button type="button" class="btn-wa-final" id="waFinalBtn">
+        <i class="fab fa-whatsapp"></i> Grupo WhatsApp de mis herramientas
+      </button>
     </div>
 
     <div class="legal-footer">
@@ -241,6 +256,12 @@
       <a href="https://legal.lionxsecurity.es/">Legal</a>
       <span>© 2026 LionxSecurity</span>
     </div>
+  </div>
+
+  <!-- ===== STICKY BAR ===== -->
+  <div class="sticky-bar" id="stickyBar">
+    <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-rocket"></i> Accede a la Academia</a>
+    <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
   </div>
 
   <!-- ===== POPUP EMAILOCTOPUS ===== -->
@@ -254,6 +275,18 @@
         <!-- EmailOctopus Form Embed -->
         <script async src="https://eomail5.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
       </div>
+      <div class="popup-success" id="popupSuccess">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h3>¡Ya estás dentro!</h3>
+        <p>Te hemos enviado la clase gratuita a tu email. Mientras la abres, puedes entrar ya al grupo de WhatsApp de mis herramientas o a la academia.</p>
+        <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-wa-popup">
+          <i class="fab fa-whatsapp"></i> Entrar al grupo WhatsApp
+        </a>
+        <br>
+        <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-rocket-popup">
+          <i class="fas fa-rocket"></i> Accede a la Academia
+        </a>
+      </div>
       <p class="popup-privacy">Al continuar aceptas nuestra <a href="https://privacy.lionxsecurity.es/" target="_blank">política de privacidad</a>.</p>
     </div>
   </div>
@@ -262,18 +295,24 @@
   <script>
     (function () {
       const POPUP_KEY      = 'lionx_popup_shown';
-      const POPUP_TIMEOUT  = 25000;  // 25 s
-      const SCROLL_TRIGGER = 45;     // 45 % de scroll
+      const POPUP_TIMEOUT  = 30000;  // 30 s
+      const SCROLL_TRIGGER = 60;     // 60 % de scroll (antes del CTA final)
       const EXIT_INTENT    = true;
+      const STICKY_TRIGGER = 35;     // 35 % -> aparece sticky bar
 
-      const overlay  = document.getElementById('leadPopup');
-      const closeBtn = document.getElementById('popupClose');
+      const overlay   = document.getElementById('leadPopup');
+      const closeBtn  = document.getElementById('popupClose');
+      const stickyBar = document.getElementById('stickyBar');
+      const waFinalBtn = document.getElementById('waFinalBtn');
+      const formView  = document.getElementById('eom-form-wrapper');
+      const successView = document.getElementById('popupSuccess');
       let shown = false;
+      let stickyShown = false;
 
-      try { if (sessionStorage.getItem(POPUP_KEY)) return; } catch(e) {}
+      try { if (sessionStorage.getItem(POPUP_KEY)) { shown = true; } } catch(e) {}
 
-      function openPopup() {
-        if (shown) return;
+      function openPopup(force) {
+        if (shown && !force) return;
         shown = true;
         overlay.classList.add('show');
         document.body.style.overflow = 'hidden';
@@ -284,21 +323,25 @@
         document.body.style.overflow = '';
       }
 
-      // Disparador scroll
+      // Scroll: sticky bar + popup
       window.addEventListener('scroll', function () {
-        if (shown) return;
         const h = document.documentElement;
         const scrolled = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
-        if (scrolled >= SCROLL_TRIGGER) openPopup();
+
+        if (!stickyShown && scrolled >= STICKY_TRIGGER) {
+          stickyBar.classList.add('show');
+          stickyShown = true;
+        }
+        if (!shown && scrolled >= SCROLL_TRIGGER) openPopup();
       }, { passive: true });
 
-      // Disparador tiempo
-      setTimeout(openPopup, POPUP_TIMEOUT);
+      // Tiempo
+      setTimeout(function(){ if (!shown) openPopup(); }, POPUP_TIMEOUT);
 
-      // Disparador exit-intent
+      // Exit intent
       if (EXIT_INTENT) {
         document.addEventListener('mouseleave', function (e) {
-          if (e.clientY <= 0) openPopup();
+          if (e.clientY <= 0 && !shown) openPopup();
         });
       }
 
@@ -309,6 +352,11 @@
       });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && overlay.classList.contains('show')) closePopup();
+      });
+
+      // Botón WhatsApp final: abre popup para captar email
+      waFinalBtn.addEventListener('click', function () {
+        openPopup(true); // force para que salga aunque se haya mostrado antes
       });
     })();
   </script>
