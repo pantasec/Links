@@ -1,13 +1,3 @@
-Aquí tienes la solución definitiva a esos dos problemas.
-
-1. **El botón flotante de Cal.com (el que se solapaba):** Lo he **desactivado por completo**. Ahora solo tienes los dos botones de tu barra inferior (Academia y Agenda tu llamada) que se ven perfectos en la captura, sin nada que los tape por debajo.
-2. **Las imágenes de las reseñas cortadas:** El problema era que la imagen original (el certificado) es más alta que ancha (vertical) o tiene un formato muy específico, y al forzar un cuadrado (`aspect-ratio: 1/1`) se recortaba. Lo he cambiado a **`aspect-ratio: 4 / 3`** y he quitado cualquier límite de altura. Así se verá como una tarjeta horizontal perfecta, mostrando el certificado entero sin cortar los bordes.
-
----
-
-### `index.html`
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
