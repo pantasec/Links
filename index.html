@@ -107,7 +107,7 @@
     .legal-footer a { color: #888; text-decoration: none; }
     .legal-footer a:hover { color: #FF6600; }
 
-    /* ===== ESTILOS POPUP EMPLEO ===== */
+    /* ===== ESTILOS POPUPS COMUNES ===== */
     .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; animation: fadeIn .3s ease; }
     .popup-overlay.show { display: flex; }
     @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
@@ -125,6 +125,13 @@
     .popup-phone-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: #25D366; color: #000; border: none; padding: 16px 32px; font-size: 1.1rem; font-weight: 800; border-radius: 60px; text-decoration: none; transition: all 0.25s; box-shadow: 0 15px 35px rgba(37,211,102,0.4); width: 100%; margin-top: 10px; user-select: none; }
     .popup-phone-btn:hover { background: #1ebe5b; transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 45px rgba(37,211,102,0.6); }
 
+    /* ESTILOS ESPECÍFICOS POPUP EMAILOCTOPUS */
+    .popup-box.tools-popup { border-color: #FF6600; box-shadow: 0 30px 80px rgba(255,102,0,0.35); }
+    .popup-box.tools-popup .popup-badge { background: rgba(255,102,0,0.15); color: #FF6600; border-color: rgba(255,102,0,0.35); }
+    .popup-box.tools-popup .popup-title span { color: #FF6600; }
+    .popup-form-wrapper { text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; margin: 0 auto; }
+    .popup-form-wrapper iframe { margin: 0 auto !important; display: block !important; max-width: 100% !important; }
+
     /* ===== STICKY BAR (BARRA INFERIOR) ===== */
     .sticky-bar { position: fixed; left: 0; right: 0; bottom: -100px; z-index: 9000; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,102,0,0.4); padding: 12px 20px; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; transition: bottom 0.35s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 -10px 30px rgba(0,0,0,0.6); }
     .sticky-bar.show { bottom: 0; }
@@ -139,7 +146,7 @@
     }
     
     @media (max-width: 768px) {
-      .container { padding: 20px 16px 90px; /* Espacio extra abajo para que la barra no tape el último contenido */ }
+      .container { padding: 20px 16px 90px; }
       .logo-img { width: 48px; height: 48px; }
       .logo-text { font-size: 24px; }
       .hero h1 { font-size: 2rem; }
@@ -163,7 +170,7 @@
         bottom: -100px;
       }
       .sticky-bar.show {
-        bottom: 0; /* Pegado al borde inferior */
+        bottom: 0;
       }
       .sticky-bar .btn-primary, 
       .sticky-bar .btn-outline { 
@@ -263,9 +270,10 @@
         <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-wa-final">
           <i class="fab fa-whatsapp"></i> Grupo WhatsApp
         </a>
-        <a href="https://chat.whatsapp.com/EypwtquFn5JKjgu1cY4nGs" target="_blank" rel="noopener" class="btn-tools-final">
+        <!-- Este botón abre el popup de EmailOctopus -->
+        <button type="button" class="btn-tools-final" id="toolsBtn">
           <i class="fas fa-tools"></i> Herramientas OSINT (Reels)
-        </a>
+        </button>
       </div>
     </div>
 
@@ -276,13 +284,31 @@
     </div>
   </div>
 
-  <!-- ===== STICKY BAR (Vuelve a estar visible) ===== -->
+  <!-- ===== STICKY BAR (Fija) ===== -->
   <div class="sticky-bar" id="stickyBar">
     <a href="https://www.skool.com/trabajo-en-ciber-5817/about" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-rocket"></i> Academia</a>
     <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-calendar-check"></i> Agenda tu llamada</a>
   </div>
 
-  <!-- ===== POPUP: EMPLEO / EVALUACIÓN ===== -->
+  <!-- ===== POPUP 1: HERRAMIENTAS OSINT (EMAILOCTOPUS) ===== -->
+  <div class="popup-overlay" id="toolsPopup">
+    <div class="popup-box tools-popup">
+      <button class="popup-close" id="toolsClose" aria-label="Cerrar">&times;</button>
+      <span class="popup-badge">🦁 Acceso gratuito</span>
+      
+      <h2 class="popup-title">Recibe las <span>herramientas de mis reels</span> de OSINT</h2>
+      <p class="popup-sub">Déjanos tu email y te enviamos la lista de herramientas OSINT para investigación online que uso en mis vídeos. Sin spam.</p>
+      
+      <!-- Formulario EmailOctopus -->
+      <div class="popup-form-wrapper" id="eom-form-wrapper">
+        <script async src="https://eomail5.com/form/baf22084-8b3a-11f0-93d9-af63b4293a21.js" data-form="baf22084-8b3a-11f0-93d9-af63b4293a21"></script>
+      </div>
+      
+      <p class="popup-privacy">Al continuar aceptas nuestra <a href="https://privacy.lionxsecurity.es/" target="_blank">política de privacidad</a>.</p>
+    </div>
+  </div>
+
+  <!-- ===== POPUP 2: EMPLEO / EVALUACIÓN ===== -->
   <div class="popup-overlay" id="jobPopup" role="dialog" aria-modal="true">
     <div class="popup-box">
       <button class="popup-close" id="jobPopupClose" aria-label="Cerrar">&times;</button>
@@ -291,7 +317,6 @@
       <h2 class="popup-title">¿Estás buscando <span>empleo en ciberseguridad</span>?</h2>
       <p class="popup-sub">Háblanos directamente y nos ponemos en contacto contigo para evaluar tu perfil y decirte cómo enfocar tu búsqueda de trabajo.</p>
       
-      <!-- Botón directo a WhatsApp Personal -->
       <a href="https://wa.me/34624898460?text=Hola,%20estoy%20buscando%20empleo%20en%20ciberseguridad%20y%20me%20gustar%C3%ADa%20evaluar%20mi%20perfil" target="_blank" rel="noopener" class="popup-phone-btn">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Hablar por WhatsApp
       </a>
@@ -304,22 +329,41 @@
   <!-- ===== SCRIPTS ===== -->
   <script>
     (function () {
-      const JOB_POPUP_KEY = 'lionx_job_popup_shown';
+      const TOOLS_POPUP_KEY = 'lionx_tools_popup_shown';
+      const JOB_POPUP_KEY   = 'lionx_job_popup_shown';
+      
+      const toolsOverlay = document.getElementById('toolsPopup');
+      const toolsClose   = document.getElementById('toolsClose');
+      const toolsBtn     = document.getElementById('toolsBtn');
       
       const jobOverlay   = document.getElementById('jobPopup');
       const jobClose     = document.getElementById('jobPopupClose');
+      
       const stickyBar    = document.getElementById('stickyBar');
       
+      let toolsShown = false;
       let jobShown = false;
       let stickyShown = false;
 
       try { 
-        if (sessionStorage.getItem(JOB_POPUP_KEY)) jobShown = true; 
+        if (sessionStorage.getItem(TOOLS_POPUP_KEY)) toolsShown = true; 
+        if (sessionStorage.getItem(JOB_POPUP_KEY)) jobShown = true;
       } catch(e) {}
 
-      // ---- POPUP: EMPLEO ----
-      function openJobPopup(force) {
-        if (jobShown && !force) return;
+      // ---- POPUP 1: HERRAMIENTAS OSINT ----
+      function openToolsPopup() {
+        toolsOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        try { sessionStorage.setItem(TOOLS_POPUP_KEY, '1'); } catch(e) {}
+      }
+      function closeToolsPopup() {
+        toolsOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      // ---- POPUP 2: EMPLEO ----
+      function openJobPopup() {
+        if (jobShown) return;
         jobShown = true;
         jobOverlay.classList.add('show');
         document.body.style.overflow = 'hidden';
@@ -330,42 +374,45 @@
         document.body.style.overflow = '';
       }
 
-      // ---- CONTROL DE SCROLL Y TRIGGERS ----
+      // ---- CONTROL DE SCROLL ----
       window.addEventListener('scroll', function () {
         const h = document.documentElement;
         const scrolled = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
 
-        // Sticky bar aparece al 35% de scroll
+        // Sticky bar al 35%
         if (!stickyShown && scrolled >= 35) {
           stickyBar.classList.add('show');
           stickyShown = true;
         }
 
-        // Popup de empleo al 80%
+        // Popup empleo al 80%
         if (!jobShown && scrolled >= 80) {
           openJobPopup();
         }
       }, { passive: true });
 
-      // Trigger por tiempo para el popup (40s)
+      // Trigger por tiempo para el popup de empleo (40s)
       setTimeout(function() { if (!jobShown) openJobPopup(); }, 40000);
 
-      // Exit intent
-      document.addEventListener('mouseleave', function (e) {
-        if (e.clientY <= 0 && !jobShown) openJobPopup();
-      });
+      // ---- EVENTOS CLICK ----
+      // Al hacer clic en el botón naranja de herramientas, se abre su popup
+      toolsBtn.addEventListener('click', openToolsPopup);
+      
+      // Cierres
+      toolsClose.addEventListener('click', closeToolsPopup);
+      toolsOverlay.addEventListener('click', function (e) { if (e.target === toolsOverlay) closeToolsPopup(); });
       
       jobClose.addEventListener('click', closeJobPopup);
       jobOverlay.addEventListener('click', function (e) { if (e.target === jobOverlay) closeJobPopup(); });
 
+      // ESC
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && jobOverlay.classList.contains('show')) {
-          closeJobPopup();
+        if (e.key === 'Escape') {
+          if (toolsOverlay.classList.contains('show')) closeToolsPopup();
+          if (jobOverlay.classList.contains('show')) closeJobPopup();
         }
       });
     })();
   </script>
-
-  <!-- NOTA: Se ha eliminado el script de Cal.com floatingButton -->
 </body>
 </html>
